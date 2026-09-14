@@ -46,15 +46,23 @@
       <div class="recipe-list" id="recetasList"></div>
       <p class="empty-state" id="recetasEmpty" hidden>No se encontraron recetas con esa búsqueda.</p>
 
-      <h1 class="section-title">Planes para bajar de peso</h1>
-      <p class="section-subtitle">4 menús diarios sin gluten pensados para un déficit calórico moderado.</p>
+      <div class="filter-chips" id="dietGoalFilter" role="group" aria-label="Filtrar planes por objetivo">
+        <button class="filter-chip active" data-goal="todos" type="button">Todos</button>
+        <button class="filter-chip" data-goal="perder" type="button">Bajar de peso</button>
+        <button class="filter-chip" data-goal="ganar" type="button">Ganar músculo</button>
+      </div>
 
-      <div class="recipe-list diet-list" id="dietasList"></div>
+      <div class="diet-block" id="bajarPesoBlock" data-goal="perder">
+        <h1 class="section-title">Planes para bajar de peso</h1>
+        <p class="section-subtitle">4 menús diarios sin gluten pensados para un déficit calórico moderado.</p>
+        <div class="recipe-list diet-list" id="dietasList"></div>
+      </div>
 
-      <h1 class="section-title">Planes para ganar músculo</h1>
-      <p class="section-subtitle">4 menús diarios sin gluten con superávit calórico y alto aporte de proteína.</p>
-
-      <div class="recipe-list diet-list" id="musculoList"></div>
+      <div class="diet-block" id="musculoBlock" data-goal="ganar">
+        <h1 class="section-title">Planes para ganar músculo</h1>
+        <p class="section-subtitle">4 menús diarios sin gluten con superávit calórico y alto aporte de proteína.</p>
+        <div class="recipe-list diet-list" id="musculoList"></div>
+      </div>
 
       <p class="disclaimer">⚠️ Las calorías son orientativas. Ajusta las cantidades según tu actividad física, peso y objetivo (déficit o superávit), y consulta a un/a dietista-nutricionista antes de seguir cualquier plan.</p>
     </section>

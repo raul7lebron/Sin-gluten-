@@ -54,4 +54,22 @@ document.addEventListener("DOMContentLoaded", () => {
       bindRecipeToggles();
     });
   }
+
+  const dietGoalFilter = document.getElementById("dietGoalFilter");
+  if (dietGoalFilter) {
+    const chips = Array.from(dietGoalFilter.querySelectorAll(".filter-chip"));
+    const dietBlocks = Array.from(document.querySelectorAll(".diet-block"));
+
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        chips.forEach((c) => c.classList.remove("active"));
+        chip.classList.add("active");
+
+        const goal = chip.dataset.goal;
+        dietBlocks.forEach((block) => {
+          block.hidden = goal !== "todos" && block.dataset.goal !== goal;
+        });
+      });
+    });
+  }
 });
