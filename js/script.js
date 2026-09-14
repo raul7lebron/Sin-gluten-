@@ -16,8 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   pillButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      pillButtons.forEach((b) => b.classList.remove("active"));
+      pillButtons.forEach((b) => {
+        b.classList.remove("active");
+        b.setAttribute("aria-selected", "false");
+      });
       btn.classList.add("active");
+      btn.setAttribute("aria-selected", "true");
       moveIndicator(btn);
       setActivePage(btn.dataset.target);
     });
