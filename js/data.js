@@ -247,3 +247,54 @@ const dietas = [
     ],
   },
 ];
+
+const dietasMusculo = [
+  {
+    icon: "🏋️",
+    title: "Volumen limpio",
+    meta: "~2.400 kcal aprox. · pollo, arroz, huevo",
+    comidas: [
+      { label: "Desayuno", text: "Tortilla de 3 huevos con avena certificada y plátano (~450 kcal)." },
+      { label: "Media mañana", text: "Batido de proteína con leche y avena certificada (~350 kcal)." },
+      { label: "Comida", text: "Pechuga de pollo con arroz basmati y verduras salteadas (~650 kcal)." },
+      { label: "Merienda", text: "Yogur griego con nueces y miel (~300 kcal)." },
+      { label: "Cena", text: "Pollo al horno con boniato y ensalada (~650 kcal)." },
+    ],
+  },
+  {
+    icon: "🥩",
+    title: "Alto calórico",
+    meta: "~2.700 kcal aprox. · ternera, pasta sin gluten, frutos secos",
+    comidas: [
+      { label: "Desayuno", text: "Porridge de avena certificada con leche entera, plátano y almendras (~550 kcal)." },
+      { label: "Media mañana", text: "Batido de proteína con crema de cacahuete y leche (~450 kcal)." },
+      { label: "Comida", text: "Solomillo de ternera con pasta sin gluten y salsa de tomate (~700 kcal)." },
+      { label: "Merienda", text: "Puñado de frutos secos y queso curado (~400 kcal)." },
+      { label: "Cena", text: "Ternera picada con arroz y verduras al wok (~600 kcal)." },
+    ],
+  },
+  {
+    icon: "🌱",
+    title: "Vegetariano proteico",
+    meta: "~2.300 kcal aprox. · tofu, legumbres, quinoa",
+    comidas: [
+      { label: "Desayuno", text: "Porridge de avena certificada con bebida de soja y frutos rojos (~450 kcal)." },
+      { label: "Media mañana", text: "Batido de proteína vegetal con plátano (~300 kcal)." },
+      { label: "Comida", text: "Tofu salteado con quinoa y verduras (~600 kcal)." },
+      { label: "Merienda", text: "Hummus con tortitas de maíz y frutos secos (~350 kcal)." },
+      { label: "Cena", text: "Lentejas estofadas con arroz y aguacate (~600 kcal)." },
+    ],
+  },
+  {
+    icon: "💥",
+    title: "Post-entreno intenso",
+    meta: "~2.500 kcal aprox. · salmón, boniato, batido de proteína",
+    comidas: [
+      { label: "Desayuno", text: "Huevos revueltos con pan sin gluten y aguacate (~450 kcal)." },
+      { label: "Media mañana", text: "Batido de proteína con avena certificada y plátano (~400 kcal)." },
+      { label: "Comida", text: "Salmón al horno con boniato y brócoli (~650 kcal)." },
+      { label: "Merienda", text: "Yogur griego con nueces (~300 kcal)." },
+      { label: "Cena", text: "Pechuga de pavo con arroz y verduras (~700 kcal)." },
+    ],
+  },
+];

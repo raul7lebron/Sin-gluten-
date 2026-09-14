@@ -58,9 +58,9 @@ function renderRecetas(query = "") {
   empty.hidden = filtered.length > 0;
 }
 
-function renderDietas() {
-  const list = document.getElementById("dietasList");
-  list.innerHTML = dietas
+function renderDietaList(containerId, items) {
+  const list = document.getElementById(containerId);
+  list.innerHTML = items
     .map((dieta) => {
       const content = `
         <ul class="meal-list">
@@ -72,6 +72,15 @@ function renderDietas() {
     .join("");
 }
 
+function renderDietas() {
+  renderDietaList("dietasList", dietas);
+}
+
+function renderMusculo() {
+  renderDietaList("musculoList", dietasMusculo);
+}
+
 renderSupermercado();
 renderRecetas();
 renderDietas();
+renderMusculo();
