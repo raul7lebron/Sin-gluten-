@@ -31,9 +31,19 @@ function renderRecipeCard(item, extraClass, listHtml) {
   `;
 }
 
-function renderRecetas() {
+function recetaMatches(receta, query) {
+  if (!query) return true;
+  const haystack = [receta.title, ...receta.ingredientes].join(" ").toLowerCase();
+  return haystack.includes(query);
+}
+
+function renderRecetas(query = "") {
   const list = document.getElementById("recetasList");
-  list.innerHTML = recetas
+  const empty = document.getElementById("recetasEmpty");
+  const normalizedQuery = query.trim().toLowerCase();
+  const filtered = recetas.filter((receta) => recetaMatches(receta, normalizedQuery));
+
+  list.innerHTML = filtered
     .map((receta) => {
       const content = `
         <h4>Ingredientes</h4>
@@ -44,6 +54,8 @@ function renderRecetas() {
       return renderRecipeCard(receta, "", content);
     })
     .join("");
+
+  empty.hidden = filtered.length > 0;
 }
 
 function renderDietas() {

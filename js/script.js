@@ -35,11 +35,23 @@ document.addEventListener("DOMContentLoaded", () => {
     header.classList.toggle("scrolled", window.scrollY > 12);
   });
 
-  document.querySelectorAll(".recipe-toggle").forEach((toggle) => {
-    toggle.addEventListener("click", () => {
-      const card = toggle.closest(".recipe-card");
-      const isOpen = card.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", String(isOpen));
+  function bindRecipeToggles() {
+    document.querySelectorAll(".recipe-toggle").forEach((toggle) => {
+      toggle.addEventListener("click", () => {
+        const card = toggle.closest(".recipe-card");
+        const isOpen = card.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+      });
     });
-  });
+  }
+
+  bindRecipeToggles();
+
+  const recetaSearch = document.getElementById("recetaSearch");
+  if (recetaSearch) {
+    recetaSearch.addEventListener("input", () => {
+      renderRecetas(recetaSearch.value);
+      bindRecipeToggles();
+    });
+  }
 });
