@@ -1,0 +1,369 @@
+:root {
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --text: #1f2733;
+  --text-muted: #6b7685;
+  --primary: #2f9e6e;
+  --primary-dark: #1f7a54;
+  --accent: #ff8a5c;
+  --border: #e6e9ee;
+  --shadow-sm: 0 2px 8px rgba(31, 39, 51, 0.06);
+  --shadow-md: 0 10px 30px rgba(31, 39, 51, 0.10);
+  --shadow-lg: 0 18px 45px rgba(31, 39, 51, 0.14);
+  --radius-lg: 20px;
+  --radius-md: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(244, 246, 248, 0.7);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition: background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-header.scrolled {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.logo-text small {
+  font-weight: 400;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Pill navigation */
+.pill-nav {
+  position: relative;
+  display: inline-flex;
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 4px;
+  box-shadow: var(--shadow-sm);
+  gap: 4px;
+}
+
+.pill-indicator {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1), width 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+  z-index: 0;
+}
+
+.pill-btn {
+  position: relative;
+  z-index: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.pill-btn.active {
+  color: #fff;
+}
+
+/* Sections */
+.page {
+  display: none;
+  padding: 32px 0 56px;
+  animation: fadeIn 0.4s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin: 36px 0 4px;
+}
+
+.section-title:first-child {
+  margin-top: 0;
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  margin: 0 0 24px;
+}
+
+/* Card grid (Supermercado) */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.info-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  font-size: 1.4rem;
+  margin-bottom: 14px;
+}
+
+.icon-1 { background: linear-gradient(135deg, #ffd8a8, #ff8a5c); }
+.icon-2 { background: linear-gradient(135deg, #ffe08a, #ffb020); }
+.icon-3 { background: linear-gradient(135deg, #ffc9c9, #ff6b6b); }
+.icon-4 { background: linear-gradient(135deg, #c3f0ca, #2f9e6e); }
+.icon-5 { background: linear-gradient(135deg, #d0ebff, #4dabf7); }
+.icon-6 { background: linear-gradient(135deg, #d0ebff, #74c0fc); }
+.icon-7 { background: linear-gradient(135deg, #eebefa, #cc5de8); }
+.icon-8 { background: linear-gradient(135deg, #ffd6e8, #f06595); }
+
+.info-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.info-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Recipe / diet cards */
+.recipe-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.recipe-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow 0.25s ease;
+}
+
+.recipe-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.recipe-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: var(--text);
+}
+
+.recipe-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.recipe-title {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.recipe-title small {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 2px;
+}
+
+.chevron {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  color: var(--text-muted);
+}
+
+.recipe-card.open .chevron {
+  transform: rotate(180deg);
+}
+
+.recipe-content {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.recipe-card.open .recipe-content {
+  max-height: 900px;
+  padding: 0 20px 22px;
+}
+
+.recipe-content h4 {
+  margin: 12px 0 6px;
+  font-size: 0.9rem;
+  color: var(--primary-dark);
+}
+
+.recipe-content ul,
+.recipe-content ol {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.recipe-content li {
+  margin-bottom: 4px;
+}
+
+.meal-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+}
+
+.meal-list li {
+  padding: 8px 0;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.meal-list li:first-child {
+  border-top: none;
+}
+
+.meal-list strong {
+  color: var(--text);
+}
+
+.diet-card .recipe-icon {
+  background: linear-gradient(135deg, #d3f9d8, var(--primary));
+  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.disclaimer {
+  margin-top: 20px;
+  padding: 14px 18px;
+  background: #fff7e6;
+  border: 1px solid #ffe1a8;
+  border-radius: var(--radius-md);
+  color: #8a5a00;
+  font-size: 0.85rem;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 24px 20px 40px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pill-nav {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+}
