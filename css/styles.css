@@ -200,6 +200,10 @@ body {
 .icon-6 { background: linear-gradient(135deg, #d0ebff, #74c0fc); }
 .icon-7 { background: linear-gradient(135deg, #eebefa, #cc5de8); }
 .icon-8 { background: linear-gradient(135deg, #ffd6e8, #f06595); }
+.icon-9 { background: linear-gradient(135deg, #fff3bf, #fcc419); }
+.icon-10 { background: linear-gradient(135deg, #e2f2e6, #37b24d); }
+.icon-11 { background: linear-gradient(135deg, #ffe8cc, #e8590c); }
+.icon-12 { background: linear-gradient(135deg, #e5dbff, #845ef7); }
 
 .info-card h3 {
   margin: 0 0 6px;
