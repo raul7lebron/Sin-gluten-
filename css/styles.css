@@ -430,6 +430,92 @@ body {
   font-size: 0.85rem;
 }
 
+/* Restaurant ranking */
+.rank-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.rank-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 18px 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rank-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.rank-number {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rank-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.rank-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.rank-header h3 {
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+.rank-rating {
+  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--primary-dark);
+  font-size: 0.9rem;
+}
+
+.rank-meta {
+  margin: 4px 0 6px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.rank-desc {
+  margin: 0 0 8px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.rank-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+.rank-link:hover {
+  text-decoration: underline;
+}
+
 /* Footer */
 .site-footer {
   text-align: center;

@@ -20,6 +20,7 @@
         <span class="pill-indicator" id="pillIndicator"></span>
         <button class="pill-btn active" id="tab-supermercado" data-target="supermercado" type="button" role="tab" aria-selected="true" aria-controls="supermercado">Supermercado</button>
         <button class="pill-btn" id="tab-dietas" data-target="dietas" type="button" role="tab" aria-selected="false" aria-controls="dietas">Dietas</button>
+        <button class="pill-btn" id="tab-restaurantes" data-target="restaurantes" type="button" role="tab" aria-selected="false" aria-controls="restaurantes">Restaurantes</button>
       </nav>
     </div>
   </header>
@@ -79,6 +80,17 @@
       </div>
 
       <p class="disclaimer">⚠️ Las calorías son orientativas. Ajusta las cantidades según tu actividad física, peso y objetivo, y consulta a un/a dietista-nutricionista antes de seguir cualquier plan.</p>
+    </section>
+
+    <section id="restaurantes" class="page" role="tabpanel" aria-labelledby="tab-restaurantes">
+      <h1 class="section-title">Restaurantes sin gluten</h1>
+      <p class="section-subtitle">Ranking por ciudad según su nota en Google, con foco en locales aptos para celíacos.</p>
+
+      <div class="filter-chips" id="ciudadFilter" role="group" aria-label="Filtrar por ciudad"></div>
+
+      <div class="rank-list" id="restaurantesList"></div>
+
+      <p class="disclaimer">⚠️ Notas y nº de reseñas recogidos mediante búsqueda web en septiembre de 2026 y pueden haber cambiado desde entonces — compruébalas en Google Maps antes de ir. Las marcadas con "≈" proceden de una fuente agregadora, no de una captura directa de Google Maps. La ausencia de un restaurante no implica que no sea apto para celíacos: solo se incluyen los que se pudieron verificar con una nota de Google razonablemente fiable.</p>
     </section>
   </main>
 

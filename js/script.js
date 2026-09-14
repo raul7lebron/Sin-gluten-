@@ -72,4 +72,16 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  const ciudadFilter = document.getElementById("ciudadFilter");
+  if (ciudadFilter) {
+    ciudadFilter.addEventListener("click", (event) => {
+      const chip = event.target.closest(".filter-chip");
+      if (!chip) return;
+
+      ciudadFilter.querySelectorAll(".filter-chip").forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderRestaurantes(chip.dataset.ciudad);
+    });
+  }
 });
