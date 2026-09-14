@@ -80,7 +80,17 @@ function renderMusculo() {
   renderDietaList("musculoList", dietasMusculo);
 }
 
+function renderMantenimiento() {
+  renderDietaList("mantenimientoList", dietasMantenimiento);
+}
+
+function renderDigestion() {
+  renderDietaList("digestionList", dietasDigestion);
+}
+
 renderSupermercado();
 renderRecetas();
 renderDietas();
 renderMusculo();
+renderMantenimiento();
+renderDigestion();

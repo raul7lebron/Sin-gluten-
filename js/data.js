@@ -298,3 +298,57 @@ const dietasMusculo = [
     ],
   },
 ];
+
+const dietasMantenimiento = [
+  {
+    icon: "⚖️",
+    title: "Equilibrio diario",
+    meta: "~2.000 kcal aprox. · variado y equilibrado",
+    comidas: [
+      { label: "Desayuno", text: "Tostadas de pan sin gluten con aguacate y huevo poché (~420 kcal)." },
+      { label: "Media mañana", text: "Una pieza de fruta y un puñado de almendras (~200 kcal)." },
+      { label: "Comida", text: "Arroz con pollo y verduras variadas (~550 kcal)." },
+      { label: "Merienda", text: "Yogur natural con granola sin gluten (~250 kcal)." },
+      { label: "Cena", text: "Pescado a la plancha con patata asada y ensalada (~580 kcal)." },
+    ],
+  },
+  {
+    icon: "⚡",
+    title: "Energía activa",
+    meta: "~2.100 kcal aprox. · pensado para quien entrena",
+    comidas: [
+      { label: "Desayuno", text: "Porridge de avena certificada con plátano y miel (~450 kcal)." },
+      { label: "Media mañana", text: "Batido de frutas con leche (~250 kcal)." },
+      { label: "Comida", text: "Pasta sin gluten con pollo y verduras salteadas (~600 kcal)." },
+      { label: "Merienda", text: "Barrita energética casera de frutos secos y dátiles (~250 kcal)." },
+      { label: "Cena", text: "Tortilla de patatas con ensalada (~550 kcal)." },
+    ],
+  },
+];
+
+const dietasDigestion = [
+  {
+    icon: "🍵",
+    title: "Intestino en calma",
+    meta: "~1.600 kcal aprox. · suave y fácil de digerir",
+    comidas: [
+      { label: "Desayuno", text: "Yogur natural sin lactosa con plátano maduro (~250 kcal)." },
+      { label: "Media mañana", text: "Infusión de manzanilla con compota de manzana (~120 kcal)." },
+      { label: "Comida", text: "Arroz blanco con pechuga de pollo hervida y zanahoria cocida (~450 kcal)." },
+      { label: "Merienda", text: "Puré de pera (~150 kcal)." },
+      { label: "Cena", text: "Pescado blanco al vapor con calabacín cocido (~430 kcal)." },
+    ],
+  },
+  {
+    icon: "🌿",
+    title: "Antiinflamatorio",
+    meta: "~1.700 kcal aprox. · cúrcuma, jengibre, omega-3",
+    comidas: [
+      { label: "Desayuno", text: "Porridge de avena certificada con cúrcuma, canela y arándanos (~350 kcal)." },
+      { label: "Media mañana", text: "Nueces y una naranja (~200 kcal)." },
+      { label: "Comida", text: "Salmón al horno con boniato y brócoli al vapor (~500 kcal)." },
+      { label: "Merienda", text: "Infusión de jengibre con un puñado de frutos rojos (~150 kcal)." },
+      { label: "Cena", text: "Ensalada de quinoa, aguacate y aceite de oliva virgen extra (~500 kcal)." },
+    ],
+  },
+];

@@ -50,6 +50,8 @@
         <button class="filter-chip active" data-goal="todos" type="button">Todos</button>
         <button class="filter-chip" data-goal="perder" type="button">Bajar de peso</button>
         <button class="filter-chip" data-goal="ganar" type="button">Ganar músculo</button>
+        <button class="filter-chip" data-goal="mantenimiento" type="button">Mantenimiento y energía</button>
+        <button class="filter-chip" data-goal="digestion" type="button">Digestión ligera</button>
       </div>
 
       <div class="diet-block" id="bajarPesoBlock" data-goal="perder">
@@ -64,7 +66,19 @@
         <div class="recipe-list diet-list" id="musculoList"></div>
       </div>
 
-      <p class="disclaimer">⚠️ Las calorías son orientativas. Ajusta las cantidades según tu actividad física, peso y objetivo (déficit o superávit), y consulta a un/a dietista-nutricionista antes de seguir cualquier plan.</p>
+      <div class="diet-block" id="mantenimientoBlock" data-goal="mantenimiento">
+        <h1 class="section-title">Mantenimiento y energía</h1>
+        <p class="section-subtitle">2 menús diarios sin gluten equilibrados, para mantener el peso y rendir en el día a día.</p>
+        <div class="recipe-list diet-list" id="mantenimientoList"></div>
+      </div>
+
+      <div class="diet-block" id="digestionBlock" data-goal="digestion">
+        <h1 class="section-title">Digestión ligera</h1>
+        <p class="section-subtitle">2 menús diarios sin gluten con opciones suaves y antiinflamatorias.</p>
+        <div class="recipe-list diet-list" id="digestionList"></div>
+      </div>
+
+      <p class="disclaimer">⚠️ Las calorías son orientativas. Ajusta las cantidades según tu actividad física, peso y objetivo, y consulta a un/a dietista-nutricionista antes de seguir cualquier plan.</p>
     </section>
   </main>
 
