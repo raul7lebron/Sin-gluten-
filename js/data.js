@@ -391,11 +391,15 @@ const restaurantesPorCiudad = {
   valencia: {
     label: "Valencia",
     restaurantes: [
+      { nombre: "Carlotes Café", nota: 4.9, resenas: 87, zona: "Ensanche / Extramurs", desc: "Cafetería 100% sin gluten certificada segura, personal formado en celiaquía." },
       { nombre: "Malkebien", nota: 4.7, resenas: 1446, zona: "Zona universitaria", desc: "Socio colaborador ACECOVA, pan y cerveza sin gluten." },
+      { nombre: "Disidente", nota: 4.7, resenas: 431, zona: "Ensanche", desc: "Vegetariano con opciones sin gluten y gestión cuidadosa de alergias." },
+      { nombre: "Civera Marisquería", nota: 4.6, resenas: 2000, zona: "Sant Francesc / centro", desc: "Marisquería histórica (desde los 60) incluida en el listado seguro de ACECOVA." },
       { nombre: "El Miracle", nota: 4.5, resenas: 2600, zona: "Pla del Remei / Gran Vía", desc: "Primer restaurante 100% sin gluten certificado por ACECOVA en la Comunidad Valenciana." },
       { nombre: "La Pappardella", nota: 4.5, resenas: 2200, zona: "La Seu", desc: "Italiana con carta asesorada por la asociación de celíacos." },
       { nombre: "Kuzina", nota: 4.5, resenas: 2000, zona: "Ciutat Vella, cerca de Ruzafa", desc: "Griega con amplia oferta sin gluten señalizada." },
       { nombre: "Casa Carmela", nota: 4.4, resenas: 8900, zona: "Malvarrosa", desc: "Icónica arrocería centenaria con acuerdo ACECOVA, pan sin gluten." },
+      { nombre: "Al Pomodoro", nota: 4.4, resenas: 1300, zona: "La Xerea / Ciutat Vella", desc: "Pizzería italiana artesanal con opciones sin gluten, listada por Celicidad." },
       { nombre: "Mey Chen", nota: 4.3, resenas: 2700, zona: "Benimaclet", desc: "China avalada por ACECOVA, comanda diferenciada por plato." },
       { nombre: "LaLoLa Restaurante", nota: 4.3, resenas: 3150, zona: "La Seu, junto a la Catedral", desc: "Toda la carta de arroces y tapas es sin gluten (salvo el pan).", aprox: true },
       { nombre: "Mállalo X", nota: 4.1, resenas: 275, zona: "Mercado Central / Velluters", desc: "Acreditado por ACECOVA como local seguro." },
@@ -404,9 +408,15 @@ const restaurantesPorCiudad = {
   sevilla: {
     label: "Sevilla",
     restaurantes: [
+      { nombre: "Restaurante Marroquí La Alcoba", nota: 4.8, resenas: 876, zona: "Santa Clara", desc: "Cocina marroquí con pastela y platos sin gluten, personal atento a intolerancias." },
       { nombre: "Barra Baja", nota: 4.7, resenas: 600, zona: "Casco Antiguo", desc: "Cocina de mercado andaluza de autor, miembro de la Red Sevilla Sin Gluten.", aprox: true },
+      { nombre: "Acento - Social Eatery", nota: 4.7, resenas: 800, zona: "El Arenal / Casco Antiguo", desc: "Mediterráneo-internacional con atención específica a comensales celíacos." },
+      { nombre: "Petit Comité", nota: 4.5, resenas: 2465, zona: "Casco Antiguo", desc: "Tapas de calidad, miembro de la Red Sevilla Sin Gluten-ASPROCESE." },
       { nombre: "Al Solito Posto", nota: 4.4, resenas: 4500, zona: "Alameda de Hércules", desc: "Italiano histórico homologado por la Asociación de Celíacos de Sevilla." },
       { nombre: "Señora Pan", nota: 4.4, resenas: null, zona: "Casco Antiguo", desc: "Restaurante 100% sin gluten, fusión español-venezolana." },
+      { nombre: "Orfeo", nota: 4.2, resenas: 811, zona: "Casco Antiguo", desc: "Café-bar tranquilo, miembro de la Red Sevilla Sin Gluten-ASPROCESE." },
+      { nombre: "Estragón", nota: 4.1, resenas: null, zona: "El Porvenir", desc: "Carta 100% sin gluten sin riesgo de contaminación cruzada, tapas y raciones." },
+      { nombre: "Habanita", nota: 4.1, resenas: null, zona: "Casco Antiguo, junto a Plaza Alfalfa", desc: "Vegetariano/cubano con opciones sin gluten, más de 20 años de trayectoria." },
     ],
   },
   bilbao: {
@@ -414,8 +424,10 @@ const restaurantesPorCiudad = {
     restaurantes: [
       { nombre: "Casa Leotta – Pozas", nota: 4.7, resenas: null, zona: "Pozas / Abando", desc: "Pinsas y pasta 100% sin gluten, asesorados por EZE (Celíacos de Euskadi)." },
       { nombre: "Casa Leotta – Ajuriaguerra", nota: 4.6, resenas: 2192, zona: "Ajuriaguerra / Abando", desc: "Pinsas y pasta sin gluten dedicadas, avalado por EZE." },
+      { nombre: "Kalí Órexi by Labocatorio", nota: 4.6, resenas: 1500, zona: "Abando (Fernández del Campo)", desc: "Gastrobar griego-mediterráneo con platos marcados sin gluten en carta." },
       { nombre: "Arraiz Asador", nota: 4.5, resenas: 1450, zona: "Arraiz (cerca de Artxanda)", desc: "Asador con certificación oficial FACE desde 2016.", aprox: true },
       { nombre: "Ahoan", nota: 4.2, resenas: null, zona: "Plaza Nueva / Casco Viejo", desc: "Bar de pintxos con cocina separada, dueños celíacos." },
+      { nombre: "El Informal", nota: 4.2, resenas: 606, zona: "Indautxu / Ensanche", desc: "Mediterráneo-vasco con menú adaptado sin gluten y opciones vegetarianas." },
       { nombre: "Mandoya", nota: 4.1, resenas: null, zona: "Casco Viejo", desc: "Usa harina de garbanzo desde los años 90, amplio conocimiento de la celiaquía.", aprox: true },
       { nombre: "La Lonja de Olabeaga", nota: 4.0, resenas: null, zona: "Olabeaga", desc: "Cocina tradicional vasca a la brasa avalada por FACE desde 2024." },
       { nombre: "Larruzz", nota: 4.0, resenas: null, zona: "Uribitarte (junto al Guggenheim)", desc: "Certificado por EZE, protocolos anti-contaminación cruzada, arroces." },
@@ -425,10 +437,15 @@ const restaurantesPorCiudad = {
     label: "Málaga",
     restaurantes: [
       { nombre: "Sushi Flower", nota: 4.8, resenas: 605, zona: "Perchel / Teatinos", desc: "Carta 98% sin gluten, extremo cuidado con la contaminación cruzada.", aprox: true },
+      { nombre: "Reviv Café", nota: 4.8, resenas: 429, zona: "Centro Histórico", desc: "Cafetería 100% sin gluten y vegana, certificada por la Red Málaga Sin Gluten." },
       { nombre: "La Plancha Taberna", nota: 4.7, resenas: 140, zona: "El Perchel", desc: "Carta 100% sin gluten, certificada por la red Málaga Sin Gluten.", aprox: true },
+      { nombre: "Mesón Mariano", nota: 4.7, resenas: 3000, zona: "Centro", desc: "Taberna tradicional desde 1988 que señala el gluten en cada plato." },
       { nombre: "Bibra Real Food Teatinos", nota: 4.6, resenas: 1098, zona: "Teatinos-Universidad", desc: "Red Málaga Sin Gluten, poke bowls y ensaladas sin contaminación cruzada." },
       { nombre: "El Taller de Larios 10", nota: 4.6, resenas: null, zona: "Centro (Calle Larios)", desc: "Restaurante en azotea con categoría sin gluten reconocida en TheFork." },
+      { nombre: "Osteria Angelino dal 1899", nota: 4.6, resenas: 3659, zona: "Centro", desc: "Italiano con pasta sin gluten y alérgenos claramente marcados en carta." },
       { nombre: "Maldonado 21", nota: 4.5, resenas: 830, zona: "Ciudad Jardín", desc: "Especialista en fritura sin gluten con utensilios y platos separados." },
+      { nombre: "El Tapeo de Cervantes", nota: 4.3, resenas: null, zona: "Centro", desc: "Bar de tapas de autor que marca el gluten en el menú." },
+      { nombre: "Los Mellizos Soho", nota: 4.1, resenas: 2790, zona: "Soho", desc: "100% sin gluten certificado ACEMA, especializado en pescaíto frito y marisco.", aprox: true },
     ],
   },
   zaragoza: {
@@ -438,7 +455,10 @@ const restaurantesPorCiudad = {
       { nombre: "Urbanita Gastrobar", nota: 4.8, resenas: null, zona: "Centro", desc: "Gastrobar 100% sin gluten con certificación oficial." },
       { nombre: "Restaurante Isla Sicilia (Con y Sin Gluten)", nota: 4.7, resenas: 1182, zona: "Casco Antiguo (Pl. del Pilar)", desc: "Italiano con dos cocinas separadas para evitar contaminación cruzada." },
       { nombre: "La Jaula de Grillos", nota: 4.6, resenas: null, zona: "Casco Antiguo", desc: "Primer establecimiento 100% sin gluten de Aragón (2016)." },
+      { nombre: "Restaurante Baobab", nota: 4.6, resenas: 4079, zona: "Romareda", desc: "Vegetariano histórico (desde 2005) afiliado a la asociación de celíacos." },
       { nombre: "Mononoke Board Game Café", nota: 4.5, resenas: null, zona: "Centro / Delicias", desc: "Cafetería-ludoteca con carta de pizzas y cervezas artesanales sin gluten." },
+      { nombre: "El Disfrutón", nota: 4.5, resenas: 690, zona: "Casco Histórico", desc: "Miembro de la Asociación Celíaca Aragonesa (ACA), carta mediterránea adaptada." },
+      { nombre: "El Truco", nota: 4.4, resenas: 2000, zona: "El Tubo / Casco Antiguo", desc: "Bar de tapas 100% sin gluten, premiado varios años por sus croquetas." },
       { nombre: "Costa 8 Gastrobar", nota: 4.3, resenas: null, zona: "Centro", desc: "Certificado por la Asociación Celíaca de Aragón (ACA)." },
       { nombre: "La Antilla", nota: 4.3, resenas: 475, zona: "Varios locales", desc: "Pan sin gluten, muy recomendada avisando con antelación." },
       { nombre: "BuleBar Zentro", nota: 4.1, resenas: 1664, zona: "Centro", desc: "Arrocería/paellas con especialidades sin gluten bajo petición." },
@@ -447,11 +467,13 @@ const restaurantesPorCiudad = {
   alicante: {
     label: "Alicante",
     restaurantes: [
+      { nombre: "Distópico", nota: 4.9, resenas: 380, zona: "Centro", desc: "Cocina mediterránea de fusión; sus croquetas llevan el sello de garantía ACECOVA." },
       { nombre: "Punto de Uva", nota: 4.8, resenas: null, zona: "Centro", desc: "Vinoteca/tapas de autor 100% sin gluten avalada por ACECOVA." },
       { nombre: "Kazoku Sushi Restaurant", nota: 4.7, resenas: 250, zona: "Cabo de las Huertas", desc: "Japonés con carta específica sin gluten y control de contaminación cruzada." },
       { nombre: "Vértice Cervecería Bulevar", nota: 4.6, resenas: 100, zona: "Bulevar / Ciudad de Asís", desc: "Más del 80% de la carta apta para celíacos." },
       { nombre: "La Taverna dell'Artista", nota: 4.5, resenas: 1700, zona: "Centro (Pl. San Cristóbal)", desc: "Pizzería italiana 100% sin gluten certificada por ACECOVA.", aprox: true },
       { nombre: "Rice&Bones", nota: 4.5, resenas: 100, zona: "Centro", desc: "Único arrocero de Alicante certificado 100% sin gluten por ACECOVA." },
+      { nombre: "La Taverna del Racó del Pla", nota: 4.5, resenas: 650, zona: "Centro (C. San Mateo)", desc: "Taberna urbana de arroces y tapas; pan sin gluten y protocolos de seguridad." },
       { nombre: "Apache Burger Grill", nota: 4.4, resenas: 800, zona: "Playa de San Juan", desc: "Hamburguesería premiada, freidora y panes sin gluten separados.", aprox: true },
       { nombre: "Oz Gastroclub", nota: 4.4, resenas: 540, zona: "Playa de San Juan", desc: "Carta prácticamente 100% sin gluten certificada por ACECOVA." },
       { nombre: "Askuabarra Alicante", nota: 4.4, resenas: 200, zona: "Centro", desc: "Bar de pinchos/tapas con amplia oferta sin gluten." },
