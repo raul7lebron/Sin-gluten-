@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sin Gluten — Guía práctica para vivir sin trigo</title>
+  <meta name="description" content="Guía práctica para vivir sin gluten: supermercado, recetas, planes de dieta, ranking de restaurantes por ciudad y un escáner de códigos de barras." />
+  <meta name="theme-color" content="#1f9d6b" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BE%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -18,26 +24,37 @@
       </a>
       <nav class="pill-nav" id="pillNav" role="tablist" aria-label="Secciones">
         <span class="pill-indicator" id="pillIndicator"></span>
-        <button class="pill-btn active" id="tab-supermercado" data-target="supermercado" type="button" role="tab" aria-selected="true" aria-controls="supermercado">Supermercado</button>
-        <button class="pill-btn" id="tab-dietas" data-target="dietas" type="button" role="tab" aria-selected="false" aria-controls="dietas">Dietas</button>
-        <button class="pill-btn" id="tab-restaurantes" data-target="restaurantes" type="button" role="tab" aria-selected="false" aria-controls="restaurantes">Restaurantes</button>
-        <button class="pill-btn" id="tab-escaner" data-target="escaner" type="button" role="tab" aria-selected="false" aria-controls="escaner">Escáner</button>
+        <button class="pill-btn active" id="tab-supermercado" data-target="supermercado" type="button" role="tab" aria-selected="true" aria-controls="supermercado"><span class="pill-icon">🛒</span>Supermercado</button>
+        <button class="pill-btn" id="tab-dietas" data-target="dietas" type="button" role="tab" aria-selected="false" aria-controls="dietas"><span class="pill-icon">🍽️</span>Dietas</button>
+        <button class="pill-btn" id="tab-restaurantes" data-target="restaurantes" type="button" role="tab" aria-selected="false" aria-controls="restaurantes"><span class="pill-icon">⭐</span>Restaurantes</button>
+        <button class="pill-btn" id="tab-escaner" data-target="escaner" type="button" role="tab" aria-selected="false" aria-controls="escaner"><span class="pill-icon">📷</span>Escáner</button>
       </nav>
     </div>
   </header>
 
+  <section class="hero">
+    <div class="container hero-inner">
+      <span class="hero-badge">🌾 Guía completa, 100% en español</span>
+      <h1 class="hero-title">Vive sin gluten, sin complicaciones</h1>
+      <p class="hero-subtitle">Supermercado, recetas, planes de dieta, restaurantes verificados y un escáner de productos — todo en un solo sitio, pensado para celíacos e intolerantes.</p>
+      <div class="hero-stats" id="heroStats"></div>
+    </div>
+  </section>
+
   <main class="container">
     <section id="supermercado" class="page active" role="tabpanel" aria-labelledby="tab-supermercado">
-      <h1 class="section-title">Supermercado sin gluten</h1>
+      <span class="eyebrow">🛒 Supermercado</span>
+      <h2 class="section-title">Categorías sin gluten</h2>
       <p class="section-subtitle">Categorías y ejemplos de productos certificados sin gluten para tu compra semanal.</p>
 
       <div class="card-grid" id="supermercadoGrid"></div>
 
-      <p class="disclaimer">⚠️ Comprueba siempre el sello o la etiqueta "sin gluten" del producto: las marcas y referencias disponibles varían según el supermercado y pueden cambiar con el tiempo.</p>
+      <p class="disclaimer"><span class="disclaimer-icon">⚠️</span><span>Comprueba siempre el sello o la etiqueta "sin gluten" del producto: las marcas y referencias disponibles varían según el supermercado y pueden cambiar con el tiempo.</span></p>
     </section>
 
     <section id="dietas" class="page" role="tabpanel" aria-labelledby="tab-dietas">
-      <h1 class="section-title">Recetas sin gluten</h1>
+      <span class="eyebrow">🍽️ Dietas</span>
+      <h2 class="section-title">Recetas sin gluten</h2>
       <p class="section-subtitle">Ideas rápidas y sabrosas, 100% aptas para celíacos.</p>
 
       <div class="search-box">
@@ -48,6 +65,7 @@
       <div class="recipe-list" id="recetasList"></div>
       <p class="empty-state" id="recetasEmpty" hidden>No se encontraron recetas con esa búsqueda.</p>
 
+      <h3 class="subsection-title">Planes de dieta</h3>
       <div class="filter-chips" id="dietGoalFilter" role="group" aria-label="Filtrar planes por objetivo">
         <button class="filter-chip active" data-goal="todos" type="button">Todos</button>
         <button class="filter-chip" data-goal="perder" type="button">Bajar de peso</button>
@@ -57,45 +75,47 @@
       </div>
 
       <div class="diet-block" id="bajarPesoBlock" data-goal="perder">
-        <h1 class="section-title">Planes para bajar de peso</h1>
+        <h3 class="subsection-title">Planes para bajar de peso</h3>
         <p class="section-subtitle">4 menús diarios sin gluten pensados para un déficit calórico moderado.</p>
         <div class="recipe-list diet-list" id="dietasList"></div>
       </div>
 
       <div class="diet-block" id="musculoBlock" data-goal="ganar">
-        <h1 class="section-title">Planes para ganar músculo</h1>
+        <h3 class="subsection-title">Planes para ganar músculo</h3>
         <p class="section-subtitle">4 menús diarios sin gluten con superávit calórico y alto aporte de proteína.</p>
         <div class="recipe-list diet-list" id="musculoList"></div>
       </div>
 
       <div class="diet-block" id="mantenimientoBlock" data-goal="mantenimiento">
-        <h1 class="section-title">Mantenimiento y energía</h1>
+        <h3 class="subsection-title">Mantenimiento y energía</h3>
         <p class="section-subtitle">2 menús diarios sin gluten equilibrados, para mantener el peso y rendir en el día a día.</p>
         <div class="recipe-list diet-list" id="mantenimientoList"></div>
       </div>
 
       <div class="diet-block" id="digestionBlock" data-goal="digestion">
-        <h1 class="section-title">Digestión ligera</h1>
+        <h3 class="subsection-title">Digestión ligera</h3>
         <p class="section-subtitle">2 menús diarios sin gluten con opciones suaves y antiinflamatorias.</p>
         <div class="recipe-list diet-list" id="digestionList"></div>
       </div>
 
-      <p class="disclaimer">⚠️ Las calorías son orientativas. Ajusta las cantidades según tu actividad física, peso y objetivo, y consulta a un/a dietista-nutricionista antes de seguir cualquier plan.</p>
+      <p class="disclaimer"><span class="disclaimer-icon">⚠️</span><span>Las calorías son orientativas. Ajusta las cantidades según tu actividad física, peso y objetivo, y consulta a un/a dietista-nutricionista antes de seguir cualquier plan.</span></p>
     </section>
 
     <section id="restaurantes" class="page" role="tabpanel" aria-labelledby="tab-restaurantes">
-      <h1 class="section-title">Restaurantes sin gluten</h1>
-      <p class="section-subtitle">Ranking por ciudad según su nota en Google, con foco en locales aptos para celíacos.</p>
+      <span class="eyebrow">⭐ Restaurantes</span>
+      <h2 class="section-title">Ranking por ciudad</h2>
+      <p class="section-subtitle">Ordenado según su nota en Google, con foco en locales aptos para celíacos.</p>
 
       <div class="filter-chips" id="ciudadFilter" role="group" aria-label="Filtrar por ciudad"></div>
 
       <div class="rank-list" id="restaurantesList"></div>
 
-      <p class="disclaimer">⚠️ Notas y nº de reseñas recogidos mediante búsqueda web en septiembre de 2026 y pueden haber cambiado desde entonces — compruébalas en Google Maps antes de ir. Las marcadas con "≈" proceden de una fuente agregadora, no de una captura directa de Google Maps. La ausencia de un restaurante no implica que no sea apto para celíacos: solo se incluyen los que se pudieron verificar con una nota de Google razonablemente fiable.</p>
+      <p class="disclaimer"><span class="disclaimer-icon">⚠️</span><span>Notas y nº de reseñas recogidos mediante búsqueda web en septiembre de 2026 y pueden haber cambiado desde entonces — compruébalas en Google Maps antes de ir. Las marcadas con "≈" proceden de una fuente agregadora, no de una captura directa de Google Maps. La ausencia de un restaurante no implica que no sea apto para celíacos: solo se incluyen los que se pudieron verificar con una nota de Google razonablemente fiable.</span></p>
     </section>
 
     <section id="escaner" class="page" role="tabpanel" aria-labelledby="tab-escaner">
-      <h1 class="section-title">Escáner de gluten</h1>
+      <span class="eyebrow">📷 Escáner</span>
+      <h2 class="section-title">Escáner de gluten</h2>
       <p class="section-subtitle">Escanea el código de barras de un producto para consultar si contiene gluten, según Open Food Facts.</p>
 
       <div class="scanner-panel">
@@ -123,12 +143,31 @@
 
       <div class="scanner-result" id="scannerResult" hidden></div>
 
-      <p class="disclaimer">⚠️ Esta herramienta consulta <a href="https://es.openfoodfacts.org" target="_blank" rel="noopener noreferrer">Open Food Facts</a>, una base de datos abierta y colaborativa: la información la añaden otros usuarios y puede estar incompleta, desactualizada o ser incorrecta. NO es una fuente médica ni sustituye la lectura del etiquetado real del producto ni la verificación con el fabricante. Ante cualquier duda, alergia grave o intolerancia severa, no te fíes únicamente de este resultado.</p>
+      <p class="disclaimer"><span class="disclaimer-icon">⚠️</span><span>Esta herramienta consulta <a href="https://es.openfoodfacts.org" target="_blank" rel="noopener noreferrer">Open Food Facts</a>, una base de datos abierta y colaborativa: la información la añaden otros usuarios y puede estar incompleta, desactualizada o ser incorrecta. NO es una fuente médica ni sustituye la lectura del etiquetado real del producto ni la verificación con el fabricante. Ante cualquier duda, alergia grave o intolerancia severa, no te fíes únicamente de este resultado.</span></p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>Sin Gluten — Guía práctica para vivir sin trigo</p>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo"><span class="logo-icon">🌾</span> Sin Gluten</div>
+        <p>Guía práctica para vivir sin gluten: supermercado, recetas, dietas, restaurantes y un escáner de productos, pensada para la comunidad celíaca de habla hispana.</p>
+      </div>
+      <nav class="footer-links" aria-label="Secciones">
+        <span class="footer-links-title">Secciones</span>
+        <a href="#" data-scroll-target="supermercado">Supermercado</a>
+        <a href="#" data-scroll-target="dietas">Dietas</a>
+        <a href="#" data-scroll-target="restaurantes">Restaurantes</a>
+        <a href="#" data-scroll-target="escaner">Escáner</a>
+      </nav>
+      <div class="footer-legal">
+        <span class="footer-links-title">Aviso</span>
+        <p>La información de este sitio es orientativa y no sustituye el consejo médico ni el etiquetado oficial de los productos.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Sin Gluten — Guía práctica para vivir sin trigo</p>
+    </div>
   </footer>
 
   <script src="js/data.js"></script>

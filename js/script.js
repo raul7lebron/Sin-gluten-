@@ -14,16 +14,28 @@ document.addEventListener("DOMContentLoaded", () => {
     pages.forEach((page) => page.classList.toggle("active", page.id === target));
   }
 
+  function activateTab(target) {
+    const btn = pillButtons.find((b) => b.dataset.target === target);
+    if (!btn) return;
+    pillButtons.forEach((b) => {
+      b.classList.remove("active");
+      b.setAttribute("aria-selected", "false");
+    });
+    btn.classList.add("active");
+    btn.setAttribute("aria-selected", "true");
+    moveIndicator(btn);
+    setActivePage(target);
+  }
+
   pillButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      pillButtons.forEach((b) => {
-        b.classList.remove("active");
-        b.setAttribute("aria-selected", "false");
-      });
-      btn.classList.add("active");
-      btn.setAttribute("aria-selected", "true");
-      moveIndicator(btn);
-      setActivePage(btn.dataset.target);
+    btn.addEventListener("click", () => activateTab(btn.dataset.target));
+  });
+
+  document.querySelectorAll("[data-scroll-target]").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      activateTab(link.dataset.scrollTarget);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
 

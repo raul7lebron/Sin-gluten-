@@ -109,9 +109,10 @@ function renderRestaurantes(ciudadKey) {
       const notaTexto = `${r.aprox ? "≈ " : ""}${r.nota.toFixed(1)}`;
       const resenasTexto = r.resenas ? `${r.resenas.toLocaleString("es-ES")} reseñas` : "nº de reseñas no confirmado";
       const mapsQuery = encodeURIComponent(`${r.nombre} ${ciudad.label}`);
+      const topClass = i < 3 ? ` rank-top-${i + 1}` : "";
       return `
         <article class="rank-card">
-          <span class="rank-number">${i + 1}</span>
+          <span class="rank-number${topClass}">${i + 1}</span>
           <div class="rank-info">
             <div class="rank-header">
               <h3>${r.nombre}</h3>
@@ -127,6 +128,36 @@ function renderRestaurantes(ciudadKey) {
     .join("");
 }
 
+function renderHeroStats() {
+  const el = document.getElementById("heroStats");
+  if (!el) return;
+
+  const totalRestaurantes = Object.values(restaurantesPorCiudad).reduce(
+    (sum, ciudad) => sum + ciudad.restaurantes.length,
+    0
+  );
+  const totalPlanes = dietas.length + dietasMusculo.length + dietasMantenimiento.length + dietasDigestion.length;
+  const totalCiudades = Object.keys(restaurantesPorCiudad).length;
+
+  const stats = [
+    { value: recetas.length, label: "Recetas sin gluten" },
+    { value: totalPlanes, label: "Planes de dieta" },
+    { value: totalRestaurantes, label: "Restaurantes verificados" },
+    { value: totalCiudades, label: "Ciudades" },
+  ];
+
+  el.innerHTML = stats
+    .map(
+      (s) => `
+        <div class="hero-stat">
+          <div class="hero-stat-value">${s.value}</div>
+          <div class="hero-stat-label">${s.label}</div>
+        </div>
+      `
+    )
+    .join("");
+}
+
 renderSupermercado();
 renderRecetas();
 renderDietas();
@@ -135,3 +166,4 @@ renderMantenimiento();
 renderDigestion();
 renderCiudadChips();
 renderRestaurantes(Object.keys(restaurantesPorCiudad)[0]);
+renderHeroStats();
