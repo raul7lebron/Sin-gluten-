@@ -13,6 +13,39 @@ function renderSupermercado() {
     .join("");
 }
 
+function renderTiendas() {
+  const list = document.getElementById("tiendasList");
+  if (!list) return;
+
+  const tipoIcono = {
+    Física: "🏬",
+    Online: "💻",
+    "Física y online": "🏬💻",
+  };
+
+  list.innerHTML = tiendasEspecializadas
+    .map((t) => {
+      const ratingHtml = t.nota
+        ? `<span class="rank-rating">⭐ ${t.aprox ? "≈ " : ""}${t.nota.toFixed(1)}${t.resenas ? ` · ${t.resenas.toLocaleString("es-ES")} reseñas` : ""}</span>`
+        : "";
+      const linkHtml = t.web
+        ? `<a class="rank-link" href="${t.web}" target="_blank" rel="noopener noreferrer">Visitar web ↗</a>`
+        : `<span class="shop-noweb">Sin web oficial verificada</span>`;
+      return `
+        <article class="shop-card">
+          <div class="rank-header">
+            <h3>${t.nombre}</h3>
+            ${ratingHtml}
+          </div>
+          <p class="rank-meta">${tipoIcono[t.tipo] || ""} ${t.tipo} · ${t.ciudad}</p>
+          <p class="rank-desc">${t.desc}</p>
+          ${linkHtml}
+        </article>
+      `;
+    })
+    .join("");
+}
+
 function renderRecipeCard(item, extraClass, listHtml) {
   return `
     <div class="recipe-card ${extraClass}">
@@ -159,6 +192,7 @@ function renderHeroStats() {
 }
 
 renderSupermercado();
+renderTiendas();
 renderRecetas();
 renderDietas();
 renderMusculo();
