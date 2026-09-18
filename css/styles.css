@@ -87,21 +87,22 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 14px;
-  padding: 16px 20px;
+  padding: 14px 20px;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
   text-decoration: none;
   color: var(--text);
 }
 
 .logo-img {
-  height: 40px;
+  height: 28px;
   width: auto;
   display: block;
 }
@@ -113,7 +114,7 @@ a:focus-visible {
   color: var(--text-muted);
 }
 
-@media (min-width: 480px) {
+@media (min-width: 860px) {
   .logo-tagline {
     display: block;
   }
@@ -124,6 +125,7 @@ a:focus-visible {
   position: relative;
   display: inline-flex;
   max-width: 100%;
+  min-width: 0;
   overflow-x: auto;
   scrollbar-width: none;
   background: var(--surface);
