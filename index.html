@@ -29,6 +29,7 @@
       <nav class="pill-nav" id="pillNav" role="tablist" aria-label="Secciones">
         <span class="pill-indicator" id="pillIndicator"></span>
         <button class="pill-btn active" id="tab-supermercado" data-target="supermercado" type="button" role="tab" aria-selected="true" aria-controls="supermercado"><span class="pill-icon">🛒</span>Supermercado</button>
+        <button class="pill-btn" id="tab-recetas" data-target="recetas" type="button" role="tab" aria-selected="false" aria-controls="recetas"><span class="pill-icon">🍳</span>Recetas</button>
         <button class="pill-btn" id="tab-dietas" data-target="dietas" type="button" role="tab" aria-selected="false" aria-controls="dietas"><span class="pill-icon">🍽️</span>Dietas</button>
         <button class="pill-btn" id="tab-restaurantes" data-target="restaurantes" type="button" role="tab" aria-selected="false" aria-controls="restaurantes"><span class="pill-icon">⭐</span>Restaurantes</button>
         <button class="pill-btn" id="tab-escaner" data-target="escaner" type="button" role="tab" aria-selected="false" aria-controls="escaner"><span class="pill-icon">📷</span>Escáner</button>
@@ -54,8 +55,8 @@
       <p class="disclaimer"><span class="disclaimer-icon">⚠️</span><span>Datos recogidos mediante búsqueda web en septiembre de 2026: nombres y ubicaciones verificados, pero las notas de Google proceden en su mayoría de agregadores (no de una consulta directa a Maps) y se marcan con "≈" cuando la fuente lo advierte. No hemos visitado estas tiendas ni sus webs — confirma horarios, existencias y condiciones antes de comprar o desplazarte.</span></p>
     </section>
 
-    <section id="dietas" class="page" role="tabpanel" aria-labelledby="tab-dietas">
-      <span class="eyebrow">🍽️ Dietas</span>
+    <section id="recetas" class="page" role="tabpanel" aria-labelledby="tab-recetas">
+      <span class="eyebrow">🍳 Recetas</span>
       <h1 class="section-title">Recetas sin gluten</h1>
       <p class="section-subtitle">Ideas rápidas y sabrosas, 100% aptas para celíacos.</p>
 
@@ -66,8 +67,13 @@
 
       <div class="recipe-list" id="recetasList"></div>
       <p class="empty-state" id="recetasEmpty" hidden>No se encontraron recetas con esa búsqueda.</p>
+    </section>
 
-      <h3 class="subsection-title">Planes de dieta</h3>
+    <section id="dietas" class="page" role="tabpanel" aria-labelledby="tab-dietas">
+      <span class="eyebrow">🍽️ Dietas</span>
+      <h1 class="section-title">Planes de dieta</h1>
+      <p class="section-subtitle">Menús diarios sin gluten organizados por objetivo.</p>
+
       <div class="filter-chips" id="dietGoalFilter" role="group" aria-label="Filtrar planes por objetivo">
         <button class="filter-chip active" data-goal="todos" type="button">Todos</button>
         <button class="filter-chip" data-goal="perder" type="button">Bajar de peso</button>
@@ -158,6 +164,7 @@
       <nav class="footer-links" aria-label="Secciones">
         <span class="footer-links-title">Secciones</span>
         <a href="#" data-scroll-target="supermercado">Supermercado</a>
+        <a href="#" data-scroll-target="recetas">Recetas</a>
         <a href="#" data-scroll-target="dietas">Dietas</a>
         <a href="#" data-scroll-target="restaurantes">Restaurantes</a>
         <a href="#" data-scroll-target="escaner">Escáner</a>
