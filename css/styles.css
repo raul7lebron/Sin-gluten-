@@ -100,22 +100,23 @@ a:focus-visible {
   color: var(--text);
 }
 
-.logo-icon {
-  font-size: 1.8rem;
+.logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.15rem;
-}
-
-.logo-text small {
+.logo-tagline {
+  display: none;
   font-weight: 500;
   font-size: 0.72rem;
   color: var(--text-muted);
+}
+
+@media (min-width: 480px) {
+  .logo-tagline {
+    display: block;
+  }
 }
 
 /* Pill navigation */
@@ -910,6 +911,11 @@ a:focus-visible {
   font-weight: 700;
   font-size: 1.05rem;
   margin-bottom: 8px;
+}
+
+.footer-logo-icon {
+  height: 22px;
+  width: auto;
 }
 
 .footer-brand p {
