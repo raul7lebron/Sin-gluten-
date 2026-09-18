@@ -59,6 +59,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   bindRecipeToggles();
 
+  document.querySelectorAll(".info-toggle").forEach((toggle) => {
+    toggle.addEventListener("click", () => {
+      const card = toggle.closest(".info-card");
+      const isOpen = card.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+    });
+  });
+
   const recetaSearch = document.getElementById("recetaSearch");
   if (recetaSearch) {
     recetaSearch.addEventListener("input", () => {

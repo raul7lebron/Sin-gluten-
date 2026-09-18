@@ -1,15 +1,28 @@
 function renderSupermercado() {
   const grid = document.getElementById("supermercadoGrid");
   grid.innerHTML = supermercadoCategories
-    .map(
-      (cat) => `
+    .map((cat) => {
+      const hasProductos = cat.productos && cat.productos.length > 0;
+      const toggleHtml = hasProductos
+        ? `
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver ${cat.productos.length} productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list">${cat.productos.map((p) => `<li>${p}</li>`).join("")}</ul>
+          </div>
+        `
+        : "";
+      return `
         <article class="info-card">
           <span class="info-icon ${cat.iconClass}">${cat.icon}</span>
           <h3>${cat.title}</h3>
           <p>${cat.text}</p>
+          ${toggleHtml}
         </article>
-      `
-    )
+      `;
+    })
     .join("");
 }
 
