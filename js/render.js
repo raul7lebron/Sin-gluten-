@@ -161,36 +161,6 @@ function renderRestaurantes(ciudadKey) {
     .join("");
 }
 
-function renderHeroStats() {
-  const el = document.getElementById("heroStats");
-  if (!el) return;
-
-  const totalRestaurantes = Object.values(restaurantesPorCiudad).reduce(
-    (sum, ciudad) => sum + ciudad.restaurantes.length,
-    0
-  );
-  const totalPlanes = dietas.length + dietasMusculo.length + dietasMantenimiento.length + dietasDigestion.length;
-  const totalCiudades = Object.keys(restaurantesPorCiudad).length;
-
-  const stats = [
-    { value: recetas.length, label: "Recetas sin gluten" },
-    { value: totalPlanes, label: "Planes de dieta" },
-    { value: totalRestaurantes, label: "Restaurantes verificados" },
-    { value: totalCiudades, label: "Ciudades" },
-  ];
-
-  el.innerHTML = stats
-    .map(
-      (s) => `
-        <div class="hero-stat">
-          <div class="hero-stat-value">${s.value}</div>
-          <div class="hero-stat-label">${s.label}</div>
-        </div>
-      `
-    )
-    .join("");
-}
-
 renderSupermercado();
 renderTiendas();
 renderRecetas();
@@ -200,4 +170,3 @@ renderMantenimiento();
 renderDigestion();
 renderCiudadChips();
 renderRestaurantes(Object.keys(restaurantesPorCiudad)[0]);
-renderHeroStats();
