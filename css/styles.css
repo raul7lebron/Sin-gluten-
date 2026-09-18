@@ -1,23 +1,23 @@
 :root {
-  --bg: #f6f4f0;
+  --bg: #f4f6f7;
   --surface: #ffffff;
-  --surface-alt: #fbfaf7;
-  --text: #201f28;
-  --text-muted: #6b7280;
-  --primary: #1f9d6b;
-  --primary-dark: #146b49;
-  --primary-light: #e7f8ef;
-  --accent: #ff7a45;
-  --accent-light: #fff1ea;
-  --border: #e9e5de;
-  --shadow-xs: 0 1px 3px rgba(24, 20, 12, 0.05);
-  --shadow-sm: 0 3px 10px rgba(24, 20, 12, 0.07);
-  --shadow-md: 0 12px 28px rgba(24, 20, 12, 0.10);
-  --shadow-lg: 0 22px 50px rgba(24, 20, 12, 0.14);
-  --radius-sm: 10px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
-  --radius-xl: 28px;
+  --surface-alt: #eef1f3;
+  --text: #131a20;
+  --text-muted: #5a6672;
+  --primary: #0e6e5f;
+  --primary-dark: #0a4f44;
+  --primary-light: #e2f2ef;
+  --border: #dde3e7;
+  --note-bg: #fbf7ea;
+  --note-border: #e6dcb8;
+  --note-text: #6b5511;
+  --shadow-xs: 0 1px 2px rgba(15, 23, 30, 0.05);
+  --shadow-sm: 0 2px 6px rgba(15, 23, 30, 0.06);
+  --shadow-md: 0 8px 20px rgba(15, 23, 30, 0.08);
+  --shadow-lg: 0 16px 36px rgba(15, 23, 30, 0.10);
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
   --font-display: "Plus Jakarta Sans", "Manrope", system-ui, -apple-system, sans-serif;
   --font-body: "Manrope", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
 }
@@ -70,7 +70,7 @@ a:focus-visible {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(246, 244, 240, 0.6);
+  background: rgba(244, 246, 247, 0.6);
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
   transition: background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
@@ -108,7 +108,7 @@ a:focus-visible {
   display: flex;
   flex-direction: column;
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1.15rem;
 }
 
@@ -210,21 +210,20 @@ a:focus-visible {
 }
 
 .eyebrow {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   color: var(--primary-dark);
-  background: var(--primary-light);
   font-weight: 700;
-  font-size: 0.75rem;
-  padding: 5px 12px;
-  border-radius: 999px;
-  margin-bottom: 10px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
 }
 
 .section-title {
-  font-size: 1.6rem;
-  font-weight: 800;
+  font-size: 1.55rem;
+  font-weight: 700;
   margin: 0 0 4px;
 }
 
@@ -285,25 +284,19 @@ a:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  font-size: 1.4rem;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  font-size: 1.25rem;
   margin-bottom: 14px;
+  background: var(--primary-light);
+  border: 1px solid var(--border);
 }
 
-.icon-1 { background: linear-gradient(135deg, #ffd8a8, #ff8a5c); }
-.icon-2 { background: linear-gradient(135deg, #ffe08a, #ffb020); }
-.icon-3 { background: linear-gradient(135deg, #ffc9c9, #ff6b6b); }
-.icon-4 { background: linear-gradient(135deg, #c3f0ca, #2f9e6e); }
-.icon-5 { background: linear-gradient(135deg, #d0ebff, #4dabf7); }
-.icon-6 { background: linear-gradient(135deg, #d0ebff, #74c0fc); }
-.icon-7 { background: linear-gradient(135deg, #eebefa, #cc5de8); }
-.icon-8 { background: linear-gradient(135deg, #ffd6e8, #f06595); }
-.icon-9 { background: linear-gradient(135deg, #fff3bf, #fcc419); }
-.icon-10 { background: linear-gradient(135deg, #e2f2e6, #37b24d); }
-.icon-11 { background: linear-gradient(135deg, #ffe8cc, #e8590c); }
-.icon-12 { background: linear-gradient(135deg, #e5dbff, #845ef7); }
+.icon-1, .icon-2, .icon-3, .icon-4, .icon-5, .icon-6,
+.icon-7, .icon-8, .icon-9, .icon-10, .icon-11, .icon-12 {
+  background: var(--primary-light);
+}
 
 .info-card h3 {
   margin: 0 0 6px;
@@ -543,10 +536,10 @@ a:focus-visible {
   gap: 10px;
   margin-top: 20px;
   padding: 14px 18px;
-  background: var(--accent-light);
-  border: 1px solid #ffd9c2;
+  background: var(--note-bg);
+  border: 1px solid var(--note-border);
   border-radius: var(--radius-md);
-  color: #8a4a1f;
+  color: var(--note-text);
   font-size: 0.85rem;
 }
 
@@ -595,15 +588,15 @@ a:focus-visible {
 }
 
 .rank-number.rank-top-1 {
-  background: linear-gradient(135deg, #ffd76b, #d69a1f);
+  background: linear-gradient(135deg, #d4a94a, #a97e1f);
 }
 
 .rank-number.rank-top-2 {
-  background: linear-gradient(135deg, #d9dfe6, #9aa5b1);
+  background: linear-gradient(135deg, #b7bfc7, #838d97);
 }
 
 .rank-number.rank-top-3 {
-  background: linear-gradient(135deg, #e3ab7d, #a86a3d);
+  background: linear-gradient(135deg, #b8895f, #8a5f3c);
 }
 
 .rank-info {
@@ -914,7 +907,7 @@ a:focus-visible {
   align-items: center;
   gap: 8px;
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1.05rem;
   margin-bottom: 8px;
 }
