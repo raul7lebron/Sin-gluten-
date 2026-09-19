@@ -108,9 +108,9 @@ function renderTiendas() {
     .join("");
 }
 
-function renderRecipeCard(item, extraClass, listHtml) {
+function renderRecipeCard(item, extraClass, listHtml, dataKey) {
   return `
-    <div class="recipe-card ${extraClass}" data-title="${item.title}">
+    <div class="recipe-card ${extraClass}" data-title="${dataKey || item.title}">
       <button class="recipe-toggle" type="button" aria-expanded="false">
         <span class="recipe-icon" aria-hidden="true">${item.icon}</span>
         <span class="recipe-title">
@@ -153,34 +153,50 @@ function renderRecetas(query = "") {
   empty.hidden = filtered.length > 0;
 }
 
-function renderDietaList(containerId, items) {
-  const list = document.getElementById(containerId);
-  list.innerHTML = items
-    .map((dieta) => {
-      const content = `
-        <ul class="meal-list">
-          ${dieta.comidas.map((c) => `<li><strong>${c.label}:</strong> ${c.text}</li>`).join("")}
-        </ul>
-      `;
-      return renderRecipeCard(dieta, "diet-card", content);
-    })
+function renderCalorieFilter() {
+  const chips = document.getElementById("calorieFilter");
+  if (!chips) return;
+  chips.innerHTML = Object.keys(planesCalorias)
+    .map(
+      (key, i) =>
+        `<button class="filter-chip${i === 0 ? " active" : ""}" data-kcal="${key}" type="button">${planesCalorias[key].label}</button>`
+    )
     .join("");
 }
 
-function renderDietas() {
-  renderDietaList("dietasList", dietas);
+function renderSemanaFilter() {
+  const chips = document.getElementById("semanaFilter");
+  if (!chips) return;
+  chips.innerHTML = [0, 1, 2, 3]
+    .map((i) => `<button class="filter-chip${i === 0 ? " active" : ""}" data-semana="${i}" type="button">Semana ${i + 1}</button>`)
+    .join("");
 }
 
-function renderMusculo() {
-  renderDietaList("musculoList", dietasMusculo);
+function renderPlanMeta(kcalKey) {
+  const metaEl = document.getElementById("planMeta");
+  const plan = planesCalorias[kcalKey];
+  if (!metaEl || !plan) return;
+  metaEl.textContent = plan.meta;
 }
 
-function renderMantenimiento() {
-  renderDietaList("mantenimientoList", dietasMantenimiento);
-}
+function renderPlanDias(kcalKey, semanaIdx) {
+  const list = document.getElementById("planDiasList");
+  const plan = planesCalorias[kcalKey];
+  if (!list || !plan) return;
+  const semana = plan.semanas[semanaIdx];
+  if (!semana) return;
 
-function renderDigestion() {
-  renderDietaList("digestionList", dietasDigestion);
+  list.innerHTML = semana.dias
+    .map((d) => {
+      const content = `
+        <ul class="meal-list">
+          ${d.comidas.map((c) => `<li><strong>${c.label}:</strong> ${c.text}</li>`).join("")}
+        </ul>
+      `;
+      const item = { icon: "🍽️", title: d.dia, meta: `${semana.titulo} · ${plan.label}` };
+      return renderRecipeCard(item, "diet-card", content, d.dayKey);
+    })
+    .join("");
 }
 
 function renderCiudadChips() {
@@ -228,9 +244,9 @@ renderSupermercadoFilter();
 renderCatalogo(Object.keys(supermercadosCatalogo)[0]);
 renderTiendas();
 renderRecetas();
-renderDietas();
-renderMusculo();
-renderMantenimiento();
-renderDigestion();
+renderCalorieFilter();
+renderSemanaFilter();
+renderPlanMeta(Object.keys(planesCalorias)[0]);
+renderPlanDias(Object.keys(planesCalorias)[0], 0);
 renderCiudadChips();
 renderRestaurantes(Object.keys(restaurantesPorCiudad)[0]);

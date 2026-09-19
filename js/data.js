@@ -1005,161 +1005,243 @@ const recetas = [
   },
 ];
 
-const dietas = [
-  {
-    icon: "🥗",
-    title: "Mediterráneo ligero",
-    meta: "~1.550 kcal aprox. · pescado, quinoa, verduras",
-    comidas: [
-      { label: "Desayuno", text: "Yogur natural sin gluten con avena certificada y arándanos (~280 kcal)." },
-      { label: "Media mañana", text: "Un puñado de nueces y una manzana (~180 kcal)." },
-      { label: "Comida", text: "Pescado blanco al horno con quinoa y verduras salteadas (~480 kcal)." },
-      { label: "Merienda", text: "Hummus con bastones de zanahoria y pepino (~150 kcal)." },
-      { label: "Cena", text: "Ensalada de tomate, aguacate y atún con aceite de oliva (~460 kcal)." },
+// Planes de dieta de 4 semanas (28 días), en 3 niveles calóricos (1500/2000/2500
+// kcal/día). Cada nivel se construye combinando 5 "pools" de 10 opciones de comida
+// (desayuno, media mañana, comida, merienda, cena) con un desfase distinto por tipo
+// de comida, para que el combo completo de cada día varíe a lo largo del mes aunque
+// algún componente suelto se repita cada 10 días (igual que en un plan real).
+const comidasPool = {
+  1500: {
+    desayuno: [
+      "Tortilla de 2 huevos con espinacas y una tostada de pan sin gluten (~300 kcal).",
+      "Porridge de 40 g de avena certificada sin gluten con leche y plátano (~300 kcal).",
+      "Yogur griego con granola sin gluten y arándanos (~290 kcal).",
+      "Tostada de pan sin gluten con aguacate y huevo poché (~300 kcal).",
+      "Batido de proteína con leche, plátano y avena certificada sin gluten (~290 kcal).",
+      "Requesón con fresas y un puñado de almendras (~280 kcal).",
+      "Tostada de pan sin gluten con tomate rallado, aceite de oliva y jamón serrano (~300 kcal).",
+      "Crepe de trigo sarraceno (naturalmente sin gluten) con fruta fresca (~290 kcal).",
+      "Cereales de maíz sin gluten con leche y fresas (~290 kcal).",
+      "Huevos revueltos con boniato asado y aguacate (~300 kcal).",
+    ],
+    mediaManana: [
+      "Una manzana y un puñado de nueces (~140 kcal).",
+      "Yogur natural sin azúcar con canela (~120 kcal).",
+      "Hummus con bastones de zanahoria y pepino (~140 kcal).",
+      "Batido de frutos rojos con leche (~130 kcal).",
+      "Requesón con una pieza de fruta (~130 kcal).",
+      "Dos tortitas de arroz con aguacate (~140 kcal).",
+      "Un puñado de uvas con queso curado (~140 kcal).",
+      "Media ración de batido de proteína con agua (~120 kcal).",
+      "Infusión con un puñado de orejones (~130 kcal).",
+      "Media barrita casera de dátiles y frutos secos (~140 kcal).",
+    ],
+    comida: [
+      "Pechuga de pollo a la plancha con arroz basmati y brócoli (~420 kcal).",
+      "Salmón al horno con boniato asado y ensalada verde (~430 kcal).",
+      "Lentejas estofadas con verduras (~420 kcal).",
+      "Pasta sin gluten con pollo y verduras salteadas (~430 kcal).",
+      "Merluza a la plancha con patata cocida y ensalada (~420 kcal).",
+      "Poke bowl de atún con arroz, edamame y aguacate (~430 kcal).",
+      "Curry de garbanzos y espinacas con arroz (~430 kcal).",
+      "Solomillo de cerdo a la plancha con verduras salteadas (~420 kcal).",
+      "Ensalada de quinoa con atún, aguacate y tomate (~420 kcal).",
+      "Albóndigas en salsa de tomate con arroz (~430 kcal).",
+    ],
+    merienda: [
+      "Yogur natural con nueces (~140 kcal).",
+      "Media tostada de pan sin gluten con aguacate (~140 kcal).",
+      "Queso fresco batido con fresas (~130 kcal).",
+      "Batido de cacao puro con leche (~140 kcal).",
+      "Un puñado de almendras y pasas (~140 kcal).",
+      "Tortitas de maíz sin gluten con jamón cocido (~140 kcal).",
+      "Hummus con tortitas de arroz (~140 kcal).",
+      "Batido de proteína con agua y fresas (~140 kcal).",
+      "Compota de manzana sin azúcar añadido con nueces (~140 kcal).",
+      "Barrita de cereales sin gluten (~140 kcal).",
+    ],
+    cena: [
+      "Tortilla de patatas (2 huevos) con ensalada verde (~420 kcal).",
+      "Pescado blanco al vapor con verduras (~420 kcal).",
+      "Crema de calabaza con un huevo duro (~420 kcal).",
+      "Ensalada de pollo, rúcula, tomate y queso feta (~420 kcal).",
+      "Revuelto de huevo con gambas y espárragos (~420 kcal).",
+      "Tofu salteado con verduras y salsa de soja sin gluten (~420 kcal).",
+      "Merluza en salsa verde con espárragos (~420 kcal).",
+      "Pechuga de pavo a la plancha con calabacín y zanahoria (~420 kcal).",
+      "Vichyssoise con una tostada de pan sin gluten (~420 kcal).",
+      "Gazpacho andaluz con tortilla francesa de 2 huevos (~420 kcal).",
     ],
   },
-  {
-    icon: "💪",
-    title: "Alto en proteína",
-    meta: "~1.600 kcal aprox. · pollo, salmón, requesón",
-    comidas: [
-      { label: "Desayuno", text: "Tortilla de 2 huevos con espinacas y pan sin gluten tostado (~350 kcal)." },
-      { label: "Media mañana", text: "Requesón con nueces (~180 kcal)." },
-      { label: "Comida", text: "Pechuga de pollo a la plancha con arroz integral y brócoli (~480 kcal)." },
-      { label: "Merienda", text: "Batido de proteína con leche y plátano (~200 kcal)." },
-      { label: "Cena", text: "Salmón al horno con espárragos trigueros (~390 kcal)." },
+  2000: {
+    desayuno: [
+      "Tortilla de 3 huevos con espinacas y dos tostadas de pan sin gluten (~400 kcal).",
+      "Porridge de 60 g de avena certificada sin gluten con leche, plátano y nueces (~400 kcal).",
+      "Yogur griego con granola sin gluten, plátano y miel (~400 kcal).",
+      "Dos tostadas de pan sin gluten con aguacate y huevo poché (~410 kcal).",
+      "Batido de proteína con leche entera, plátano, avena certificada y crema de cacahuete (~400 kcal).",
+      "Requesón con fresas, plátano y almendras (~390 kcal).",
+      "Dos tostadas de pan sin gluten con tomate rallado, aceite de oliva y jamón serrano (~410 kcal).",
+      "Dos crepes de trigo sarraceno con fruta fresca y yogur (~400 kcal).",
+      "Cereales de maíz sin gluten con leche entera, plátano y nueces (~400 kcal).",
+      "Tres huevos revueltos con boniato asado, aguacate y pan sin gluten (~410 kcal).",
+    ],
+    mediaManana: [
+      "Una manzana y un puñado grande de nueces (~200 kcal).",
+      "Yogur griego natural con un puñado de arándanos (~190 kcal).",
+      "Hummus con bastones de zanahoria, pepino y pimiento (~200 kcal).",
+      "Batido de frutos rojos con leche y avena certificada (~200 kcal).",
+      "Requesón con fruta y un puñado de almendras (~200 kcal).",
+      "Tres tortitas de arroz con aguacate y tomate (~200 kcal).",
+      "Uvas con queso curado y nueces (~200 kcal).",
+      "Batido de proteína con leche (~190 kcal).",
+      "Infusión con orejones y almendras (~200 kcal).",
+      "Barrita casera de dátiles y frutos secos (~200 kcal).",
+    ],
+    comida: [
+      "Pechuga de pollo a la plancha con arroz basmati, brócoli y aceite de oliva (~600 kcal).",
+      "Salmón al horno con boniato asado, ensalada verde y aceite de oliva (~600 kcal).",
+      "Lentejas estofadas con verduras y arroz (~600 kcal).",
+      "Pasta sin gluten con pollo, verduras salteadas y queso parmesano (~600 kcal).",
+      "Merluza a la plancha con patata cocida, ensalada y aceite de oliva (~600 kcal).",
+      "Poke bowl de atún con arroz, edamame, aguacate y salsa de soja sin gluten (~600 kcal).",
+      "Curry de garbanzos y espinacas con arroz y leche de coco (~600 kcal).",
+      "Solomillo de cerdo a la plancha con verduras salteadas y arroz (~600 kcal).",
+      "Ensalada de quinoa con atún, aguacate, tomate y huevo duro (~600 kcal).",
+      "Albóndigas en salsa de tomate con arroz y ensalada (~600 kcal).",
+    ],
+    merienda: [
+      "Yogur griego con nueces y miel (~200 kcal).",
+      "Tostada de pan sin gluten con aguacate (~200 kcal).",
+      "Queso fresco batido con fresas y miel (~200 kcal).",
+      "Batido de cacao puro con leche y avena certificada (~200 kcal).",
+      "Almendras, pasas y una pieza de fruta (~200 kcal).",
+      "Tortitas de maíz sin gluten con jamón cocido y tomate (~200 kcal).",
+      "Hummus con tortitas de arroz y zanahoria (~200 kcal).",
+      "Batido de proteína con leche y fresas (~200 kcal).",
+      "Compota de manzana con nueces y canela (~200 kcal).",
+      "Barrita de cereales sin gluten y una pieza de fruta (~200 kcal).",
+    ],
+    cena: [
+      "Tortilla de patatas (3 huevos) con ensalada verde y pan sin gluten (~600 kcal).",
+      "Pescado blanco al horno con verduras y patata (~600 kcal).",
+      "Crema de calabaza con huevo duro y pan sin gluten (~600 kcal).",
+      "Ensalada de pollo, rúcula, tomate, queso feta y nueces (~600 kcal).",
+      "Revuelto de huevo con gambas, espárragos y pan sin gluten (~600 kcal).",
+      "Tofu salteado con verduras, arroz y salsa de soja sin gluten (~600 kcal).",
+      "Merluza en salsa verde con espárragos y patata (~600 kcal).",
+      "Pechuga de pavo a la plancha con calabacín, zanahoria y arroz (~600 kcal).",
+      "Vichyssoise con dos tostadas de pan sin gluten y jamón (~600 kcal).",
+      "Gazpacho andaluz con tortilla francesa de 3 huevos y pan sin gluten (~600 kcal).",
     ],
   },
-  {
-    icon: "🥩",
-    title: "Bajo en carbohidratos",
-    meta: "~1.450 kcal aprox. · huevo, solomillo, ensaladas",
-    comidas: [
-      { label: "Desayuno", text: "Huevos revueltos con aguacate (~320 kcal)." },
-      { label: "Media mañana", text: "Queso curado en lonchas y aceitunas (~150 kcal)." },
-      { label: "Comida", text: "Solomillo de cerdo con ensalada verde y aceite de oliva (~420 kcal)." },
-      { label: "Merienda", text: "Yogur natural sin azúcar con un puñado de almendras (~180 kcal)." },
-      { label: "Cena", text: "Ensalada de pollo, rúcula, tomate y queso feta (~380 kcal)." },
+  2500: {
+    desayuno: [
+      "Tortilla de 3 huevos con espinacas, aguacate y dos tostadas de pan sin gluten (~500 kcal).",
+      "Porridge de 80 g de avena certificada sin gluten con leche entera, plátano, nueces y miel (~500 kcal).",
+      "Yogur griego con granola sin gluten, plátano, miel y frutos secos (~510 kcal).",
+      "Dos tostadas de pan sin gluten con aguacate, huevo poché y salmón ahumado (~510 kcal).",
+      "Batido de proteína con leche entera, plátano, avena certificada, crema de cacahuete y miel (~500 kcal).",
+      "Requesón con fresas, plátano, almendras y miel (~500 kcal).",
+      "Dos tostadas de pan sin gluten con tomate rallado, aceite de oliva, jamón serrano y queso fresco (~500 kcal).",
+      "Dos crepes de trigo sarraceno con fruta fresca, yogur y miel (~500 kcal).",
+      "Cereales de maíz sin gluten con leche entera, plátano, nueces y miel (~500 kcal).",
+      "Tres huevos revueltos con boniato asado, aguacate, pan sin gluten y queso (~500 kcal).",
+    ],
+    mediaManana: [
+      "Una manzana, un puñado grande de nueces y una cucharada de crema de cacahuete (~260 kcal).",
+      "Yogur griego natural con arándanos y granola sin gluten (~260 kcal).",
+      "Hummus con bastones de verduras y tortitas de maíz sin gluten (~260 kcal).",
+      "Batido de frutos rojos con leche entera, avena certificada y miel (~260 kcal).",
+      "Requesón con fruta, almendras y miel (~260 kcal).",
+      "Tres tortitas de arroz con aguacate, tomate y huevo duro (~260 kcal).",
+      "Uvas con queso curado, nueces y una tostada de pan sin gluten (~260 kcal).",
+      "Batido de proteína con leche y plátano (~260 kcal).",
+      "Infusión con orejones, almendras y nueces (~260 kcal).",
+      "Barrita casera de dátiles y frutos secos con una pieza de fruta (~260 kcal).",
+    ],
+    comida: [
+      "Pechuga de pollo a la plancha con arroz basmati, brócoli, aguacate y aceite de oliva (~750 kcal).",
+      "Salmón al horno con boniato asado, quinoa y ensalada con aceite de oliva (~750 kcal).",
+      "Lentejas estofadas con verduras, arroz y un huevo duro (~750 kcal).",
+      "Pasta sin gluten con pollo, verduras salteadas, queso parmesano y aceite de oliva (~750 kcal).",
+      "Merluza en salsa verde con patata cocida y ensalada con aceite de oliva (~750 kcal).",
+      "Poke bowl grande de atún con arroz, edamame, aguacate y anacardos (~750 kcal).",
+      "Curry de garbanzos y espinacas con arroz, leche de coco y anacardos (~750 kcal).",
+      "Solomillo de cerdo con salsa de mostaza, verduras salteadas y arroz (~750 kcal).",
+      "Ensalada de quinoa con atún, aguacate, tomate, huevo duro y aceite de oliva extra (~750 kcal).",
+      "Albóndigas en salsa de tomate con arroz, ensalada y pan sin gluten (~750 kcal).",
+    ],
+    merienda: [
+      "Yogur griego con nueces, miel y granola sin gluten (~260 kcal).",
+      "Tostada de pan sin gluten con aguacate y huevo duro (~260 kcal).",
+      "Queso fresco batido con fresas, miel y granola sin gluten (~260 kcal).",
+      "Batido de cacao puro con leche entera, avena certificada y plátano (~260 kcal).",
+      "Almendras, pasas, orejones y una pieza de fruta (~260 kcal).",
+      "Tortitas de maíz sin gluten con jamón cocido, tomate y aguacate (~260 kcal).",
+      "Hummus con tortitas de arroz, zanahoria y pepino (~260 kcal).",
+      "Batido de proteína con leche, fresas y avena certificada (~260 kcal).",
+      "Compota de manzana con nueces, canela y yogur (~260 kcal).",
+      "Barrita de cereales sin gluten, una pieza de fruta y un puñado de nueces (~260 kcal).",
+    ],
+    cena: [
+      "Tortilla de patatas (3 huevos) con ensalada verde, pan sin gluten y aceite de oliva extra (~750 kcal).",
+      "Pescado blanco al horno con verduras, patata y aceite de oliva extra (~750 kcal).",
+      "Crema de calabaza con huevo duro, pan sin gluten y jamón serrano (~750 kcal).",
+      "Ensalada de pollo, rúcula, tomate, queso feta, nueces y aguacate (~750 kcal).",
+      "Revuelto de huevo con gambas, espárragos, pan sin gluten y aguacate (~750 kcal).",
+      "Tofu salteado con verduras, arroz, anacardos y salsa de soja sin gluten (~750 kcal).",
+      "Merluza en salsa verde con espárragos, patata y pan sin gluten (~750 kcal).",
+      "Pechuga de pavo a la plancha con calabacín, zanahoria, arroz y aceite de oliva extra (~750 kcal).",
+      "Vichyssoise con dos tostadas de pan sin gluten, jamón y queso (~750 kcal).",
+      "Gazpacho andaluz con tortilla francesa de 3 huevos, pan sin gluten y jamón (~750 kcal).",
     ],
   },
-  {
-    icon: "🌱",
-    title: "Vegetariano equilibrado",
-    meta: "~1.500 kcal aprox. · lentejas, tofu, avena certificada",
-    comidas: [
-      { label: "Desayuno", text: "Porridge de avena certificada sin gluten con bebida vegetal y fresas (~300 kcal)." },
-      { label: "Media mañana", text: "Hummus con tortitas de maíz (~170 kcal)." },
-      { label: "Comida", text: "Lentejas estofadas con verduras y arroz (~430 kcal)." },
-      { label: "Merienda", text: "Batido de tofu con frutos rojos (~180 kcal)." },
-      { label: "Cena", text: "Tofu salteado con verduras y quinoa (~420 kcal)." },
-    ],
-  },
-];
+};
 
-const dietasMusculo = [
-  {
-    icon: "🏋️",
-    title: "Volumen limpio",
-    meta: "~2.400 kcal aprox. · pollo, arroz, huevo",
-    comidas: [
-      { label: "Desayuno", text: "Tortilla de 3 huevos con avena certificada y plátano (~450 kcal)." },
-      { label: "Media mañana", text: "Batido de proteína con leche y avena certificada (~350 kcal)." },
-      { label: "Comida", text: "Pechuga de pollo con arroz basmati y verduras salteadas (~650 kcal)." },
-      { label: "Merienda", text: "Yogur griego con nueces y miel (~300 kcal)." },
-      { label: "Cena", text: "Pollo al horno con boniato y ensalada (~650 kcal)." },
-    ],
-  },
-  {
-    icon: "🥩",
-    title: "Alto calórico",
-    meta: "~2.700 kcal aprox. · ternera, pasta sin gluten, frutos secos",
-    comidas: [
-      { label: "Desayuno", text: "Porridge de avena certificada con leche entera, plátano y almendras (~550 kcal)." },
-      { label: "Media mañana", text: "Batido de proteína con crema de cacahuete y leche (~450 kcal)." },
-      { label: "Comida", text: "Solomillo de ternera con pasta sin gluten y salsa de tomate (~700 kcal)." },
-      { label: "Merienda", text: "Puñado de frutos secos y queso curado (~400 kcal)." },
-      { label: "Cena", text: "Ternera picada con arroz y verduras al wok (~600 kcal)." },
-    ],
-  },
-  {
-    icon: "🌱",
-    title: "Vegetariano proteico",
-    meta: "~2.300 kcal aprox. · tofu, legumbres, quinoa",
-    comidas: [
-      { label: "Desayuno", text: "Porridge de avena certificada con bebida de soja y frutos rojos (~450 kcal)." },
-      { label: "Media mañana", text: "Batido de proteína vegetal con plátano (~300 kcal)." },
-      { label: "Comida", text: "Tofu salteado con quinoa y verduras (~600 kcal)." },
-      { label: "Merienda", text: "Hummus con tortitas de maíz y frutos secos (~350 kcal)." },
-      { label: "Cena", text: "Lentejas estofadas con arroz y aguacate (~600 kcal)." },
-    ],
-  },
-  {
-    icon: "💥",
-    title: "Post-entreno intenso",
-    meta: "~2.500 kcal aprox. · salmón, boniato, batido de proteína",
-    comidas: [
-      { label: "Desayuno", text: "Huevos revueltos con pan sin gluten y aguacate (~450 kcal)." },
-      { label: "Media mañana", text: "Batido de proteína con avena certificada y plátano (~400 kcal)." },
-      { label: "Comida", text: "Salmón al horno con boniato y brócoli (~650 kcal)." },
-      { label: "Merienda", text: "Yogur griego con nueces (~300 kcal)." },
-      { label: "Cena", text: "Pechuga de pavo con arroz y verduras (~700 kcal)." },
-    ],
-  },
-];
+const NOMBRES_DIAS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
 
-const dietasMantenimiento = [
-  {
-    icon: "⚖️",
-    title: "Equilibrio diario",
-    meta: "~2.000 kcal aprox. · variado y equilibrado",
-    comidas: [
-      { label: "Desayuno", text: "Tostadas de pan sin gluten con aguacate y huevo poché (~420 kcal)." },
-      { label: "Media mañana", text: "Una pieza de fruta y un puñado de almendras (~200 kcal)." },
-      { label: "Comida", text: "Arroz con pollo y verduras variadas (~550 kcal)." },
-      { label: "Merienda", text: "Yogur natural con granola sin gluten (~250 kcal)." },
-      { label: "Cena", text: "Pescado a la plancha con patata asada y ensalada (~580 kcal)." },
-    ],
-  },
-  {
-    icon: "⚡",
-    title: "Energía activa",
-    meta: "~2.100 kcal aprox. · pensado para quien entrena",
-    comidas: [
-      { label: "Desayuno", text: "Porridge de avena certificada con plátano y miel (~450 kcal)." },
-      { label: "Media mañana", text: "Batido de frutas con leche (~250 kcal)." },
-      { label: "Comida", text: "Pasta sin gluten con pollo y verduras salteadas (~600 kcal)." },
-      { label: "Merienda", text: "Barrita energética casera de frutos secos y dátiles (~250 kcal)." },
-      { label: "Cena", text: "Tortilla de patatas con ensalada (~550 kcal)." },
-    ],
-  },
-];
+function buildPlanSemanas(kcal) {
+  const pool = comidasPool[kcal];
+  const semanas = [];
+  for (let w = 0; w < 4; w++) {
+    const dias = [];
+    for (let i = 0; i < 7; i++) {
+      const d = w * 7 + i;
+      dias.push({
+        dayKey: `${kcal}-${w}-${i}`,
+        dia: NOMBRES_DIAS[i],
+        comidas: [
+          { label: "Desayuno", text: pool.desayuno[d % 10] },
+          { label: "Media mañana", text: pool.mediaManana[(d + 3) % 10] },
+          { label: "Comida", text: pool.comida[(d + 7) % 10] },
+          { label: "Merienda", text: pool.merienda[(d + 5) % 10] },
+          { label: "Cena", text: pool.cena[(d + 2) % 10] },
+        ],
+      });
+    }
+    semanas.push({ titulo: `Semana ${w + 1}`, dias });
+  }
+  return semanas;
+}
 
-const dietasDigestion = [
-  {
-    icon: "🍵",
-    title: "Intestino en calma",
-    meta: "~1.600 kcal aprox. · suave y fácil de digerir",
-    comidas: [
-      { label: "Desayuno", text: "Yogur natural sin lactosa con plátano maduro (~250 kcal)." },
-      { label: "Media mañana", text: "Infusión de manzanilla con compota de manzana (~120 kcal)." },
-      { label: "Comida", text: "Arroz blanco con pechuga de pollo hervida y zanahoria cocida (~450 kcal)." },
-      { label: "Merienda", text: "Puré de pera (~150 kcal)." },
-      { label: "Cena", text: "Pescado blanco al vapor con calabacín cocido (~430 kcal)." },
-    ],
+const planesCalorias = {
+  1500: {
+    label: "1500 kcal/día",
+    meta: "Déficit calórico moderado: pensado para complexiones menudas o poca actividad física. Consulta la calculadora para saber si te encaja.",
+    semanas: buildPlanSemanas(1500),
   },
-  {
-    icon: "🌿",
-    title: "Antiinflamatorio",
-    meta: "~1.700 kcal aprox. · cúrcuma, jengibre, omega-3",
-    comidas: [
-      { label: "Desayuno", text: "Porridge de avena certificada con cúrcuma, canela y arándanos (~350 kcal)." },
-      { label: "Media mañana", text: "Nueces y una naranja (~200 kcal)." },
-      { label: "Comida", text: "Salmón al horno con boniato y brócoli al vapor (~500 kcal)." },
-      { label: "Merienda", text: "Infusión de jengibre con un puñado de frutos rojos (~150 kcal)." },
-      { label: "Cena", text: "Ensalada de quinoa, aguacate y aceite de oliva virgen extra (~500 kcal)." },
-    ],
+  2000: {
+    label: "2000 kcal/día",
+    meta: "Nivel de mantenimiento habitual para actividad física ligera-moderada en adultos de estatura y peso medios.",
+    semanas: buildPlanSemanas(2000),
   },
-];
+  2500: {
+    label: "2500 kcal/día",
+    meta: "Superávit o alta actividad física: pensado para complexiones grandes, entrenamiento frecuente o necesidades energéticas altas.",
+    semanas: buildPlanSemanas(2500),
+  },
+};
 
 // Restaurantes investigados vía búsqueda web (fuentes: Celicidad, Celiaquita, FACE y
 // asociaciones territoriales, Glutiful, FindMeGlutenFree, TheFork, Restaurant Guru,

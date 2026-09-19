@@ -721,6 +721,83 @@ a:focus-visible {
   color: var(--text-muted);
 }
 
+/* Calorie calculator */
+.calc-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  padding: 24px;
+  margin-bottom: 8px;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.calc-field-wide {
+  grid-column: 1 / -1;
+}
+
+.calc-field label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.calc-field input,
+.calc-field select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  font: inherit;
+  color: var(--text);
+}
+
+.calc-field input:focus,
+.calc-field select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.calc-error {
+  color: #b3261e;
+  font-size: 0.85rem;
+  margin: 10px 0 0;
+}
+
+.calc-result {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.calc-tdee {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+.calc-goto {
+  margin-top: 4px;
+}
+
+.plan-meta {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 8px 0 16px;
+}
+
+.filter-chips-sub {
+  margin-top: -4px;
+}
+
 /* Filter chips */
 .filter-chips {
   display: flex;
@@ -751,10 +828,6 @@ a:focus-visible {
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   border-color: transparent;
   color: #fff;
-}
-
-.diet-block + .diet-block {
-  margin-top: 8px;
 }
 
 .empty-state {

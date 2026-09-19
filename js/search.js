@@ -63,6 +63,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 200);
   }
 
+  function openPlanDia(kcal, weekIdx, dayKey) {
+    if (window.libreDeTrigo) window.libreDeTrigo.activateTab("dietas");
+    closeModal();
+    setTimeout(() => {
+      const kcalChip = document.querySelector(`#calorieFilter [data-kcal="${kcal}"]`);
+      if (kcalChip) kcalChip.click();
+      setTimeout(() => {
+        const semanaChip = document.querySelector(`#semanaFilter [data-semana="${weekIdx}"]`);
+        if (semanaChip) semanaChip.click();
+        setTimeout(() => {
+          const cards = Array.from(document.querySelectorAll("#planDiasList .recipe-card"));
+          const card = cards.find((c) => c.dataset.title === dayKey);
+          if (!card) return;
+          card.scrollIntoView({ behavior: "smooth", block: "center" });
+          const toggleBtn = card.querySelector(".recipe-toggle");
+          if (toggleBtn && !card.classList.contains("open")) toggleBtn.click();
+          flashHighlight(card);
+        }, 150);
+      }, 150);
+    }, 200);
+  }
+
   function buildIndex() {
     const items = [];
 
@@ -76,23 +98,17 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    [
-      typeof dietas !== "undefined" ? dietas : [],
-      typeof dietasMusculo !== "undefined" ? dietasMusculo : [],
-      typeof dietasMantenimiento !== "undefined" ? dietasMantenimiento : [],
-      typeof dietasDigestion !== "undefined" ? dietasDigestion : [],
-    ].forEach((list) => {
-      list.forEach((d) => {
-        items.push({
-          type: "dieta",
-          title: d.title,
-          snippet: d.meta,
-          haystack: [d.title, d.meta].join(" ").toLowerCase(),
-          action: () => {
-            const todos = document.querySelector('#dietGoalFilter [data-goal="todos"]');
-            if (todos) todos.click();
-            openCard("dietas", ".recipe-card.diet-card", d.title);
-          },
+    Object.entries(typeof planesCalorias !== "undefined" ? planesCalorias : {}).forEach(([kcal, plan]) => {
+      plan.semanas.forEach((semana, weekIdx) => {
+        semana.dias.forEach((d) => {
+          const resumenComidas = d.comidas.map((c) => c.text).join(" ");
+          items.push({
+            type: "dieta",
+            title: `${d.dia} · ${semana.titulo} · ${plan.label}`,
+            snippet: d.comidas[2] ? d.comidas[2].text : "",
+            haystack: [d.dia, semana.titulo, plan.label, resumenComidas].join(" ").toLowerCase(),
+            action: () => openPlanDia(kcal, weekIdx, d.dayKey),
+          });
         });
       });
     });

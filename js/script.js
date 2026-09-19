@@ -92,20 +92,79 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const dietGoalFilter = document.getElementById("dietGoalFilter");
-  if (dietGoalFilter) {
-    const chips = Array.from(dietGoalFilter.querySelectorAll(".filter-chip"));
-    const dietBlocks = Array.from(document.querySelectorAll(".diet-block"));
+  const calorieFilter = document.getElementById("calorieFilter");
+  const semanaFilter = document.getElementById("semanaFilter");
+  if (calorieFilter && semanaFilter) {
+    function currentKcal() {
+      const active = calorieFilter.querySelector(".filter-chip.active");
+      return active ? active.dataset.kcal : Object.keys(planesCalorias)[0];
+    }
 
-    chips.forEach((chip) => {
-      chip.addEventListener("click", () => {
-        chips.forEach((c) => c.classList.remove("active"));
-        chip.classList.add("active");
+    function currentSemana() {
+      const active = semanaFilter.querySelector(".filter-chip.active");
+      return active ? Number(active.dataset.semana) : 0;
+    }
 
-        const goal = chip.dataset.goal;
-        dietBlocks.forEach((block) => {
-          block.hidden = goal !== "todos" && block.dataset.goal !== goal;
-        });
+    function refreshPlan() {
+      renderPlanMeta(currentKcal());
+      renderPlanDias(currentKcal(), currentSemana());
+      bindRecipeToggles();
+    }
+
+    calorieFilter.addEventListener("click", (event) => {
+      const chip = event.target.closest(".filter-chip");
+      if (!chip) return;
+      calorieFilter.querySelectorAll(".filter-chip").forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      refreshPlan();
+    });
+
+    semanaFilter.addEventListener("click", (event) => {
+      const chip = event.target.closest(".filter-chip");
+      if (!chip) return;
+      semanaFilter.querySelectorAll(".filter-chip").forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      refreshPlan();
+    });
+  }
+
+  const calcSubmit = document.getElementById("calcSubmit");
+  if (calcSubmit) {
+    calcSubmit.addEventListener("click", () => {
+      const sexo = document.getElementById("calcSexo").value;
+      const edad = Number(document.getElementById("calcEdad").value);
+      const altura = Number(document.getElementById("calcAltura").value);
+      const peso = Number(document.getElementById("calcPeso").value);
+      const actividad = Number(document.getElementById("calcActividad").value);
+      const errorEl = document.getElementById("calcError");
+      const resultEl = document.getElementById("calcResult");
+
+      if (!edad || !altura || !peso || edad < 14 || edad > 100 || altura < 120 || altura > 230 || peso < 30 || peso > 250) {
+        errorEl.hidden = false;
+        resultEl.hidden = true;
+        return;
+      }
+      errorEl.hidden = true;
+
+      const bmr = sexo === "hombre" ? 10 * peso + 6.25 * altura - 5 * edad + 5 : 10 * peso + 6.25 * altura - 5 * edad - 161;
+      const tdee = Math.round(bmr * actividad);
+
+      const niveles = Object.keys(planesCalorias).map(Number);
+      const recomendado = niveles.reduce((prev, curr) => (Math.abs(curr - tdee) < Math.abs(prev - tdee) ? curr : prev));
+
+      resultEl.innerHTML = `
+        <p class="calc-tdee">Mantenimiento estimado: <strong>~${tdee.toLocaleString("es-ES")} kcal/día</strong></p>
+        <p>Plan de 4 semanas recomendado según tu resultado:</p>
+        <button class="btn-primary calc-goto" type="button" data-kcal="${recomendado}">Ver plan de ${recomendado} kcal</button>
+      `;
+      resultEl.hidden = false;
+
+      const gotoBtn = resultEl.querySelector(".calc-goto");
+      gotoBtn.addEventListener("click", () => {
+        const chip = calorieFilter && calorieFilter.querySelector(`[data-kcal="${recomendado}"]`);
+        if (chip) chip.click();
+        const target = document.getElementById("calorieFilter");
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
       });
     });
   }
