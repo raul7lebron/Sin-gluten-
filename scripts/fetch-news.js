@@ -81,6 +81,9 @@ async function fetchFeed(feed, retries = 1) {
         pubDate: item.pubDate || item.isoDate || null,
         summary: (item.contentSnippet || item.summary || '').slice(0, 240),
         image: extractImage(item),
+        // Los artículos de Google Noticias nunca pueden conseguir una foto real (ver
+        // fetchOgImage): se usa para reservar hueco a fuentes directas en la selección.
+        viaGoogleNews: feed.name.startsWith('Google Noticias'),
       }));
   } catch (err) {
     if (retries > 0) return fetchFeed(feed, retries - 1);
@@ -200,7 +203,19 @@ async function fetchAllNews() {
   });
 
   deduped.sort((a, b) => new Date(b.pubDate || 0) - new Date(a.pubDate || 0));
-  return deduped.slice(0, MAX_ITEMS);
+
+  // Los artículos de Google Noticias son mucho más numerosos y recientes que los del
+  // feed directo de la Asociación de Celiacos, así que un simple "top N por fecha"
+  // los deja siempre fuera — y son la única fuente que puede llevar foto real (ver
+  // fetchOgImage). Se reserva un hueco mínimo para artículos de fuentes directas.
+  const MIN_DIRECT_SOURCE_ITEMS = 6;
+  const direct = deduped.filter((item) => !item.viaGoogleNews).slice(0, MIN_DIRECT_SOURCE_ITEMS);
+  const directLinks = new Set(direct.map((item) => item.link));
+  const rest = deduped.filter((item) => !directLinks.has(item.link));
+  const combined = [...direct, ...rest].slice(0, MAX_ITEMS);
+  combined.sort((a, b) => new Date(b.pubDate || 0) - new Date(a.pubDate || 0));
+
+  return combined.map(({ viaGoogleNews, ...item }) => item);
 }
 
 async function main() {
