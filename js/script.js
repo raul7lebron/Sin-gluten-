@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
     pages.forEach((page) => page.classList.toggle("active", page.id === target));
   }
 
+  const ACTIVE_TAB_KEY = "libreDeTrigoActiveTab";
+
   function activateTab(target) {
     const btn = pillButtons.find((b) => b.dataset.target === target);
     pillButtons.forEach((b) => {
@@ -26,6 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
       indicator.style.width = "0px";
     }
     setActivePage(target);
+    try {
+      localStorage.setItem(ACTIVE_TAB_KEY, target);
+    } catch (err) {
+      // Almacenamiento no disponible (navegación privada, etc.): no se recuerda la página.
+    }
   }
 
   pillButtons.forEach((btn) => {
@@ -39,6 +46,15 @@ document.addEventListener("DOMContentLoaded", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
+
+  // Al recargar, vuelve a abrir la última página visitada en este dispositivo en vez de
+  // ir siempre a Inicio.
+  try {
+    const lastTab = localStorage.getItem(ACTIVE_TAB_KEY);
+    if (lastTab && pages.some((page) => page.id === lastTab)) activateTab(lastTab);
+  } catch (err) {
+    // Almacenamiento no disponible: se queda en Inicio, la página por defecto.
+  }
 
   const activeBtn = nav.querySelector(".pill-btn.active") || pillButtons[0];
   moveIndicator(activeBtn);
