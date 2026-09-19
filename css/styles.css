@@ -1473,7 +1473,6 @@ a:focus-visible {
   z-index: 90;
   max-width: 640px;
   margin: 0 auto;
-  display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 14px;
@@ -1482,6 +1481,14 @@ a:focus-visible {
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
   padding: 18px 22px;
+}
+
+.cookie-banner[hidden] {
+  display: none;
+}
+
+.cookie-banner:not([hidden]) {
+  display: flex;
 }
 
 .cookie-banner p {
