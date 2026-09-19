@@ -26,6 +26,55 @@ function renderSupermercado() {
     .join("");
 }
 
+function renderSupermercadoFilter() {
+  const chips = document.getElementById("supermercadoFilter");
+  if (!chips) return;
+  const keys = Object.keys(supermercadosCatalogo);
+  chips.innerHTML = keys
+    .map(
+      (key, i) =>
+        `<button class="filter-chip${i === 0 ? " active" : ""}" data-super="${key}" type="button">${supermercadosCatalogo[key].label}</button>`
+    )
+    .join("");
+}
+
+function renderCatalogo(superKey) {
+  const grid = document.getElementById("catalogoGrid");
+  const empty = document.getElementById("catalogoEmpty");
+  const cadena = supermercadosCatalogo[superKey];
+  if (!grid || !cadena) return;
+
+  const categoryMeta = {};
+  supermercadoCategories.forEach((c) => {
+    categoryMeta[c.title] = c;
+  });
+
+  const catTitles = Object.keys(cadena.categorias);
+
+  grid.innerHTML = catTitles
+    .map((catTitle) => {
+      const meta = categoryMeta[catTitle] || { icon: "🛒", iconClass: "icon-1" };
+      const productos = cadena.categorias[catTitle];
+      return `
+        <article class="info-card">
+          <span class="info-icon ${meta.iconClass}">${meta.icon}</span>
+          <h3>${catTitle}</h3>
+          <p>${productos.length} producto${productos.length === 1 ? "" : "s"} sin gluten verificados</p>
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list">${productos.map((p) => `<li>${p}</li>`).join("")}</ul>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+
+  empty.hidden = catTitles.length > 0;
+}
+
 function renderTiendas() {
   const list = document.getElementById("tiendasList");
   if (!list) return;
@@ -175,6 +224,8 @@ function renderRestaurantes(ciudadKey) {
 }
 
 renderSupermercado();
+renderSupermercadoFilter();
+renderCatalogo(Object.keys(supermercadosCatalogo)[0]);
 renderTiendas();
 renderRecetas();
 renderDietas();

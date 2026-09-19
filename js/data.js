@@ -239,6 +239,379 @@ const supermercadoCategories = [
   },
 ];
 
+// Catálogo sin gluten por supermercado. Cada clave de "categorias" debe
+// coincidir con un "title" de supermercadoCategories (se reutiliza su
+// icono). Solo se listan categorías con productos verificados vía
+// búsqueda web para esa cadena concreta — si una cadena no tiene una
+// categoría, es porque no se encontraron datos fiables, no porque no
+// venda nada sin gluten ahí.
+const supermercadosCatalogo = {
+  mercadona: {
+    label: "Mercadona",
+    categorias: {
+      "Panadería y bollería": [
+        "Hacendado — Pan de molde sin gluten blanco",
+        "Hacendado — Pan de molde multicereales sin gluten",
+        "Hacendado — Pan de molde cereales sin gluten",
+        "Hacendado — Magdalenas sin gluten",
+        "Hacendado — Picos sin gluten",
+        "Hacendado — Tostadas sin gluten",
+      ],
+      "Pasta y arroz": [
+        "Hacendado — Fusilli sin gluten (harina de maíz y arroz)",
+        "Hacendado — Espaguetis sin gluten",
+        "Hacendado — Macarrones/Coditos sin gluten",
+      ],
+      "Snacks y aperitivos": [
+        "Hacendado — Patatas fritas 0% sal añadida sin gluten",
+        "Hacendado — Patatas fritas extra crujientes",
+        "Hacendado — Maíz palomitas natural para microondas",
+        "Hacendado — Palomitas de maíz dulces para microondas",
+        "Hacendado — Crackers sin gluten con romero",
+      ],
+      "Desayuno y cereales": [
+        "Hacendado — Cereales rellenos de crema de cacao y avellana sin gluten",
+        "Hacendado — Copos de avena sin gluten",
+      ],
+      "Salsas y condimentos": ["Hacendado — Salsa de soja sin gluten"],
+      Congelados: [
+        "Hacendado — Pizza 4 quesos sin gluten y sin lactosa (ultracongelada)",
+        "Hacendado — Bases de pizza sin gluten y sin lactosa (ultracongeladas)",
+        "Hacendado — Arroz tres delicias ultracongelado sin gluten",
+      ],
+      Bebidas: [
+        "Mahou — Cerveza sin gluten 0,0% sin alcohol tostada",
+        "Free Damm — Cerveza sin gluten 0,0% sin alcohol",
+        "Hacendado — Bebida de avena 0% azúcar sin gluten",
+      ],
+      "Dulces y postres": [
+        "Hacendado — Bizcocho de chocolate sin gluten",
+        "Hacendado — Bizcocho de chocolate sin gluten y sin lactosa",
+        "Hacendado — Turrón crema de almendras 0% azúcares añadidos sin gluten",
+      ],
+      "Lácteos y alternativas": [
+        "Hacendado — Queso fresco batido 0% sin gluten",
+        "Hacendado — Bebida de avena sin gluten",
+        "Alpro — Bebida de avena/soja sin gluten",
+      ],
+      "Legumbres y conservas": [
+        "Hacendado — Garbanzos cocidos a la jardinera sin gluten",
+        "Hacendado — Fusilli de lentejas rojas (100% harina de lentejas, sin gluten)",
+      ],
+      "Harinas y repostería": [
+        "Hacendado — Harina de maíz fina precocinada sin gluten",
+        "Hacendado — Harina de garbanzo sin gluten",
+        "Hacendado — Preparado para bizcocho sin gluten",
+        "Hacendado — Preparado para panificación y repostería sin gluten",
+      ],
+      "Alimentación infantil": [
+        "Hero Baby — Papilla sin gluten crema de arroz +4 meses",
+        "Nestlé — Papilla maíz y arroz sin gluten +4 meses",
+        "Hacendado — Potitos de fruta sin azúcares añadidos, sin gluten",
+      ],
+    },
+  },
+  carrefour: {
+    label: "Carrefour",
+    categorias: {
+      "Panadería y bollería": [
+        "Carrefour No Gluten — Pan de molde Classic sin gluten",
+        "Carrefour No Gluten — Pan de molde con semillas sin gluten",
+        "Carrefour No Gluten — Magdalenas redondas sin gluten y sin lactosa",
+        "Carrefour No Gluten — Magdalenas valencianas sin gluten y sin lactosa",
+        "Carrefour No Gluten — Croissant Classic sin gluten",
+        "Carrefour No Gluten — Baguette sin gluten",
+      ],
+      "Pasta y arroz": [
+        "Carrefour Classic No Gluten — Espaguetis de maíz y arroz",
+        "Carrefour Classic No Gluten — Macarrones de maíz y arroz",
+        "Carrefour Classic No Gluten — Espirales de maíz y arroz",
+        "Carrefour Classic — Arroz blanco cocido sin gluten",
+        "Gallo — Placas para lasaña y canelones sin gluten",
+      ],
+      "Snacks y aperitivos": [
+        "Risi — Risketos sin gluten",
+        "Risi — Triskys sin gluten",
+        'Risi Mios! — Aperitivo de maíz sabor tomillo y limón sin gluten',
+        "Risi Mios! — Aperitivo de maíz y chía con sal marina sin gluten",
+        "Mission — Tortillas de maíz y arroz sin gluten",
+      ],
+      "Desayuno y cereales": [
+        "Carrefour Classic — Corn flakes sin gluten y sin azúcar añadido",
+        "Carrefour Sensation — Muesli crujiente sin gluten y sin azúcar añadido",
+        "Nestlé — Cereales de maíz Corn Flakes sin gluten",
+        "Gullón — Galletas María sin gluten y sin lactosa",
+        "Gullón — Galletas Digestive sin gluten y sin lactosa",
+      ],
+      "Salsas y condimentos": [
+        "Kikkoman — Salsa de soja sin gluten",
+        "Kikkoman — Salsa de soja Tamari sin gluten",
+        "Tiger Khan — Salsa de soja tradicional Gold sin gluten",
+      ],
+      Congelados: [
+        "Carrefour Classic — Base de pizza sin gluten",
+        "Pescanova — Nuggets de merluza sin gluten",
+        "Pescanova — Varitas popcorn de merluza sin gluten",
+        "Gallo — Placas para lasaña y canelones sin gluten",
+      ],
+      Bebidas: [
+        "Carrefour Sensation — Cerveza artesana Radler sin gluten",
+        "Carrefour Sensation — Cerveza artesana sin gluten",
+      ],
+      "Dulces y postres": [
+        "Carrefour Sensation — Turrón blando crujiente sin gluten",
+        "Carrefour Sensation — Turrón crujiente de chocolate blanco con galleta negra sin gluten",
+        "Carrefour Sensation — Turrón duro sin gluten",
+        "Carrefour Sensation — Turrón blando sin gluten",
+        "Carrefour Sensation — Turrón praliné de pistacho sin gluten",
+        "Carrefour Sensation — Turrón de guirlache sin gluten",
+      ],
+      "Lácteos y alternativas": [
+        "Carrefour — Bebida de soja sin azúcar añadido sin gluten",
+        "YoSoy — Bebida de avena sin gluten",
+        "YoSoy — Bebida de avena ecológica sin gluten",
+      ],
+      "Legumbres y conservas": [
+        "Carrefour Simply — Garbanzos cocidos",
+        "Carrefour Classic — Alubias con verduras sin gluten",
+        "Litoral — Fabada Asturiana sin gluten",
+      ],
+      "Harinas y repostería": [
+        "Carrefour No Gluten — Preparado panificable Extra sin gluten y sin lactosa",
+        "Carrefour No Gluten — Harina para pan y pastelería sin gluten",
+        "Carrefour Classic No Gluten — Preparado para bizcocho sin gluten",
+      ],
+      "Alimentación infantil": [
+        "Carrefour Baby Bio — Papilla infantil con cereales desde 4 meses, ecológica, sin gluten",
+      ],
+    },
+  },
+  lidl: {
+    label: "Lidl",
+    categorias: {
+      "Panadería y bollería": [
+        "La Cestera — Pan de molde sin gluten",
+        "La Cestera — Magdalenas sin gluten",
+        "La Cestera — Bizcocho de chocolate sin gluten",
+        "La Cestera — Palitos sin gluten",
+      ],
+      "Pasta y arroz": [
+        "Combino — Penne sin gluten (maíz y arroz)",
+        "Vitasia — Fideos de arroz",
+        "Vitasia — Noodles de konjac sin gluten",
+      ],
+      "Snacks y aperitivos": [
+        "Snack Day — Patatas fritas sin gluten con aceite de oliva",
+        "Sondey — Tortitas de maíz sin gluten",
+        "Alesto — Frutos secos naturales",
+      ],
+      Congelados: [
+        "Lidl — Nuggets de pollo sin gluten y sin lactosa",
+        "Dr. Oetker Ristorante — Pizza Prosciutto sin gluten y sin lactosa",
+      ],
+      "Dulces y postres": [
+        "Sondey — Cookies de chocolate sin gluten (veganas)",
+        "Sondey — Galletas María sin gluten",
+        "Gelatelli — Helados sin gluten",
+      ],
+      "Harinas y repostería": [
+        "Belbake — Harina/preparado sin gluten para pan y pizza",
+        "Belbake — Preparado panificable sin gluten (pan blanco)",
+      ],
+    },
+  },
+  dia: {
+    label: "Dia",
+    categorias: {
+      "Panadería y bollería": [
+        "El Molino de Dia — Magdalenas sin gluten (también sin lactosa)",
+        "Panceliac (Dia) — Picos sin gluten",
+        "Panceliac (Dia) — Pan rallado sin gluten",
+        "Panceliac (Dia) — Pan de molde sin gluten",
+        "Dia Sin Gluten — Pan de molde y panecillos de hamburguesa sin gluten",
+      ],
+      "Pasta y arroz": [
+        "Gallo (Dia) — Espaguetis sin gluten",
+        "Gallo (Dia) — Macarrones sin gluten",
+        "Dia Sin Gluten — Pasta sin gluten (gama propia)",
+      ],
+      "Snacks y aperitivos": [
+        "Snack Maniac (Dia) — Patatas fritas gourmet extra crujientes sin gluten",
+        "Snack Maniac (Dia) — Patatas fritas campesinas sin gluten",
+        "Snack Maniac (Dia) — Torzitos sabor queso sin gluten",
+        "Snack Maniac (Dia) — Nachos sabor queso tex-mex sin gluten",
+        "Tosfrit (Dia) — Aros de maíz frito sin gluten",
+      ],
+      "Desayuno y cereales": [
+        "Nestlé (Dia) — Corn Flakes sin gluten",
+        "Dia Sin Gluten — Cereales sin gluten (gama propia)",
+      ],
+      "Salsas y condimentos": [
+        "Dia Selección Mundial — Salsa de soja sin gluten",
+        "Dia Salseo — Ketchup sin gluten",
+        "Dia Salseo — Mayonesa sin gluten y sin lactosa",
+      ],
+      Congelados: [
+        "Dia Al Punto — Lasaña boloñesa sin gluten",
+        "Dr. Oetker Ristorante (Dia) — Pizza prosciutto sin gluten",
+        "Dia Sin Gluten — Empanadillas sin gluten",
+      ],
+      Bebidas: [
+        "Dia Ramblers — Cerveza especial sin gluten",
+        "Dia — Horchata sin gluten",
+        "Dia (Vegedia) — Bebida de chufa 0% azúcares, sin gluten y sin lactosa",
+      ],
+      "Dulces y postres": [
+        "Dulce Noel Dia — Turrón crujiente de chocolate sin azúcares añadidos, sin gluten",
+        "Dulce Noel Dia — Turrón de chocolate con leche y almendras sin gluten",
+        "Dulce Noel Dia — Turrón de chocolate con leche crujiente clásico, sin gluten",
+        "Galleteca (Dia Sin Gluten) — Galletas con pepitas de chocolate y sabor mantequilla, sin gluten",
+      ],
+      "Lácteos y alternativas": [
+        "Dia — Bífidus con piña y coco doble 0%, sin gluten",
+        "Dia — Bífidus con nueces y cereales doble 0%, sin gluten",
+        "Dia — Bífidus con fresa doble 0%, sin gluten",
+        "Dia Láctea — Yogur sabor fresa sin gluten",
+      ],
+      "Legumbres y conservas": [
+        "Dia — Lentejas cocidas sin gluten",
+        "Dia — Garbanzos cocidos sin gluten",
+        "Dia — Alubias blancas extra sin gluten",
+        "Dia — Lentejas con chorizo sin gluten",
+        "Vegecampo de Dia — Lentejas pardinas sin gluten",
+      ],
+      "Harinas y repostería": [
+        "El Molino de Dia — Harina de garbanzo sin gluten",
+        "Dia Delimagic — Preparado para hornear en polvo sin gluten",
+      ],
+      "Alimentación infantil": [
+        "Hero Baby (Dia) — Potitos de frutas ecológicos sin gluten",
+        "Nestlé (Dia) — Puré de 7 frutas sin gluten",
+        "Smileat / Be Plus (Dia) — Potitos y tarritos sin gluten, sin lactosa",
+      ],
+    },
+  },
+  aldi: {
+    label: "Aldi",
+    categorias: {
+      "Panadería y bollería": [
+        "Aldi — Pan de molde sin gluten",
+        "GutBio — Pan sin gluten (base teff)",
+        "Aldi — Bagels sin gluten",
+        "Aldi — Panecillos sin gluten",
+      ],
+      "Pasta y arroz": [
+        "GutBio — Fusilli de arroz integral y teff",
+        "GutBio — Pasta de lentejas",
+        "GutBio — Pasta de legumbres variadas",
+        "GutBio — Espaguetis de edamame ecológicos",
+      ],
+      "Snacks y aperitivos": [
+        "Aldi — Patatas fritas sin gluten sabor entrecot con setas",
+        "Aldi — Patatas fritas sin gluten sabor sobrasada ibérica",
+        "AURADA — Tortitas de maíz",
+        "AURADA — Tortitas de arroz",
+        "AURADA — Tortitas de maíz con chocolate negro",
+      ],
+      "Desayuno y cereales": [
+        "Golden Bridge — Copos de avena integral certificados sin gluten",
+        "Golden Bridge — Copos de avena integral XXL",
+        "Golden Bridge — Avena Rings",
+      ],
+      "Salsas y condimentos": ["La Villa — Kétchup sin gluten", "La Villa — Mayonesa sin gluten"],
+      Congelados: [
+        "Aldi — Pizza de jamón y queso sin gluten",
+        "Aldi — Gama de pizzas sin gluten (16 referencias)",
+        "Aldi — Empanadillas sin gluten",
+        "Aldi — Chicken fingers / croquetas de pollo empanadas sin gluten",
+      ],
+      Bebidas: [
+        "Karlsquell — Cerveza Especial Sin Gluten (Bio)",
+        "Maternus — Cerveza Rubia Sin Gluten",
+        "Milsani — Horchata sin gluten",
+      ],
+      "Dulces y postres": [
+        "Biscotto — Galletas Chocobrownie sin gluten",
+        "Biscotto — Galletas con pepitas de chocolate sin gluten",
+        "GutBio — Galletas de avena sin gluten sabor limón y canela",
+        "GutBio — Galletas de avena sin gluten sabor naranja, cúrcuma y jengibre",
+        "Choceur — Bombones de chocolate sin gluten",
+        "Flor de Navidad — Turrón sin gluten (blando Jijona y yema tostada)",
+      ],
+      "Lácteos y alternativas": [
+        "GutBio — Bebida de avena ecológica sin gluten",
+        "GutBio — Bebida de soja ecológica sin gluten",
+        "GutBio — Bebida de arroz ecológica sin gluten",
+        "GutBio — Bebida de almendra sin gluten",
+      ],
+      "Legumbres y conservas": [
+        "GutBio — Garbanzos y alubias extra cocidos ecológicos",
+        "GutBio — Lentejas y alubias rojas extra cocidas ecológicas",
+        "GutBio — Plato de alubias, lentejas con verduras y garbanzos con espinacas",
+      ],
+      "Harinas y repostería": [
+        "Aldi — Preparado para pan sin gluten (mezcla + levadura)",
+        "Aldi — Harina de arroz sin gluten",
+        "Aldi — Levadura de panadería/repostería sin gluten",
+      ],
+    },
+  },
+  consum: {
+    label: "Consum",
+    categorias: {
+      "Panadería y bollería": [
+        "Consum — Hogaza sin gluten",
+        "Consum — Baguette sin gluten",
+        "Consum — Baguettina sin gluten (congelada)",
+        "Consum — Tostadas sin gluten integrales",
+        "Consum — Pan de molde sin gluten cereales y semillas",
+      ],
+      "Pasta y arroz": ["Consum — Spaghetti sin gluten", "Consum — Fideos sin gluten", "Consum — Tallarines de arroz"],
+      "Snacks y aperitivos": [
+        "Consum — Tortitas de maíz sin gluten",
+        "Consum — Tortillas de maíz sin gluten",
+        "Consum — Crackers sin gluten",
+      ],
+      "Desayuno y cereales": [
+        "Consum — Cereales Choco Zero sin gluten y sin azúcares",
+        "Consum — Cereales rellenos de leche sin gluten",
+        "Consum — Cereales rellenos de choco sin gluten",
+        "Consum — Corn Flakes Classic sin azúcar y sin gluten",
+        "Consum — Arroz inflado choco sin gluten",
+      ],
+      "Salsas y condimentos": ["Consum — Tomate frito sin gluten", "Consum — Salsa de soja baja en sal y sin gluten"],
+      Congelados: [
+        "Ristorante (Dr. Oetker, en Consum) — Pizza Mozzarella sin gluten",
+        "Ristorante — Pizza Prosciutto sin gluten y sin lactosa",
+        "Ristorante — Pizza Jamón y Queso sin gluten y sin lactosa",
+        "Consum — Nuggets de pollo sin gluten y sin lactosa",
+        "Consum — Base de pizza sin gluten",
+        "Consum — Cono nata-chocolate x4 sin gluten y sin lactosa",
+      ],
+      Bebidas: [
+        "Consum — Cerveza sin gluten",
+        "Damm — Daura, cerveza sin gluten",
+        "Consum — Cerveza Celíacos (0,0)",
+      ],
+      "Dulces y postres": [
+        "Consum — Magdalenas artesanas sin gluten",
+        "Consum — Plumcake sin gluten con pepitas de chocolate",
+        "Consum — Muffin de chocolate sin gluten",
+        "Consum — Bizcocho sin gluten con pepitas de chocolate",
+        "Consum — Galleta María sin gluten",
+        "Consum — Bombones surtidos sin gluten",
+      ],
+      "Lácteos y alternativas": [
+        "Consum — Queso Pell Florida de leche de cabra pasteurizada, sin gluten",
+        "Consum — Queso fresco Servilleta de leche de vaca pasteurizada, sin gluten",
+        "Consum — Queso de oveja pasta blanda, sin gluten",
+      ],
+      "Harinas y repostería": ["Consum — Harina mix sin gluten multiusos", "Consum — Pan rallado sin gluten"],
+      "Alimentación infantil": ["Consum — Crema de arroz sin gluten (papilla)", "Consum — Crema de arroz sin gluten y sin azúcar (papilla)"],
+    },
+  },
+};
+
 const recetas = [
   {
     icon: "🍳",
