@@ -1069,7 +1069,7 @@ The post Nuevos pasos para un etiquetado más seguro appeared first on Asociaci�
       <h1 class="section-title">Planes de 4 semanas por calorías</h1>
       <p class="section-hint">¿No sabes cuántas calorías necesitas? Usa la <a href="#" data-scroll-target="calculadora">calculadora calórica</a>. Toca cualquier alimento en negrita de un día para añadirlo automáticamente a tu lista de la compra, lista para cuando vayas al supermercado.</p>
 
-      <div class="filter-chips" id="objetivoFilter" role="group" aria-label="Filtrar por objetivo"><button class="filter-chip active" data-objetivo="perder-peso" type="button">📉 Perder peso</button><button class="filter-chip" data-objetivo="ganar-musculo" type="button">💪 Ganar músculo</button></div>
+      <div class="filter-chips" id="objetivoFilter" role="group" aria-label="Filtrar por objetivo"><button class="filter-chip active" data-objetivo="perder-peso" type="button">📉 Perder peso</button><button class="filter-chip" data-objetivo="mantenimiento" type="button">⚖️ Mantenimiento</button><button class="filter-chip" data-objetivo="ganar-musculo" type="button">💪 Ganar músculo</button></div>
       <div class="filter-chips filter-chips-sub" id="calorieFilter" role="group" aria-label="Filtrar por nivel calórico"><button class="filter-chip active" data-kcal="1500" type="button">1500 kcal/día</button><button class="filter-chip" data-kcal="1750" type="button">1750 kcal/día</button><button class="filter-chip" data-kcal="2000" type="button">2000 kcal/día</button><button class="filter-chip" data-kcal="2250" type="button">2250 kcal/día</button><button class="filter-chip" data-kcal="2500" type="button">2500 kcal/día</button><button class="filter-chip" data-kcal="2750" type="button">2750 kcal/día</button></div>
       <p class="plan-meta" id="planMeta">Déficit calórico moderado: pensado para complexiones menudas o poca actividad física. Consulta la calculadora para saber si te encaja.</p>
       <div class="filter-chips filter-chips-sub" id="semanaFilter" role="group" aria-label="Filtrar por semana"><button class="filter-chip active" data-semana="0" type="button">Semana 1</button><button class="filter-chip" data-semana="1" type="button">Semana 2</button><button class="filter-chip" data-semana="2" type="button">Semana 3</button><button class="filter-chip" data-semana="3" type="button">Semana 4</button></div>
@@ -1236,6 +1236,14 @@ The post Nuevos pasos para un etiquetado más seguro appeared first on Asociaci�
               <option value="1.55" selected="">Moderada (ejercicio moderado 3-5 días/semana)</option>
               <option value="1.725">Alta (ejercicio intenso 6-7 días/semana)</option>
               <option value="1.9">Muy alta (trabajo físico o entreno 2 veces al día)</option>
+            </select>
+          </div>
+          <div class="calc-field calc-field-wide">
+            <label for="calcMetabolismo">Tipo de metabolismo</label>
+            <select id="calcMetabolismo">
+              <option value="0.9">Lento (te cuesta más perder peso de lo habitual)</option>
+              <option value="1" selected="">Medio (el más común)</option>
+              <option value="1.1">Rápido (te cuesta más ganar peso de lo habitual)</option>
             </select>
           </div>
         </div>
@@ -2790,13 +2798,18 @@ The post Nuevos pasos para un etiquetado más seguro appeared first on Asociaci�
       <span class="eyebrow">🛍️ Lista de la compra</span>
       <h1 class="section-title">Tu lista de la compra</h1>
 
+      <div class="shopping-add-row">
+        <input type="text" id="shoppingAddInput" placeholder="Escribe un producto y añádelo…" aria-label="Añadir producto a mano">
+        <button type="button" id="shoppingAddBtn" class="btn-primary">Añadir</button>
+      </div>
+
       <div class="shopping-list-toolbar">
         <p class="shopping-list-count" id="shoppingListCount"></p>
         <button type="button" id="shoppingListClear" class="btn-secondary">Vaciar lista</button>
       </div>
 
       <div class="shopping-list-groups" id="shoppingListGroups"></div>
-      <p class="empty-state" id="shoppingListEmpty">Todavía no has añadido nada. Ve a Recetas o Dietas y toca cualquier ingrediente en negrita para añadirlo aquí.</p>
+      <p class="empty-state" id="shoppingListEmpty">Todavía no has añadido nada. Escribe un producto arriba, o ve a Recetas o Dietas y toca cualquier ingrediente en negrita para añadirlo aquí.</p>
     </section>
 
     <section id="aviso-legal" class="page legal-page" aria-label="Aviso legal">

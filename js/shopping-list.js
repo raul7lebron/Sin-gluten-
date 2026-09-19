@@ -178,6 +178,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const addInput = document.getElementById("shoppingAddInput");
+  const addBtn = document.getElementById("shoppingAddBtn");
+  if (addInput && addBtn) {
+    function addFromInput() {
+      const value = addInput.value.trim();
+      if (!value) return;
+      addOrIncrementShoppingItem(value);
+      addInput.value = "";
+      addInput.focus();
+    }
+    addBtn.addEventListener("click", addFromInput);
+    addInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") addFromInput();
+    });
+  }
+
   const clearBtn = document.getElementById("shoppingListClear");
   if (clearBtn) {
     clearBtn.addEventListener("click", () => {

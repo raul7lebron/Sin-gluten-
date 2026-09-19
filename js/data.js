@@ -1772,6 +1772,234 @@ const comidasPoolGanarMusculo = {
   },
 };
 
+// Comidas equilibradas para mantener el peso: variedad de platos de cuchara, ensaladas
+// completas y pasta/arroz sin gluten, sin el enfoque en proteína extra de "Ganar músculo"
+// ni el mismo recetario que "Perder peso". 5 opciones por comida y nivel.
+const comidasPoolMantenimiento = {
+  1500: {
+    desayuno: [
+      "Bocadillo de pan sin gluten con jamón cocido y tomate (~300 kcal).",
+      "Tazón de yogur natural con muesli sin gluten y plátano (~300 kcal).",
+      "Tostada de pan sin gluten con queso fresco y miel (~300 kcal).",
+      "Batido de leche con avena certificada sin gluten y fresas (~300 kcal).",
+      "Tortilla francesa de 2 huevos con una pieza de fruta (~300 kcal).",
+    ],
+    mediaManana: [
+      "Yogur natural con un puñado de nueces (~140 kcal).",
+      "Una pieza de fruta con unas almendras (~140 kcal).",
+      "Tostada de pan sin gluten con aguacate (~140 kcal).",
+      "Queso fresco batido con arándanos (~140 kcal).",
+      "Barrita de cereales sin gluten (~140 kcal).",
+    ],
+    comida: [
+      "Merluza al horno con patata panadera y ensalada (~420 kcal).",
+      "Pasta sin gluten con tomate, atún y aceitunas (~420 kcal).",
+      "Pollo al curry con arroz y verduras (~420 kcal).",
+      "Garbanzos guisados con verduras y un poco de chorizo (~420 kcal).",
+      "Arroz tres delicias sin gluten con gambas y huevo (~420 kcal).",
+    ],
+    merienda: [
+      "Yogur griego con miel (~140 kcal).",
+      "Fruta variada con un puñado de frutos secos (~140 kcal).",
+      "Tostada de pan sin gluten con mermelada (~140 kcal).",
+      "Batido de cacao con leche (~140 kcal).",
+      "Queso curado con unas nueces (~140 kcal).",
+    ],
+    cena: [
+      "Crema de verduras con una tostada de pan sin gluten (~420 kcal).",
+      "Tortilla de calabacín con ensalada (~420 kcal).",
+      "Salmón a la plancha con espárragos y patata (~420 kcal).",
+      "Ensalada completa con pollo, huevo y maíz (~420 kcal).",
+      "Pescado blanco al horno con verduras asadas (~420 kcal).",
+    ],
+  },
+  1750: {
+    desayuno: [
+      "Bocadillo de pan sin gluten con jamón serrano y tomate (~350 kcal).",
+      "Tazón de yogur natural con muesli sin gluten, plátano y miel (~350 kcal).",
+      "Dos tostadas de pan sin gluten con queso fresco y miel (~350 kcal).",
+      "Batido de leche con avena certificada sin gluten, fresas y plátano (~350 kcal).",
+      "Tortilla francesa de 3 huevos con una pieza de fruta (~350 kcal).",
+    ],
+    mediaManana: [
+      "Yogur natural con un puñado grande de nueces (~160 kcal).",
+      "Una pieza de fruta con almendras (~160 kcal).",
+      "Tostada de pan sin gluten con aguacate y tomate (~160 kcal).",
+      "Queso fresco batido con arándanos y miel (~160 kcal).",
+      "Barrita de cereales sin gluten con una pieza de fruta (~160 kcal).",
+    ],
+    comida: [
+      "Merluza al horno con patata panadera, ensalada y aceite de oliva (~500 kcal).",
+      "Pasta sin gluten con tomate, atún, aceitunas y queso (~500 kcal).",
+      "Pollo al curry con arroz, verduras y leche de coco (~500 kcal).",
+      "Garbanzos guisados con verduras, chorizo y pan sin gluten (~500 kcal).",
+      "Arroz tres delicias sin gluten con gambas, huevo y jamón (~500 kcal).",
+    ],
+    merienda: [
+      "Yogur griego con miel y granola sin gluten (~160 kcal).",
+      "Fruta variada con un puñado grande de frutos secos (~160 kcal).",
+      "Tostada de pan sin gluten con mermelada y queso fresco (~160 kcal).",
+      "Batido de cacao con leche entera (~160 kcal).",
+      "Queso curado con nueces (~160 kcal).",
+    ],
+    cena: [
+      "Crema de verduras con una tostada de pan sin gluten y jamón (~480 kcal).",
+      "Tortilla de calabacín y queso con ensalada (~480 kcal).",
+      "Salmón a la plancha con espárragos, patata y aceite de oliva (~480 kcal).",
+      "Ensalada completa con pollo, huevo, maíz y aguacate (~480 kcal).",
+      "Pescado blanco al horno con verduras asadas y patata (~480 kcal).",
+    ],
+  },
+  2000: {
+    desayuno: [
+      "Bocadillo grande de pan sin gluten con jamón serrano, tomate y aceite (~400 kcal).",
+      "Tazón de yogur natural con muesli sin gluten, plátano, miel y nueces (~400 kcal).",
+      "Dos tostadas de pan sin gluten con queso fresco, miel y fruta (~400 kcal).",
+      "Batido de leche con avena certificada sin gluten, fresas, plátano y crema de cacahuete (~400 kcal).",
+      "Tortilla francesa de 3 huevos con tostada de pan sin gluten y fruta (~400 kcal).",
+    ],
+    mediaManana: [
+      "Yogur natural con un puñado grande de nueces y miel (~190 kcal).",
+      "Dos piezas de fruta con almendras (~190 kcal).",
+      "Tostada de pan sin gluten con aguacate, tomate y huevo (~190 kcal).",
+      "Queso fresco batido con arándanos, miel y granola sin gluten (~190 kcal).",
+      "Barrita de cereales sin gluten con fruta y frutos secos (~190 kcal).",
+    ],
+    comida: [
+      "Merluza al horno con patata panadera, ensalada y aceite de oliva extra (~580 kcal).",
+      "Pasta sin gluten con tomate, atún, aceitunas, queso y aceite (~580 kcal).",
+      "Pollo al curry con arroz, verduras, leche de coco y anacardos (~580 kcal).",
+      "Garbanzos guisados con verduras, chorizo, pan sin gluten y aceite (~580 kcal).",
+      "Arroz tres delicias sin gluten con gambas, huevo, jamón y guisantes (~580 kcal).",
+    ],
+    merienda: [
+      "Yogur griego con miel, granola sin gluten y frutos rojos (~190 kcal).",
+      "Fruta variada con un puñado grande de frutos secos y miel (~190 kcal).",
+      "Tostada de pan sin gluten con mermelada, queso fresco y nueces (~190 kcal).",
+      "Batido de cacao con leche entera y plátano (~190 kcal).",
+      "Queso curado con nueces y una pieza de fruta (~190 kcal).",
+    ],
+    cena: [
+      "Crema de verduras con dos tostadas de pan sin gluten y jamón (~540 kcal).",
+      "Tortilla de calabacín y queso con ensalada y pan sin gluten (~540 kcal).",
+      "Salmón a la plancha con espárragos, patata y aceite de oliva extra (~540 kcal).",
+      "Ensalada completa con pollo, huevo, maíz, aguacate y queso (~540 kcal).",
+      "Pescado blanco al horno con verduras asadas, patata y aceite de oliva (~540 kcal).",
+    ],
+  },
+  2250: {
+    desayuno: [
+      "Bocadillo grande de pan sin gluten con jamón serrano, tomate, aceite y queso (~450 kcal).",
+      "Tazón grande de yogur natural con muesli sin gluten, plátano, miel y nueces (~450 kcal).",
+      "Tres tostadas de pan sin gluten con queso fresco, miel y fruta (~450 kcal).",
+      "Batido grande de leche con avena certificada sin gluten, fresas, plátano y crema de cacahuete (~450 kcal).",
+      "Tortilla francesa de 4 huevos con tostada de pan sin gluten y fruta (~450 kcal).",
+    ],
+    mediaManana: [
+      "Yogur natural con un puñado grande de nueces, miel y fruta (~210 kcal).",
+      "Dos piezas de fruta con almendras y nueces (~210 kcal).",
+      "Tostada de pan sin gluten con aguacate, tomate y huevo (~210 kcal).",
+      "Queso fresco batido con arándanos, miel, granola sin gluten y nueces (~210 kcal).",
+      "Barrita de cereales sin gluten con fruta y un puñado de frutos secos (~210 kcal).",
+    ],
+    comida: [
+      "Merluza al horno con patata panadera, ensalada, pan sin gluten y aceite de oliva extra (~650 kcal).",
+      "Pasta sin gluten con tomate, atún, aceitunas, queso y aceite de oliva extra (~650 kcal).",
+      "Pollo al curry con arroz, verduras, leche de coco y anacardos (~650 kcal).",
+      "Garbanzos guisados con verduras, chorizo, pan sin gluten y aceite de oliva extra (~650 kcal).",
+      "Arroz tres delicias sin gluten con gambas, huevo, jamón, guisantes y aceite (~650 kcal).",
+    ],
+    merienda: [
+      "Yogur griego con miel, granola sin gluten, frutos rojos y nueces (~210 kcal).",
+      "Fruta variada con un puñado grande de frutos secos y miel (~210 kcal).",
+      "Dos tostadas de pan sin gluten con mermelada, queso fresco y nueces (~210 kcal).",
+      "Batido de cacao con leche entera, plátano y avena certificada sin gluten (~210 kcal).",
+      "Queso curado con nueces, pasas y una pieza de fruta (~210 kcal).",
+    ],
+    cena: [
+      "Crema de verduras con dos tostadas de pan sin gluten, jamón y queso (~630 kcal).",
+      "Tortilla de calabacín y queso con ensalada, pan sin gluten y aceite (~630 kcal).",
+      "Salmón a la plancha con espárragos, patata, ensalada y aceite de oliva extra (~630 kcal).",
+      "Ensalada completa con pollo, huevo, maíz, aguacate, queso y pan sin gluten (~630 kcal).",
+      "Pescado blanco al horno con verduras asadas, patata y aceite de oliva extra (~630 kcal).",
+    ],
+  },
+  2500: {
+    desayuno: [
+      "Bocadillo grande de pan sin gluten con jamón serrano, tomate, aceite, queso y aguacate (~500 kcal).",
+      "Tazón grande de yogur natural con muesli sin gluten, plátano, miel, nueces y granola sin gluten (~500 kcal).",
+      "Tres tostadas de pan sin gluten con queso fresco, miel, fruta y nueces (~500 kcal).",
+      "Batido grande de leche con avena certificada sin gluten, fresas, plátano, crema de cacahuete y miel (~500 kcal).",
+      "Tortilla francesa de 4 huevos con dos tostadas de pan sin gluten y fruta (~500 kcal).",
+    ],
+    mediaManana: [
+      "Yogur natural con un puñado grande de nueces, miel y dos piezas de fruta (~230 kcal).",
+      "Dos piezas de fruta con almendras, nueces y miel (~230 kcal).",
+      "Dos tostadas de pan sin gluten con aguacate, tomate y huevo (~230 kcal).",
+      "Queso fresco batido con arándanos, miel, granola sin gluten y nueces (~230 kcal).",
+      "Barrita de cereales sin gluten con fruta y un puñado grande de frutos secos (~230 kcal).",
+    ],
+    comida: [
+      "Merluza al horno con patata panadera, ensalada, pan sin gluten y aceite de oliva extra (~730 kcal).",
+      "Ración grande de pasta sin gluten con tomate, atún, aceitunas, queso y aceite (~730 kcal).",
+      "Pollo al curry con arroz, verduras, leche de coco, anacardos y pan sin gluten (~730 kcal).",
+      "Garbanzos guisados con verduras, chorizo, pan sin gluten y aceite de oliva extra (~730 kcal).",
+      "Arroz tres delicias sin gluten con gambas, huevo, jamón, guisantes y aceite de oliva extra (~730 kcal).",
+    ],
+    merienda: [
+      "Yogur griego con miel, granola sin gluten, frutos rojos y nueces (~230 kcal).",
+      "Fruta variada con un puñado grande de frutos secos, miel y queso curado (~230 kcal).",
+      "Dos tostadas de pan sin gluten con mermelada, queso fresco y nueces (~230 kcal).",
+      "Batido de cacao con leche entera, plátano y avena certificada sin gluten (~230 kcal).",
+      "Queso curado con nueces, pasas y dos piezas de fruta (~230 kcal).",
+    ],
+    cena: [
+      "Crema de verduras con dos tostadas de pan sin gluten, jamón y queso (~710 kcal).",
+      "Tortilla de calabacín y queso con ensalada, pan sin gluten y aceite de oliva extra (~710 kcal).",
+      "Salmón a la plancha con espárragos, patata, ensalada y aceite de oliva extra (~710 kcal).",
+      "Ensalada completa con pollo, huevo, maíz, aguacate, queso y pan sin gluten (~710 kcal).",
+      "Pescado blanco al horno con verduras asadas, patata y aceite de oliva extra (~710 kcal).",
+    ],
+  },
+  2750: {
+    desayuno: [
+      "Bocadillo grande de pan sin gluten con jamón serrano, tomate, aceite, queso y aguacate (~550 kcal).",
+      "Tazón grande de yogur natural con muesli sin gluten, plátano, miel, nueces y granola sin gluten (~550 kcal).",
+      "Cuatro tostadas de pan sin gluten con queso fresco, miel, fruta y nueces (~550 kcal).",
+      "Batido grande de leche con avena certificada sin gluten, fresas, plátano, crema de cacahuete y miel (~550 kcal).",
+      "Tortilla francesa de 5 huevos con dos tostadas de pan sin gluten y fruta (~550 kcal).",
+    ],
+    mediaManana: [
+      "Yogur natural con un puñado grande de nueces, miel y dos piezas de fruta (~250 kcal).",
+      "Dos piezas de fruta con almendras, nueces, pasas y miel (~250 kcal).",
+      "Dos tostadas de pan sin gluten con aguacate, tomate, huevo y queso (~250 kcal).",
+      "Queso fresco batido con arándanos, miel, granola sin gluten y nueces (~250 kcal).",
+      "Barrita de cereales sin gluten con fruta y un puñado grande de frutos secos (~250 kcal).",
+    ],
+    comida: [
+      "Merluza al horno con patata panadera, ensalada, pan sin gluten y aceite de oliva extra (~800 kcal).",
+      "Ración grande de pasta sin gluten con tomate, atún, aceitunas, queso y aceite de oliva extra (~800 kcal).",
+      "Pollo al curry con arroz, verduras, leche de coco, anacardos y pan sin gluten (~800 kcal).",
+      "Garbanzos guisados con verduras, chorizo, pan sin gluten y aceite de oliva extra (~800 kcal).",
+      "Ración grande de arroz tres delicias sin gluten con gambas, huevo, jamón, guisantes y aceite (~800 kcal).",
+    ],
+    merienda: [
+      "Yogur griego con miel, granola sin gluten, frutos rojos y nueces (~250 kcal).",
+      "Fruta variada con un puñado grande de frutos secos, miel y queso curado (~250 kcal).",
+      "Tres tostadas de pan sin gluten con mermelada, queso fresco y nueces (~250 kcal).",
+      "Batido de cacao con leche entera, plátano, avena certificada sin gluten y miel (~250 kcal).",
+      "Queso curado con nueces, pasas y dos piezas de fruta (~250 kcal).",
+    ],
+    cena: [
+      "Crema de verduras con tres tostadas de pan sin gluten, jamón y queso (~780 kcal).",
+      "Tortilla de calabacín y queso con ensalada, pan sin gluten y aceite de oliva extra (~780 kcal).",
+      "Salmón a la plancha con espárragos, patata, ensalada y aceite de oliva extra (~780 kcal).",
+      "Ensalada completa con pollo, huevo, maíz, aguacate, queso y pan sin gluten (~780 kcal).",
+      "Doble pescado blanco al horno con verduras asadas, patata y aceite de oliva extra (~780 kcal).",
+    ],
+  },
+};
+
 // Palabras/frases de ingrediente que se resaltan en negrita y se vuelven tocables dentro
 // de las recetas y las comidas de los planes de dieta (ver highlightShoppable en render.js).
 // Las frases de varias palabras van primero para que "aceite de oliva" se detecte entera
@@ -1867,6 +2095,42 @@ const planesPorObjetivo = {
         label: "2750 kcal/día",
         meta: "Superávit alto: pensado para complexiones muy grandes, entrenamiento intenso o necesidades energéticas muy elevadas.",
         semanas: buildPlanSemanas(comidasPool[2750], "perder-peso", 2750),
+      },
+    },
+  },
+  mantenimiento: {
+    label: "Mantenimiento",
+    icon: "⚖️",
+    planes: {
+      1500: {
+        label: "1500 kcal/día",
+        meta: "Menú variado y equilibrado para mantener el peso en complexiones menudas o poca actividad física.",
+        semanas: buildPlanSemanas(comidasPoolMantenimiento[1500], "mantenimiento", 1500),
+      },
+      1750: {
+        label: "1750 kcal/día",
+        meta: "Menú variado y equilibrado, un paso intermedio entre 1500 y 2000 kcal.",
+        semanas: buildPlanSemanas(comidasPoolMantenimiento[1750], "mantenimiento", 1750),
+      },
+      2000: {
+        label: "2000 kcal/día",
+        meta: "Nivel de mantenimiento habitual para actividad física ligera-moderada en adultos de estatura y peso medios.",
+        semanas: buildPlanSemanas(comidasPoolMantenimiento[2000], "mantenimiento", 2000),
+      },
+      2250: {
+        label: "2250 kcal/día",
+        meta: "Mantenimiento para complexiones algo mayores o actividad física moderada-alta.",
+        semanas: buildPlanSemanas(comidasPoolMantenimiento[2250], "mantenimiento", 2250),
+      },
+      2500: {
+        label: "2500 kcal/día",
+        meta: "Mantenimiento para complexiones grandes o entrenamiento frecuente sin buscar cambio de peso.",
+        semanas: buildPlanSemanas(comidasPoolMantenimiento[2500], "mantenimiento", 2500),
+      },
+      2750: {
+        label: "2750 kcal/día",
+        meta: "Mantenimiento para complexiones muy grandes o necesidades energéticas muy elevadas sin buscar cambio de peso.",
+        semanas: buildPlanSemanas(comidasPoolMantenimiento[2750], "mantenimiento", 2750),
       },
     },
   },

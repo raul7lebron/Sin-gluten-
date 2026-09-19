@@ -192,6 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const altura = Number(document.getElementById("calcAltura").value);
       const peso = Number(document.getElementById("calcPeso").value);
       const actividad = Number(document.getElementById("calcActividad").value);
+      const metabolismo = Number(document.getElementById("calcMetabolismo").value);
       const errorEl = document.getElementById("calcError");
       const resultEl = document.getElementById("calcResult");
 
@@ -203,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
       errorEl.hidden = true;
 
       const bmr = sexo === "hombre" ? 10 * peso + 6.25 * altura - 5 * edad + 5 : 10 * peso + 6.25 * altura - 5 * edad - 161;
-      const tdee = Math.round(bmr * actividad);
+      const tdee = Math.round(bmr * actividad * metabolismo);
 
       const niveles = Object.keys(planesPorObjetivo["perder-peso"].planes).map(Number);
       const recomendado = niveles.reduce((prev, curr) => (Math.abs(curr - tdee) < Math.abs(prev - tdee) ? curr : prev));

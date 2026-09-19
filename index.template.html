@@ -145,6 +145,14 @@
               <option value="1.9">Muy alta (trabajo físico o entreno 2 veces al día)</option>
             </select>
           </div>
+          <div class="calc-field calc-field-wide">
+            <label for="calcMetabolismo">Tipo de metabolismo</label>
+            <select id="calcMetabolismo">
+              <option value="0.9">Lento (te cuesta más perder peso de lo habitual)</option>
+              <option value="1" selected>Medio (el más común)</option>
+              <option value="1.1">Rápido (te cuesta más ganar peso de lo habitual)</option>
+            </select>
+          </div>
         </div>
         <button id="calcSubmit" class="btn-primary" type="button">Calcular calorías</button>
         <p class="calc-error" id="calcError" hidden>Rellena edad, altura y peso con valores válidos.</p>
@@ -227,13 +235,18 @@
       <span class="eyebrow">🛍️ Lista de la compra</span>
       <h1 class="section-title">Tu lista de la compra</h1>
 
+      <div class="shopping-add-row">
+        <input type="text" id="shoppingAddInput" placeholder="Escribe un producto y añádelo…" aria-label="Añadir producto a mano" />
+        <button type="button" id="shoppingAddBtn" class="btn-primary">Añadir</button>
+      </div>
+
       <div class="shopping-list-toolbar">
         <p class="shopping-list-count" id="shoppingListCount"></p>
         <button type="button" id="shoppingListClear" class="btn-secondary">Vaciar lista</button>
       </div>
 
       <div class="shopping-list-groups" id="shoppingListGroups"></div>
-      <p class="empty-state" id="shoppingListEmpty">Todavía no has añadido nada. Ve a Recetas o Dietas y toca cualquier ingrediente en negrita para añadirlo aquí.</p>
+      <p class="empty-state" id="shoppingListEmpty">Todavía no has añadido nada. Escribe un producto arriba, o ve a Recetas o Dietas y toca cualquier ingrediente en negrita para añadirlo aquí.</p>
     </section>
 
     <section id="aviso-legal" class="page legal-page" aria-label="Aviso legal">
