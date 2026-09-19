@@ -99,6 +99,19 @@ function isGlutenRelated(item) {
 // visitando el enlace del artículo y leyendo su etiqueta og:image/twitter:image.
 // Si falla (timeout, artículo sin esa etiqueta, bloqueo del medio, etc.) se deja sin
 // imagen sin más — nunca hace fallar el resto del proceso.
+//
+// Ojo: los enlaces de Google Noticias (news.google.com/rss/articles/...) NO
+// redirigen al medio real con una petición HTTP simple — devuelven una página de
+// Google que salta al artículo real mediante JavaScript. Un fetch() normal se queda
+// en esa página intermedia, cuya og:image es la MISMA genérica de Google para
+// cualquier artículo. Por eso, si tras seguir redirecciones seguimos en un dominio
+// de Google, descartamos la imagen en vez de aceptar ese resultado falso.
+const BLOCKED_IMAGE_HOST_PATTERNS = [/(^|\.)google\.com$/i, /(^|\.)googleusercontent\.com$/i, /(^|\.)gstatic\.com$/i];
+
+function isBlockedHost(hostname) {
+  return BLOCKED_IMAGE_HOST_PATTERNS.some((re) => re.test(hostname));
+}
+
 async function fetchOgImage(url, timeoutMs = 8000) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
@@ -111,6 +124,14 @@ async function fetchOgImage(url, timeoutMs = 8000) {
       },
     });
     if (!res.ok) return null;
+
+    const finalUrl = new URL(res.url);
+    if (isBlockedHost(finalUrl.hostname)) {
+      // No se salió de Google (o similar): no llegamos al artículo real, así que
+      // cualquier og:image que encontremos aquí sería la genérica, no la del medio.
+      return null;
+    }
+
     const html = await res.text();
     const match =
       html.match(/<meta[^>]+property=["']og:image["'][^>]*content=["']([^"']+)["']/i) ||
@@ -119,7 +140,9 @@ async function fetchOgImage(url, timeoutMs = 8000) {
       html.match(/<meta[^>]+content=["']([^"']+)["'][^>]*name=["']twitter:image["']/i);
     if (!match) return null;
     try {
-      return new URL(match[1], res.url).href;
+      const imageUrl = new URL(match[1], res.url);
+      if (isBlockedHost(imageUrl.hostname)) return null;
+      return imageUrl.href;
     } catch (err) {
       return null;
     }
@@ -145,11 +168,23 @@ async function mapWithConcurrency(items, limit, fn) {
 }
 
 async function enrichMissingImages(items) {
-  return mapWithConcurrency(items, 6, async (item) => {
+  const enriched = await mapWithConcurrency(items, 6, async (item) => {
     if (item.image) return item;
     const image = await fetchOgImage(item.link);
     return { ...item, image };
   });
+
+  // Red de seguridad adicional: si la misma URL de imagen aparece en 3 o más
+  // artículos distintos, casi seguro es una imagen genérica (de una página
+  // intermedia, un logo por defecto, etc.) y no la foto real de cada uno — se
+  // descarta en vez de mostrar la misma foto en varias noticias distintas.
+  const counts = new Map();
+  enriched.forEach((item) => {
+    if (!item.image) return;
+    counts.set(item.image, (counts.get(item.image) || 0) + 1);
+  });
+
+  return enriched.map((item) => (item.image && counts.get(item.image) >= 3 ? { ...item, image: null } : item));
 }
 
 async function fetchAllNews() {
