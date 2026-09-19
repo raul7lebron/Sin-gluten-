@@ -142,7 +142,7 @@ function renderRecetas(query = "") {
     .map((receta) => {
       const content = `
         <h4>Ingredientes</h4>
-        <ul>${receta.ingredientes.map((i) => `<li>${i}</li>`).join("")}</ul>
+        <ul>${receta.ingredientes.map((i) => `<li class="shoppable" data-shop-text="${i}">${i}</li>`).join("")}</ul>
         <h4>Preparación</h4>
         <ol>${receta.pasos.map((p) => `<li>${p}</li>`).join("")}</ol>
       `;
@@ -190,7 +190,9 @@ function renderPlanDias(kcalKey, semanaIdx) {
     .map((d) => {
       const content = `
         <ul class="meal-list">
-          ${d.comidas.map((c) => `<li><strong>${c.label}:</strong> ${c.text}</li>`).join("")}
+          ${d.comidas
+            .map((c) => `<li class="shoppable" data-shop-text="${c.text}"><strong>${c.label}:</strong> ${c.text}</li>`)
+            .join("")}
         </ul>
       `;
       const item = { icon: "🍽️", title: d.dia, meta: `${semana.titulo} · ${plan.label}` };

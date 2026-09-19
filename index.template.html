@@ -46,6 +46,7 @@
         <button class="pill-btn" id="tab-dietas" data-target="dietas" type="button" role="tab" aria-selected="false" aria-controls="dietas"><span class="pill-icon" aria-hidden="true">🍽️</span>Dietas</button>
         <button class="pill-btn" id="tab-restaurantes" data-target="restaurantes" type="button" role="tab" aria-selected="false" aria-controls="restaurantes"><span class="pill-icon" aria-hidden="true">⭐</span>Restaurantes</button>
         <button class="pill-btn" id="tab-escaner" data-target="escaner" type="button" role="tab" aria-selected="false" aria-controls="escaner"><span class="pill-icon" aria-hidden="true">📷</span>Escáner</button>
+        <button class="pill-btn" id="tab-lista-compra" data-target="lista-compra" type="button" role="tab" aria-selected="false" aria-controls="lista-compra"><span class="pill-icon" aria-hidden="true">🛍️</span>Lista de la compra<span class="pill-badge" id="shoppingBadge" hidden>0</span></button>
       </nav>
     </div>
   </header>
@@ -203,6 +204,21 @@
       <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Esta herramienta consulta <a href="https://es.openfoodfacts.org" target="_blank" rel="noopener noreferrer">Open Food Facts</a>, una base de datos abierta y colaborativa: la información la añaden otros usuarios y puede estar incompleta, desactualizada o ser incorrecta. NO es una fuente médica ni sustituye la lectura del etiquetado real del producto ni la verificación con el fabricante. Ante cualquier duda, alergia grave o intolerancia severa, no te fíes únicamente de este resultado.</span></p>
     </section>
 
+    <section id="lista-compra" class="page" role="tabpanel" aria-labelledby="tab-lista-compra">
+      <span class="eyebrow">🛍️ Lista de la compra</span>
+      <h1 class="section-title">Tu lista de la compra</h1>
+
+      <div class="shopping-list-toolbar">
+        <p class="shopping-list-count" id="shoppingListCount"></p>
+        <button type="button" id="shoppingListClear" class="btn-secondary">Vaciar lista</button>
+      </div>
+
+      <div class="shopping-list-groups" id="shoppingListGroups"></div>
+      <p class="empty-state" id="shoppingListEmpty">Todavía no has añadido nada. Ve a Recetas o Dietas y toca un ingrediente para ver qué productos hay en cada supermercado.</p>
+
+      <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Esta lista se guarda solo en este dispositivo (no en un servidor). No mostramos precio ni peso/volumen por producto porque no disponemos de esos datos verificados para cada supermercado — escribe tú la cantidad que necesites en cada artículo.</span></p>
+    </section>
+
     <section id="aviso-legal" class="page legal-page" aria-label="Aviso legal">
       <a href="#" class="legal-back" data-scroll-target="inicio">← Volver a Libre de Trigo</a>
       <span class="eyebrow">⚖️ Legal</span>
@@ -349,6 +365,7 @@
         <a href="#" data-scroll-target="dietas">Dietas</a>
         <a href="#" data-scroll-target="restaurantes">Restaurantes</a>
         <a href="#" data-scroll-target="escaner">Escáner</a>
+        <a href="#" data-scroll-target="lista-compra">Lista de la compra</a>
       </nav>
       <div class="footer-legal">
         <span class="footer-links-title">Aviso</span>
@@ -366,6 +383,21 @@
     </div>
   </footer>
 
+  <div class="ingredient-modal" id="ingredientModal" hidden>
+    <div class="ingredient-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="ingredientModalTitle">
+      <div class="ingredient-modal-header">
+        <div>
+          <span class="ingredient-modal-eyebrow">¿Qué necesitas para…?</span>
+          <h2 class="ingredient-modal-title" id="ingredientModalTitle"></h2>
+        </div>
+        <button type="button" id="ingredientModalClose" class="search-modal-close" aria-label="Cerrar">✕</button>
+      </div>
+      <p class="ingredient-modal-hint">Estas son las opciones sin gluten verificadas que coinciden con este ingrediente. No mostramos precio ni peso/volumen porque no tenemos esos datos confirmados por producto.</p>
+      <div class="ingredient-modal-results" id="ingredientModalResults"></div>
+      <button type="button" id="ingredientModalGeneric" class="ingredient-modal-generic"></button>
+    </div>
+  </div>
+
   <div class="cookie-banner" id="cookieBanner" hidden>
     <p>Usamos cookies de analítica (Google Analytics) para saber qué páginas se visitan más y mejorar el sitio. Solo se activan si las aceptas. Puedes leer más en nuestra <a href="#" data-scroll-target="cookies">Política de cookies</a>.</p>
     <div class="cookie-banner-actions">
@@ -379,6 +411,7 @@
   <script src="js/news.js"></script>
   <script src="js/script.js"></script>
   <script src="js/search.js"></script>
+  <script src="js/shopping-list.js"></script>
   <script src="js/analytics.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.20.0/umd/index.min.js"></script>
   <script src="js/scanner.js"></script>
