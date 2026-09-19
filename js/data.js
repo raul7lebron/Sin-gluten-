@@ -729,7 +729,7 @@ const recetas = [
   {
     icon: "🍳",
     title: "Tortilla de patatas clásica",
-    meta: "~320 kcal · 35 min",
+    meta: "~320 kcal · 35 min · Para 4 personas",
     ingredientes: ["4 patatas medianas", "5 huevos", "1 cebolla", "Aceite de oliva virgen extra", "Sal"],
     pasos: [
       "Pelar las patatas y cortarlas en láminas finas (2-3 mm); cortar la cebolla en juliana fina.",
@@ -745,7 +745,7 @@ const recetas = [
   {
     icon: "🍗",
     title: "Pollo al horno con verduras",
-    meta: "~410 kcal · 45 min",
+    meta: "~410 kcal · 45 min · Para 4 personas",
     ingredientes: ["4 muslos de pollo", "1 calabacín", "1 pimiento rojo", "2 patatas", "Aceite de oliva y romero"],
     pasos: [
       "Precalentar el horno a 200 °C con calor arriba y abajo.",
@@ -761,7 +761,7 @@ const recetas = [
   {
     icon: "🍤",
     title: "Arroz con verduras y gambas",
-    meta: "~380 kcal · 30 min",
+    meta: "~380 kcal · 30 min · Para 4 personas",
     ingredientes: ["300 g de arroz", "200 g de gambas peladas", "1 pimiento verde", "Guisantes", "Caldo de verduras sin gluten"],
     pasos: [
       "Picar el ajo y el pimiento verde en trozos pequeños.",
@@ -776,7 +776,7 @@ const recetas = [
   {
     icon: "🥑",
     title: "Ensalada de quinoa y aguacate",
-    meta: "~340 kcal · 20 min",
+    meta: "~340 kcal · 20 min · Para 2 personas",
     ingredientes: ["150 g de quinoa", "1 aguacate", "Tomates cherry", "Pepino", "Limón y aceite de oliva"],
     pasos: [
       "Enjuagar la quinoa con un colador fino bajo el grifo para quitar el sabor amargo de la saponina.",
@@ -791,7 +791,7 @@ const recetas = [
   {
     icon: "🎃",
     title: "Crema de calabaza",
-    meta: "~210 kcal · 30 min",
+    meta: "~210 kcal · 30 min · Para 4 personas",
     ingredientes: ["500 g de calabaza", "1 cebolla", "1 zanahoria", "Caldo de verduras sin gluten", "Un chorrito de nata ligera (opcional)"],
     pasos: [
       "Pelar y trocear la calabaza, la cebolla y la zanahoria en trozos medianos.",
@@ -806,7 +806,7 @@ const recetas = [
   {
     icon: "🐟",
     title: "Salmón a la plancha con puré de boniato",
-    meta: "~430 kcal · 30 min",
+    meta: "~430 kcal · 30 min · Para 2 personas",
     ingredientes: ["2 lomos de salmón", "2 boniatos", "Leche o bebida vegetal", "Aceite de oliva", "Eneldo"],
     pasos: [
       "Pelar los boniatos y cortarlos en trozos medianos.",
@@ -822,7 +822,7 @@ const recetas = [
   {
     icon: "🍅",
     title: "Gazpacho andaluz",
-    meta: "~150 kcal · 15 min",
+    meta: "~150 kcal · 15 min · Para 4 personas",
     ingredientes: ["1 kg de tomates maduros", "1 pepino", "1 pimiento verde", "1 diente de ajo", "Aceite de oliva, vinagre y sal"],
     pasos: [
       "Lavar los tomates y quitarles el pedúnculo; trocear junto con el pepino, el pimiento verde y el ajo.",
@@ -837,7 +837,7 @@ const recetas = [
   {
     icon: "🍖",
     title: "Albóndigas en salsa de tomate",
-    meta: "~450 kcal · 50 min",
+    meta: "~450 kcal · 50 min · Para 4 personas",
     ingredientes: ["500 g de carne picada", "1 huevo", "Pan rallado sin gluten", "Tomate triturado", "Ajo, perejil y aceite de oliva"],
     pasos: [
       "Picar finamente el ajo y el perejil.",
@@ -853,7 +853,7 @@ const recetas = [
   {
     icon: "🥙",
     title: "Poke bowl de atún",
-    meta: "~420 kcal · 25 min",
+    meta: "~420 kcal · 25 min · Para 2 personas",
     ingredientes: ["200 g de atún fresco", "Arroz cocido", "Edamame", "Aguacate y zanahoria", "Salsa de soja sin gluten (tamari)"],
     pasos: [
       "Cortar el atún fresco en dados de 1-2 cm.",
@@ -868,7 +868,7 @@ const recetas = [
   {
     icon: "🥞",
     title: "Crepes de trigo sarraceno con fruta",
-    meta: "~280 kcal · 20 min",
+    meta: "~280 kcal · 20 min · Para 2 personas",
     ingredientes: [
       "150 g de harina de trigo sarraceno (naturalmente sin gluten)",
       "2 huevos",
@@ -890,7 +890,7 @@ const recetas = [
   {
     icon: "🥣",
     title: "Porridge de avena con frutos rojos",
-    meta: "~320 kcal · 10 min",
+    meta: "~320 kcal · 10 min · Para 1 persona",
     ingredientes: [
       "80 g de copos de avena certificados sin gluten",
       "250 ml de leche o bebida vegetal",
@@ -909,7 +909,7 @@ const recetas = [
   {
     icon: "🥔",
     title: "Vichyssoise (crema fría de puerro y patata)",
-    meta: "~230 kcal · 40 min + enfriado",
+    meta: "~230 kcal · 40 min + enfriado · Para 4 personas",
     ingredientes: ["3 puerros (solo la parte blanca)", "2 patatas medianas", "1 cebolla pequeña", "Caldo de verduras sin gluten", "Nata líquida o bebida vegetal"],
     pasos: [
       "Lavar bien los puerros entre las capas y cortarlos en rodajas finas, junto con la cebolla.",
@@ -925,7 +925,7 @@ const recetas = [
   {
     icon: "🍖",
     title: "Solomillo de cerdo con salsa de mostaza",
-    meta: "~410 kcal · 35 min",
+    meta: "~410 kcal · 35 min · Para 4 personas",
     ingredientes: ["1 solomillo de cerdo (~500 g)", "2 cucharadas de mostaza sin gluten", "200 ml de nata para cocinar", "1 cebolla", "Aceite de oliva"],
     pasos: [
       "Salpimentar el solomillo y cortarlo en medallones de 2-3 cm.",
@@ -941,7 +941,7 @@ const recetas = [
   {
     icon: "🐠",
     title: "Merluza en salsa verde",
-    meta: "~280 kcal · 30 min",
+    meta: "~280 kcal · 30 min · Para 4 personas",
     ingredientes: ["4 lomos de merluza", "3 dientes de ajo", "Perejil fresco", "200 ml de caldo de pescado sin gluten", "Aceite de oliva y 1 cucharada de harina de arroz (opcional)"],
     pasos: [
       "Salar los lomos de merluza y reservar.",
@@ -957,7 +957,7 @@ const recetas = [
   {
     icon: "🍛",
     title: "Curry de garbanzos y espinacas",
-    meta: "~360 kcal · 30 min",
+    meta: "~360 kcal · 30 min · Para 4 personas",
     ingredientes: ["400 g de garbanzos cocidos sin gluten", "200 g de espinacas frescas", "1 cebolla", "400 ml de leche de coco", "2 cucharaditas de curry en polvo sin gluten", "1 diente de ajo"],
     pasos: [
       "Picar la cebolla y el ajo finamente.",
@@ -972,7 +972,7 @@ const recetas = [
   {
     icon: "🍝",
     title: "Carbonara sin gluten",
-    meta: "~520 kcal · 20 min",
+    meta: "~520 kcal · 20 min · Para 4 personas",
     ingredientes: ["350 g de pasta sin gluten (espagueti)", "150 g de panceta o bacon", "3 huevos", "50 g de queso parmesano rallado", "Pimienta negra"],
     pasos: [
       "Poner una olla grande con agua y sal a hervir para la pasta.",
@@ -989,7 +989,7 @@ const recetas = [
   {
     icon: "🍫",
     title: "Brownie sin gluten",
-    meta: "~290 kcal por ración · 40 min",
+    meta: "~290 kcal por ración · 40 min · Para 9 raciones",
     ingredientes: ["200 g de chocolate negro sin gluten", "150 g de mantequilla", "3 huevos", "180 g de azúcar", "80 g de harina de arroz o mezcla panificable sin gluten", "Nueces troceadas (opcional)"],
     pasos: [
       "Precalentar el horno a 180 °C y forrar un molde rectangular con papel de horno.",
@@ -1001,6 +1001,164 @@ const recetas = [
       "Añadir las nueces si se desea y verter la masa en el molde.",
       "Hornear 20-25 minutos: el interior debe quedar húmedo y ligeramente poco hecho.",
       "Dejar enfriar completamente en el molde antes de cortar en cuadrados.",
+    ],
+  },
+  {
+    icon: "🥗",
+    title: "Ensalada César con pollo (sin gluten)",
+    meta: "~380 kcal · 25 min · Para 2 personas",
+    ingredientes: ["2 pechugas de pollo", "1 lechuga romana", "50 g de pan sin gluten (para picatostes)", "30 g de queso parmesano rallado", "Salsa César sin gluten (o yogur, limón, ajo y anchoa)"],
+    pasos: [
+      "Salpimentar las pechugas de pollo y cocinarlas a la plancha 5-6 minutos por cada lado, hasta que estén doradas y hechas por dentro.",
+      "Dejar reposar el pollo 5 minutos y cortarlo en tiras.",
+      "Cortar el pan sin gluten en dados pequeños y tostarlos en una sartén con un poco de aceite hasta que estén dorados y crujientes.",
+      "Lavar y trocear la lechuga romana en trozos grandes.",
+      "Preparar la salsa césar mezclando yogur, un diente de ajo picado, zumo de limón, una anchoa picada y aceite de oliva (o usar una salsa césar comercial sin gluten).",
+      "Mezclar la lechuga con la salsa en un bol grande.",
+      "Repartir el pollo y los picatostes por encima y terminar con el parmesano rallado.",
+    ],
+  },
+  {
+    icon: "🍖",
+    title: "Pastel de carne sin gluten",
+    meta: "~380 kcal · 60 min · Para 4 personas",
+    ingredientes: ["600 g de carne picada de ternera", "1 huevo", "50 g de copos de avena certificados sin gluten", "1 cebolla", "2 cucharadas de kétchup sin gluten"],
+    pasos: [
+      "Precalentar el horno a 180 °C.",
+      "Picar la cebolla muy fina y rehogarla 5 minutos en una sartén con un poco de aceite hasta que esté transparente; dejar enfriar.",
+      "Mezclar en un bol la carne picada, el huevo, los copos de avena, la cebolla pochada y salpimentar.",
+      "Amasar bien hasta integrar todos los ingredientes.",
+      "Dar forma de pan alargado y colocar en una bandeja de horno forrada con papel.",
+      "Untar la superficie con el kétchup sin gluten.",
+      "Hornear 40-45 minutos, hasta que esté dorado por fuera y hecho por dentro.",
+      "Dejar reposar 10 minutos antes de cortar en rodajas.",
+    ],
+  },
+  {
+    icon: "🍄",
+    title: "Risotto de champiñones",
+    meta: "~420 kcal · 35 min · Para 4 personas",
+    ingredientes: ["320 g de arroz arborio", "300 g de champiñones", "1 cebolla", "1 litro de caldo de verduras sin gluten", "50 g de queso parmesano rallado"],
+    pasos: [
+      "Calentar el caldo de verduras en un cazo y mantenerlo caliente a fuego muy bajo.",
+      "Picar la cebolla finamente y laminar los champiñones.",
+      "Rehogar la cebolla en una cazuela amplia con aceite de oliva 4-5 minutos, hasta que esté blanda.",
+      "Añadir los champiñones y saltear 3-4 minutos, hasta que suelten su agua y se doren ligeramente.",
+      "Incorporar el arroz y remover 1-2 minutos para que se impregne del sofrito.",
+      "Añadir el caldo caliente poco a poco, un cucharón cada vez, sin dejar de remover y esperando a que se absorba antes de añadir más.",
+      "Repetir el proceso durante 18-20 minutos, hasta que el arroz esté en su punto (cremoso por fuera, ligeramente al dente por dentro).",
+      "Retirar del fuego, añadir el parmesano rallado y remover enérgicamente para que quede meloso; dejar reposar 2 minutos y servir.",
+    ],
+  },
+  {
+    icon: "🥞",
+    title: "Tortitas de plátano sin gluten",
+    meta: "~300 kcal · 15 min · Para 2 personas",
+    ingredientes: ["2 plátanos maduros", "3 huevos", "50 g de harina de avena certificada sin gluten", "1 cucharadita de levadura sin gluten", "Canela al gusto"],
+    pasos: [
+      "Chafar los plátanos con un tenedor hasta obtener un puré.",
+      "Batir los huevos y mezclarlos con el puré de plátano.",
+      "Añadir la harina de avena, la levadura y la canela, y mezclar hasta obtener una masa homogénea sin grumos.",
+      "Calentar una sartén antiadherente a fuego medio con un poco de aceite.",
+      "Verter un cucharón de masa por tortita y cocinar 2 minutos, hasta que aparezcan burbujas en la superficie.",
+      "Dar la vuelta y cocinar 1-2 minutos más por el otro lado.",
+      "Repetir con el resto de la masa y servir templadas.",
+    ],
+  },
+  {
+    icon: "🥢",
+    title: "Wok de ternera y verduras",
+    meta: "~400 kcal · 25 min · Para 3 personas",
+    ingredientes: ["400 g de ternera en tiras finas", "1 pimiento rojo", "1 zanahoria", "150 g de brócoli", "Salsa de soja sin gluten (tamari)"],
+    pasos: [
+      "Cortar el pimiento y la zanahoria en tiras finas y el brócoli en arbolitos pequeños.",
+      "Calentar un wok o sartén amplia a fuego fuerte con un poco de aceite.",
+      "Saltear la ternera en tandas pequeñas 2-3 minutos, hasta que esté dorada; retirar y reservar.",
+      "En el mismo wok, saltear las verduras 4-5 minutos, empezando por la zanahoria y el brócoli y añadiendo el pimiento al final.",
+      "Volver a incorporar la ternera al wok.",
+      "Añadir la salsa de soja sin gluten y saltear todo junto 1-2 minutos más, hasta que quede bien integrado.",
+      "Servir caliente, con arroz blanco o fideos de arroz como acompañamiento si se desea.",
+    ],
+  },
+  {
+    icon: "🍆",
+    title: "Lasaña de calabacín (sin pasta)",
+    meta: "~310 kcal · 55 min · Para 4 personas",
+    ingredientes: ["3 calabacines grandes", "400 g de carne picada", "400 g de tomate triturado", "200 g de queso mozzarella rallado", "1 cebolla"],
+    pasos: [
+      "Cortar los calabacines en láminas finas a lo largo, con ayuda de una mandolina o un pelador.",
+      "Salar las láminas y dejarlas reposar 10 minutos sobre papel de cocina para que suelten agua; secar bien.",
+      "Picar la cebolla y rehogarla en una sartén con aceite 5 minutos, hasta que esté blanda.",
+      "Añadir la carne picada y dorarla a fuego medio-alto, deshaciendo los grumos.",
+      "Incorporar el tomate triturado, salpimentar y cocinar 10-12 minutos a fuego lento.",
+      "Precalentar el horno a 190 °C.",
+      "Montar la lasaña en una fuente alternando capas de láminas de calabacín, carne con tomate y queso mozzarella, terminando con una capa de queso.",
+      "Hornear 25-30 minutos, hasta que esté gratinado y burbujeante por encima.",
+      "Dejar reposar 5-10 minutos antes de servir para que se asiente.",
+    ],
+  },
+  {
+    icon: "🥗",
+    title: "Buddha bowl de garbanzos asados",
+    meta: "~450 kcal · 35 min · Para 2 personas",
+    ingredientes: ["400 g de garbanzos cocidos", "1 boniato", "100 g de espinacas frescas", "1 aguacate", "Tahini y limón para la salsa"],
+    pasos: [
+      "Precalentar el horno a 200 °C.",
+      "Escurrir y secar bien los garbanzos; mezclarlos con aceite de oliva, sal y las especias que se prefieran.",
+      "Pelar el boniato y cortarlo en dados; mezclar también con aceite y sal.",
+      "Repartir los garbanzos y el boniato en una bandeja de horno y asar 20-25 minutos, removiendo a mitad de cocción, hasta que estén dorados y crujientes.",
+      "Mientras tanto, preparar la salsa de tahini mezclando tahini, zumo de limón, agua y una pizca de sal hasta que quede fluida.",
+      "Lavar las espinacas y cortar el aguacate en láminas.",
+      "Montar el bowl con la base de espinacas y repartir el boniato, los garbanzos y el aguacate.",
+      "Terminar con la salsa de tahini por encima.",
+    ],
+  },
+  {
+    icon: "🍲",
+    title: "Sopa de miso con tofu",
+    meta: "~140 kcal · 15 min · Para 2 personas",
+    ingredientes: ["2 cucharadas de pasta de miso", "150 g de tofu firme", "1 lámina de alga wakame", "500 ml de agua o caldo suave", "1 cebolleta"],
+    pasos: [
+      "Hidratar el alga wakame en agua fría 5 minutos y escurrir.",
+      "Cortar el tofu en dados pequeños y la cebolleta en aros finos.",
+      "Calentar el agua o caldo en un cazo sin que llegue a hervir con fuerza.",
+      "Disolver la pasta de miso en un cazo pequeño con un poco del caldo caliente, removiendo hasta que no queden grumos.",
+      "Verter la mezcla de miso disuelto de nuevo en el cazo principal.",
+      "Añadir el tofu y el alga wakame hidratada, y calentar 2-3 minutos sin llegar a hervir (el hervor fuerte estropea el sabor del miso).",
+      "Servir caliente con la cebolleta picada por encima.",
+    ],
+  },
+  {
+    icon: "🍰",
+    title: "Tarta de queso sin gluten",
+    meta: "~340 kcal por ración · 70 min + enfriado · Para 8 raciones",
+    ingredientes: ["600 g de queso crema", "3 huevos", "150 g de azúcar", "200 ml de nata para montar", "20 g de maicena (fécula de maíz)"],
+    pasos: [
+      "Precalentar el horno a 180 °C y forrar un molde desmontable con papel de horno.",
+      "Batir el queso crema con el azúcar hasta que quede una mezcla homogénea y sin grumos.",
+      "Añadir los huevos uno a uno, batiendo bien después de cada uno.",
+      "Incorporar la nata y la maicena, y mezclar hasta integrar todo.",
+      "Verter la mezcla en el molde preparado.",
+      "Hornear 45-50 minutos, hasta que los bordes estén cuajados y el centro tenga un ligero temblor.",
+      "Apagar el horno y dejar la tarta dentro con la puerta entreabierta 30 minutos.",
+      "Enfriar completamente a temperatura ambiente y refrigerar al menos 4 horas antes de desmoldar y servir.",
+    ],
+  },
+  {
+    icon: "🧆",
+    title: "Falafel al horno con salsa de yogur",
+    meta: "~360 kcal · 40 min + remojo · Para 4 personas",
+    ingredientes: ["250 g de garbanzos secos (en remojo 12 h)", "1 cebolla", "2 dientes de ajo", "Perejil y comino", "Yogur griego natural para la salsa"],
+    pasos: [
+      "Escurrir bien los garbanzos, que deben llevar en remojo con agua fría al menos 12 horas (no usar garbanzos ya cocidos, quedan demasiado blandos para el falafel).",
+      "Triturar los garbanzos escurridos junto con la cebolla, el ajo, el perejil, el comino, sal y pimienta hasta obtener una masa espesa y algo granulada.",
+      "Dejar reposar la masa 15-20 minutos en la nevera.",
+      "Precalentar el horno a 200 °C.",
+      "Formar bolitas o pequeñas hamburguesas con la masa y colocarlas en una bandeja forrada con papel de horno.",
+      "Pincelar con un poco de aceite de oliva.",
+      "Hornear 25-30 minutos, dando la vuelta a mitad de cocción, hasta que estén dorados y firmes.",
+      "Preparar la salsa mezclando yogur griego con ajo picado, limón y una pizca de sal.",
+      "Servir los falafel calientes acompañados de la salsa de yogur.",
     ],
   },
 ];
@@ -1415,6 +1573,7 @@ const SHOPPABLE_KEYWORDS = [
   "calabacín", "calabaza", "rúcula", "vichyssoise", "gazpacho", "miel", "anacardos", "pimientos",
   "pimiento", "cebolla", "ajo", "eneldo", "perejil", "limón", "guisantes", "sal", "cerdo",
   "boniatos", "boniato", "fruta", "cacao", "pasas", "romero", "nata",
+  "ternera", "champiñones", "lechuga", "mozzarella", "tahini", "kétchup", "mostaza",
 ];
 
 const NOMBRES_DIAS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
