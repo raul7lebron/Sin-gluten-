@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
         title: t.nombre,
         snippet: `${t.ciudad} · ${t.tipo}`,
         haystack: [t.nombre, t.ciudad, t.tipo, t.desc].join(" ").toLowerCase(),
-        action: () => openCard("supermercado", ".shop-card", t.nombre),
+        action: () => openCard("tiendas", ".shop-card", t.nombre),
       });
     });
 

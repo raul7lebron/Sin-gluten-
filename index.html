@@ -33,6 +33,7 @@
         <span class="pill-indicator" id="pillIndicator"></span>
         <button class="pill-btn active" id="tab-inicio" data-target="inicio" type="button" role="tab" aria-selected="true" aria-controls="inicio"><span class="pill-icon" aria-hidden="true">📰</span>Inicio</button>
         <button class="pill-btn" id="tab-supermercado" data-target="supermercado" type="button" role="tab" aria-selected="false" aria-controls="supermercado"><span class="pill-icon" aria-hidden="true">🛒</span>Supermercado</button>
+        <button class="pill-btn" id="tab-tiendas" data-target="tiendas" type="button" role="tab" aria-selected="false" aria-controls="tiendas"><span class="pill-icon" aria-hidden="true">🏬</span>Tiendas sin gluten</button>
         <button class="pill-btn" id="tab-recetas" data-target="recetas" type="button" role="tab" aria-selected="false" aria-controls="recetas"><span class="pill-icon" aria-hidden="true">🍳</span>Recetas</button>
         <button class="pill-btn" id="tab-dietas" data-target="dietas" type="button" role="tab" aria-selected="false" aria-controls="dietas"><span class="pill-icon" aria-hidden="true">🍽️</span>Dietas</button>
         <button class="pill-btn" id="tab-restaurantes" data-target="restaurantes" type="button" role="tab" aria-selected="false" aria-controls="restaurantes"><span class="pill-icon" aria-hidden="true">⭐</span>Restaurantes</button>
@@ -79,8 +80,11 @@
       <div class="card-grid" id="supermercadoGrid"></div>
 
       <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Comprueba siempre el sello o la etiqueta "sin gluten" del producto: las marcas y referencias disponibles varían según el supermercado y pueden cambiar con el tiempo.</span></p>
+    </section>
 
-      <h3 class="subsection-title">Tiendas especializadas sin gluten</h3>
+    <section id="tiendas" class="page" role="tabpanel" aria-labelledby="tab-tiendas">
+      <span class="eyebrow">🏬 Tiendas sin gluten</span>
+      <h1 class="section-title">Tiendas especializadas sin gluten</h1>
 
       <div class="shop-list" id="tiendasList"></div>
 
@@ -189,6 +193,7 @@
         <span class="footer-links-title">Secciones</span>
         <a href="#" data-scroll-target="inicio">Inicio</a>
         <a href="#" data-scroll-target="supermercado">Supermercado</a>
+        <a href="#" data-scroll-target="tiendas">Tiendas sin gluten</a>
         <a href="#" data-scroll-target="recetas">Recetas</a>
         <a href="#" data-scroll-target="dietas">Dietas</a>
         <a href="#" data-scroll-target="restaurantes">Restaurantes</a>
