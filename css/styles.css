@@ -854,19 +854,6 @@ a:focus-visible {
   justify-content: center;
 }
 
-.disclaimer {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-top: 20px;
-  padding: 14px 18px;
-  background: var(--note-bg);
-  border: 1px solid var(--note-border);
-  border-radius: var(--radius-md);
-  color: var(--note-text);
-  font-size: 0.85rem;
-}
-
 .disclaimer-icon {
   flex-shrink: 0;
 }
