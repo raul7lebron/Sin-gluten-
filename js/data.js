@@ -1674,6 +1674,7 @@ const restaurantesPorCiudad = {
     label: "Valencia",
     restaurantes: [
       { nombre: "Carlotes Café", nota: 4.9, resenas: 87, zona: "Ensanche / Extramurs", desc: "Cafetería 100% sin gluten certificada segura, personal formado en celiaquía." },
+      { nombre: "Somni", nota: 4.9, resenas: 666, zona: "Nou Campanar", desc: "Cocina de autor 100% sin gluten que mezcla raíces sirias y mediterráneas; de los creadores de El Miracle.", aprox: true },
       { nombre: "Malkebien", nota: 4.7, resenas: 1446, zona: "Zona universitaria", desc: "Socio colaborador ACECOVA, pan y cerveza sin gluten." },
       { nombre: "Disidente", nota: 4.7, resenas: 431, zona: "Ensanche", desc: "Vegetariano con opciones sin gluten y gestión cuidadosa de alergias." },
       { nombre: "Civera Marisquería", nota: 4.6, resenas: 2000, zona: "Sant Francesc / centro", desc: "Marisquería histórica (desde los 60) incluida en el listado seguro de ACECOVA." },
