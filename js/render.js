@@ -250,7 +250,7 @@ function renderNutricion(query = "", categoria = "todos") {
     .map(
       (item) => `
       <tr>
-        <td><strong class="shoppable" data-shop-text="${item.nombre}">${item.nombre}</strong></td>
+        <td class="nutri-food-col"><strong class="shoppable" data-shop-text="${item.nombre}">${item.nombre}</strong></td>
         <td>${item.kcal}</td>
         <td>${item.proteinas}</td>
         <td>${item.carbohidratos}</td>
