@@ -28,7 +28,8 @@
       </a>
       <nav class="pill-nav" id="pillNav" role="tablist" aria-label="Secciones">
         <span class="pill-indicator" id="pillIndicator"></span>
-        <button class="pill-btn active" id="tab-supermercado" data-target="supermercado" type="button" role="tab" aria-selected="true" aria-controls="supermercado"><span class="pill-icon" aria-hidden="true">🛒</span>Supermercado</button>
+        <button class="pill-btn active" id="tab-inicio" data-target="inicio" type="button" role="tab" aria-selected="true" aria-controls="inicio"><span class="pill-icon" aria-hidden="true">📰</span>Inicio</button>
+        <button class="pill-btn" id="tab-supermercado" data-target="supermercado" type="button" role="tab" aria-selected="false" aria-controls="supermercado"><span class="pill-icon" aria-hidden="true">🛒</span>Supermercado</button>
         <button class="pill-btn" id="tab-recetas" data-target="recetas" type="button" role="tab" aria-selected="false" aria-controls="recetas"><span class="pill-icon" aria-hidden="true">🍳</span>Recetas</button>
         <button class="pill-btn" id="tab-dietas" data-target="dietas" type="button" role="tab" aria-selected="false" aria-controls="dietas"><span class="pill-icon" aria-hidden="true">🍽️</span>Dietas</button>
         <button class="pill-btn" id="tab-restaurantes" data-target="restaurantes" type="button" role="tab" aria-selected="false" aria-controls="restaurantes"><span class="pill-icon" aria-hidden="true">⭐</span>Restaurantes</button>
@@ -38,7 +39,20 @@
   </header>
 
   <main class="container">
-    <section id="supermercado" class="page active" role="tabpanel" aria-labelledby="tab-supermercado">
+    <section id="inicio" class="page active" role="tabpanel" aria-labelledby="tab-inicio">
+      <span class="eyebrow">📰 Inicio</span>
+      <h1 class="section-title">Actualidad sobre el gluten</h1>
+      <p class="section-subtitle">Últimas noticias sobre celiaquía, alertas alimentarias e investigación sobre el gluten, actualizadas automáticamente varias veces al día.</p>
+
+      <p class="news-updated" id="newsUpdated" hidden></p>
+
+      <div class="news-grid" id="newsGrid"></div>
+      <p class="empty-state" id="newsEmpty" hidden>No se han podido cargar las noticias en este momento. Vuelve a intentarlo más tarde.</p>
+
+      <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Noticias recopiladas automáticamente de medios y asociaciones de celíacos mediante fuentes RSS públicas. Libre de Trigo no redacta ni verifica el contenido de estos artículos: consulta siempre la fuente original antes de dar por buena cualquier información médica o de seguridad alimentaria.</span></p>
+    </section>
+
+    <section id="supermercado" class="page" role="tabpanel" aria-labelledby="tab-supermercado">
       <span class="eyebrow">🛒 Supermercado</span>
       <h1 class="section-title">Categorías sin gluten</h1>
       <p class="section-subtitle">Categorías y ejemplos de productos certificados sin gluten para tu compra semanal.</p>
@@ -173,6 +187,7 @@
       </div>
       <nav class="footer-links" aria-label="Secciones">
         <span class="footer-links-title">Secciones</span>
+        <a href="#" data-scroll-target="inicio">Inicio</a>
         <a href="#" data-scroll-target="supermercado">Supermercado</a>
         <a href="#" data-scroll-target="recetas">Recetas</a>
         <a href="#" data-scroll-target="dietas">Dietas</a>
@@ -191,6 +206,7 @@
 
   <script src="js/data.js"></script>
   <script src="js/render.js"></script>
+  <script src="js/news.js"></script>
   <script src="js/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.20.0/umd/index.min.js"></script>
   <script src="js/scanner.js"></script>

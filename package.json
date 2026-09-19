@@ -1,0 +1,12 @@
+{
+  "name": "libre-de-trigo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Web estatica de Libre de Trigo. Este package.json solo existe para el workflow automatico que actualiza data/news.json, no hace falta para servir el sitio.",
+  "scripts": {
+    "fetch-news": "node scripts/fetch-news.js"
+  },
+  "dependencies": {
+    "rss-parser": "^3.13.0"
+  }
+}
