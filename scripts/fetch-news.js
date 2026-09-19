@@ -94,6 +94,64 @@ function isGlutenRelated(item) {
   return /(gluten|cel[ií]ac|trigo)/.test(haystack);
 }
 
+// Google Noticias casi nunca trae imagen en el propio feed RSS, así que para esos
+// artículos (y cualquier otro sin imagen) intentamos sacar la foto de portada real
+// visitando el enlace del artículo y leyendo su etiqueta og:image/twitter:image.
+// Si falla (timeout, artículo sin esa etiqueta, bloqueo del medio, etc.) se deja sin
+// imagen sin más — nunca hace fallar el resto del proceso.
+async function fetchOgImage(url, timeoutMs = 8000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const res = await fetch(url, {
+      redirect: 'follow',
+      signal: controller.signal,
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (compatible; LibreDeTrigoBot/1.0; +https://www.libredetrigo.com)',
+      },
+    });
+    if (!res.ok) return null;
+    const html = await res.text();
+    const match =
+      html.match(/<meta[^>]+property=["']og:image["'][^>]*content=["']([^"']+)["']/i) ||
+      html.match(/<meta[^>]+content=["']([^"']+)["'][^>]*property=["']og:image["']/i) ||
+      html.match(/<meta[^>]+name=["']twitter:image["'][^>]*content=["']([^"']+)["']/i) ||
+      html.match(/<meta[^>]+content=["']([^"']+)["'][^>]*name=["']twitter:image["']/i);
+    if (!match) return null;
+    try {
+      return new URL(match[1], res.url).href;
+    } catch (err) {
+      return null;
+    }
+  } catch (err) {
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function mapWithConcurrency(items, limit, fn) {
+  const results = new Array(items.length);
+  let next = 0;
+  async function worker() {
+    while (next < items.length) {
+      const i = next;
+      next += 1;
+      results[i] = await fn(items[i], i);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
+  return results;
+}
+
+async function enrichMissingImages(items) {
+  return mapWithConcurrency(items, 6, async (item) => {
+    if (item.image) return item;
+    const image = await fetchOgImage(item.link);
+    return { ...item, image };
+  });
+}
+
 async function fetchAllNews() {
   const results = await Promise.all(FEEDS.map((feed) => fetchFeed(feed)));
   const merged = results.flat().filter(isGlutenRelated);
@@ -118,9 +176,13 @@ async function main() {
     process.exit(1);
   }
 
+  const enriched = await enrichMissingImages(items);
+  const withImage = enriched.filter((item) => item.image).length;
+  console.log(`[news] ${withImage}/${enriched.length} artículos con imagen de portada`);
+
   const payload = {
     updatedAt: new Date().toISOString(),
-    items,
+    items: enriched,
   };
 
   fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
