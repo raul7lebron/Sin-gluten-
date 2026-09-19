@@ -54,4 +54,4 @@ async function loadNews() {
   }
 }
 
-loadNews();
+window.__newsRenderPromise = loadNews();

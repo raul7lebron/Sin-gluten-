@@ -1,36 +1,42 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Generado automáticamente por scripts/prerender.js a partir de index.template.html. No edites este archivo a mano: los cambios se perderán en la próxima ejecución de "npm run prerender". -->
+<!--
+  Esta es la PLANTILLA fuente. El archivo servido de verdad es index.html, generado
+  automáticamente a partir de esta plantilla con "npm run prerender" (hornea dentro
+  del HTML el contenido que normalmente construye JavaScript, para que sea visible
+  sin ejecutar JS). Edita este archivo, nunca index.html directamente — se sobrescribe.
+  Un GitHub Action lo regenera solo en cada push que toque index.template.html, js/**
+  o data/news.json, por si te olvidas de ejecutarlo tú.
+--><!DOCTYPE html><html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Libre de Trigo — Guía práctica para vivir sin gluten</title>
-  <meta name="description" content="Guía práctica para vivir sin gluten: supermercado, recetas, planes de dieta, ranking de restaurantes por ciudad y un escáner de códigos de barras." />
-  <meta name="theme-color" content="#0e6e5f" />
-  <link rel="canonical" href="https://www.libredetrigo.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Libre de Trigo" />
-  <meta property="og:title" content="Libre de Trigo — Guía práctica para vivir sin gluten" />
-  <meta property="og:description" content="Supermercado, recetas, planes de dieta, ranking de restaurantes por ciudad y un escáner de gluten, todo en un solo sitio." />
-  <meta property="og:url" content="https://www.libredetrigo.com/" />
-  <meta name="twitter:card" content="summary" />
-  <link rel="icon" type="image/png" href="img/favicon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta name="description" content="Guía práctica para vivir sin gluten: supermercado, recetas, planes de dieta, ranking de restaurantes por ciudad y un escáner de códigos de barras.">
+  <meta name="theme-color" content="#0e6e5f">
+  <link rel="canonical" href="https://www.libredetrigo.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Libre de Trigo">
+  <meta property="og:title" content="Libre de Trigo — Guía práctica para vivir sin gluten">
+  <meta property="og:description" content="Supermercado, recetas, planes de dieta, ranking de restaurantes por ciudad y un escáner de gluten, todo en un solo sitio.">
+  <meta property="og:url" content="https://www.libredetrigo.com/">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header class="site-header" id="siteHeader">
     <div class="header-inner container">
       <a href="#" class="logo">
-        <img src="img/logo.png" alt="Libre de Trigo" class="logo-img" />
+        <img src="img/logo.png" alt="Libre de Trigo" class="logo-img">
         <span class="logo-tagline">Guía práctica para vivir sin gluten</span>
       </a>
       <button class="header-search-btn" id="searchToggle" type="button" aria-label="Buscar en toda la web" aria-haspopup="dialog">
         <span aria-hidden="true">🔍</span>
       </button>
       <nav class="pill-nav" id="pillNav" role="tablist" aria-label="Secciones">
-        <span class="pill-indicator" id="pillIndicator"></span>
+        <span class="pill-indicator" id="pillIndicator" style="width: 0px; transform: translateX(-4px);"></span>
         <button class="pill-btn active" id="tab-inicio" data-target="inicio" type="button" role="tab" aria-selected="true" aria-controls="inicio"><span class="pill-icon" aria-hidden="true">📰</span>Inicio</button>
         <button class="pill-btn" id="tab-supermercado" data-target="supermercado" type="button" role="tab" aria-selected="false" aria-controls="supermercado"><span class="pill-icon" aria-hidden="true">🛒</span>Supermercado</button>
         <button class="pill-btn" id="tab-tiendas" data-target="tiendas" type="button" role="tab" aria-selected="false" aria-controls="tiendas"><span class="pill-icon" aria-hidden="true">🏬</span>Tiendas sin gluten</button>
@@ -42,11 +48,11 @@
     </div>
   </header>
 
-  <div class="search-overlay" id="searchOverlay" hidden>
+  <div class="search-overlay" id="searchOverlay" hidden="">
     <div class="search-modal" role="dialog" aria-modal="true" aria-label="Buscar en toda la web">
       <div class="search-modal-input-row">
         <span class="search-modal-icon" aria-hidden="true">🔍</span>
-        <input type="search" id="searchModalInput" placeholder="Buscar recetas, productos, restaurantes, noticias…" aria-label="Buscar en toda la web" autocomplete="off" />
+        <input type="search" id="searchModalInput" placeholder="Buscar recetas, productos, restaurantes, noticias…" aria-label="Buscar en toda la web" autocomplete="off">
         <button class="search-modal-close" id="searchModalClose" type="button" aria-label="Cerrar búsqueda">✕</button>
       </div>
       <div class="search-modal-results" id="searchModalResults"></div>
@@ -58,8 +64,320 @@
       <span class="eyebrow">📰 Inicio</span>
       <h1 class="section-title">Actualidad sobre el gluten</h1>
 
-      <div class="news-grid" id="newsGrid"></div>
-      <p class="empty-state" id="newsEmpty" hidden>No se han podido cargar las noticias en este momento. Vuelve a intentarlo más tarde.</p>
+      <div class="news-grid" id="newsGrid">
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">RO Contenidos</span>
+          <span class="news-date">19 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxOZDFDTWROTnFWT3RLRVltcTU0OHc4Q254YmR2M2Z3RWpUQmpmOWI1b3lDVWpZOWtsLVEyXzBfVjNZdnBXQkw3TEVYeV9ER1Z4YnNCUEFKVkZyV2hzdEZvR2VETDZFWE5nMlRmMU03ZmFaRmpIaDVZc2hJYjRfQzN6aV9wRlRmVGxqSVN2OHZ1d1Fsb3pOWnhXRnNIb0l0emRuY2FZcEE4S2VMSHJrRENqXzI5Slp4cDVKSXNSaERja3U1eEpQcTFXeA?oc=5" target="_blank" rel="noopener noreferrer">Colonia Sin Gluten: UTU Nueva Helvecia será sede de una jornada con productos, charlas y talleres</a></h3>
+        <p class="news-summary">Colonia Sin Gluten: UTU Nueva Helvecia será sede de una jornada con productos, charlas y talleres&nbsp;&nbsp;RO Contenidos</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxOZDFDTWROTnFWT3RLRVltcTU0OHc4Q254YmR2M2Z3RWpUQmpmOWI1b3lDVWpZOWtsLVEyXzBfVjNZdnBXQkw3TEVYeV9ER1Z4YnNCUEFKVkZyV2hzdEZvR2VETDZFWE5nMlRmMU03ZmFaRmpIaDVZc2hJYjRfQzN6aV9wRlRmVGxqSVN2OHZ1d1Fsb3pOWnhXRnNIb0l0emRuY2FZcEE4S2VMSHJrRENqXzI5Slp4cDVKSXNSaERja3U1eEpQcTFXeA?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">noticiasdebariloche.com.ar</span>
+          <span class="news-date">19 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQYzFWQ3VWWmtCc1lURjhpRWlGVWJqSHNwX3RIQ29hODcyOTl4XzBrdVBLNGpMN3VlU0xxYUJHTk9CTk9pbUxzeklLTUhCeUphZERJZGR0c25WbjM4LVpzVk9TY0prTUc1WlVncWZKM1N2Z1VpbEs5Zjh1X2ljYlRRQ0ViUXBkdGcwNXdxZ0pWcUFDa0txeHA5dTlHeUNjNkxhR2V5UmVjTnRwT05pRmg3SUk2MTVWa29RV1o2WEtpd192dlXSAcgBQVVfeXFMUFUxQkFqZUFWTXZ6SmJoMTdodUppMHA1M0w2N01fNkhVdlJRdko1eGh2aUNuZmNPOGxWVEY5WU9kRC1wTk16em1KQzJfd1NJMGUwa0gzVzVndDVaNnpBTHU3aXVDd09hVks2T0ZnYzBvTzZEaXJweTBsOEUzSE14VUJFRTRfb0U2ZUNaRi1UOHdrT1lIeFlDUXp0OUJocU1rT1MwY1dJd0xVQkZ3OW5hMVZGUzYxX3dKTzNFV1BuMnBoaGlQaW9ibGk?oc=5" target="_blank" rel="noopener noreferrer">Alimentos sin gluten: cuáles son naturalmente aptos y cómo armar una dieta equilibrada</a></h3>
+        <p class="news-summary">Alimentos sin gluten: cuáles son naturalmente aptos y cómo armar una dieta equilibrada&nbsp;&nbsp;noticiasdebariloche.com.ar</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQYzFWQ3VWWmtCc1lURjhpRWlGVWJqSHNwX3RIQ29hODcyOTl4XzBrdVBLNGpMN3VlU0xxYUJHTk9CTk9pbUxzeklLTUhCeUphZERJZGR0c25WbjM4LVpzVk9TY0prTUc1WlVncWZKM1N2Z1VpbEs5Zjh1X2ljYlRRQ0ViUXBkdGcwNXdxZ0pWcUFDa0txeHA5dTlHeUNjNkxhR2V5UmVjTnRwT05pRmg3SUk2MTVWa29RV1o2WEtpd192dlXSAcgBQVVfeXFMUFUxQkFqZUFWTXZ6SmJoMTdodUppMHA1M0w2N01fNkhVdlJRdko1eGh2aUNuZmNPOGxWVEY5WU9kRC1wTk16em1KQzJfd1NJMGUwa0gzVzVndDVaNnpBTHU3aXVDd09hVks2T0ZnYzBvTzZEaXJweTBsOEUzSE14VUJFRTRfb0U2ZUNaRi1UOHdrT1lIeFlDUXp0OUJocU1rT1MwY1dJd0xVQkZ3OW5hMVZGUzYxX3dKTzNFV1BuMnBoaGlQaW9ibGk?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">Noticias del Vino</span>
+          <span class="news-date">19 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMiiwJBVV95cUxQUmxTZVU4ZGUxbkhyeVkzLUdpQ0RwWHBxTnFyYzNVRUZpa2xBeHBDR3h4VDZUMERPMEN4aUFFNThsTDBYM3JDVmFaYzB2Si1VVld1OUE4a0s4ZFJOQkpnNmQ1LTVhQTV6eHJkNmg0VkFadDR3ZkZ2X1JoRlRPTEQtYlZiREw0QzRYR1hZU1ZTRnFyMHpKMmVxT2N6aHNWUmpQYlZQdEI2WTVyTDZvOTczV0tYdWtwZ1dTWGdYUnBGRU9jT2RZeUlxSlpPaTd3TjU5Qk9xZmJYVEkxWDQ3WTBXQ0ktN0lpU2tvUFNXcndOVGgxTVNUTzB0Z2hPekV3WU5oRFhkeHZKSG80ZTQ?oc=5" target="_blank" rel="noopener noreferrer">Ismael Galancho, experto en nutrición: «Quitar el gluten de la dieta de forma arbitraria es un error absoluto»</a></h3>
+        <p class="news-summary">Ismael Galancho, experto en nutrición: «Quitar el gluten de la dieta de forma arbitraria es un error absoluto»&nbsp;&nbsp;Noticias del Vino</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMiiwJBVV95cUxQUmxTZVU4ZGUxbkhyeVkzLUdpQ0RwWHBxTnFyYzNVRUZpa2xBeHBDR3h4VDZUMERPMEN4aUFFNThsTDBYM3JDVmFaYzB2Si1VVld1OUE4a0s4ZFJOQkpnNmQ1LTVhQTV6eHJkNmg0VkFadDR3ZkZ2X1JoRlRPTEQtYlZiREw0QzRYR1hZU1ZTRnFyMHpKMmVxT2N6aHNWUmpQYlZQdEI2WTVyTDZvOTczV0tYdWtwZ1dTWGdYUnBGRU9jT2RZeUlxSlpPaTd3TjU5Qk9xZmJYVEkxWDQ3WTBXQ0ktN0lpU2tvUFNXcndOVGgxTVNUTzB0Z2hPekV3WU5oRFhkeHZKSG80ZTQ?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">FRS Food Retail &amp; Service</span>
+          <span class="news-date">17 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxOMmZxdEV3Mk5CMTFlS0k2ZGt0QzdFRHF2SlM5VmFqQVNwRkp3emg0bElibGlzNDVobDRYUVNpSF9qX1BybkZIc21Fc0c2X3ZkVEFSVVdMQTg4ei1rSFRlbkhuNHdXN0lzYWxEZ2VLcVp3WEhiY2UtTGliYXMtNGRBUzhRSWRycmdTQTZXNEt0RVp4Y1hXRndRQWJmME1rbm1ZTWZ2ZUlJTVFWMEZMVlM3bDZIYlpnNk1PbmFpOTE5OE9Qb2kx?oc=5" target="_blank" rel="noopener noreferrer">Dia presenta una funcionalidad online para ayudar a sus clientes a comprar 'Sin gluten'</a></h3>
+        <p class="news-summary">Dia presenta una funcionalidad online para ayudar a sus clientes a comprar 'Sin gluten'&nbsp;&nbsp;FRS Food Retail &amp; Service</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMixAFBVV95cUxOMmZxdEV3Mk5CMTFlS0k2ZGt0QzdFRHF2SlM5VmFqQVNwRkp3emg0bElibGlzNDVobDRYUVNpSF9qX1BybkZIc21Fc0c2X3ZkVEFSVVdMQTg4ei1rSFRlbkhuNHdXN0lzYWxEZ2VLcVp3WEhiY2UtTGliYXMtNGRBUzhRSWRycmdTQTZXNEt0RVp4Y1hXRndRQWJmME1rbm1ZTWZ2ZUlJTVFWMEZMVlM3bDZIYlpnNk1PbmFpOTE5OE9Qb2kx?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">diacorporate.com</span>
+          <span class="news-date">17 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxNcTdyeE1zR1pwTzdXVFZIMFZfc3M4ajhtRG9PRXhrVnFxSjFSaDJFSk1mNzluYTlrVjdlWFppQVp0WnprZ3dQV0ZLRDRSSU54Y3ViS1A0cHJPTzNva2tXU1Uxcm12SXlYSTVGNXktcmJjMVV3c0FpUEhxZWxZMDk2TWdUb3lsb1Ey?oc=5" target="_blank" rel="noopener noreferrer">Dia supera las 1.000 referencias de productos sin gluten</a></h3>
+        <p class="news-summary">Dia supera las 1.000 referencias de productos sin gluten&nbsp;&nbsp;diacorporate.com</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxNcTdyeE1zR1pwTzdXVFZIMFZfc3M4ajhtRG9PRXhrVnFxSjFSaDJFSk1mNzluYTlrVjdlWFppQVp0WnprZ3dQV0ZLRDRSSU54Y3ViS1A0cHJPTzNva2tXU1Uxcm12SXlYSTVGNXktcmJjMVV3c0FpUEhxZWxZMDk2TWdUb3lsb1Ey?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">- Financial Food</span>
+          <span class="news-date">17 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxNU2RIX1h1dGsyVkliR3J5WFhPSXAyeGxEQzJ1eVRDYzM4a1ExMUtVZXRPd3F1QWN0eUxqM25VckdMZ2cwb3NhaENhVm4xY0xZbEtRQmFFTDdIb2ZSSGZ2OFdUOXBFeEhkcHNtb1BURTJJenJTdDVUb040M2ZJczV4blBQSnQweVMyWEpDQUltaVVFQmlIWElLcW9JTjhPOE1VR3Q1VEEtNEFBbHA0SlBuVTdMWGdNS0NWN0hF?oc=5" target="_blank" rel="noopener noreferrer">Dia fortalece su apuesta por el surtido sin gluten facilitando su búsqueda en el canal online -</a></h3>
+        <p class="news-summary">Dia fortalece su apuesta por el surtido sin gluten facilitando su búsqueda en el canal online&nbsp;&nbsp;- Financial Food</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxNU2RIX1h1dGsyVkliR3J5WFhPSXAyeGxEQzJ1eVRDYzM4a1ExMUtVZXRPd3F1QWN0eUxqM25VckdMZ2cwb3NhaENhVm4xY0xZbEtRQmFFTDdIb2ZSSGZ2OFdUOXBFeEhkcHNtb1BURTJJenJTdDVUb040M2ZJczV4blBQSnQweVMyWEpDQUltaVVFQmlIWElLcW9JTjhPOE1VR3Q1VEEtNEFBbHA0SlBuVTdMWGdNS0NWN0hF?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">EL PAÍS</span>
+          <span class="news-date">16 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMi2wFBVV95cUxNQV9uanhMbENtUnZEWXhCMWtpTVV1MlpXbkw1U0VjeDVJal8yRzF2bVFOaEJHSVlDOUs1NUhOYnVjVU5EaUlXMlNtUXVQejh1bGNzdmVYVzBqNjRnRTdaelQydHhCZkZFdlRTVDYwNkRsa3RWNmlleUNhVmJQMFI0U0VzeExtQ05FNy1mM3RqRHlGeEFzS1VvWG9kQ0xyVHdQbGtCSWozUDF6VVFsUUpDSFVUZEdWQ3ZwZ1FRY21kSmV2djZ6amItcVdFenB4S0JIUGE3MVNRLWRxSTDSAe8BQVVfeXFMTmFZSVBLXzk1dFloU25HZHkxUjM1WVo4V0pmVVRNbEdHOW5XM2dPZ0pFRHdGZWJ3SnRiXzZhdmZiTzZrR1BhRWRkZGZDbm00dWc3Nmo1VjJYY2EwMk5RSjRfblRsQXRyU1E3b1llTFJIa1lacGl1VFhWaml0YUZKQUxFS3RLN3dqQS1Xa1NoRW0xVTVuY1VSU3dISlFkMFZYRTIweXZRa0hXazVkU0g5S1BhMUpHMEtmQUJxblU4M2RzZjhHaDIyTEk1NkluSHpCanVjcjd5NmNjYlN2cmxPOEIxd2ZfeTlXMFNjUE13aHM?oc=5" target="_blank" rel="noopener noreferrer">De la fantasía medieval a la cocina sin gluten: las fondas alternativas de las Fiestas Patrias de Chile</a></h3>
+        <p class="news-summary">De la fantasía medieval a la cocina sin gluten: las fondas alternativas de las Fiestas Patrias de Chile&nbsp;&nbsp;EL PAÍS</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMi2wFBVV95cUxNQV9uanhMbENtUnZEWXhCMWtpTVV1MlpXbkw1U0VjeDVJal8yRzF2bVFOaEJHSVlDOUs1NUhOYnVjVU5EaUlXMlNtUXVQejh1bGNzdmVYVzBqNjRnRTdaelQydHhCZkZFdlRTVDYwNkRsa3RWNmlleUNhVmJQMFI0U0VzeExtQ05FNy1mM3RqRHlGeEFzS1VvWG9kQ0xyVHdQbGtCSWozUDF6VVFsUUpDSFVUZEdWQ3ZwZ1FRY21kSmV2djZ6amItcVdFenB4S0JIUGE3MVNRLWRxSTDSAe8BQVVfeXFMTmFZSVBLXzk1dFloU25HZHkxUjM1WVo4V0pmVVRNbEdHOW5XM2dPZ0pFRHdGZWJ3SnRiXzZhdmZiTzZrR1BhRWRkZGZDbm00dWc3Nmo1VjJYY2EwMk5RSjRfblRsQXRyU1E3b1llTFJIa1lacGl1VFhWaml0YUZKQUxFS3RLN3dqQS1Xa1NoRW0xVTVuY1VSU3dISlFkMFZYRTIweXZRa0hXazVkU0g5S1BhMUpHMEtmQUJxblU4M2RzZjhHaDIyTEk1NkluSHpCanVjcjd5NmNjYlN2cmxPOEIxd2ZfeTlXMFNjUE13aHM?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">Time Out Worldwide</span>
+          <span class="news-date">16 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMi4gFBVV95cUxPNzNWUEVaaGlKN1dZdUJyMlQwVmNuM2xaZWN6VkJSRkRXWHBGZ1JSanVseFJnR3p2eTZCUGVsOWF3SC1NSVIyUlhFaFhvRDJBV2ZpbERwYlZ5U2FzSjRRaFJmd1lXMHRnZFlNX0tlVnBybER0cUVuR0FOYzdWVjZwR1pqdGlUR0lKTzVrRzNYakI4b09QdHgzSEtsSnpzYUlfNXNVVXdXSE96dnpndldQQ2hCMl9KYjd0RF9HUHJ5SXNwSTRsa0hGbXFnSEtYM0RzVnlhckhPc1Q0aEt4Z0VwMmFR?oc=5" target="_blank" rel="noopener noreferrer">Can Pizza innova en Barcelona con el primer restaurante con carta 100% simétrica con y sin gluten</a></h3>
+        <p class="news-summary">Can Pizza innova en Barcelona con el primer restaurante con carta 100% simétrica con y sin gluten&nbsp;&nbsp;Time Out Worldwide</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMi4gFBVV95cUxPNzNWUEVaaGlKN1dZdUJyMlQwVmNuM2xaZWN6VkJSRkRXWHBGZ1JSanVseFJnR3p2eTZCUGVsOWF3SC1NSVIyUlhFaFhvRDJBV2ZpbERwYlZ5U2FzSjRRaFJmd1lXMHRnZFlNX0tlVnBybER0cUVuR0FOYzdWVjZwR1pqdGlUR0lKTzVrRzNYakI4b09QdHgzSEtsSnpzYUlfNXNVVXdXSE96dnpndldQQ2hCMl9KYjd0RF9HUHJ5SXNwSTRsa0hGbXFnSEtYM0RzVnlhckhPc1Q0aEt4Z0VwMmFR?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">Diario de Ferrol</span>
+          <span class="news-date">15 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMi5AFBVV95cUxQaHpxaVJVa0J2Nmlqd0k4LWIxa2MyemNFM3Niam9SR0hON25uQmkyUjRiMm14MlptV0hRenBSaExsYjFXZ0lGS18zUnlBd3ZKVDhPT3RaWUJQNHNtc1hBd0Fsd0xtVVNrQU8tajh4b0hURzkxVkdqUE0xeFZueUFmQm9oMlRZdk9OT3ZncXJTOHVBamtMV0dyZk4xN2YtWFlTcDRaOWpmQVA1VVJPRUdMbHZfbXpvdThiaGkwNDF2OUsxZl9NMkkxMlFxU1QtZElab2ZCT0VlVUJNTFdyWEc3WEJPNV8?oc=5" target="_blank" rel="noopener noreferrer">El aprobado de Ferrolterra otorgado por la influencer celíaca ‘Angie glutenfree’</a></h3>
+        <p class="news-summary">El aprobado de Ferrolterra otorgado por la influencer celíaca ‘Angie glutenfree’&nbsp;&nbsp;Diario de Ferrol</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMi5AFBVV95cUxQaHpxaVJVa0J2Nmlqd0k4LWIxa2MyemNFM3Niam9SR0hON25uQmkyUjRiMm14MlptV0hRenBSaExsYjFXZ0lGS18zUnlBd3ZKVDhPT3RaWUJQNHNtc1hBd0Fsd0xtVVNrQU8tajh4b0hURzkxVkdqUE0xeFZueUFmQm9oMlRZdk9OT3ZncXJTOHVBamtMV0dyZk4xN2YtWFlTcDRaOWpmQVA1VVJPRUdMbHZfbXpvdThiaGkwNDF2OUsxZl9NMkkxMlFxU1QtZElab2ZCT0VlVUJNTFdyWEc3WEJPNV8?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">eldiariocantabria.es</span>
+          <span class="news-date">14 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMihwJBVV95cUxOUGRYellmRFVSdm1IUGZxYlZKWUplUWdoOVNsV213ZEZFcDJkRHZDLVU5RXhEUEtQYmxhczRPZHRYUFhyaERuVGVSZnlURkpYSnI4dU5JN0Zqb3ZHbWdwTW9KU0JNbjhibHBYUFlkWFhuX19zUXpsOFBKSnJ3MnZnWjAweVlZeE5iQ3ZQa1ZZYkpoNi1FZUprWGY2d3N3ZmlWQmJCbEIwSENVbjZmLTZrUDdWcEQ3RkJTbW10ZmgyVXU4WVdhN0ZrSEZhNl9IeGcwMmlHRmJMamFuZEN3SlF2SFZvcnJDaVhtMVQtYm96bFVYdDFpRklIMkRDVEw0VFQyT0pnTmVITdIBjAJBVV95cUxNTmFBNXlvTlNvd2RnTF9HUGxDMDNsYUNuLWRmbmZZMDJiX2lIX19Pb1ZZM3RfMUViMlJHcFJTNFNOWVNoTXpuRGtSMWtWWHBDS2dteTBtb0M5VGJHSDVCZktNWC11SzlxOHBMTDNmTV9Ub2FaNy1mcnlGV1ZWbl94XzNqeHY2NWVrMzVwcm5FaDBIYlZWQlZWM2NrYjNDd3NoZnVhMzNTZ1RWMHpoN2RYTDEtc2l4YzIzV0laVUhyYlg2NmI4c0FvalBRT2lDcUpmMnZDckhRaTVzVlUwS3FQekxFVVNYWEk2MkpDLTVVVzJ0clN3bkZ0MnpJV250dGFlSW13MEhuVXhFT3JP?oc=5" target="_blank" rel="noopener noreferrer">El PP deja a los celiacos sin 30.000 euros de ayudas para comprar los alimentos que necesitan al incluirlos en una partida que no corresponde</a></h3>
+        <p class="news-summary">El PP deja a los celiacos sin 30.000 euros de ayudas para comprar los alimentos que necesitan al incluirlos en una partida que no corresponde&nbsp;&nbsp;eldiariocantabria.es</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMihwJBVV95cUxOUGRYellmRFVSdm1IUGZxYlZKWUplUWdoOVNsV213ZEZFcDJkRHZDLVU5RXhEUEtQYmxhczRPZHRYUFhyaERuVGVSZnlURkpYSnI4dU5JN0Zqb3ZHbWdwTW9KU0JNbjhibHBYUFlkWFhuX19zUXpsOFBKSnJ3MnZnWjAweVlZeE5iQ3ZQa1ZZYkpoNi1FZUprWGY2d3N3ZmlWQmJCbEIwSENVbjZmLTZrUDdWcEQ3RkJTbW10ZmgyVXU4WVdhN0ZrSEZhNl9IeGcwMmlHRmJMamFuZEN3SlF2SFZvcnJDaVhtMVQtYm96bFVYdDFpRklIMkRDVEw0VFQyT0pnTmVITdIBjAJBVV95cUxNTmFBNXlvTlNvd2RnTF9HUGxDMDNsYUNuLWRmbmZZMDJiX2lIX19Pb1ZZM3RfMUViMlJHcFJTNFNOWVNoTXpuRGtSMWtWWHBDS2dteTBtb0M5VGJHSDVCZktNWC11SzlxOHBMTDNmTV9Ub2FaNy1mcnlGV1ZWbl94XzNqeHY2NWVrMzVwcm5FaDBIYlZWQlZWM2NrYjNDd3NoZnVhMzNTZ1RWMHpoN2RYTDEtc2l4YzIzV0laVUhyYlg2NmI4c0FvalBRT2lDcUpmMnZDckhRaTVzVlUwS3FQekxFVVNYWEk2MkpDLTVVVzJ0clN3bkZ0MnpJV250dGFlSW13MEhuVXhFT3JP?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">Aragón Digital</span>
+          <span class="news-date">14 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMiggJBVV95cUxQcGtBaHdrczBEYmtvZHhSNk5CdnhVTUxHMmxsMkR1U2hOeTc4OHRLSzQzQ2RBUlZXOEFtcUpDZmVKZVFqOUhoaVdLUE5RMUJkYlhVSk9LSnNOS1djdkowRnIyUzA2WHZfd182UGRmMVl3dE1YdzNKNW11TU1ScVljM2hHVGVMdDZTVzBrN09JSmF3ZWdTdFlDWHZhT09HWS1IWEZ0ZFh5ZDdtZ0ZOUFZBSVdWWm5lQUd1dDBuNC1kUDVpUmZaUUN2WTlLQ0sydHdvbXA5SWZ0dWFIN1pxT3MxN1FjYkRKZVJOX2g1ejhhakU0VnYwQkxycU1paHdWckhSWXfSAYcCQVVfeXFMUDZmVmVEaFFRV0lYMTFMT0lLZ2hCN0pYbHlTYTB1dy1MQkNvLUJXemJmNUZvN3VoTVdxX184RHF3ZjBscm05OFZoVEstWUZ2Wnhyemx4QVlaZmhJUlFUNFB5OWpxX3BidmJReHMyaHRIZjg1MG5XWHh6RXZEdk5KZDlpclh2SUZQMktyY29lb1FRZm4wQU9YV092XzJfQ01BNVBrVUp3NVJxVFpNVTEtTGxSN1pDUGhZTFItYnpySlAxZlcxeHNFSS1rTG5hS0NEX0xNLUQzMDVJbmxUNEx0dU5MZDI2dG1Uc1g1aHJ6ZXRPcGFJNWd5NndPVFZvX2RJdklwZ1hOTk0?oc=5" target="_blank" rel="noopener noreferrer">Comer sin gluten en las Fiestas del Pilar 2026: estas Foodtrucks tendrán opciones para celíacos</a></h3>
+        <p class="news-summary">Comer sin gluten en las Fiestas del Pilar 2026: estas Foodtrucks tendrán opciones para celíacos&nbsp;&nbsp;Aragón Digital</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMiggJBVV95cUxQcGtBaHdrczBEYmtvZHhSNk5CdnhVTUxHMmxsMkR1U2hOeTc4OHRLSzQzQ2RBUlZXOEFtcUpDZmVKZVFqOUhoaVdLUE5RMUJkYlhVSk9LSnNOS1djdkowRnIyUzA2WHZfd182UGRmMVl3dE1YdzNKNW11TU1ScVljM2hHVGVMdDZTVzBrN09JSmF3ZWdTdFlDWHZhT09HWS1IWEZ0ZFh5ZDdtZ0ZOUFZBSVdWWm5lQUd1dDBuNC1kUDVpUmZaUUN2WTlLQ0sydHdvbXA5SWZ0dWFIN1pxT3MxN1FjYkRKZVJOX2g1ejhhakU0VnYwQkxycU1paHdWckhSWXfSAYcCQVVfeXFMUDZmVmVEaFFRV0lYMTFMT0lLZ2hCN0pYbHlTYTB1dy1MQkNvLUJXemJmNUZvN3VoTVdxX184RHF3ZjBscm05OFZoVEstWUZ2Wnhyemx4QVlaZmhJUlFUNFB5OWpxX3BidmJReHMyaHRIZjg1MG5XWHh6RXZEdk5KZDlpclh2SUZQMktyY29lb1FRZm4wQU9YV092XzJfQ01BNVBrVUp3NVJxVFpNVTEtTGxSN1pDUGhZTFItYnpySlAxZlcxeHNFSS1rTG5hS0NEX0xNLUQzMDVJbmxUNEx0dU5MZDI2dG1Uc1g1aHJ6ZXRPcGFJNWd5NndPVFZvX2RJdklwZ1hOTk0?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">La Opinión de Zamora</span>
+          <span class="news-date">14 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxPWUxfenU1N2FZekxmQjRpQUhVb240SFRNNXMyOUM2RXVYbzVqaGNuVllqV3lqSUNhTjU0bnRFZk5udHZEczl2cTlLREdkZVBEQjlwR2taeXgtdXFrVlZXbWNrNTVKX0tHMGpSYUNRa0pPbFJOQlFYTU5VaFJZbVpVSVhrVENtVlRzdHJOQ2V0cHpkb0VGNzlYM0s2T1U1ekpDWl9laUtNOWfSAa4BQVVfeXFMTVVnZHQ0R2FXMEFET2lQd0t3MUZkY09Ma05zYnZ0X0hfc29ZQkdDVm8xQTB3Q1pBeWpoM2FSTU40WUNiZmVlS3JyTm1aWDFhZWt0RWtoR2lIRGhKQ3NVbmRONGJhYTduSTVXLWJMVnRBWlZ3bWtBZnlOZGM0LVkySFlQTFdYZ1RKYjd3MHdtMTlmNm91QWFTMTY1QVdqcjNnZktISk5nV1A3Wmo0OW1R?oc=5" target="_blank" rel="noopener noreferrer">Fromago también piensa en los celiacos: las opciones sin gluten para disfrutar de la feria del queso en Zamora</a></h3>
+        <p class="news-summary">Fromago también piensa en los celiacos: las opciones sin gluten para disfrutar de la feria del queso en Zamora&nbsp;&nbsp;La Opinión de Zamora</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxPWUxfenU1N2FZekxmQjRpQUhVb240SFRNNXMyOUM2RXVYbzVqaGNuVllqV3lqSUNhTjU0bnRFZk5udHZEczl2cTlLREdkZVBEQjlwR2taeXgtdXFrVlZXbWNrNTVKX0tHMGpSYUNRa0pPbFJOQlFYTU5VaFJZbVpVSVhrVENtVlRzdHJOQ2V0cHpkb0VGNzlYM0s2T1U1ekpDWl9laUtNOWfSAa4BQVVfeXFMTVVnZHQ0R2FXMEFET2lQd0t3MUZkY09Ma05zYnZ0X0hfc29ZQkdDVm8xQTB3Q1pBeWpoM2FSTU40WUNiZmVlS3JyTm1aWDFhZWt0RWtoR2lIRGhKQ3NVbmRONGJhYTduSTVXLWJMVnRBWlZ3bWtBZnlOZGM0LVkySFlQTFdYZ1RKYjd3MHdtMTlmNm91QWFTMTY1QVdqcjNnZktISk5nV1A3Wmo0OW1R?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">Federación de Asociaciones de Celíacos de España</span>
+          <span class="news-date">14 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMizAFBVV95cUxQVllGYk9oNU5XUDRpckllX01CYmRnYXBZZk10OXYwbnUtU3pFaDk1dUpkQ2EyamtJSkZUbGpna2NuejEtcGlfZ0liNUREZXpJV2RTZHpKemNTaVk0YTFiRnFHXzZSQ00xODJFYTFMYXprdUx1aDhtaDBRalRFcGJJY2I5LTNXSTdKOF9JcFVDd2ZtRVJoUUVJelByUDlkNHdZM2tnNUFmWEZUY25ZVUd3SS1KMEpYZGJTd1B3d3RKTnRpUFpZQjkzT2JRbkM?oc=5" target="_blank" rel="noopener noreferrer">Ampliación de la alerta por presencia de gluten no declarado en salsas etiquetadas «sin gluten» de Vulpi y Dumt’s</a></h3>
+        <p class="news-summary">Ampliación de la alerta por presencia de gluten no declarado en salsas etiquetadas «sin gluten» de Vulpi y Dumt’s&nbsp;&nbsp;Federación de Asociaciones de Celíacos de España</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMizAFBVV95cUxQVllGYk9oNU5XUDRpckllX01CYmRnYXBZZk10OXYwbnUtU3pFaDk1dUpkQ2EyamtJSkZUbGpna2NuejEtcGlfZ0liNUREZXpJV2RTZHpKemNTaVk0YTFiRnFHXzZSQ00xODJFYTFMYXprdUx1aDhtaDBRalRFcGJJY2I5LTNXSTdKOF9JcFVDd2ZtRVJoUUVJelByUDlkNHdZM2tnNUFmWEZUY25ZVUd3SS1KMEpYZGJTd1B3d3RKTnRpUFpZQjkzT2JRbkM?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">El Digital de Albacete</span>
+          <span class="news-date">13 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMi7wFBVV95cUxOcTc4S1BOb1dnLWU5SGROQm9TR0JxNVZjWW0yU2NKYmpaaFZzNWV1VW5iQ2NLZ0tOZl9VMVJqQ3BYRkhqQ0RNV2h6X196WkJPa3RoTkFLU2NiNnFmcS1ZeHBuWHhzTTBaSVY2Rm9zNWtVLTFzN2s3eTVzdFRmOXVMYlc2TGg0cDI5MlJjTDVxY2Zqa0R3UmNkZWZpam5TVmtSdmdBSUI4U1hxa3A0UUplanlwN3pPMmNWbnpxWmhDc3FzeXZPSGxTU3o1WnVwWHRvUG9lbC11N094Zl9SbTNzQzB2TUJHUkhhMGd0VElDQQ?oc=5" target="_blank" rel="noopener noreferrer">Con Feria pero sin gluten: Miguelitos, churros, bocadillos o sushi para disfrutar de los días grandes de Albacete</a></h3>
+        <p class="news-summary">Con Feria pero sin gluten: Miguelitos, churros, bocadillos o sushi para disfrutar de los días grandes de Albacete&nbsp;&nbsp;El Digital de Albacete</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMi7wFBVV95cUxOcTc4S1BOb1dnLWU5SGROQm9TR0JxNVZjWW0yU2NKYmpaaFZzNWV1VW5iQ2NLZ0tOZl9VMVJqQ3BYRkhqQ0RNV2h6X196WkJPa3RoTkFLU2NiNnFmcS1ZeHBuWHhzTTBaSVY2Rm9zNWtVLTFzN2s3eTVzdFRmOXVMYlc2TGg0cDI5MlJjTDVxY2Zqa0R3UmNkZWZpam5TVmtSdmdBSUI4U1hxa3A0UUplanlwN3pPMmNWbnpxWmhDc3FzeXZPSGxTU3o1WnVwWHRvUG9lbC11N094Zl9SbTNzQzB2TUJHUkhhMGd0VElDQQ?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">Telecinco</span>
+          <span class="news-date">13 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMixAFBVV95cUxNVnhJTk5zd0R5TkMyanlfWnZFREFzc2pBQVpVMWtkaGxvZ0lSSDlBXzRoNTkwakFZREwtWmVmWUE0QmFkRUtIX1I3VGpxbU1nN0NKazhBZHRaRjRzdEF2T0U3c0Vyay1SRFhmbkJQTFUyUy1iTVJBQ1RvRWZ3Q3FWSmtKZWQxbWFoalpWRGpQMS1GcmNXYTR2VjlqVXJzNUZnR3ZRTUwwYjBGOWFFZkhDZ0lHNmM4V2g3V0x0M2RjZUxTQnU3?oc=5" target="_blank" rel="noopener noreferrer">La croquetería sin gluten que se ha convertido en una referencia en España para celíacos</a></h3>
+        <p class="news-summary">La croquetería sin gluten que se ha convertido en una referencia en España para celíacos&nbsp;&nbsp;Telecinco</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMixAFBVV95cUxNVnhJTk5zd0R5TkMyanlfWnZFREFzc2pBQVpVMWtkaGxvZ0lSSDlBXzRoNTkwakFZREwtWmVmWUE0QmFkRUtIX1I3VGpxbU1nN0NKazhBZHRaRjRzdEF2T0U3c0Vyay1SRFhmbkJQTFUyUy1iTVJBQ1RvRWZ3Q3FWSmtKZWQxbWFoalpWRGpQMS1GcmNXYTR2VjlqVXJzNUZnR3ZRTUwwYjBGOWFFZkhDZ0lHNmM4V2g3V0x0M2RjZUxTQnU3?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">Tua Saúde</span>
+          <span class="news-date">12 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMiywFBVV95cUxNUnhYcWxfY0xiU2JudG9fc0Q4cUh0dV9kUjdOUW9Pb25GelZMdnZyejBfR0Fobl95ZmxoQXJPUzFMY2p6V1B6V21Wc1pJa3duOGNQTnV5b3dDRVAzYUZ3eEdhSDViMjJ2MmJ3cG1UQ2RSZ2R1bGJsdENzdTNxTTdCdjM1dVFSSE0tdlNRWWxmb0JBemZXZ3g3S3R6MV9rQV84Q1FkV1B0TUtpY0VwSVplR2ZBTS1fTlR5TG1Zek05WTMyLVI4U1JfX2swQQ?oc=5" target="_blank" rel="noopener noreferrer">Aftas que vuelven, diarrea y abdomen hinchado pueden hacer pensar en enfermedad celíaca</a></h3>
+        <p class="news-summary">Aftas que vuelven, diarrea y abdomen hinchado pueden hacer pensar en enfermedad celíaca&nbsp;&nbsp;Tua Saúde</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMiywFBVV95cUxNUnhYcWxfY0xiU2JudG9fc0Q4cUh0dV9kUjdOUW9Pb25GelZMdnZyejBfR0Fobl95ZmxoQXJPUzFMY2p6V1B6V21Wc1pJa3duOGNQTnV5b3dDRVAzYUZ3eEdhSDViMjJ2MmJ3cG1UQ2RSZ2R1bGJsdENzdTNxTTdCdjM1dVFSSE0tdlNRWWxmb0JBemZXZ3g3S3R6MV9rQV84Q1FkV1B0TUtpY0VwSVplR2ZBTS1fTlR5TG1Zek05WTMyLVI4U1JfX2swQQ?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">Cadena SER</span>
+          <span class="news-date">11 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMi6AFBVV95cUxPb2ZJZnlvTlRKUE50bEhxZmZFeU9vZXNjVVZNRi1sUDdNc040bjBYM1lHV29PZUduS2o2ZndkdjZZcDFzZnZOUVFiUnpUci1FYmUwa3dXWkdOeFpHY05yZ2hiMWppaVpNQXdNZmZDeHNoY2Fnel84OEk0ZDFPNUYtZTVfQkNvYWpha2RmbVgza1FIaHRCX21BckFSUTdVZWNtX3ltQWR3ZHczVThna3RJZVZBd3VHVWJKbWo4ZDlOTVNQTXVmYkZkckRUN3plMWNWMklabEFVdjFGQmtjV2VRZTVpOWk5LVdm0gH8AUFVX3lxTE9Jb211UFN4QmduUUR1REFnVjVTcVg0SzlVX3RuUldhTzEtTjktelVKWkZ6alVIcmk3MGVTWTlVWXZERkNqQ19NRVZZSzB3YUlQVnFkbHo3aXdfY3JVY0JlYnJpcUJtMlMwRjYtZFlyZ2loWVU5ZWRrcjRJZkkwRjJlM1hVbEJEMF85UE5nejhjNWxlX2JmZ1ZWYXFIcUFsVE1BYnQyUDA1ME9NcjMzSVRhRzhjWnhkbkRhSTBKUnhqLTRnbm9QeFZpb0tnWkpOQ0N6MHVrZURUc3U5MzhrMWszWkd0blJmTTlIcVFyTHgwamp5cnNFWEEyTVZOZQ?oc=5" target="_blank" rel="noopener noreferrer">Picoteo y primera foodtruck sin gluten en la Feria de Restauración y Obradores de Torrelavega</a></h3>
+        <p class="news-summary">Picoteo y primera foodtruck sin gluten en la Feria de Restauración y Obradores de Torrelavega&nbsp;&nbsp;Cadena SER</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMi6AFBVV95cUxPb2ZJZnlvTlRKUE50bEhxZmZFeU9vZXNjVVZNRi1sUDdNc040bjBYM1lHV29PZUduS2o2ZndkdjZZcDFzZnZOUVFiUnpUci1FYmUwa3dXWkdOeFpHY05yZ2hiMWppaVpNQXdNZmZDeHNoY2Fnel84OEk0ZDFPNUYtZTVfQkNvYWpha2RmbVgza1FIaHRCX21BckFSUTdVZWNtX3ltQWR3ZHczVThna3RJZVZBd3VHVWJKbWo4ZDlOTVNQTXVmYkZkckRUN3plMWNWMklabEFVdjFGQmtjV2VRZTVpOWk5LVdm0gH8AUFVX3lxTE9Jb211UFN4QmduUUR1REFnVjVTcVg0SzlVX3RuUldhTzEtTjktelVKWkZ6alVIcmk3MGVTWTlVWXZERkNqQ19NRVZZSzB3YUlQVnFkbHo3aXdfY3JVY0JlYnJpcUJtMlMwRjYtZFlyZ2loWVU5ZWRrcjRJZkkwRjJlM1hVbEJEMF85UE5nejhjNWxlX2JmZ1ZWYXFIcUFsVE1BYnQyUDA1ME9NcjMzSVRhRzhjWnhkbkRhSTBKUnhqLTRnbm9QeFZpb0tnWkpOQ0N6MHVrZURUc3U5MzhrMWszWkd0blJmTTlIcVFyTHgwamp5cnNFWEEyTVZOZQ?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">Nuevo Mundo Israelita</span>
+          <span class="news-date">10 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQNDVyNUc0QVZmRE9FeW1razBaRldyQUtGdmxFWklieDdzX21YazFXdWhQRHBBQ2JlT3ZPY0tGR2VFQlhRVkRoTnBXYll0UElpUE4xU05DX2M2aHZ0S20tWXBqNW5pbmZtMV9XZHpPdEZZekFLelBlSnBOakM3WXF6Ri11THZJR1J1SVZTbVJOSmtSd1BtRWg5UnhISHM3b2pMWnkwSVMyNUZsVng4djVlUXowMm84dDA3YVZqdHl2SUxMa28?oc=5" target="_blank" rel="noopener noreferrer">¿Fin de la dieta sin gluten? Fármaco israelí muestra resultados prometedores para la enfermedad celíaca</a></h3>
+        <p class="news-summary">¿Fin de la dieta sin gluten? Fármaco israelí muestra resultados prometedores para la enfermedad celíaca&nbsp;&nbsp;Nuevo Mundo Israelita</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxQNDVyNUc0QVZmRE9FeW1razBaRldyQUtGdmxFWklieDdzX21YazFXdWhQRHBBQ2JlT3ZPY0tGR2VFQlhRVkRoTnBXYll0UElpUE4xU05DX2M2aHZ0S20tWXBqNW5pbmZtMV9XZHpPdEZZekFLelBlSnBOakM3WXF6Ri11THZJR1J1SVZTbVJOSmtSd1BtRWg5UnhISHM3b2pMWnkwSVMyNUZsVng4djVlUXowMm84dDA3YVZqdHl2SUxMa28?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">El Faradio</span>
+          <span class="news-date">10 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMi6gFBVV95cUxOUGRBWmJXVEVKeFZwY1J2VDBIdTdFd0lHal9KVXBScWZfX0VNQ0lucW4wRkUxOUVIRzFqU0pscHNCTXdzaVVtam5fQWtGTFlhZzZLZFFQQnlqdnRUSmFIcVJGSkI0RWpQRW9uVjdtVmhQd1l1STF4TFMyY1FXeFBaQ0lLcUYzdG4zUFhrTGl4UlZWbDdGNmQ2YVBKM183TWhIVUgtMzRGLVJKZ29uVHZaMVFIYWxlSVFoTGlhT1pvMnZxQmtmR01lOFFlbHh1Y0tEUVZMLXdiZlNsYjZqSjZJUVlCdFVRTmlrVnc?oc=5" target="_blank" rel="noopener noreferrer">ACECAN reivindica en la V Feria Sin Gluten de Cantabria el compromiso de las instituciones con las personas celíacas</a></h3>
+        <p class="news-summary">ACECAN reivindica en la V Feria Sin Gluten de Cantabria el compromiso de las instituciones con las personas celíacas&nbsp;&nbsp;El Faradio</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMi6gFBVV95cUxOUGRBWmJXVEVKeFZwY1J2VDBIdTdFd0lHal9KVXBScWZfX0VNQ0lucW4wRkUxOUVIRzFqU0pscHNCTXdzaVVtam5fQWtGTFlhZzZLZFFQQnlqdnRUSmFIcVJGSkI0RWpQRW9uVjdtVmhQd1l1STF4TFMyY1FXeFBaQ0lLcUYzdG4zUFhrTGl4UlZWbDdGNmQ2YVBKM183TWhIVUgtMzRGLVJKZ29uVHZaMVFIYWxlSVFoTGlhT1pvMnZxQmtmR01lOFFlbHh1Y0tEUVZMLXdiZlNsYjZqSjZJUVlCdFVRTmlrVnc?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">cruisesnews.es</span>
+          <span class="news-date">10 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMilwFBVV95cUxPZHUwd2pHal9zc3RQMjZ5Yl9ad1BwNmJPejBseURWTkN6NnVaRnA0SUI4eHZSaXNFWHRIdV9oWE8xeXJZOUlGMnVSSWlzVU1ta0YwTkE3cjdwSDFTOGFBQ3ZTeTZrRFltdGo2QlZzV2gybVVfSVk1NW4tSHBhalcxaXRWTkJwaC1ieWMzUDB3MXl0Wm9IZENn?oc=5" target="_blank" rel="noopener noreferrer">Primer crucero sin gluten a bordo con Oceania Cruises</a></h3>
+        <p class="news-summary">Primer crucero sin gluten a bordo con Oceania Cruises&nbsp;&nbsp;cruisesnews.es</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMilwFBVV95cUxPZHUwd2pHal9zc3RQMjZ5Yl9ad1BwNmJPejBseURWTkN6NnVaRnA0SUI4eHZSaXNFWHRIdV9oWE8xeXJZOUlGMnVSSWlzVU1ta0YwTkE3cjdwSDFTOGFBQ3ZTeTZrRFltdGo2QlZzV2gybVVfSVk1NW4tSHBhalcxaXRWTkJwaC1ieWMzUDB3MXl0Wm9IZENn?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">elDiario.es</span>
+          <span class="news-date">10 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxNQTI2VzRjSU8wWG5PakpDeEtCaVVzNVZMbDZxQUlWYjUzYXdTOEZGc3YtbXZPMFNidDMwZHZlUGM2UThlQmdBMEthc1dMb0FDcGJtN1dNRmQzNWNKU3hkbGpJR1BqLXVNNk5wOUtQZENQQWRVX3duVFRBWmVCN0xzamd6RlYwek9XYlFYLW83RVViWWNiRXRzcGNKWHNWT3czZU9jU3M5Q2R5a3FVYTVidDZIT0ZoOUF2R2Vqbmw1bUxkRnJfREp3eHVaVElUX2VYSElySlh30gHbAUFVX3lxTE9MSlhSR3RIS0FrZ3hfVkd4dkJZQ1dKeG1TQ2pUVjVhekQxWnlSQWdabEdWclJCNlJFZUpJbVJSLWRUQ0Z4M2Y0RW9LZUxCY1RkNG1lNEQ3UXBSWFBoYkJCbzhsbG1lZ3kzQUdFNFpQZ044VmxyR1Zna05fa3NYR2xYbHViZW9QX3pLYmFMV21oWnhrYlZ5SDhJUFZnblFvUzlFSUVmRGpWSnNVRExSVkJaQW5NTTdldWU2UG9WdHlYQk5NdkNiZ2dHVXFTYXJrbGQ5dllBb2dEdklwcw?oc=5" target="_blank" rel="noopener noreferrer">Un error administrativo impide a los afectados por la enfermedad celíaca cobrar las ayudas del Gobierno de Cantabria</a></h3>
+        <p class="news-summary">Un error administrativo impide a los afectados por la enfermedad celíaca cobrar las ayudas del Gobierno de Cantabria&nbsp;&nbsp;elDiario.es</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxNQTI2VzRjSU8wWG5PakpDeEtCaVVzNVZMbDZxQUlWYjUzYXdTOEZGc3YtbXZPMFNidDMwZHZlUGM2UThlQmdBMEthc1dMb0FDcGJtN1dNRmQzNWNKU3hkbGpJR1BqLXVNNk5wOUtQZENQQWRVX3duVFRBWmVCN0xzamd6RlYwek9XYlFYLW83RVViWWNiRXRzcGNKWHNWT3czZU9jU3M5Q2R5a3FVYTVidDZIT0ZoOUF2R2Vqbmw1bUxkRnJfREp3eHVaVElUX2VYSElySlh30gHbAUFVX3lxTE9MSlhSR3RIS0FrZ3hfVkd4dkJZQ1dKeG1TQ2pUVjVhekQxWnlSQWdabEdWclJCNlJFZUpJbVJSLWRUQ0Z4M2Y0RW9LZUxCY1RkNG1lNEQ3UXBSWFBoYkJCbzhsbG1lZ3kzQUdFNFpQZ044VmxyR1Zna05fa3NYR2xYbHViZW9QX3pLYmFMV21oWnhrYlZ5SDhJUFZnblFvUzlFSUVmRGpWSnNVRExSVkJaQW5NTTdldWU2UG9WdHlYQk5NdkNiZ2dHVXFTYXJrbGQ5dllBb2dEdklwcw?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">Expansión</span>
+          <span class="news-date">9 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMikgFBVV95cUxQbWV0YXV1ZmNVNHNOdlBHTWJlanBZd0oxdmtkR2FWdnI3ai1UQW9jQXRnTHBmN0w1YmZjZnJQa0lmOFRub0JFZ2JMMEp5YklfLW1Zbmo4RzNicWFwb0JyQ2VtV1d2dmRLdG1WT0twUXctUHRLdmJDZ2FNRWtreTJmbWFUUTZaYTFtaUNpaWJ0MFZYd9IBkgFBVV95cUxQaHhlaVkzRGQtY0swbTBQRlowdURkUFdXcllxYkVBOXZJc3NJREJsLXJ3aTRHRnROMl9ydlktMzVrWTZudFZfSHVRRXBodG05V2pwZkR6ZUV3Y1VYc25iNFhLaUlMUU9hSTNILVhqdVEtR3JfaXFRUEFfQndnS1BOSExzNTdkS2t1azlmVll6N3NUZw?oc=5" target="_blank" rel="noopener noreferrer">Impact Bridge crea un gigante del mercado sin gluten al integrar Airos y Esgir</a></h3>
+        <p class="news-summary">Impact Bridge crea un gigante del mercado sin gluten al integrar Airos y Esgir&nbsp;&nbsp;Expansión</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMikgFBVV95cUxQbWV0YXV1ZmNVNHNOdlBHTWJlanBZd0oxdmtkR2FWdnI3ai1UQW9jQXRnTHBmN0w1YmZjZnJQa0lmOFRub0JFZ2JMMEp5YklfLW1Zbmo4RzNicWFwb0JyQ2VtV1d2dmRLdG1WT0twUXctUHRLdmJDZ2FNRWtreTJmbWFUUTZaYTFtaUNpaWJ0MFZYd9IBkgFBVV95cUxQaHhlaVkzRGQtY0swbTBQRlowdURkUFdXcllxYkVBOXZJc3NJREJsLXJ3aTRHRnROMl9ydlktMzVrWTZudFZfSHVRRXBodG05V2pwZkR6ZUV3Y1VYc25iNFhLaUlMUU9hSTNILVhqdVEtR3JfaXFRUEFfQndnS1BOSExzNTdkS2t1azlmVll6N3NUZw?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">Europa Press</span>
+          <span class="news-date">9 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxPUFhIMUFISm5VM3BybjBLNmdjSExOZjRYWm80MUR6TFhNWGIyc2dxUjNOaWJrUVZnbDZyUmxpOEJ5NzRKaXBkd0t1Q3NBX2RWUDR1dGlLeF9nQlI1Mkk0YkZ6bUhVdHN4Q1M2ODBzU2dQWWplVWZTSXo0MzB4R2VJWFM1c3VaRHNTTFFRbm5DQ3BDZF9aX0p5V09CckRYU1BmUm93aUFvcnpDcS1nejVocTJCWFJuMnpBVFp2WjUyYVlhVE1TeldxTVd6VFp0UnE0elZN?oc=5" target="_blank" rel="noopener noreferrer">Torrelavega acogerá este sábado la Feria de Restauración y Obradores Sin Gluten de Cantabria</a></h3>
+        <p class="news-summary">Torrelavega acogerá este sábado la Feria de Restauración y Obradores Sin Gluten de Cantabria&nbsp;&nbsp;Europa Press</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxPUFhIMUFISm5VM3BybjBLNmdjSExOZjRYWm80MUR6TFhNWGIyc2dxUjNOaWJrUVZnbDZyUmxpOEJ5NzRKaXBkd0t1Q3NBX2RWUDR1dGlLeF9nQlI1Mkk0YkZ6bUhVdHN4Q1M2ODBzU2dQWWplVWZTSXo0MzB4R2VJWFM1c3VaRHNTTFFRbm5DQ3BDZF9aX0p5V09CckRYU1BmUm93aUFvcnpDcS1nejVocTJCWFJuMnpBVFp2WjUyYVlhVE1TeldxTVd6VFp0UnE0elZN?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  
+    <article class="news-card">
+      <div class="news-image"><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()"></div>
+      <div class="news-body">
+        <div class="news-meta">
+          <span class="news-source">Ayuntamiento de Torrelavega</span>
+          <span class="news-date">9 de septiembre de 2026</span>
+        </div>
+        <h3 class="news-title"><a href="https://news.google.com/rss/articles/CBMizwFBVV95cUxNSno1bUtacEtmQ0ZEU1FvR1hIbzA4TFBoQkdjWlhEbnhsbzR4TEFhZUxsNktRRkxQckQ1ZDVlNW5EM0pfZWpuRUVibEttZWtOUWVJdDI1REd4cm4wWHNRLVp5bUZsellhSWt3TTU3cmctMlJuUklJenFVbGQyQ3dSYnlJdUY1aTNvbEFIWlVRVmptY3d2NEdNRU1hVm42YUNTTlNqMDFnVU9yWnpWUW9CUTU0dkZ3VGlvNmg2TDBlV2ZSNUgxN0NhV1ZZNTZLLUk?oc=5" target="_blank" rel="noopener noreferrer">Torrelavega acogerá el 12 de septiembre la V Feria de Restauración y Obradores Sin Gluten de Cantabria</a></h3>
+        <p class="news-summary">Torrelavega acogerá el 12 de septiembre la V Feria de Restauración y Obradores Sin Gluten de Cantabria&nbsp;&nbsp;Ayuntamiento de Torrelavega</p>
+        <a class="news-link" href="https://news.google.com/rss/articles/CBMizwFBVV95cUxNSno1bUtacEtmQ0ZEU1FvR1hIbzA4TFBoQkdjWlhEbnhsbzR4TEFhZUxsNktRRkxQckQ1ZDVlNW5EM0pfZWpuRUVibEttZWtOUWVJdDI1REd4cm4wWHNRLVp5bUZsellhSWt3TTU3cmctMlJuUklJenFVbGQyQ3dSYnlJdUY1aTNvbEFIWlVRVmptY3d2NEdNRU1hVm42YUNTTlNqMDFnVU9yWnpWUW9CUTU0dkZ3VGlvNmg2TDBlV2ZSNUgxN0NhV1ZZNTZLLUk?oc=5" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+      </div>
+    </article>
+  </div>
+      <p class="empty-state" id="newsEmpty" hidden="">No se han podido cargar las noticias en este momento. Vuelve a intentarlo más tarde.</p>
 
       <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Noticias recopiladas automáticamente de medios y asociaciones de celíacos mediante fuentes RSS públicas. Libre de Trigo no redacta ni verifica el contenido de estos artículos: consulta siempre la fuente original antes de dar por buena cualquier información médica o de seguridad alimentaria.</span></p>
     </section>
@@ -68,16 +386,352 @@
       <span class="eyebrow">🛒 Supermercado</span>
       <h1 class="section-title">Catálogo sin gluten por supermercado</h1>
 
-      <div class="filter-chips" id="supermercadoFilter" role="group" aria-label="Filtrar por supermercado"></div>
+      <div class="filter-chips" id="supermercadoFilter" role="group" aria-label="Filtrar por supermercado"><button class="filter-chip active" data-super="mercadona" type="button">Mercadona</button><button class="filter-chip" data-super="carrefour" type="button">Carrefour</button><button class="filter-chip" data-super="lidl" type="button">Lidl</button><button class="filter-chip" data-super="dia" type="button">Dia</button><button class="filter-chip" data-super="aldi" type="button">Aldi</button><button class="filter-chip" data-super="consum" type="button">Consum</button></div>
 
-      <div class="card-grid" id="catalogoGrid"></div>
-      <p class="empty-state" id="catalogoEmpty" hidden>No tenemos datos verificados de este supermercado todavía.</p>
+      <div class="card-grid" id="catalogoGrid">
+        <article class="info-card" data-title="Panadería y bollería">
+          <span class="info-icon icon-1" aria-hidden="true">🍞</span>
+          <h3>Panadería y bollería</h3>
+          <p>7 productos sin gluten verificados</p>
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado — Pan de molde sin gluten blanco</li><li>Hacendado — Pan de molde multicereales sin gluten</li><li>Hacendado — Pan de molde cereales sin gluten</li><li>Hacendado — Magdalenas sin gluten</li><li>Hacendado — Picos sin gluten</li><li>Hacendado — Tostadas sin gluten</li><li>Hacendado — Polvorones sin gluten (navideño, producto estacional)</li></ul>
+          </div>
+        </article>
+      
+        <article class="info-card" data-title="Pasta y arroz">
+          <span class="info-icon icon-2" aria-hidden="true">🍝</span>
+          <h3>Pasta y arroz</h3>
+          <p>5 productos sin gluten verificados</p>
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado — Fusilli sin gluten (harina de maíz y arroz)</li><li>Hacendado — Espaguetis sin gluten</li><li>Hacendado — Macarrones/Coditos sin gluten</li><li>Hacendado — Penne/macarrones de harina de avena y maíz sin gluten</li><li>Felicia (en Mercadona) — Spaghetti sin gluten</li></ul>
+          </div>
+        </article>
+      
+        <article class="info-card" data-title="Snacks y aperitivos">
+          <span class="info-icon icon-3" aria-hidden="true">🍿</span>
+          <h3>Snacks y aperitivos</h3>
+          <p>8 productos sin gluten verificados</p>
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado — Patatas fritas 0% sal añadida sin gluten</li><li>Hacendado — Patatas fritas extra crujientes</li><li>Hacendado — Maíz palomitas natural para microondas</li><li>Hacendado — Palomitas de maíz dulces para microondas</li><li>Hacendado — Crackers sin gluten con romero</li><li>Hacendado — Triángulos de maíz sin gluten</li><li>Hacendado — Nachos sin gluten</li><li>Hacendado — Tortitas de maíz sin gluten</li></ul>
+          </div>
+        </article>
+      
+        <article class="info-card" data-title="Desayuno y cereales">
+          <span class="info-icon icon-4" aria-hidden="true">🥣</span>
+          <h3>Desayuno y cereales</h3>
+          <p>3 productos sin gluten verificados</p>
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado — Cereales rellenos de crema de cacao y avellana sin gluten</li><li>Hacendado — Copos de avena sin gluten</li><li>Hacendado — Copos de maíz (Corn Flakes) 0% azúcares añadidos sin gluten</li></ul>
+          </div>
+        </article>
+      
+        <article class="info-card" data-title="Salsas y condimentos">
+          <span class="info-icon icon-5" aria-hidden="true">🧂</span>
+          <h3>Salsas y condimentos</h3>
+          <p>1 producto sin gluten verificados</p>
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado — Salsa de soja sin gluten</li></ul>
+          </div>
+        </article>
+      
+        <article class="info-card" data-title="Congelados">
+          <span class="info-icon icon-6" aria-hidden="true">🧊</span>
+          <h3>Congelados</h3>
+          <p>5 productos sin gluten verificados</p>
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado — Pizza 4 quesos sin gluten y sin lactosa (ultracongelada)</li><li>Hacendado — Bases de pizza sin gluten y sin lactosa (ultracongeladas)</li><li>Hacendado — Arroz tres delicias ultracongelado sin gluten</li><li>Hacendado — Croquetas de jamón sin gluten (línea Caprichos)</li><li>Hacendado — Nuggets de pollo sin gluten</li></ul>
+          </div>
+        </article>
+      
+        <article class="info-card" data-title="Bebidas">
+          <span class="info-icon icon-7" aria-hidden="true">🥤</span>
+          <h3>Bebidas</h3>
+          <p>4 productos sin gluten verificados</p>
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Mahou — Cerveza sin gluten 0,0% sin alcohol tostada</li><li>Free Damm — Cerveza sin gluten 0,0% sin alcohol</li><li>Hacendado — Bebida de avena 0% azúcar sin gluten</li><li>Mercadona — Cerveza Steinburg 0,0 sin gluten</li></ul>
+          </div>
+        </article>
+      
+        <article class="info-card" data-title="Dulces y postres">
+          <span class="info-icon icon-8" aria-hidden="true">🍫</span>
+          <h3>Dulces y postres</h3>
+          <p>6 productos sin gluten verificados</p>
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado — Bizcocho de chocolate sin gluten</li><li>Hacendado — Bizcocho de chocolate sin gluten y sin lactosa</li><li>Hacendado — Turrón crema de almendras 0% azúcares añadidos sin gluten</li><li>Hacendado — Cookies sin gluten y sin lactosa con pepitas de chocolate</li><li>Hacendado — Flan de queso sin gluten</li><li>Hacendado — Flan de huevo alto en proteínas sin gluten</li></ul>
+          </div>
+        </article>
+      
+        <article class="info-card" data-title="Lácteos y alternativas">
+          <span class="info-icon icon-9" aria-hidden="true">🧀</span>
+          <h3>Lácteos y alternativas</h3>
+          <p>5 productos sin gluten verificados</p>
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado — Queso fresco batido 0% sin gluten</li><li>Hacendado — Bebida de avena sin gluten</li><li>Alpro — Bebida de avena/soja sin gluten</li><li>Hacendado — Bebida de almendras con calcio sin gluten</li><li>Hacendado — Bebida de almendras Zero sin gluten</li></ul>
+          </div>
+        </article>
+      
+        <article class="info-card" data-title="Legumbres y conservas">
+          <span class="info-icon icon-10" aria-hidden="true">🥫</span>
+          <h3>Legumbres y conservas</h3>
+          <p>3 productos sin gluten verificados</p>
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado — Garbanzos cocidos a la jardinera sin gluten</li><li>Hacendado — Fusilli de lentejas rojas (100% harina de lentejas, sin gluten)</li><li>Hacendado — Garbanzo cocido en tarro sin gluten</li></ul>
+          </div>
+        </article>
+      
+        <article class="info-card" data-title="Harinas y repostería">
+          <span class="info-icon icon-11" aria-hidden="true">🌾</span>
+          <h3>Harinas y repostería</h3>
+          <p>5 productos sin gluten verificados</p>
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado — Harina de maíz fina precocinada sin gluten</li><li>Hacendado — Harina de garbanzo sin gluten</li><li>Hacendado — Preparado para bizcocho sin gluten</li><li>Hacendado — Preparado para panificación y repostería sin gluten</li><li>Hacendado — Pan rallado sin gluten</li></ul>
+          </div>
+        </article>
+      
+        <article class="info-card" data-title="Alimentación infantil">
+          <span class="info-icon icon-12" aria-hidden="true">👶</span>
+          <h3>Alimentación infantil</h3>
+          <p>4 productos sin gluten verificados</p>
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hero Baby — Papilla sin gluten crema de arroz +4 meses</li><li>Nestlé — Papilla maíz y arroz sin gluten +4 meses</li><li>Hacendado — Potitos de fruta sin azúcares añadidos, sin gluten</li><li>Hacendado — Galleta para bebé sin gluten y sin lactosa</li></ul>
+          </div>
+        </article>
+      </div>
+      <p class="empty-state" id="catalogoEmpty" hidden="">No tenemos datos verificados de este supermercado todavía.</p>
 
       <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Catálogo recogido mediante búsqueda web en septiembre de 2026: solo se incluyen categorías y productos que pudimos verificar como reales de cada cadena — si una categoría no aparece para un supermercado es porque no encontramos datos fiables, no porque no tenga ninguna opción sin gluten. La disponibilidad varía por tienda y cambia con el tiempo; comprueba siempre el etiquetado antes de comprar.</span></p>
 
       <h3 class="subsection-title">Categorías sin gluten</h3>
 
-      <div class="card-grid" id="supermercadoGrid"></div>
+      <div class="card-grid" id="supermercadoGrid">
+        <article class="info-card" data-title="Panadería y bollería">
+          <span class="info-icon icon-1" aria-hidden="true">🍞</span>
+          <h3>Panadería y bollería</h3>
+          <p>Pan de molde sin gluten, baguettes certificadas y bollería (Schär, Proceli, líneas "Sin Gluten" de supermercado).</p>
+          
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver 14 productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado (Mercadona) — Pan de molde blanco sin gluten</li><li>Hacendado (Mercadona) — Baguette sin gluten</li><li>Hacendado (Mercadona) — Pan de hamburguesa sin gluten</li><li>Schär — Pan de molde (Pan Carré)</li><li>Proceli — Pan tradicional sin gluten</li><li>Beiker — Pan de molde sin gluten</li><li>Adpan — Chapata sin gluten</li><li>Carrefour Sin Gluten — Magdalenas y bollería sin gluten</li><li>Gerblé — Pan payés con semillas sin gluten</li><li>Gerblé — Pan burger (hamburguesa) sin gluten, a la harina de soja</li><li>Schär — Pan de molde con cereales</li><li>Schär — Panecillos (Bridge Rolls) sin gluten</li><li>Proceli — Pan de molde Complet</li><li>Hacendado (Mercadona) — Magdalena de coco sin gluten</li></ul>
+          </div>
+        
+        </article>
+      
+        <article class="info-card" data-title="Pasta y arroz">
+          <span class="info-icon icon-2" aria-hidden="true">🍝</span>
+          <h3>Pasta y arroz</h3>
+          <p>Pasta de maíz y arroz, fideos sin gluten y arroces certificados para todo tipo de recetas.</p>
+          
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver 11 productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado (Mercadona) — Pasta sin gluten: fusilli, espagueti, estrellas (maíz y arroz)</li><li>Gallo — Pasta sin gluten (spaghetti, macarrones, tiburones)</li><li>Barilla — Pasta senza glutine</li><li>Schär — Pasta Anellini</li><li>Carrefour Sin Gluten — Macarrones y espirales</li><li>El Granero Integral — Pasta de trigo sarraceno sin gluten</li><li>Hacendado (Mercadona) — Pasta rellena sin gluten (harina de arroz y maíz)</li><li>Barilla — Penne Rigate sin gluten</li><li>Gallo — Pasta de lentejas rojas sin gluten</li><li>Schär — Pasta Fusilli sin gluten</li><li>El Granero Integral — Arroz integral Bio</li></ul>
+          </div>
+        
+        </article>
+      
+        <article class="info-card" data-title="Snacks y aperitivos">
+          <span class="info-icon icon-3" aria-hidden="true">🍿</span>
+          <h3>Snacks y aperitivos</h3>
+          <p>Patatas fritas certificadas, palomitas naturales y frutos secos sin trazas de gluten.</p>
+          
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver 12 productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado (Mercadona) — Patatas fritas sin gluten</li><li>Carrefour — Snacks "mios!" sin gluten</li><li>Lay's — Patatas fritas sin gluten</li><li>Ruffles — Patatas fritas sin gluten</li><li>Grefusa — Snacks sin gluten</li><li>Risi — Snacks de arroz sin gluten</li><li>Proceli — Picos/colines sin gluten (aceite de oliva virgen extra)</li><li>Risi — Risketos, snack de maíz horneado sin gluten</li><li>Risi — Palomitas de maíz sin gluten</li><li>Risi — Palomitas recubiertas de chocolate sin gluten</li><li>Carrefour Sin Gluten — Tortitas de maíz/arroz</li><li>Carrefour Sin Gluten — Palomitas</li></ul>
+          </div>
+        
+        </article>
+      
+        <article class="info-card" data-title="Desayuno y cereales">
+          <span class="info-icon icon-4" aria-hidden="true">🥣</span>
+          <h3>Desayuno y cereales</h3>
+          <p>Avena certificada sin gluten, cereales de maíz o arroz y galletas de líneas sin gluten.</p>
+          
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver 11 productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado (Mercadona) — Corn Flakes sin gluten (Harvest Home)</li><li>Hacendado (Mercadona) — Muesli crunchy chocolate sin gluten</li><li>Santiveri (Noglut) — Cereales cacao y miel sin gluten</li><li>Santiveri (Noglut) — Corn Flakes sin gluten</li><li>Santiveri (Noglut) — Muesli frutas y frutos secos sin gluten</li><li>Schär — Cereales de desayuno sin gluten</li><li>Nestlé — Corn Flakes sin gluten</li><li>Kellogg's — Cereales sin gluten (Dia)</li><li>Go Free — Copos de maíz tostados sin gluten</li><li>Gerblé — Tostadas de maíz y arroz sin gluten</li><li>Gerblé — Galletas de desayuno a la harina de arroz sin gluten</li></ul>
+          </div>
+        
+        </article>
+      
+        <article class="info-card" data-title="Salsas y condimentos">
+          <span class="info-icon icon-5" aria-hidden="true">🧂</span>
+          <h3>Salsas y condimentos</h3>
+          <p>Salsa de soja sin gluten (tamari), caldos certificados y especias puras sin aditivos.</p>
+          
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver 12 productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado (Mercadona) — Salsa de soja sin gluten</li><li>Hacendado (Mercadona) — Mayonesa ligera sin gluten</li><li>Hacendado (Mercadona) — Kétchup sin gluten</li><li>Carrefour Sin Gluten — Salsa barbacoa y salsa de soja</li><li>Ybarra — Mayonesa y kétchup sin gluten</li><li>Schär — Salsa boloñesa y pesto sin gluten</li><li>Hellmann's — Mostaza sin gluten</li><li>Hellmann's — Salsa mostaza y miel sin gluten</li><li>Hellmann's — Salsa barbacoa dulce sin gluten</li><li>Ybarra — Salsa miel y mostaza sin gluten</li><li>Ybarra — Salsa Alioli/Gaucha sin gluten</li><li>Orlando — Tomate frito sin gluten</li></ul>
+          </div>
+        
+        </article>
+      
+        <article class="info-card" data-title="Congelados">
+          <span class="info-icon icon-6" aria-hidden="true">🧊</span>
+          <h3>Congelados</h3>
+          <p>Pizzas sin gluten, empanados de maíz y rebozados certificados listos para hornear.</p>
+          
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver 10 productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado (Mercadona) — Pizza 4 quesos sin gluten y sin lactosa</li><li>Hacendado (Mercadona) — Bases de pizza sin gluten y sin lactosa</li><li>Hacendado (Mercadona) — Pan rallado sin gluten</li><li>Hacendado (Mercadona) — Placas de canelones/lasaña precocidas sin gluten (maíz y arroz)</li><li>Frisa — Croquetas "Caprichos de Jamón" sin gluten (Mercadona)</li><li>Carrefour Sin Gluten — Pizza congelada</li><li>La Cocinera — Nuggets de pollo sin gluten (rebozados con harina de arroz y garbanzo)</li><li>Hacendado (Mercadona) — San Jacobos de cerdo sin gluten</li><li>Schär — Pizza congelada 4 quesos sin gluten (Alcampo)</li><li>Schär — Base de pizza congelada sin gluten</li></ul>
+          </div>
+        
+        </article>
+      
+        <article class="info-card" data-title="Bebidas">
+          <span class="info-icon icon-7" aria-hidden="true">🥤</span>
+          <h3>Bebidas</h3>
+          <p>Cerveza sin gluten, horchata y batidos certificados aptos para celíacos.</p>
+          
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver 11 productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Damm — Cerveza Daura sin gluten</li><li>Damm — Daura Märzen sin gluten</li><li>Chufi — Horchata de chufa (naturalmente sin gluten)</li><li>Hacendado (Mercadona) — Horchata de chufa sin gluten</li><li>ColaCao — Cacao soluble sin gluten</li><li>Puleva — Batido sin gluten</li><li>Estrella Galicia — Cerveza Sin Gluten</li><li>Mahou — Cerveza Sin Gluten</li><li>Ambar — Especial Sin Gluten</li><li>Ambar — 0,0 Sin Gluten (sin alcohol)</li><li>Free Damm — Cerveza 0,0 sin gluten</li></ul>
+          </div>
+        
+        </article>
+      
+        <article class="info-card" data-title="Dulces y postres">
+          <span class="info-icon icon-8" aria-hidden="true">🍫</span>
+          <h3>Dulces y postres</h3>
+          <p>Chocolate sin gluten, bizcochos y turrones certificados en temporada.</p>
+          
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver 13 productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado (Mercadona) — Galletas María sin gluten y sin lactosa</li><li>Hacendado (Mercadona) — Cookies con chispas de chocolate sin gluten</li><li>Hacendado (Mercadona) — Bizcocho de chocolate sin gluten y sin lactosa</li><li>Gullón — Galletas María sin gluten</li><li>Gullón — Sharkies sin gluten (infantil)</li><li>Gullón — Digestive sin gluten</li><li>Proceli — Bizcochitos rellenos (Petite Fraise / Petite Délice)</li><li>Gullón Diet Nature — Digestive sin azúcar, sin gluten</li><li>Gerblé — Galletas con chispas de chocolate sin gluten</li><li>Delaviuda — Turrón duro sin gluten</li><li>Hacendado (Mercadona) — Bizcocho de limón sin gluten</li><li>Valor — Chocolate negro 85% sin azúcares añadidos, sin gluten</li><li>Valor — Postres de chocolate negro 70% sin gluten</li></ul>
+          </div>
+        
+        </article>
+      
+        <article class="info-card" data-title="Lácteos y alternativas">
+          <span class="info-icon icon-9" aria-hidden="true">🧀</span>
+          <h3>Lácteos y alternativas</h3>
+          <p>Quesos naturales, yogures sin aditivos y bebidas vegetales (avena, soja, almendra) certificadas sin gluten.</p>
+          
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver 11 productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado (Mercadona) — Yogur natural sin gluten</li><li>Hacendado (Mercadona) — Postre lácteo cremoso sin lactosa y sin gluten</li><li>Hacendado (Mercadona) — Bebida de avena sin gluten</li><li>Alpro — Bebida de avena sin gluten certificada</li><li>Central Lechera Asturiana — Bebida de avena sin gluten</li><li>Hacendado (Mercadona) — Skyr sin gluten</li><li>Vivesoy — Bebida de avena sin azúcar</li><li>Vivesoy — Bebida de frutos secos sin azúcar</li><li>Kaiku Begetal — Bebida vegetal de avena/almendra</li><li>Alpro (Danone) — Postre vegetal de coco natural</li><li>Alpro (Danone) — Frutos rojos y dátiles sin azúcares añadidos</li></ul>
+          </div>
+        
+        </article>
+      
+        <article class="info-card" data-title="Legumbres y conservas">
+          <span class="info-icon icon-10" aria-hidden="true">🥫</span>
+          <h3>Legumbres y conservas</h3>
+          <p>Legumbres cocidas al natural y conservas de pescado en aceite de oliva o al natural, sin aditivos con gluten.</p>
+          
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver 12 productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado (Mercadona) — Garbanzos cocidos sin gluten</li><li>Hacendado (Mercadona) — Lenteja pardina cocida sin gluten</li><li>Hacendado (Mercadona) — Alubias blancas cocidas sin gluten</li><li>Hacendado (Mercadona) — Atún en aceite de oliva sin gluten</li><li>Litoral — Legumbres cocidas sin gluten</li><li>El Granero Integral — Legumbres ecológicas sin gluten</li><li>Carrefour Sin Gluten — Legumbres cocidas</li><li>Luengo — Legumbres cocidas sin gluten</li><li>Cidacos — Legumbres en conserva</li><li>Carretilla — Fabada asturiana sin gluten</li><li>Calvo — Atún claro en aceite de oliva sin gluten</li><li>Isabel — Atún claro en aceite de girasol alto oleico, sin gluten y sin lactosa</li></ul>
+          </div>
+        
+        </article>
+      
+        <article class="info-card" data-title="Harinas y repostería">
+          <span class="info-icon icon-11" aria-hidden="true">🌾</span>
+          <h3>Harinas y repostería</h3>
+          <p>Harina de arroz, maíz y almendra, y mezclas panificables certificadas para hornear en casa.</p>
+          
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver 13 productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Hacendado (Mercadona) — Preparado para panificación y repostería sin gluten</li><li>Hacendado (Mercadona) — Preparado para bizcocho sin gluten</li><li>Schär — Mix B Pan (harina panificable sin gluten)</li><li>El Granero Integral — Harina de arroz sin gluten</li><li>El Granero Integral — Harina de trigo sarraceno sin gluten</li><li>Beiker — Preparado panificable sin gluten</li><li>Adpan — Mix panadera sin gluten</li><li>NaturGreen — Harina de trigo sarraceno Bio sin gluten</li><li>NaturGreen — Harina de arroz integral Bio sin gluten</li><li>NaturGreen — Harina de garbanzo Bio sin gluten</li><li>NaturGreen — Harina de avena integral Bio sin gluten</li><li>NaturGreen — Mezcla de harina para pan Bio sin gluten</li><li>Ceresin — Preparado panificable y de repostería sin gluten</li></ul>
+          </div>
+        
+        </article>
+      
+        <article class="info-card" data-title="Alimentación infantil">
+          <span class="info-icon icon-12" aria-hidden="true">👶</span>
+          <h3>Alimentación infantil</h3>
+          <p>Potitos, papillas y galletas de iniciación certificados sin gluten para bebés y niños.</p>
+          
+          <button class="info-toggle" type="button" aria-expanded="false">
+            <span>Ver 12 productos</span>
+            <span class="chevron">⌄</span>
+          </button>
+          <div class="info-content">
+            <ul class="info-product-list"><li>Nestlé — Papilla de cereales sin gluten (crema de arroz)</li><li>Nestlé — Papilla maíz y arroz sin gluten</li><li>Blevit (Ordesa) — Blevit Plus Bibe sin gluten (arroz y maíz)</li><li>Nutribén — Papilla de cereales sin gluten</li><li>Hero Baby — Papilla de cereales sin gluten</li><li>Smileat — Potitos y papillas ecológicas sin gluten</li><li>Hacendado (Mercadona) — Potitos de fruta (naturalmente sin gluten)</li><li>Nutribén — Harina Vegetal Primera Papilla sin gluten y sin lactosa</li><li>Hero Solo — Papilla de cereales sin gluten</li><li>Hero Baby Pedialac — Papilla de cereales sin gluten</li><li>Holle — Papilla de 3 cereales sin gluten Bio</li><li>Gerber (Nestlé) — Papilla de arroz sin gluten</li></ul>
+          </div>
+        
+        </article>
+      </div>
 
       <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Comprueba siempre el sello o la etiqueta "sin gluten" del producto: las marcas y referencias disponibles varían según el supermercado y pueden cambiar con el tiempo.</span></p>
     </section>
@@ -86,7 +740,147 @@
       <span class="eyebrow">🏬 Tiendas sin gluten</span>
       <h1 class="section-title">Tiendas especializadas sin gluten</h1>
 
-      <div class="shop-list" id="tiendasList"></div>
+      <div class="shop-list" id="tiendasList">
+        <article class="shop-card" data-title="Artediet">
+          <div class="rank-header">
+            <h3>Artediet</h3>
+            <span class="rank-rating">⭐ 4.8 · 185 reseñas</span>
+          </div>
+          <p class="rank-meta">🏬 Física · Madrid</p>
+          <p class="rank-desc">Panadería y pastelería 100% sin gluten: pan, bollería, dulces y salados.</p>
+          <a class="rank-link" href="https://www.artediet.es/" target="_blank" rel="noopener noreferrer">Visitar web ↗</a>
+        </article>
+      
+        <article class="shop-card" data-title="Gluten Tag">
+          <div class="rank-header">
+            <h3>Gluten Tag</h3>
+            <span class="rank-rating">⭐ 4.8 · 159 reseñas</span>
+          </div>
+          <p class="rank-meta">🏬 Física · Barcelona (Gràcia)</p>
+          <p class="rank-desc">Obrador sin gluten especializado en bollería, pan y dulces.</p>
+          <a class="rank-link" href="https://www.glutentag.cat" target="_blank" rel="noopener noreferrer">Visitar web ↗</a>
+        </article>
+      
+        <article class="shop-card" data-title="Celiacs &amp; Co">
+          <div class="rank-header">
+            <h3>Celiacs &amp; Co</h3>
+            <span class="rank-rating">⭐ ≈ 4.8</span>
+          </div>
+          <p class="rank-meta">🏬 Física · Barcelona (La Sagrera)</p>
+          <p class="rank-desc">Supermercado especializado sin gluten (también sin lactosa y opciones veganas).</p>
+          <a class="rank-link" href="https://celiacsandco.com/" target="_blank" rel="noopener noreferrer">Visitar web ↗</a>
+        </article>
+      
+        <article class="shop-card" data-title="Glutery">
+          <div class="rank-header">
+            <h3>Glutery</h3>
+            <span class="rank-rating">⭐ ≈ 4.7</span>
+          </div>
+          <p class="rank-meta">🏬 Física · Barcelona (Gràcia)</p>
+          <p class="rank-desc">Café-obrador sin gluten certificado por Celíacs Catalunya, conocido por empanadas y focaccia.</p>
+          <span class="shop-noweb">Sin web oficial verificada</span>
+        </article>
+      
+        <article class="shop-card" data-title="Maná Productos Sin Gluten">
+          <div class="rank-header">
+            <h3>Maná Productos Sin Gluten</h3>
+            <span class="rank-rating">⭐ 4.2 · 121 reseñas</span>
+          </div>
+          <p class="rank-meta">🏬💻 Física y online · Madrid (Salamanca)</p>
+          <p class="rank-desc">Supermercado especializado sin gluten con más de 600 referencias de varias marcas.</p>
+          <a class="rank-link" href="https://www.manaproductossingluten.com/" target="_blank" rel="noopener noreferrer">Visitar web ↗</a>
+        </article>
+      
+        <article class="shop-card" data-title="Celicioso">
+          <div class="rank-header">
+            <h3>Celicioso</h3>
+            <span class="rank-rating">⭐ ≈ 3.9</span>
+          </div>
+          <p class="rank-meta">🏬 Física · Madrid (varios locales, también Marbella y Palma)</p>
+          <p class="rank-desc">Pastelería-cafetería 100% sin gluten: bollería americana, dulce y salado.</p>
+          <span class="shop-noweb">Sin web oficial verificada</span>
+        </article>
+      
+        <article class="shop-card" data-title="Sana Locura Gluten Free Bakery">
+          <div class="rank-header">
+            <h3>Sana Locura Gluten Free Bakery</h3>
+            <span class="rank-rating">⭐ 3.5 · 84 reseñas</span>
+          </div>
+          <p class="rank-meta">🏬 Física · Barcelona (Sant Gervasi)</p>
+          <p class="rank-desc">Panadería y pastelería 100% sin gluten.</p>
+          <a class="rank-link" href="https://sanalocura.es/" target="_blank" rel="noopener noreferrer">Visitar web ↗</a>
+        </article>
+      
+        <article class="shop-card" data-title="La Celiacoteca">
+          <div class="rank-header">
+            <h3>La Celiacoteca</h3>
+            
+          </div>
+          <p class="rank-meta">🏬 Física · Madrid / Alcalá de Henares</p>
+          <p class="rank-desc">Obrador 100% sin gluten: panadería, bollería y masas saladas.</p>
+          <a class="rank-link" href="https://www.laceliacoteca.com/index.html" target="_blank" rel="noopener noreferrer">Visitar web ↗</a>
+        </article>
+      
+        <article class="shop-card" data-title="Món Celíac">
+          <div class="rank-header">
+            <h3>Món Celíac</h3>
+            
+          </div>
+          <p class="rank-meta">🏬💻 Física y online · Barcelona</p>
+          <p class="rank-desc">Obrador 100% sin gluten: pan, dulces y snacks, con envío a la península.</p>
+          <a class="rank-link" href="https://monceliac.com/" target="_blank" rel="noopener noreferrer">Visitar web ↗</a>
+        </article>
+      
+        <article class="shop-card" data-title="Celikatessen">
+          <div class="rank-header">
+            <h3>Celikatessen</h3>
+            
+          </div>
+          <p class="rank-meta">🏬 Física · Madrid (Mercado de Pacífico)</p>
+          <p class="rank-desc">Panadería y repostería ecológica sin gluten y sin lácteos.</p>
+          <span class="shop-noweb">Sin web oficial verificada</span>
+        </article>
+      
+        <article class="shop-card" data-title="Celicientos">
+          <div class="rank-header">
+            <h3>Celicientos</h3>
+            
+          </div>
+          <p class="rank-meta">🏬 Física · Valencia</p>
+          <p class="rank-desc">Panadería-cafetería 100% sin gluten, dulce y salado, con reparto a domicilio.</p>
+          <a class="rank-link" href="https://celicientos.com/" target="_blank" rel="noopener noreferrer">Visitar web ↗</a>
+        </article>
+      
+        <article class="shop-card" data-title="El Obrador del Celíaco">
+          <div class="rank-header">
+            <h3>El Obrador del Celíaco</h3>
+            
+          </div>
+          <p class="rank-meta">🏬 Física · Valencia</p>
+          <p class="rank-desc">Panadería y pastelería sin gluten y sin lactosa: pan rústico, fartons, tartas.</p>
+          <span class="shop-noweb">Sin web oficial verificada</span>
+        </article>
+      
+        <article class="shop-card" data-title="Panceliac">
+          <div class="rank-header">
+            <h3>Panceliac</h3>
+            
+          </div>
+          <p class="rank-meta">💻 Online · Envío a toda España</p>
+          <p class="rank-desc">Panadería, bollería y alimentación sin gluten con envío a domicilio.</p>
+          <a class="rank-link" href="https://panceliac.com/" target="_blank" rel="noopener noreferrer">Visitar web ↗</a>
+        </article>
+      
+        <article class="shop-card" data-title="Glutenfreeshop.es">
+          <div class="rank-header">
+            <h3>Glutenfreeshop.es</h3>
+            
+          </div>
+          <p class="rank-meta">💻 Online · Envío a la península</p>
+          <p class="rank-desc">Selección gourmet de alimentos ecológicos sin gluten, suplementos y libros.</p>
+          <a class="rank-link" href="https://glutenfreeshop.es/" target="_blank" rel="noopener noreferrer">Visitar web ↗</a>
+        </article>
+      </div>
 
       <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Datos recogidos mediante búsqueda web en septiembre de 2026: nombres y ubicaciones verificados, pero las notas de Google proceden en su mayoría de agregadores (no de una consulta directa a Maps) y se marcan con "≈" cuando la fuente lo advierte. No hemos visitado estas tiendas ni sus webs — confirma horarios, existencias y condiciones antes de comprar o desplazarte.</span></p>
     </section>
@@ -97,11 +891,334 @@
 
       <div class="search-box">
         <span class="search-icon">🔍</span>
-        <input type="search" id="recetaSearch" placeholder="Buscar por nombre o ingrediente…" aria-label="Buscar recetas" />
+        <input type="search" id="recetaSearch" placeholder="Buscar por nombre o ingrediente…" aria-label="Buscar recetas">
       </div>
 
-      <div class="recipe-list" id="recetasList"></div>
-      <p class="empty-state" id="recetasEmpty" hidden>No se encontraron recetas con esa búsqueda.</p>
+      <div class="recipe-list" id="recetasList">
+    <div class="recipe-card " data-title="Tortilla de patatas clásica">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🍳</span>
+        <span class="recipe-title">
+          <strong>Tortilla de patatas clásica</strong>
+          <small>~320 kcal · 35 min</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <h4>Ingredientes</h4>
+        <ul><li>4 patatas medianas</li><li>5 huevos</li><li>1 cebolla</li><li>Aceite de oliva virgen extra</li><li>Sal</li></ul>
+        <h4>Preparación</h4>
+        <ol><li>Pelar las patatas y cortarlas en láminas finas (2-3 mm); cortar la cebolla en juliana fina.</li><li>Calentar abundante aceite de oliva en una sartén amplia a fuego medio-bajo.</li><li>Añadir las patatas y la cebolla, salar ligeramente y confitar 20-25 minutos, removiendo de vez en cuando, hasta que estén blandas sin dorarse.</li><li>Escurrir bien el aceite con un colador, reservando un par de cucharadas para cuajar.</li><li>Batir los huevos en un bol amplio, mezclar con las patatas y la cebolla templadas y dejar reposar 5 minutos.</li><li>Calentar el aceite reservado en una sartén antiadherente de 20-22 cm y verter la mezcla, repartiendo bien.</li><li>Cuajar a fuego medio 2-3 minutos, dar la vuelta con ayuda de un plato y cuajar otros 2-3 minutos por el otro lado.</li><li>Dejar reposar unos minutos antes de cortar y servir.</li></ol>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card " data-title="Pollo al horno con verduras">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🍗</span>
+        <span class="recipe-title">
+          <strong>Pollo al horno con verduras</strong>
+          <small>~410 kcal · 45 min</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <h4>Ingredientes</h4>
+        <ul><li>4 muslos de pollo</li><li>1 calabacín</li><li>1 pimiento rojo</li><li>2 patatas</li><li>Aceite de oliva y romero</li></ul>
+        <h4>Preparación</h4>
+        <ol><li>Precalentar el horno a 200 °C con calor arriba y abajo.</li><li>Lavar y cortar el calabacín, el pimiento y las patatas en trozos regulares de tamaño similar.</li><li>Salpimentar los muslos de pollo y las verduras.</li><li>Colocar todo en una bandeja de horno amplia, sin amontonar, para que se doren en vez de cocerse al vapor.</li><li>Regar con un buen chorro de aceite de oliva y espolvorear el romero.</li><li>Hornear 25 minutos, sacar y dar la vuelta al pollo, removiendo las verduras.</li><li>Hornear 15-20 minutos más, hasta que el pollo esté dorado y las verduras tiernas.</li><li>Dejar reposar 5 minutos fuera del horno antes de servir.</li></ol>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card " data-title="Arroz con verduras y gambas">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🍤</span>
+        <span class="recipe-title">
+          <strong>Arroz con verduras y gambas</strong>
+          <small>~380 kcal · 30 min</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <h4>Ingredientes</h4>
+        <ul><li>300 g de arroz</li><li>200 g de gambas peladas</li><li>1 pimiento verde</li><li>Guisantes</li><li>Caldo de verduras sin gluten</li></ul>
+        <h4>Preparación</h4>
+        <ol><li>Picar el ajo y el pimiento verde en trozos pequeños.</li><li>Calentar aceite de oliva en una cazuela ancha y sofreír el ajo y el pimiento 4-5 minutos, hasta que estén blandos.</li><li>Añadir el arroz y remover 1-2 minutos para que se impregne del sofrito.</li><li>Verter el caldo de verduras caliente (el doble de volumen que el arroz) y llevar a ebullición.</li><li>Bajar el fuego a medio-bajo, añadir los guisantes y cocer 15 minutos sin remover demasiado.</li><li>Incorporar las gambas peladas y cocer 3 minutos más, hasta que cambien de color.</li><li>Apagar el fuego, tapar y dejar reposar 2-3 minutos antes de servir.</li></ol>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card " data-title="Ensalada de quinoa y aguacate">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🥑</span>
+        <span class="recipe-title">
+          <strong>Ensalada de quinoa y aguacate</strong>
+          <small>~340 kcal · 20 min</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <h4>Ingredientes</h4>
+        <ul><li>150 g de quinoa</li><li>1 aguacate</li><li>Tomates cherry</li><li>Pepino</li><li>Limón y aceite de oliva</li></ul>
+        <h4>Preparación</h4>
+        <ol><li>Enjuagar la quinoa con un colador fino bajo el grifo para quitar el sabor amargo de la saponina.</li><li>Cocerla en agua con una pizca de sal (1 parte de quinoa por 2 de agua) 12-15 minutos, hasta que los granos se abran.</li><li>Escurrir y dejar enfriar completamente extendida en una bandeja, para que no quede pastosa.</li><li>Cortar el aguacate en dados, los tomates cherry por la mitad y el pepino en cubos pequeños.</li><li>Mezclar la quinoa fría con las verduras en un bol grande.</li><li>Preparar la vinagreta batiendo el zumo de limón, el aceite de oliva y una pizca de sal.</li><li>Aliñar justo antes de servir para que el aguacate no se oxide.</li></ol>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card " data-title="Crema de calabaza">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🎃</span>
+        <span class="recipe-title">
+          <strong>Crema de calabaza</strong>
+          <small>~210 kcal · 30 min</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <h4>Ingredientes</h4>
+        <ul><li>500 g de calabaza</li><li>1 cebolla</li><li>1 zanahoria</li><li>Caldo de verduras sin gluten</li><li>Un chorrito de nata ligera (opcional)</li></ul>
+        <h4>Preparación</h4>
+        <ol><li>Pelar y trocear la calabaza, la cebolla y la zanahoria en trozos medianos.</li><li>Calentar un chorro de aceite de oliva en una olla y pochar la cebolla y la zanahoria a fuego medio-bajo 8-10 minutos.</li><li>Añadir la calabaza troceada y rehogar 2-3 minutos más.</li><li>Cubrir con el caldo de verduras caliente (que cubra ligeramente las verduras) y salar.</li><li>Cocer a fuego medio 20-25 minutos, hasta que todo esté muy tierno al pincharlo con un tenedor.</li><li>Triturar con batidora hasta conseguir una crema fina, añadiendo más caldo si queda demasiado espesa.</li><li>Añadir un chorrito de nata ligera si se desea, remover y servir bien caliente.</li></ol>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card " data-title="Salmón a la plancha con puré de boniato">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🐟</span>
+        <span class="recipe-title">
+          <strong>Salmón a la plancha con puré de boniato</strong>
+          <small>~430 kcal · 30 min</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <h4>Ingredientes</h4>
+        <ul><li>2 lomos de salmón</li><li>2 boniatos</li><li>Leche o bebida vegetal</li><li>Aceite de oliva</li><li>Eneldo</li></ul>
+        <h4>Preparación</h4>
+        <ol><li>Pelar los boniatos y cortarlos en trozos medianos.</li><li>Cocerlos en agua con sal 15-18 minutos, hasta que estén muy tiernos al pincharlos.</li><li>Escurrir y triturar con un poco de leche caliente y un chorrito de aceite hasta obtener un puré fino; salpimentar.</li><li>Secar bien los lomos de salmón con papel de cocina y salpimentar.</li><li>Calentar una plancha o sartén antiadherente con un poco de aceite a fuego fuerte.</li><li>Marcar el salmón por el lado de la piel 3-4 minutos, hasta que esté crujiente, y dar la vuelta.</li><li>Cocinar 2-3 minutos más por el otro lado, según el grosor, hasta que quede jugoso por dentro.</li><li>Servir el salmón sobre una base de puré de boniato y espolvorear eneldo fresco picado.</li></ol>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card " data-title="Gazpacho andaluz">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🍅</span>
+        <span class="recipe-title">
+          <strong>Gazpacho andaluz</strong>
+          <small>~150 kcal · 15 min</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <h4>Ingredientes</h4>
+        <ul><li>1 kg de tomates maduros</li><li>1 pepino</li><li>1 pimiento verde</li><li>1 diente de ajo</li><li>Aceite de oliva, vinagre y sal</li></ul>
+        <h4>Preparación</h4>
+        <ol><li>Lavar los tomates y quitarles el pedúnculo; trocear junto con el pepino, el pimiento verde y el ajo.</li><li>Colocar todas las verduras en el vaso de la batidora junto con el aceite de oliva, el vinagre y la sal.</li><li>Triturar a máxima potencia 2-3 minutos, hasta obtener una mezcla completamente fina.</li><li>Probar y rectificar de sal, vinagre o aceite al gusto.</li><li>Colar con un colador fino o chino si se prefiere una textura sin pieles ni pepitas.</li><li>Enfriar en la nevera un mínimo de 1-2 horas antes de servir bien frío.</li><li>Servir con dados de pepino, pimiento y tomate picado por encima si se desea.</li></ol>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card " data-title="Albóndigas en salsa de tomate">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🍖</span>
+        <span class="recipe-title">
+          <strong>Albóndigas en salsa de tomate</strong>
+          <small>~450 kcal · 50 min</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <h4>Ingredientes</h4>
+        <ul><li>500 g de carne picada</li><li>1 huevo</li><li>Pan rallado sin gluten</li><li>Tomate triturado</li><li>Ajo, perejil y aceite de oliva</li></ul>
+        <h4>Preparación</h4>
+        <ol><li>Picar finamente el ajo y el perejil.</li><li>En un bol grande, mezclar la carne picada con el huevo, el pan rallado sin gluten, el ajo y el perejil; salpimentar y amasar bien.</li><li>Dejar reposar la masa 10 minutos en la nevera para que sea más fácil de formar.</li><li>Formar bolas de tamaño similar con las manos humedecidas.</li><li>Calentar aceite de oliva en una sartén y dorar las albóndigas por todos los lados a fuego medio-alto.</li><li>Retirar y reservar; en la misma sartén, añadir el tomate triturado y una pizca de sal.</li><li>Incorporar de nuevo las albóndigas a la salsa y cocer a fuego lento 20-25 minutos, removiendo de vez en cuando.</li><li>Servir calientes, con un poco de perejil picado por encima.</li></ol>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card " data-title="Poke bowl de atún">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🥙</span>
+        <span class="recipe-title">
+          <strong>Poke bowl de atún</strong>
+          <small>~420 kcal · 25 min</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <h4>Ingredientes</h4>
+        <ul><li>200 g de atún fresco</li><li>Arroz cocido</li><li>Edamame</li><li>Aguacate y zanahoria</li><li>Salsa de soja sin gluten (tamari)</li></ul>
+        <h4>Preparación</h4>
+        <ol><li>Cortar el atún fresco en dados de 1-2 cm.</li><li>Marinar el atún con la salsa de soja sin gluten (tamari) durante 10-15 minutos en la nevera.</li><li>Cocer el arroz según las instrucciones del paquete y dejar enfriar ligeramente (templado, no caliente).</li><li>Cortar el aguacate en láminas y la zanahoria en tiras finas o rallada.</li><li>Descongelar o cocer el edamame según indique el envase.</li><li>Montar el bowl colocando el arroz como base y distribuyendo el atún, el aguacate, la zanahoria y el edamame en secciones.</li><li>Terminar con un poco de la marinada de tamari por encima y semillas de sésamo si se desea.</li></ol>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card " data-title="Crepes de trigo sarraceno con fruta">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🥞</span>
+        <span class="recipe-title">
+          <strong>Crepes de trigo sarraceno con fruta</strong>
+          <small>~280 kcal · 20 min</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <h4>Ingredientes</h4>
+        <ul><li>150 g de harina de trigo sarraceno (naturalmente sin gluten)</li><li>2 huevos</li><li>250 ml de leche o bebida vegetal</li><li>Fruta fresca al gusto</li><li>Una pizca de sal</li></ul>
+        <h4>Preparación</h4>
+        <ol><li>Tamizar la harina de trigo sarraceno en un bol grande para evitar grumos.</li><li>Batir los huevos aparte y añadirlos a la harina poco a poco, alternando con la leche, hasta conseguir una masa homogénea.</li><li>Añadir una pizca de sal y dejar reposar la masa 15-20 minutos a temperatura ambiente.</li><li>Calentar una sartén antiadherente a fuego medio y engrasar ligeramente con un poco de aceite.</li><li>Verter un cucharón de masa y repartir girando la sartén para que quede una capa fina y uniforme.</li><li>Cocinar 1-2 minutos hasta que los bordes se despeguen, dar la vuelta y cocinar 1 minuto más por el otro lado.</li><li>Repetir con el resto de la masa, apilando los crepes en un plato.</li><li>Rellenar o cubrir con fruta fresca troceada al gusto y servir templados.</li></ol>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card " data-title="Porridge de avena con frutos rojos">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🥣</span>
+        <span class="recipe-title">
+          <strong>Porridge de avena con frutos rojos</strong>
+          <small>~320 kcal · 10 min</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <h4>Ingredientes</h4>
+        <ul><li>80 g de copos de avena certificados sin gluten</li><li>250 ml de leche o bebida vegetal</li><li>Un puñado de frutos rojos (fresas, arándanos, frambuesas)</li><li>1 cucharadita de miel</li><li>Canela al gusto</li></ul>
+        <h4>Preparación</h4>
+        <ol><li>Verter la avena y la leche en un cazo pequeño.</li><li>Calentar a fuego medio, removiendo con frecuencia para que no se pegue.</li><li>Cocer 5-7 minutos, hasta que la avena haya absorbido el líquido y tenga una textura cremosa.</li><li>Retirar del fuego y dejar templar 1-2 minutos.</li><li>Servir en un bol, añadir los frutos rojos por encima, un chorrito de miel y espolvorear canela.</li></ol>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card " data-title="Vichyssoise (crema fría de puerro y patata)">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🥔</span>
+        <span class="recipe-title">
+          <strong>Vichyssoise (crema fría de puerro y patata)</strong>
+          <small>~230 kcal · 40 min + enfriado</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <h4>Ingredientes</h4>
+        <ul><li>3 puerros (solo la parte blanca)</li><li>2 patatas medianas</li><li>1 cebolla pequeña</li><li>Caldo de verduras sin gluten</li><li>Nata líquida o bebida vegetal</li></ul>
+        <h4>Preparación</h4>
+        <ol><li>Lavar bien los puerros entre las capas y cortarlos en rodajas finas, junto con la cebolla.</li><li>Pelar y trocear las patatas en dados medianos.</li><li>Calentar un chorro de aceite de oliva en una olla y pochar el puerro y la cebolla a fuego bajo 10 minutos, sin que cojan color.</li><li>Añadir las patatas y el caldo de verduras (que cubra los ingredientes) y salar.</li><li>Cocer a fuego medio 20-25 minutos, hasta que la patata esté muy tierna.</li><li>Triturar todo hasta obtener una crema fina; añadir un chorro de nata o bebida vegetal y volver a triturar.</li><li>Dejar enfriar a temperatura ambiente y luego refrigerar al menos 2 horas.</li><li>Servir bien fría, con cebollino picado por encima si se desea.</li></ol>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card " data-title="Solomillo de cerdo con salsa de mostaza">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🍖</span>
+        <span class="recipe-title">
+          <strong>Solomillo de cerdo con salsa de mostaza</strong>
+          <small>~410 kcal · 35 min</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <h4>Ingredientes</h4>
+        <ul><li>1 solomillo de cerdo (~500 g)</li><li>2 cucharadas de mostaza sin gluten</li><li>200 ml de nata para cocinar</li><li>1 cebolla</li><li>Aceite de oliva</li></ul>
+        <h4>Preparación</h4>
+        <ol><li>Salpimentar el solomillo y cortarlo en medallones de 2-3 cm.</li><li>Picar la cebolla finamente.</li><li>Calentar aceite de oliva en una sartén a fuego fuerte y dorar los medallones 2 minutos por cada lado; retirar y reservar.</li><li>En la misma sartén, bajar el fuego y pochar la cebolla 5-6 minutos, hasta que esté transparente.</li><li>Añadir la nata y la mostaza, remover bien y cocinar 3-4 minutos a fuego medio hasta que espese ligeramente.</li><li>Incorporar de nuevo los medallones a la salsa y cocinar 4-5 minutos más, hasta que estén hechos por dentro.</li><li>Probar y rectificar de sal si es necesario.</li><li>Servir caliente con la salsa por encima.</li></ol>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card " data-title="Merluza en salsa verde">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🐠</span>
+        <span class="recipe-title">
+          <strong>Merluza en salsa verde</strong>
+          <small>~280 kcal · 30 min</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <h4>Ingredientes</h4>
+        <ul><li>4 lomos de merluza</li><li>3 dientes de ajo</li><li>Perejil fresco</li><li>200 ml de caldo de pescado sin gluten</li><li>Aceite de oliva y 1 cucharada de harina de arroz (opcional)</li></ul>
+        <h4>Preparación</h4>
+        <ol><li>Salar los lomos de merluza y reservar.</li><li>Picar el ajo y el perejil finamente.</li><li>Calentar aceite de oliva en una cazuela amplia y dorar el ajo a fuego bajo, sin que se queme.</li><li>Si se desea espesar la salsa, añadir la harina de arroz y remover 1 minuto.</li><li>Verter el caldo de pescado poco a poco, removiendo para que no se formen grumos.</li><li>Añadir el perejil picado y llevar a un ligero hervor.</li><li>Colocar los lomos de merluza en la cazuela, con la piel hacia abajo, y cocinar a fuego medio-bajo 8-10 minutos, moviendo la cazuela de vez en cuando en vez de remover.</li><li>Servir la merluza con la salsa verde por encima.</li></ol>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card " data-title="Curry de garbanzos y espinacas">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🍛</span>
+        <span class="recipe-title">
+          <strong>Curry de garbanzos y espinacas</strong>
+          <small>~360 kcal · 30 min</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <h4>Ingredientes</h4>
+        <ul><li>400 g de garbanzos cocidos sin gluten</li><li>200 g de espinacas frescas</li><li>1 cebolla</li><li>400 ml de leche de coco</li><li>2 cucharaditas de curry en polvo sin gluten</li><li>1 diente de ajo</li></ul>
+        <h4>Preparación</h4>
+        <ol><li>Picar la cebolla y el ajo finamente.</li><li>Calentar aceite de oliva en una sartén honda y sofreír la cebolla y el ajo a fuego medio 5 minutos.</li><li>Añadir el curry en polvo y remover 1 minuto para que suelte aroma.</li><li>Incorporar los garbanzos escurridos y remover para que se impregnen de las especias.</li><li>Verter la leche de coco y cocinar a fuego medio 10-12 minutos, removiendo de vez en cuando.</li><li>Añadir las espinacas y cocinar 2-3 minutos más, hasta que se ablanden.</li><li>Salpimentar al gusto y servir caliente, con arroz basmati como acompañamiento si se desea.</li></ol>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card " data-title="Carbonara sin gluten">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🍝</span>
+        <span class="recipe-title">
+          <strong>Carbonara sin gluten</strong>
+          <small>~520 kcal · 20 min</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <h4>Ingredientes</h4>
+        <ul><li>350 g de pasta sin gluten (espagueti)</li><li>150 g de panceta o bacon</li><li>3 huevos</li><li>50 g de queso parmesano rallado</li><li>Pimienta negra</li></ul>
+        <h4>Preparación</h4>
+        <ol><li>Poner una olla grande con agua y sal a hervir para la pasta.</li><li>Cortar la panceta en tiras o dados pequeños.</li><li>Cocer la pasta sin gluten según las instrucciones del paquete (suele necesitar 1-2 minutos menos que la pasta normal).</li><li>Mientras tanto, dorar la panceta en una sartén grande a fuego medio, sin aceite adicional, hasta que esté crujiente.</li><li>En un bol, batir los huevos con el queso parmesano y una buena cantidad de pimienta negra molida.</li><li>Escurrir la pasta reservando un cazo del agua de cocción.</li><li>Añadir la pasta caliente a la sartén con la panceta y retirar del fuego.</li><li>Incorporar la mezcla de huevo y queso, removiendo rápido sin volver a poner al fuego directo.</li><li>Añadir un poco del agua de cocción reservada si queda demasiado espesa, y servir inmediatamente.</li></ol>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card " data-title="Brownie sin gluten">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🍫</span>
+        <span class="recipe-title">
+          <strong>Brownie sin gluten</strong>
+          <small>~290 kcal por ración · 40 min</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <h4>Ingredientes</h4>
+        <ul><li>200 g de chocolate negro sin gluten</li><li>150 g de mantequilla</li><li>3 huevos</li><li>180 g de azúcar</li><li>80 g de harina de arroz o mezcla panificable sin gluten</li><li>Nueces troceadas (opcional)</li></ul>
+        <h4>Preparación</h4>
+        <ol><li>Precalentar el horno a 180 °C y forrar un molde rectangular con papel de horno.</li><li>Trocear el chocolate y derretirlo junto con la mantequilla al baño maría o en el microondas en golpes cortos.</li><li>Dejar templar la mezcla de chocolate unos minutos.</li><li>Batir los huevos con el azúcar hasta que blanqueen y dupliquen su volumen.</li><li>Incorporar el chocolate derretido a los huevos, mezclando con movimientos envolventes.</li><li>Tamizar la harina sin gluten sobre la mezcla y añadir con cuidado, sin batir en exceso.</li><li>Añadir las nueces si se desea y verter la masa en el molde.</li><li>Hornear 20-25 minutos: el interior debe quedar húmedo y ligeramente poco hecho.</li><li>Dejar enfriar completamente en el molde antes de cortar en cuadrados.</li></ol>
+      
+      </div>
+    </div>
+  </div>
+      <p class="empty-state" id="recetasEmpty" hidden="">No se encontraron recetas con esa búsqueda.</p>
     </section>
 
     <section id="dietas" class="page" role="tabpanel" aria-labelledby="tab-dietas">
@@ -119,48 +1236,291 @@
           </div>
           <div class="calc-field">
             <label for="calcEdad">Edad (años)</label>
-            <input type="number" id="calcEdad" min="14" max="100" placeholder="Ej. 32" />
+            <input type="number" id="calcEdad" min="14" max="100" placeholder="Ej. 32">
           </div>
           <div class="calc-field">
             <label for="calcAltura">Altura (cm)</label>
-            <input type="number" id="calcAltura" min="120" max="230" placeholder="Ej. 170" />
+            <input type="number" id="calcAltura" min="120" max="230" placeholder="Ej. 170">
           </div>
           <div class="calc-field">
             <label for="calcPeso">Peso (kg)</label>
-            <input type="number" id="calcPeso" min="30" max="250" placeholder="Ej. 68" />
+            <input type="number" id="calcPeso" min="30" max="250" placeholder="Ej. 68">
           </div>
           <div class="calc-field calc-field-wide">
             <label for="calcActividad">Nivel de actividad física</label>
             <select id="calcActividad">
               <option value="1.2">Sedentaria (poco o ningún ejercicio)</option>
               <option value="1.375">Ligera (ejercicio suave 1-3 días/semana)</option>
-              <option value="1.55" selected>Moderada (ejercicio moderado 3-5 días/semana)</option>
+              <option value="1.55" selected="">Moderada (ejercicio moderado 3-5 días/semana)</option>
               <option value="1.725">Alta (ejercicio intenso 6-7 días/semana)</option>
               <option value="1.9">Muy alta (trabajo físico o entreno 2 veces al día)</option>
             </select>
           </div>
         </div>
         <button id="calcSubmit" class="btn-primary" type="button">Calcular calorías</button>
-        <p class="calc-error" id="calcError" hidden>Rellena edad, altura y peso con valores válidos.</p>
-        <div class="calc-result" id="calcResult" hidden></div>
+        <p class="calc-error" id="calcError" hidden="">Rellena edad, altura y peso con valores válidos.</p>
+        <div class="calc-result" id="calcResult" hidden=""></div>
       </div>
 
       <h3 class="subsection-title">Planes de 4 semanas por calorías</h3>
 
-      <div class="filter-chips" id="calorieFilter" role="group" aria-label="Filtrar por nivel calórico"></div>
-      <p class="plan-meta" id="planMeta"></p>
-      <div class="filter-chips filter-chips-sub" id="semanaFilter" role="group" aria-label="Filtrar por semana"></div>
+      <div class="filter-chips" id="calorieFilter" role="group" aria-label="Filtrar por nivel calórico"><button class="filter-chip active" data-kcal="1500" type="button">1500 kcal/día</button><button class="filter-chip" data-kcal="1750" type="button">1750 kcal/día</button><button class="filter-chip" data-kcal="2000" type="button">2000 kcal/día</button><button class="filter-chip" data-kcal="2250" type="button">2250 kcal/día</button><button class="filter-chip" data-kcal="2500" type="button">2500 kcal/día</button><button class="filter-chip" data-kcal="2750" type="button">2750 kcal/día</button></div>
+      <p class="plan-meta" id="planMeta">Déficit calórico moderado: pensado para complexiones menudas o poca actividad física. Consulta la calculadora para saber si te encaja.</p>
+      <div class="filter-chips filter-chips-sub" id="semanaFilter" role="group" aria-label="Filtrar por semana"><button class="filter-chip active" data-semana="0" type="button">Semana 1</button><button class="filter-chip" data-semana="1" type="button">Semana 2</button><button class="filter-chip" data-semana="2" type="button">Semana 3</button><button class="filter-chip" data-semana="3" type="button">Semana 4</button></div>
 
-      <div class="recipe-list" id="planDiasList"></div>
+      <div class="recipe-list" id="planDiasList">
+    <div class="recipe-card diet-card" data-title="1500-0-0">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🍽️</span>
+        <span class="recipe-title">
+          <strong>Lunes</strong>
+          <small>Semana 1 · 1500 kcal/día</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <ul class="meal-list">
+          <li><strong>Desayuno:</strong> Tortilla de 2 huevos con espinacas y una tostada de pan sin gluten (~300 kcal).</li><li><strong>Media mañana:</strong> Batido de frutos rojos con leche (~130 kcal).</li><li><strong>Comida:</strong> Solomillo de cerdo a la plancha con verduras salteadas (~420 kcal).</li><li><strong>Merienda:</strong> Tortitas de maíz sin gluten con jamón cocido (~140 kcal).</li><li><strong>Cena:</strong> Crema de calabaza con un huevo duro (~420 kcal).</li>
+        </ul>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card diet-card" data-title="1500-0-1">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🍽️</span>
+        <span class="recipe-title">
+          <strong>Martes</strong>
+          <small>Semana 1 · 1500 kcal/día</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <ul class="meal-list">
+          <li><strong>Desayuno:</strong> Porridge de 40 g de avena certificada sin gluten con leche y plátano (~300 kcal).</li><li><strong>Media mañana:</strong> Requesón con una pieza de fruta (~130 kcal).</li><li><strong>Comida:</strong> Ensalada de quinoa con atún, aguacate y tomate (~420 kcal).</li><li><strong>Merienda:</strong> Hummus con tortitas de arroz (~140 kcal).</li><li><strong>Cena:</strong> Ensalada de pollo, rúcula, tomate y queso feta (~420 kcal).</li>
+        </ul>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card diet-card" data-title="1500-0-2">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🍽️</span>
+        <span class="recipe-title">
+          <strong>Miércoles</strong>
+          <small>Semana 1 · 1500 kcal/día</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <ul class="meal-list">
+          <li><strong>Desayuno:</strong> Yogur griego con granola sin gluten y arándanos (~290 kcal).</li><li><strong>Media mañana:</strong> Dos tortitas de arroz con aguacate (~140 kcal).</li><li><strong>Comida:</strong> Albóndigas en salsa de tomate con arroz (~430 kcal).</li><li><strong>Merienda:</strong> Batido de proteína con agua y fresas (~140 kcal).</li><li><strong>Cena:</strong> Revuelto de huevo con gambas y espárragos (~420 kcal).</li>
+        </ul>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card diet-card" data-title="1500-0-3">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🍽️</span>
+        <span class="recipe-title">
+          <strong>Jueves</strong>
+          <small>Semana 1 · 1500 kcal/día</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <ul class="meal-list">
+          <li><strong>Desayuno:</strong> Tostada de pan sin gluten con aguacate y huevo poché (~300 kcal).</li><li><strong>Media mañana:</strong> Un puñado de uvas con queso curado (~140 kcal).</li><li><strong>Comida:</strong> Pechuga de pollo a la plancha con arroz basmati y brócoli (~420 kcal).</li><li><strong>Merienda:</strong> Compota de manzana sin azúcar añadido con nueces (~140 kcal).</li><li><strong>Cena:</strong> Tofu salteado con verduras y salsa de soja sin gluten (~420 kcal).</li>
+        </ul>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card diet-card" data-title="1500-0-4">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🍽️</span>
+        <span class="recipe-title">
+          <strong>Viernes</strong>
+          <small>Semana 1 · 1500 kcal/día</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <ul class="meal-list">
+          <li><strong>Desayuno:</strong> Batido de proteína con leche, plátano y avena certificada sin gluten (~290 kcal).</li><li><strong>Media mañana:</strong> Media ración de batido de proteína con agua (~120 kcal).</li><li><strong>Comida:</strong> Salmón al horno con boniato asado y ensalada verde (~430 kcal).</li><li><strong>Merienda:</strong> Barrita de cereales sin gluten (~140 kcal).</li><li><strong>Cena:</strong> Merluza en salsa verde con espárragos (~420 kcal).</li>
+        </ul>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card diet-card" data-title="1500-0-5">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🍽️</span>
+        <span class="recipe-title">
+          <strong>Sábado</strong>
+          <small>Semana 1 · 1500 kcal/día</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <ul class="meal-list">
+          <li><strong>Desayuno:</strong> Requesón con fresas y un puñado de almendras (~280 kcal).</li><li><strong>Media mañana:</strong> Infusión con un puñado de orejones (~130 kcal).</li><li><strong>Comida:</strong> Lentejas estofadas con verduras (~420 kcal).</li><li><strong>Merienda:</strong> Yogur natural con nueces (~140 kcal).</li><li><strong>Cena:</strong> Pechuga de pavo a la plancha con calabacín y zanahoria (~420 kcal).</li>
+        </ul>
+      
+      </div>
+    </div>
+  
+    <div class="recipe-card diet-card" data-title="1500-0-6">
+      <button class="recipe-toggle" type="button" aria-expanded="false">
+        <span class="recipe-icon" aria-hidden="true">🍽️</span>
+        <span class="recipe-title">
+          <strong>Domingo</strong>
+          <small>Semana 1 · 1500 kcal/día</small>
+        </span>
+        <span class="chevron">⌄</span>
+      </button>
+      <div class="recipe-content">
+        
+        <ul class="meal-list">
+          <li><strong>Desayuno:</strong> Tostada de pan sin gluten con tomate rallado, aceite de oliva y jamón serrano (~300 kcal).</li><li><strong>Media mañana:</strong> Media barrita casera de dátiles y frutos secos (~140 kcal).</li><li><strong>Comida:</strong> Pasta sin gluten con pollo y verduras salteadas (~430 kcal).</li><li><strong>Merienda:</strong> Media tostada de pan sin gluten con aguacate (~140 kcal).</li><li><strong>Cena:</strong> Vichyssoise con una tostada de pan sin gluten (~420 kcal).</li>
+        </ul>
+      
+      </div>
+    </div>
+  </div>
     </section>
 
     <section id="restaurantes" class="page" role="tabpanel" aria-labelledby="tab-restaurantes">
       <span class="eyebrow">⭐ Restaurantes</span>
       <h1 class="section-title">Ranking por ciudad</h1>
 
-      <div class="filter-chips" id="ciudadFilter" role="group" aria-label="Filtrar por ciudad"></div>
+      <div class="filter-chips" id="ciudadFilter" role="group" aria-label="Filtrar por ciudad"><button class="filter-chip active" data-ciudad="madrid" type="button">Madrid</button><button class="filter-chip" data-ciudad="barcelona" type="button">Barcelona</button><button class="filter-chip" data-ciudad="valencia" type="button">Valencia</button><button class="filter-chip" data-ciudad="sevilla" type="button">Sevilla</button><button class="filter-chip" data-ciudad="bilbao" type="button">Bilbao</button><button class="filter-chip" data-ciudad="malaga" type="button">Málaga</button><button class="filter-chip" data-ciudad="zaragoza" type="button">Zaragoza</button><button class="filter-chip" data-ciudad="alicante" type="button">Alicante</button><button class="filter-chip" data-ciudad="castellon" type="button">Castellón</button></div>
 
-      <div class="rank-list" id="restaurantesList"></div>
+      <div class="rank-list" id="restaurantesList">
+        <article class="rank-card" data-title="Ardemos Burger">
+          <span class="rank-number rank-top-1">1</span>
+          <div class="rank-info">
+            <div class="rank-header">
+              <h3>Ardemos Burger</h3>
+              <span class="rank-rating">⭐ 4.8</span>
+            </div>
+            <p class="rank-meta">Chamberí · 7200 reseñas</p>
+            <p class="rank-desc">Hamburguesería 100% sin gluten, sin riesgo de contaminación cruzada.</p>
+            <a class="rank-link" href="https://www.google.com/maps/search/?api=1&amp;query=Ardemos%20Burger%20Madrid" target="_blank" rel="noopener noreferrer">Ver en Google Maps ↗</a>
+          </div>
+        </article>
+      
+        <article class="rank-card" data-title="Pizza Natura">
+          <span class="rank-number rank-top-2">2</span>
+          <div class="rank-info">
+            <div class="rank-header">
+              <h3>Pizza Natura</h3>
+              <span class="rank-rating">⭐ 4.8</span>
+            </div>
+            <p class="rank-meta">Centro · 2340 reseñas</p>
+            <p class="rank-desc">Pizzería 100% sin gluten con masa de mijo y quinoa.</p>
+            <a class="rank-link" href="https://www.google.com/maps/search/?api=1&amp;query=Pizza%20Natura%20Madrid" target="_blank" rel="noopener noreferrer">Ver en Google Maps ↗</a>
+          </div>
+        </article>
+      
+        <article class="rank-card" data-title="El Japo Carranza">
+          <span class="rank-number rank-top-3">3</span>
+          <div class="rank-info">
+            <div class="rank-header">
+              <h3>El Japo Carranza</h3>
+              <span class="rank-rating">⭐ 4.7</span>
+            </div>
+            <p class="rank-meta">Chamberí / Trafalgar · 2784 reseñas</p>
+            <p class="rank-desc">Restaurante japonés con cocina íntegramente sin gluten.</p>
+            <a class="rank-link" href="https://www.google.com/maps/search/?api=1&amp;query=El%20Japo%20Carranza%20Madrid" target="_blank" rel="noopener noreferrer">Ver en Google Maps ↗</a>
+          </div>
+        </article>
+      
+        <article class="rank-card" data-title="Okashi Sanda">
+          <span class="rank-number">4</span>
+          <div class="rank-info">
+            <div class="rank-header">
+              <h3>Okashi Sanda</h3>
+              <span class="rank-rating">⭐ 4.7</span>
+            </div>
+            <p class="rank-meta">Malasaña / Universidad · nº de reseñas no confirmado</p>
+            <p class="rank-desc">Primer japonés sin gluten de Madrid, certificado FACE.</p>
+            <a class="rank-link" href="https://www.google.com/maps/search/?api=1&amp;query=Okashi%20Sanda%20Madrid" target="_blank" rel="noopener noreferrer">Ver en Google Maps ↗</a>
+          </div>
+        </article>
+      
+        <article class="rank-card" data-title="Bastardi Ristorante">
+          <span class="rank-number">5</span>
+          <div class="rank-info">
+            <div class="rank-header">
+              <h3>Bastardi Ristorante</h3>
+              <span class="rank-rating">⭐ ≈ 4.7</span>
+            </div>
+            <p class="rank-meta">Malasaña · 30 reseñas</p>
+            <p class="rank-desc">Italiano 100% sin gluten, avalado por asociación de celíacos.</p>
+            <a class="rank-link" href="https://www.google.com/maps/search/?api=1&amp;query=Bastardi%20Ristorante%20Madrid" target="_blank" rel="noopener noreferrer">Ver en Google Maps ↗</a>
+          </div>
+        </article>
+      
+        <article class="rank-card" data-title="Solo de Croquetas">
+          <span class="rank-number">6</span>
+          <div class="rank-info">
+            <div class="rank-header">
+              <h3>Solo de Croquetas</h3>
+              <span class="rank-rating">⭐ 4.4</span>
+            </div>
+            <p class="rank-meta">Centro / Salamanca · 3600 reseñas</p>
+            <p class="rank-desc">Especialista en croquetas 100% sin gluten y sin lactosa.</p>
+            <a class="rank-link" href="https://www.google.com/maps/search/?api=1&amp;query=Solo%20de%20Croquetas%20Madrid" target="_blank" rel="noopener noreferrer">Ver en Google Maps ↗</a>
+          </div>
+        </article>
+      
+        <article class="rank-card" data-title="As de Bastos">
+          <span class="rank-number">7</span>
+          <div class="rank-info">
+            <div class="rank-header">
+              <h3>As de Bastos</h3>
+              <span class="rank-rating">⭐ 4.3</span>
+            </div>
+            <p class="rank-meta">Bellas Vistas / Tetuán · nº de reseñas no confirmado</p>
+            <p class="rank-desc">Menú mediterráneo 100% sin gluten.</p>
+            <a class="rank-link" href="https://www.google.com/maps/search/?api=1&amp;query=As%20de%20Bastos%20Madrid" target="_blank" rel="noopener noreferrer">Ver en Google Maps ↗</a>
+          </div>
+        </article>
+      
+        <article class="rank-card" data-title="LaLina Bravas y Tapas">
+          <span class="rank-number">8</span>
+          <div class="rank-info">
+            <div class="rank-header">
+              <h3>LaLina Bravas y Tapas</h3>
+              <span class="rank-rating">⭐ 4.3</span>
+            </div>
+            <p class="rank-meta">La Latina · 3645 reseñas</p>
+            <p class="rank-desc">Bar de tapas y bravas prácticamente 100% sin gluten.</p>
+            <a class="rank-link" href="https://www.google.com/maps/search/?api=1&amp;query=LaLina%20Bravas%20y%20Tapas%20Madrid" target="_blank" rel="noopener noreferrer">Ver en Google Maps ↗</a>
+          </div>
+        </article>
+      
+        <article class="rank-card" data-title="Llagar La Llobera">
+          <span class="rank-number">9</span>
+          <div class="rank-info">
+            <div class="rank-header">
+              <h3>Llagar La Llobera</h3>
+              <span class="rank-rating">⭐ 4.2</span>
+            </div>
+            <p class="rank-meta">Chamberí · nº de reseñas no confirmado</p>
+            <p class="rank-desc">Asturiano 100% apto celíacos: fabada, cachopo, croquetas.</p>
+            <a class="rank-link" href="https://www.google.com/maps/search/?api=1&amp;query=Llagar%20La%20Llobera%20Madrid" target="_blank" rel="noopener noreferrer">Ver en Google Maps ↗</a>
+          </div>
+        </article>
+      </div>
 
       <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Notas y nº de reseñas recogidos mediante búsqueda web en septiembre de 2026 y pueden haber cambiado desde entonces — compruébalas en Google Maps antes de ir. Las marcadas con "≈" proceden de una fuente agregadora, no de una captura directa de Google Maps. La ausencia de un restaurante no implica que no sea apto para celíacos: solo se incluyen los que se pudieron verificar con una nota de Google razonablemente fiable.</span></p>
     </section>
@@ -170,14 +1530,14 @@
       <h1 class="section-title">Escáner de gluten</h1>
 
       <div class="scanner-panel">
-        <div class="scanner-camera" id="scannerCamera" hidden>
-          <video id="scannerVideo" class="scanner-video" muted playsinline></video>
+        <div class="scanner-camera" id="scannerCamera" hidden="">
+          <video id="scannerVideo" class="scanner-video" muted="" playsinline=""></video>
           <div class="scanner-frame" aria-hidden="true"></div>
         </div>
 
         <div class="scanner-controls">
           <button id="scannerStart" class="btn-primary" type="button">📷 Iniciar cámara</button>
-          <button id="scannerStop" class="btn-secondary" type="button" hidden>Detener cámara</button>
+          <button id="scannerStop" class="btn-secondary" type="button" hidden="">Detener cámara</button>
         </div>
         <p class="scanner-status" id="scannerStatus" role="status"></p>
 
@@ -186,13 +1546,13 @@
         <div class="scanner-manual">
           <label for="barcodeInput">Escribe el código de barras (EAN/UPC):</label>
           <div class="scanner-manual-row">
-            <input type="text" id="barcodeInput" inputmode="numeric" pattern="[0-9]*" placeholder="Ej. 3017620422003" aria-label="Código de barras" />
+            <input type="text" id="barcodeInput" inputmode="numeric" pattern="[0-9]*" placeholder="Ej. 3017620422003" aria-label="Código de barras">
             <button id="barcodeLookup" class="btn-primary" type="button">Buscar</button>
           </div>
         </div>
       </div>
 
-      <div class="scanner-result" id="scannerResult" hidden></div>
+      <div class="scanner-result" id="scannerResult" hidden=""></div>
 
       <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Esta herramienta consulta <a href="https://es.openfoodfacts.org" target="_blank" rel="noopener noreferrer">Open Food Facts</a>, una base de datos abierta y colaborativa: la información la añaden otros usuarios y puede estar incompleta, desactualizada o ser incorrecta. NO es una fuente médica ni sustituye la lectura del etiquetado real del producto ni la verificación con el fabricante. Ante cualquier duda, alergia grave o intolerancia severa, no te fíes únicamente de este resultado.</span></p>
     </section>
@@ -331,7 +1691,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <div class="footer-logo"><img src="img/icon-mark.png" alt="" class="footer-logo-icon" /> Libre de Trigo</div>
+        <div class="footer-logo"><img src="img/icon-mark.png" alt="" class="footer-logo-icon"> Libre de Trigo</div>
         <p>Guía práctica para vivir sin gluten: supermercado, recetas, dietas, restaurantes y un escáner de productos, pensada para la comunidad celíaca de habla hispana.</p>
       </div>
       <nav class="footer-links" aria-label="Secciones">
@@ -360,7 +1720,7 @@
     </div>
   </footer>
 
-  <div class="cookie-banner" id="cookieBanner" hidden>
+  <div class="cookie-banner" id="cookieBanner" hidden="">
     <p>Usamos cookies de analítica (Google Analytics) para saber qué páginas se visitan más y mejorar el sitio. Solo se activan si las aceptas. Puedes leer más en nuestra <a href="#" data-scroll-target="cookies">Política de cookies</a>.</p>
     <div class="cookie-banner-actions">
       <button type="button" id="cookieReject" class="btn-secondary">Rechazar</button>
@@ -376,5 +1736,6 @@
   <script src="js/analytics.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.20.0/umd/index.min.js"></script>
   <script src="js/scanner.js"></script>
-</body>
-</html>
+
+
+</body></html>

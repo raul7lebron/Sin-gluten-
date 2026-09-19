@@ -25,14 +25,17 @@ jobs:
       - name: Descargar noticias
         run: npm run fetch-news
 
-      - name: Publicar cambios si hay noticias nuevas
+      - name: Regenerar index.html con las noticias nuevas
+        run: npm run prerender
+
+      - name: Publicar cambios si algo cambió
         run: |
-          if git diff --quiet -- data/news.json; then
-            echo "Sin cambios en data/news.json"
+          if git diff --quiet -- data/news.json index.html; then
+            echo "Sin cambios en data/news.json ni index.html"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/news.json
+          git add data/news.json index.html
           git commit -m "Actualizar noticias sobre gluten [automático]"
           git push
