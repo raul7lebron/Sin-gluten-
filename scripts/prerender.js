@@ -78,7 +78,9 @@ async function main() {
   window.close();
 }
 
-main().catch((err) => {
-  console.error('[prerender] error:', err);
-  process.exit(1);
-});
+main()
+  .then(() => process.exit(0))
+  .catch((err) => {
+    console.error('[prerender] error:', err);
+    process.exit(1);
+  });

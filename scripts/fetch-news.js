@@ -225,7 +225,10 @@ async function main() {
   console.log(`[news] escritos ${items.length} artículos en ${OUTPUT_PATH}`);
 }
 
-main().catch((err) => {
-  console.error('[news] error inesperado:', err);
-  process.exit(1);
-});
+main()
+  .then(() => process.exit(0)) // las conexiones fetch() con keep-alive pueden dejar el
+  // proceso colgado varios minutos si no se fuerza la salida al terminar bien.
+  .catch((err) => {
+    console.error('[news] error inesperado:', err);
+    process.exit(1);
+  });
