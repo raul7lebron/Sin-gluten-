@@ -39,12 +39,15 @@ const OUTPUT_PATH = path.join(__dirname, '..', 'data', 'news.json');
 const MAX_ITEMS = 24;
 
 // Google Noticias mete el medio de origen al final del título ("Titular - El País");
-// si rss-parser no capturó <source>, lo sacamos de ahí como último recurso.
+// si rss-parser no capturó <source>, lo sacamos de ahí como último recurso. Para
+// feeds directos (no Google), usamos siempre el nombre del feed: <dc:creator> suele
+// ser el nombre de pila de quien redactó el post (p. ej. "Nuria"), no el medio.
 function extractSource(item, feedName) {
   if (item.sourceName && typeof item.sourceName === 'string') return item.sourceName.trim();
+  if (!feedName.startsWith('Google Noticias')) return feedName;
   if (item.creator) return item.creator;
   const match = (item.title || '').match(/ - ([^-]+)$/);
-  if (match && feedName.startsWith('Google Noticias')) return match[1].trim();
+  if (match) return match[1].trim();
   return feedName;
 }
 
