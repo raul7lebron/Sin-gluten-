@@ -39,23 +39,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 200);
   }
 
-  function openPlanDia(kcal, weekIdx, dayKey) {
+  function openPlanDia(objetivo, kcal, weekIdx, dayKey) {
     if (window.libreDeTrigo) window.libreDeTrigo.activateTab("dietas");
     closeModal();
     setTimeout(() => {
-      const kcalChip = document.querySelector(`#calorieFilter [data-kcal="${kcal}"]`);
-      if (kcalChip) kcalChip.click();
+      const objetivoChip = document.querySelector(`#objetivoFilter [data-objetivo="${objetivo}"]`);
+      if (objetivoChip) objetivoChip.click();
       setTimeout(() => {
-        const semanaChip = document.querySelector(`#semanaFilter [data-semana="${weekIdx}"]`);
-        if (semanaChip) semanaChip.click();
+        const kcalChip = document.querySelector(`#calorieFilter [data-kcal="${kcal}"]`);
+        if (kcalChip) kcalChip.click();
         setTimeout(() => {
-          const cards = Array.from(document.querySelectorAll("#planDiasList .recipe-card"));
-          const card = cards.find((c) => c.dataset.title === dayKey);
-          if (!card) return;
-          card.scrollIntoView({ behavior: "smooth", block: "center" });
-          const toggleBtn = card.querySelector(".recipe-toggle");
-          if (toggleBtn && !card.classList.contains("open")) toggleBtn.click();
-          flashHighlight(card);
+          const semanaChip = document.querySelector(`#semanaFilter [data-semana="${weekIdx}"]`);
+          if (semanaChip) semanaChip.click();
+          setTimeout(() => {
+            const cards = Array.from(document.querySelectorAll("#planDiasList .recipe-card"));
+            const card = cards.find((c) => c.dataset.title === dayKey);
+            if (!card) return;
+            card.scrollIntoView({ behavior: "smooth", block: "center" });
+            const toggleBtn = card.querySelector(".recipe-toggle");
+            if (toggleBtn && !card.classList.contains("open")) toggleBtn.click();
+            flashHighlight(card);
+          }, 150);
         }, 150);
       }, 150);
     }, 200);
@@ -74,16 +78,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    Object.entries(typeof planesCalorias !== "undefined" ? planesCalorias : {}).forEach(([kcal, plan]) => {
-      plan.semanas.forEach((semana, weekIdx) => {
-        semana.dias.forEach((d) => {
-          const resumenComidas = d.comidas.map((c) => c.text).join(" ");
-          items.push({
-            type: "dieta",
-            title: `${d.dia} · ${semana.titulo} · ${plan.label}`,
-            snippet: d.comidas[2] ? d.comidas[2].text : "",
-            haystack: [d.dia, semana.titulo, plan.label, resumenComidas].join(" ").toLowerCase(),
-            action: () => openPlanDia(kcal, weekIdx, d.dayKey),
+    Object.entries(typeof planesPorObjetivo !== "undefined" ? planesPorObjetivo : {}).forEach(([objetivoKey, objetivo]) => {
+      Object.entries(objetivo.planes).forEach(([kcal, plan]) => {
+        plan.semanas.forEach((semana, weekIdx) => {
+          semana.dias.forEach((d) => {
+            const resumenComidas = d.comidas.map((c) => c.text).join(" ");
+            items.push({
+              type: "dieta",
+              title: `${d.dia} · ${semana.titulo} · ${objetivo.label} · ${plan.label}`,
+              snippet: d.comidas[2] ? d.comidas[2].text : "",
+              haystack: [d.dia, semana.titulo, objetivo.label, plan.label, resumenComidas].join(" ").toLowerCase(),
+              action: () => openPlanDia(objetivoKey, kcal, weekIdx, d.dayKey),
+            });
           });
         });
       });

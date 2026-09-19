@@ -122,13 +122,25 @@ function renderRecetas(query = "") {
   empty.hidden = filtered.length > 0;
 }
 
-function renderCalorieFilter() {
+function renderObjetivoFilter() {
+  const chips = document.getElementById("objetivoFilter");
+  if (!chips) return;
+  chips.innerHTML = Object.keys(planesPorObjetivo)
+    .map((key, i) => {
+      const obj = planesPorObjetivo[key];
+      return `<button class="filter-chip${i === 0 ? " active" : ""}" data-objetivo="${key}" type="button">${obj.icon} ${obj.label}</button>`;
+    })
+    .join("");
+}
+
+function renderCalorieFilter(objetivoKey) {
   const chips = document.getElementById("calorieFilter");
   if (!chips) return;
-  chips.innerHTML = Object.keys(planesCalorias)
+  const planes = planesPorObjetivo[objetivoKey].planes;
+  chips.innerHTML = Object.keys(planes)
     .map(
       (key, i) =>
-        `<button class="filter-chip${i === 0 ? " active" : ""}" data-kcal="${key}" type="button">${planesCalorias[key].label}</button>`
+        `<button class="filter-chip${i === 0 ? " active" : ""}" data-kcal="${key}" type="button">${planes[key].label}</button>`
     )
     .join("");
 }
@@ -141,16 +153,16 @@ function renderSemanaFilter() {
     .join("");
 }
 
-function renderPlanMeta(kcalKey) {
+function renderPlanMeta(objetivoKey, kcalKey) {
   const metaEl = document.getElementById("planMeta");
-  const plan = planesCalorias[kcalKey];
+  const plan = planesPorObjetivo[objetivoKey].planes[kcalKey];
   if (!metaEl || !plan) return;
   metaEl.textContent = plan.meta;
 }
 
-function renderPlanDias(kcalKey, semanaIdx) {
+function renderPlanDias(objetivoKey, kcalKey, semanaIdx) {
   const list = document.getElementById("planDiasList");
-  const plan = planesCalorias[kcalKey];
+  const plan = planesPorObjetivo[objetivoKey].planes[kcalKey];
   if (!list || !plan) return;
   const semana = plan.semanas[semanaIdx];
   if (!semana) return;
@@ -257,10 +269,13 @@ function renderNutricion(query = "", categoria = "todos") {
 
 renderTiendas();
 renderRecetas();
-renderCalorieFilter();
+renderObjetivoFilter();
+const primerObjetivo = Object.keys(planesPorObjetivo)[0];
+const primerKcal = Object.keys(planesPorObjetivo[primerObjetivo].planes)[0];
+renderCalorieFilter(primerObjetivo);
 renderSemanaFilter();
-renderPlanMeta(Object.keys(planesCalorias)[0]);
-renderPlanDias(Object.keys(planesCalorias)[0], 0);
+renderPlanMeta(primerObjetivo, primerKcal);
+renderPlanDias(primerObjetivo, primerKcal, 0);
 renderCiudadChips();
 renderRestaurantes(Object.keys(restaurantesPorCiudad)[0]);
 renderNutriFilter();

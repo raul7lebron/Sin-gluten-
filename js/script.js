@@ -132,12 +132,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const objetivoFilter = document.getElementById("objetivoFilter");
   const calorieFilter = document.getElementById("calorieFilter");
   const semanaFilter = document.getElementById("semanaFilter");
-  if (calorieFilter && semanaFilter) {
+  if (objetivoFilter && calorieFilter && semanaFilter) {
+    function currentObjetivo() {
+      const active = objetivoFilter.querySelector(".filter-chip.active");
+      return active ? active.dataset.objetivo : Object.keys(planesPorObjetivo)[0];
+    }
+
     function currentKcal() {
       const active = calorieFilter.querySelector(".filter-chip.active");
-      return active ? active.dataset.kcal : Object.keys(planesCalorias)[0];
+      return active ? active.dataset.kcal : Object.keys(planesPorObjetivo[currentObjetivo()].planes)[0];
     }
 
     function currentSemana() {
@@ -146,10 +152,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function refreshPlan() {
-      renderPlanMeta(currentKcal());
-      renderPlanDias(currentKcal(), currentSemana());
+      renderPlanMeta(currentObjetivo(), currentKcal());
+      renderPlanDias(currentObjetivo(), currentKcal(), currentSemana());
       bindRecipeToggles();
     }
+
+    objetivoFilter.addEventListener("click", (event) => {
+      const chip = event.target.closest(".filter-chip");
+      if (!chip) return;
+      objetivoFilter.querySelectorAll(".filter-chip").forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderCalorieFilter(currentObjetivo());
+      semanaFilter.querySelectorAll(".filter-chip").forEach((c, i) => c.classList.toggle("active", i === 0));
+      refreshPlan();
+    });
 
     calorieFilter.addEventListener("click", (event) => {
       const chip = event.target.closest(".filter-chip");
@@ -189,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const bmr = sexo === "hombre" ? 10 * peso + 6.25 * altura - 5 * edad + 5 : 10 * peso + 6.25 * altura - 5 * edad - 161;
       const tdee = Math.round(bmr * actividad);
 
-      const niveles = Object.keys(planesCalorias).map(Number);
+      const niveles = Object.keys(planesPorObjetivo["perder-peso"].planes).map(Number);
       const recomendado = niveles.reduce((prev, curr) => (Math.abs(curr - tdee) < Math.abs(prev - tdee) ? curr : prev));
 
       resultEl.innerHTML = `

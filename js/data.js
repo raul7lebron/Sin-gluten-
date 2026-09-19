@@ -1543,6 +1543,235 @@ const comidasPool = {
   },
 };
 
+// Comidas pensadas para ganar músculo: más proteína por comida que el plan de "Perder
+// peso" al mismo nivel de kcal (más huevo, pollo, pescado, batido de proteína, legumbres),
+// con las raciones creciendo por nivel igual que en comidasPool. Solo 5 opciones por
+// comida y nivel (en vez de 10): buildPlanSemanas() se adapta al tamaño de cada pool.
+const comidasPoolGanarMusculo = {
+  1500: {
+    desayuno: [
+      "Tortilla de 3 claras y 1 huevo entero con 40 g de avena certificada sin gluten (~320 kcal).",
+      "Yogur griego con 30 g de proteína en polvo sin gluten y un plátano (~320 kcal).",
+      "Tostada de pan sin gluten con 2 huevos revueltos y aguacate (~320 kcal).",
+      "Batido de proteína con leche, avena certificada sin gluten y crema de cacahuete (~320 kcal).",
+      "Requesón con claras de huevo cocidas y frutos rojos (~320 kcal).",
+    ],
+    mediaManana: [
+      "Batido de proteína con agua y un plátano (~150 kcal).",
+      "Yogur griego con un puñado de almendras (~150 kcal).",
+      "Requesón con nueces (~150 kcal).",
+      "Dos huevos duros con una pieza de fruta (~150 kcal).",
+      "Atún al natural con tortitas de arroz (~150 kcal).",
+    ],
+    comida: [
+      "Pechuga de pollo a la plancha (200 g) con arroz basmati y brócoli (~450 kcal).",
+      "Salmón al horno (180 g) con quinoa y espárragos (~450 kcal).",
+      "Ternera magra a la plancha (200 g) con boniato asado (~450 kcal).",
+      "Lentejas cocidas con arroz y un huevo duro (~450 kcal).",
+      "Solomillo de cerdo (200 g) con patata cocida y ensalada (~450 kcal).",
+    ],
+    merienda: [
+      "Batido de proteína con leche y avena certificada sin gluten (~150 kcal).",
+      "Yogur griego con miel y nueces (~150 kcal).",
+      "Tortitas de arroz con crema de cacahuete (~150 kcal).",
+      "Requesón con una pieza de fruta (~150 kcal).",
+      "Puñado de almendras con un plátano pequeño (~150 kcal).",
+    ],
+    cena: [
+      "Merluza a la plancha (200 g) con verduras salteadas (~430 kcal).",
+      "Tortilla de 3 huevos con espinacas y pan sin gluten (~430 kcal).",
+      "Pechuga de pavo (200 g) a la plancha con calabacín y arroz (~430 kcal).",
+      "Gambas salteadas (200 g) con quinoa y verduras (~430 kcal).",
+      "Revuelto de 3 huevos con gambas y espárragos (~430 kcal).",
+    ],
+  },
+  1750: {
+    desayuno: [
+      "Tortilla de 4 claras y 1 huevo entero con 50 g de avena certificada sin gluten (~370 kcal).",
+      "Yogur griego con 30 g de proteína en polvo sin gluten, plátano y miel (~370 kcal).",
+      "Dos tostadas de pan sin gluten con 3 huevos revueltos (~370 kcal).",
+      "Batido de proteína con leche entera, avena certificada sin gluten y crema de cacahuete (~370 kcal).",
+      "Requesón con claras de huevo cocidas, frutos rojos y granola sin gluten (~370 kcal).",
+    ],
+    mediaManana: [
+      "Batido de proteína con leche y un plátano (~180 kcal).",
+      "Yogur griego con un puñado grande de almendras (~180 kcal).",
+      "Requesón con nueces y miel (~180 kcal).",
+      "Tres huevos duros (~180 kcal).",
+      "Atún al natural con dos tortitas de arroz (~180 kcal).",
+    ],
+    comida: [
+      "Pechuga de pollo a la plancha (230 g) con arroz basmati, brócoli y aceite de oliva (~520 kcal).",
+      "Salmón al horno (200 g) con quinoa, espárragos y aceite de oliva (~520 kcal).",
+      "Ternera magra a la plancha (230 g) con boniato asado y ensalada (~520 kcal).",
+      "Lentejas cocidas con arroz, un huevo duro y aguacate (~520 kcal).",
+      "Solomillo de cerdo (230 g) con patata cocida, ensalada y aceite de oliva (~520 kcal).",
+    ],
+    merienda: [
+      "Batido de proteína con leche entera y avena certificada sin gluten (~180 kcal).",
+      "Yogur griego con miel, nueces y granola sin gluten (~180 kcal).",
+      "Tortitas de arroz con crema de cacahuete y plátano (~180 kcal).",
+      "Requesón con fruta y almendras (~180 kcal).",
+      "Puñado grande de almendras con un plátano (~180 kcal).",
+    ],
+    cena: [
+      "Merluza a la plancha (230 g) con verduras salteadas y arroz (~500 kcal).",
+      "Tortilla de 4 huevos con espinacas y pan sin gluten (~500 kcal).",
+      "Pechuga de pavo (230 g) a la plancha con calabacín, zanahoria y arroz (~500 kcal).",
+      "Gambas salteadas (230 g) con quinoa, verduras y aceite de oliva (~500 kcal).",
+      "Revuelto de 4 huevos con gambas, espárragos y pan sin gluten (~500 kcal).",
+    ],
+  },
+  2000: {
+    desayuno: [
+      "Tortilla de 5 claras y 1 huevo entero con 60 g de avena certificada sin gluten (~420 kcal).",
+      "Yogur griego con 35 g de proteína en polvo sin gluten, plátano, miel y nueces (~420 kcal).",
+      "Dos tostadas de pan sin gluten con 4 huevos revueltos y aguacate (~420 kcal).",
+      "Batido de proteína con leche entera, avena certificada sin gluten, plátano y crema de cacahuete (~420 kcal).",
+      "Requesón con claras de huevo cocidas, frutos rojos, granola sin gluten y miel (~420 kcal).",
+    ],
+    mediaManana: [
+      "Batido de proteína con leche y un plátano grande (~200 kcal).",
+      "Yogur griego con un puñado grande de almendras y miel (~200 kcal).",
+      "Requesón con nueces, miel y una pieza de fruta (~200 kcal).",
+      "Tres huevos duros con una pieza de fruta (~200 kcal).",
+      "Atún al natural con tres tortitas de arroz (~200 kcal).",
+    ],
+    comida: [
+      "Pechuga de pollo a la plancha (260 g) con arroz basmati, brócoli, aguacate y aceite de oliva (~600 kcal).",
+      "Salmón al horno (230 g) con quinoa, espárragos, aguacate y aceite de oliva (~600 kcal).",
+      "Ternera magra a la plancha (260 g) con boniato asado, ensalada y aceite de oliva (~600 kcal).",
+      "Lentejas cocidas con arroz, dos huevos duros y aguacate (~600 kcal).",
+      "Solomillo de cerdo (260 g) con patata cocida, ensalada y aceite de oliva extra (~600 kcal).",
+    ],
+    merienda: [
+      "Batido de proteína con leche entera, avena certificada sin gluten y plátano (~200 kcal).",
+      "Yogur griego con miel, nueces y granola sin gluten (~200 kcal).",
+      "Tortitas de arroz con crema de cacahuete, plátano y miel (~200 kcal).",
+      "Requesón con fruta, almendras y miel (~200 kcal).",
+      "Puñado grande de almendras y nueces con un plátano (~200 kcal).",
+    ],
+    cena: [
+      "Merluza a la plancha (260 g) con verduras salteadas, arroz y aceite de oliva (~580 kcal).",
+      "Tortilla de 5 huevos con espinacas, aguacate y pan sin gluten (~580 kcal).",
+      "Pechuga de pavo (260 g) a la plancha con calabacín, zanahoria, arroz y aceite de oliva (~580 kcal).",
+      "Gambas salteadas (260 g) con quinoa, verduras, aguacate y aceite de oliva (~580 kcal).",
+      "Revuelto de 5 huevos con gambas, espárragos y pan sin gluten (~580 kcal).",
+    ],
+  },
+  2250: {
+    desayuno: [
+      "Tortilla de 6 claras y 1 huevo entero con 70 g de avena certificada sin gluten (~470 kcal).",
+      "Yogur griego con 40 g de proteína en polvo sin gluten, plátano, miel y nueces (~470 kcal).",
+      "Tres tostadas de pan sin gluten con 4 huevos revueltos y aguacate (~470 kcal).",
+      "Batido de proteína con leche entera, avena certificada sin gluten, plátano y crema de cacahuete (~470 kcal).",
+      "Requesón con claras de huevo cocidas, frutos rojos, granola sin gluten, miel y nueces (~470 kcal).",
+    ],
+    mediaManana: [
+      "Batido de proteína con leche entera y un plátano grande (~220 kcal).",
+      "Yogur griego con un puñado grande de almendras, miel y granola sin gluten (~220 kcal).",
+      "Requesón con nueces, miel y una pieza de fruta grande (~220 kcal).",
+      "Cuatro huevos duros (~220 kcal).",
+      "Atún al natural con tres tortitas de arroz y aguacate (~220 kcal).",
+    ],
+    comida: [
+      "Pechuga de pollo a la plancha (290 g) con arroz basmati, brócoli, aguacate y aceite de oliva (~670 kcal).",
+      "Salmón al horno (260 g) con quinoa, espárragos, aguacate y aceite de oliva extra (~670 kcal).",
+      "Ternera magra a la plancha (290 g) con boniato asado, ensalada y aceite de oliva extra (~670 kcal).",
+      "Lentejas cocidas con arroz, dos huevos duros, aguacate y aceite de oliva (~670 kcal).",
+      "Solomillo de cerdo (290 g) con patata cocida, ensalada y aceite de oliva extra (~670 kcal).",
+    ],
+    merienda: [
+      "Batido de proteína con leche entera, avena certificada sin gluten y crema de cacahuete (~220 kcal).",
+      "Yogur griego con miel, nueces, granola sin gluten y frutos rojos (~220 kcal).",
+      "Tortitas de arroz con crema de cacahuete, plátano y miel (~220 kcal).",
+      "Requesón con fruta, almendras, nueces y miel (~220 kcal).",
+      "Puñado grande de almendras, nueces y pasas (~220 kcal).",
+    ],
+    cena: [
+      "Merluza a la plancha (290 g) con verduras salteadas, arroz y aceite de oliva extra (~670 kcal).",
+      "Tortilla de 6 huevos con espinacas, aguacate y pan sin gluten (~670 kcal).",
+      "Pechuga de pavo (290 g) a la plancha con calabacín, zanahoria, arroz y aceite de oliva extra (~670 kcal).",
+      "Gambas salteadas (290 g) con quinoa, verduras, aguacate y aceite de oliva extra (~670 kcal).",
+      "Revuelto de 6 huevos con gambas, espárragos, aguacate y pan sin gluten (~670 kcal).",
+    ],
+  },
+  2500: {
+    desayuno: [
+      "Tortilla de 7 claras y 1 huevo entero con 80 g de avena certificada sin gluten (~520 kcal).",
+      "Yogur griego con 45 g de proteína en polvo sin gluten, plátano, miel y nueces (~520 kcal).",
+      "Tres tostadas de pan sin gluten con 5 huevos revueltos y aguacate (~520 kcal).",
+      "Batido de proteína grande con leche entera, avena certificada sin gluten, plátano y crema de cacahuete (~520 kcal).",
+      "Requesón con claras de huevo cocidas, frutos rojos, granola sin gluten, miel y nueces (~520 kcal).",
+    ],
+    mediaManana: [
+      "Batido de proteína con leche entera, plátano y crema de cacahuete (~250 kcal).",
+      "Yogur griego con un puñado grande de almendras, miel y granola sin gluten (~250 kcal).",
+      "Requesón con nueces, miel y dos piezas de fruta (~250 kcal).",
+      "Cuatro huevos duros con una pieza de fruta (~250 kcal).",
+      "Atún al natural con cuatro tortitas de arroz y aguacate (~250 kcal).",
+    ],
+    comida: [
+      "Pechuga de pollo a la plancha (320 g) con arroz basmati, brócoli, aguacate y aceite de oliva extra (~750 kcal).",
+      "Salmón al horno (290 g) con quinoa, espárragos, aguacate y aceite de oliva extra (~750 kcal).",
+      "Ternera magra a la plancha (320 g) con boniato asado, ensalada y aceite de oliva extra (~750 kcal).",
+      "Lentejas cocidas con arroz, tres huevos duros, aguacate y aceite de oliva (~750 kcal).",
+      "Solomillo de cerdo (320 g) con patata cocida, ensalada y aceite de oliva extra (~750 kcal).",
+    ],
+    merienda: [
+      "Batido de proteína con leche entera, avena certificada sin gluten y crema de cacahuete (~250 kcal).",
+      "Yogur griego con miel, nueces, granola sin gluten y frutos rojos (~250 kcal).",
+      "Tortitas de arroz con crema de cacahuete, plátano y miel (~250 kcal).",
+      "Requesón con fruta, almendras, nueces y miel (~250 kcal).",
+      "Puñado grande de almendras, nueces, anacardos y pasas (~250 kcal).",
+    ],
+    cena: [
+      "Merluza a la plancha (320 g) con verduras salteadas, arroz y aceite de oliva extra (~730 kcal).",
+      "Tortilla de 7 huevos con espinacas, aguacate y pan sin gluten (~730 kcal).",
+      "Pechuga de pavo (320 g) a la plancha con calabacín, zanahoria, arroz y aceite de oliva extra (~730 kcal).",
+      "Gambas salteadas (320 g) con quinoa, verduras, aguacate y aceite de oliva extra (~730 kcal).",
+      "Revuelto de 7 huevos con gambas, espárragos, aguacate y pan sin gluten (~730 kcal).",
+    ],
+  },
+  2750: {
+    desayuno: [
+      "Tortilla de 8 claras y 1 huevo entero con 90 g de avena certificada sin gluten (~570 kcal).",
+      "Yogur griego con 50 g de proteína en polvo sin gluten, plátano, miel y nueces (~570 kcal).",
+      "Cuatro tostadas de pan sin gluten con 5 huevos revueltos y aguacate (~570 kcal).",
+      "Batido de proteína grande con leche entera, avena certificada sin gluten, plátano y crema de cacahuete (~570 kcal).",
+      "Requesón con claras de huevo cocidas, frutos rojos, granola sin gluten, miel y nueces (~570 kcal).",
+    ],
+    mediaManana: [
+      "Batido de proteína con leche entera, plátano y crema de cacahuete (~270 kcal).",
+      "Yogur griego con un puñado grande de almendras, miel y granola sin gluten (~270 kcal).",
+      "Requesón con nueces, miel y dos piezas de fruta (~270 kcal).",
+      "Cinco huevos duros (~270 kcal).",
+      "Atún al natural con cuatro tortitas de arroz y aguacate (~270 kcal).",
+    ],
+    comida: [
+      "Pechuga de pollo a la plancha (350 g) con arroz basmati, brócoli, aguacate y aceite de oliva extra (~830 kcal).",
+      "Salmón al horno (320 g) con quinoa, espárragos, aguacate y aceite de oliva extra (~830 kcal).",
+      "Ternera magra a la plancha (350 g) con boniato asado, ensalada y aceite de oliva extra (~830 kcal).",
+      "Lentejas cocidas con arroz, tres huevos duros, aguacate y aceite de oliva extra (~830 kcal).",
+      "Solomillo de cerdo (350 g) con patata cocida, ensalada y aceite de oliva extra (~830 kcal).",
+    ],
+    merienda: [
+      "Batido de proteína con leche entera, avena certificada sin gluten, plátano y crema de cacahuete (~270 kcal).",
+      "Yogur griego con miel, nueces, granola sin gluten y frutos rojos (~270 kcal).",
+      "Tortitas de arroz con crema de cacahuete, plátano y miel (~270 kcal).",
+      "Requesón con fruta, almendras, nueces y miel (~270 kcal).",
+      "Puñado grande de almendras, nueces, anacardos y pasas (~270 kcal).",
+    ],
+    cena: [
+      "Merluza a la plancha (350 g) con verduras salteadas, arroz y aceite de oliva extra (~810 kcal).",
+      "Tortilla de 8 huevos con espinacas, aguacate y pan sin gluten (~810 kcal).",
+      "Pechuga de pavo (350 g) a la plancha con calabacín, zanahoria, arroz y aceite de oliva extra (~810 kcal).",
+      "Gambas salteadas (350 g) con quinoa, verduras, aguacate y aceite de oliva extra (~810 kcal).",
+      "Revuelto de 8 huevos con gambas, espárragos, aguacate y pan sin gluten (~810 kcal).",
+    ],
+  },
+};
+
 // Palabras/frases de ingrediente que se resaltan en negrita y se vuelven tocables dentro
 // de las recetas y las comidas de los planes de dieta (ver highlightShoppable en render.js).
 // Las frases de varias palabras van primero para que "aceite de oliva" se detecte entera
@@ -1578,22 +1807,24 @@ const SHOPPABLE_KEYWORDS = [
 
 const NOMBRES_DIAS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
 
-function buildPlanSemanas(kcal) {
-  const pool = comidasPool[kcal];
+// pool.desayuno.length decide el ciclo: comidasPool tiene 10 opciones por comida,
+// comidasPoolGanarMusculo tiene 5 — así el mismo constructor sirve para ambas.
+function buildPlanSemanas(pool, objetivo, kcal) {
+  const n = pool.desayuno.length;
   const semanas = [];
   for (let w = 0; w < 4; w++) {
     const dias = [];
     for (let i = 0; i < 7; i++) {
       const d = w * 7 + i;
       dias.push({
-        dayKey: `${kcal}-${w}-${i}`,
+        dayKey: `${objetivo}-${kcal}-${w}-${i}`,
         dia: NOMBRES_DIAS[i],
         comidas: [
-          { label: "Desayuno", text: pool.desayuno[d % 10] },
-          { label: "Media mañana", text: pool.mediaManana[(d + 3) % 10] },
-          { label: "Comida", text: pool.comida[(d + 7) % 10] },
-          { label: "Merienda", text: pool.merienda[(d + 5) % 10] },
-          { label: "Cena", text: pool.cena[(d + 2) % 10] },
+          { label: "Desayuno", text: pool.desayuno[d % n] },
+          { label: "Media mañana", text: pool.mediaManana[(d + 3) % n] },
+          { label: "Comida", text: pool.comida[(d + 7) % n] },
+          { label: "Merienda", text: pool.merienda[(d + 5) % n] },
+          { label: "Cena", text: pool.cena[(d + 2) % n] },
         ],
       });
     }
@@ -1602,36 +1833,78 @@ function buildPlanSemanas(kcal) {
   return semanas;
 }
 
-const planesCalorias = {
-  1500: {
-    label: "1500 kcal/día",
-    meta: "Déficit calórico moderado: pensado para complexiones menudas o poca actividad física. Consulta la calculadora para saber si te encaja.",
-    semanas: buildPlanSemanas(1500),
+const planesPorObjetivo = {
+  "perder-peso": {
+    label: "Perder peso",
+    icon: "📉",
+    planes: {
+      1500: {
+        label: "1500 kcal/día",
+        meta: "Déficit calórico moderado: pensado para complexiones menudas o poca actividad física. Consulta la calculadora para saber si te encaja.",
+        semanas: buildPlanSemanas(comidasPool[1500], "perder-peso", 1500),
+      },
+      1750: {
+        label: "1750 kcal/día",
+        meta: "Déficit calórico ligero, un paso intermedio entre 1500 y 2000 kcal para ajustar el ritmo de pérdida de peso.",
+        semanas: buildPlanSemanas(comidasPool[1750], "perder-peso", 1750),
+      },
+      2000: {
+        label: "2000 kcal/día",
+        meta: "Nivel de mantenimiento habitual para actividad física ligera-moderada en adultos de estatura y peso medios.",
+        semanas: buildPlanSemanas(comidasPool[2000], "perder-peso", 2000),
+      },
+      2250: {
+        label: "2250 kcal/día",
+        meta: "Ligero superávit o mantenimiento para complexiones algo mayores o actividad física moderada-alta.",
+        semanas: buildPlanSemanas(comidasPool[2250], "perder-peso", 2250),
+      },
+      2500: {
+        label: "2500 kcal/día",
+        meta: "Superávit o alta actividad física: pensado para complexiones grandes, entrenamiento frecuente o necesidades energéticas altas.",
+        semanas: buildPlanSemanas(comidasPool[2500], "perder-peso", 2500),
+      },
+      2750: {
+        label: "2750 kcal/día",
+        meta: "Superávit alto: pensado para complexiones muy grandes, entrenamiento intenso o necesidades energéticas muy elevadas.",
+        semanas: buildPlanSemanas(comidasPool[2750], "perder-peso", 2750),
+      },
+    },
   },
-  1750: {
-    label: "1750 kcal/día",
-    meta: "Déficit calórico ligero, un paso intermedio entre 1500 y 2000 kcal para ajustar el ritmo de pérdida de peso.",
-    semanas: buildPlanSemanas(1750),
-  },
-  2000: {
-    label: "2000 kcal/día",
-    meta: "Nivel de mantenimiento habitual para actividad física ligera-moderada en adultos de estatura y peso medios.",
-    semanas: buildPlanSemanas(2000),
-  },
-  2250: {
-    label: "2250 kcal/día",
-    meta: "Ligero superávit o mantenimiento para complexiones algo mayores o actividad física moderada-alta.",
-    semanas: buildPlanSemanas(2250),
-  },
-  2500: {
-    label: "2500 kcal/día",
-    meta: "Superávit o alta actividad física: pensado para complexiones grandes, entrenamiento frecuente o necesidades energéticas altas.",
-    semanas: buildPlanSemanas(2500),
-  },
-  2750: {
-    label: "2750 kcal/día",
-    meta: "Superávit alto: pensado para complexiones muy grandes, entrenamiento intenso o necesidades energéticas muy elevadas.",
-    semanas: buildPlanSemanas(2750),
+  "ganar-musculo": {
+    label: "Ganar músculo",
+    icon: "💪",
+    planes: {
+      1500: {
+        label: "1500 kcal/día",
+        meta: "Más proteína por comida que el plan de perder peso a las mismas kcal: pensado para complexiones menudas que entrenan fuerza con poco margen calórico.",
+        semanas: buildPlanSemanas(comidasPoolGanarMusculo[1500], "ganar-musculo", 1500),
+      },
+      1750: {
+        label: "1750 kcal/día",
+        meta: "Más proteína por comida (huevo, pollo, pescado, batido de proteína, legumbres) para apoyar el entrenamiento de fuerza.",
+        semanas: buildPlanSemanas(comidasPoolGanarMusculo[1750], "ganar-musculo", 1750),
+      },
+      2000: {
+        label: "2000 kcal/día",
+        meta: "Nivel habitual para ganar músculo con actividad física moderada: superávit ligero y proteína alta en cada comida.",
+        semanas: buildPlanSemanas(comidasPoolGanarMusculo[2000], "ganar-musculo", 2000),
+      },
+      2250: {
+        label: "2250 kcal/día",
+        meta: "Superávit para entrenamiento de fuerza frecuente, con más proteína y ración por comida que el plan de perder peso a este mismo nivel.",
+        semanas: buildPlanSemanas(comidasPoolGanarMusculo[2250], "ganar-musculo", 2250),
+      },
+      2500: {
+        label: "2500 kcal/día",
+        meta: "Superávit alto pensado para complexiones grandes o entrenamiento intenso, con raciones de proteína más generosas.",
+        semanas: buildPlanSemanas(comidasPoolGanarMusculo[2500], "ganar-musculo", 2500),
+      },
+      2750: {
+        label: "2750 kcal/día",
+        meta: "Superávit muy alto para necesidades energéticas elevadas y entrenamiento de fuerza intenso, con la mayor carga de proteína del plan.",
+        semanas: buildPlanSemanas(comidasPoolGanarMusculo[2750], "ganar-musculo", 2750),
+      },
+    },
   },
 };
 
