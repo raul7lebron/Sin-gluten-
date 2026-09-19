@@ -32,13 +32,18 @@
         <img src="img/logo.png" alt="Libre de Trigo" class="logo-img">
         <span class="logo-tagline">Guía práctica para vivir sin gluten</span>
       </a>
-      <button class="header-search-btn" id="searchToggle" type="button" aria-label="Buscar en toda la web" aria-haspopup="dialog">
-        <span aria-hidden="true">🔍</span>
-      </button>
+      <div class="header-actions">
+        <button class="header-search-btn" id="searchToggle" type="button" aria-label="Buscar en toda la web" aria-haspopup="dialog">
+          <span aria-hidden="true">🔍</span>
+        </button>
+        <button class="header-search-btn menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-haspopup="true" aria-expanded="false" aria-controls="pillNav">
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
       <nav class="pill-nav" id="pillNav" role="tablist" aria-label="Secciones">
         <span class="pill-indicator" id="pillIndicator" style="width: 0px; transform: translateX(-4px);"></span>
-        <button class="pill-btn active" id="tab-inicio" data-target="inicio" type="button" role="tab" aria-selected="true" aria-controls="inicio"><span class="pill-icon" aria-hidden="true">📰</span>Inicio</button>
-        <button class="pill-btn" id="tab-tiendas" data-target="tiendas" type="button" role="tab" aria-selected="false" aria-controls="tiendas"><span class="pill-icon" aria-hidden="true">🏬</span>Tiendas sin gluten</button>
+        <button class="pill-btn active" id="tab-inicio" data-target="inicio" type="button" role="tab" aria-selected="true" aria-controls="inicio"><span class="pill-icon" aria-hidden="true">📰</span>Actualidad</button>
+        <button class="pill-btn" id="tab-tiendas" data-target="tiendas" type="button" role="tab" aria-selected="false" aria-controls="tiendas"><span class="pill-icon" aria-hidden="true">🏬</span>Tiendas especializadas</button>
         <button class="pill-btn" id="tab-recetas" data-target="recetas" type="button" role="tab" aria-selected="false" aria-controls="recetas"><span class="pill-icon" aria-hidden="true">🍳</span>Recetas</button>
         <button class="pill-btn" id="tab-dietas" data-target="dietas" type="button" role="tab" aria-selected="false" aria-controls="dietas"><span class="pill-icon" aria-hidden="true">🍽️</span>Dietas</button>
         <button class="pill-btn" id="tab-calculadora" data-target="calculadora" type="button" role="tab" aria-selected="false" aria-controls="calculadora"><span class="pill-icon" aria-hidden="true">🧮</span>Calculadora calórica</button>
@@ -62,7 +67,7 @@
 
   <main class="container">
     <section id="inicio" class="page active" role="tabpanel" aria-labelledby="tab-inicio">
-      <span class="eyebrow">📰 Inicio</span>
+      <span class="eyebrow">📰 Actualidad</span>
       <h1 class="section-title">Actualidad sobre el gluten</h1>
 
       <div class="news-grid" id="newsGrid">
@@ -386,7 +391,7 @@ The post Nuevos pasos para un etiquetado más seguro appeared first on Asociaci�
     </section>
 
     <section id="tiendas" class="page" role="tabpanel" aria-labelledby="tab-tiendas">
-      <span class="eyebrow">🏬 Tiendas sin gluten</span>
+      <span class="eyebrow">🏬 Tiendas especializadas</span>
       <h1 class="section-title">Tiendas especializadas sin gluten</h1>
 
       <div class="shop-list" id="tiendasList">
@@ -1244,7 +1249,7 @@ The post Nuevos pasos para un etiquetado más seguro appeared first on Asociaci�
 
         <h3>4. Propiedad intelectual e industrial</h3>
         <p>Los textos, diseño, marca "Libre de Trigo", logotipo y código propios de este sitio son titularidad de <span class="legal-placeholder">[NOMBRE Y APELLIDOS O RAZÓN SOCIAL]</span>, salvo el contenido de terceros indicado a continuación. Queda prohibida su reproducción, distribución o transformación sin autorización expresa, salvo uso personal y no comercial.</p>
-        <p>Los datos de productos consultados a través del escáner proceden de <a href="https://es.openfoodfacts.org" target="_blank" rel="noopener noreferrer">Open Food Facts</a>, base de datos colaborativa bajo licencia <a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noopener noreferrer">Open Database License (ODbL)</a>. Las noticias mostradas en Inicio son propiedad de sus respectivos medios y se enlazan citando la fuente original; Libre de Trigo no las redacta ni se atribuye su autoría.</p>
+        <p>Los datos de productos consultados a través del escáner proceden de <a href="https://es.openfoodfacts.org" target="_blank" rel="noopener noreferrer">Open Food Facts</a>, base de datos colaborativa bajo licencia <a href="https://opendatacommons.org/licenses/odbl/1-0/" target="_blank" rel="noopener noreferrer">Open Database License (ODbL)</a>. Las noticias mostradas en Actualidad son propiedad de sus respectivos medios y se enlazan citando la fuente original; Libre de Trigo no las redacta ni se atribuye su autoría.</p>
 
         <h3>5. Enlaces externos</h3>
         <p>Este sitio incluye enlaces a webs de terceros (tiendas, restaurantes, supermercados, medios de noticias, Open Food Facts). El titular no controla ni se responsabiliza del contenido, disponibilidad o políticas de privacidad de esos sitios externos.</p>
@@ -1356,8 +1361,8 @@ The post Nuevos pasos para un etiquetado más seguro appeared first on Asociaci�
       </div>
       <nav class="footer-links" aria-label="Secciones">
         <span class="footer-links-title">Secciones</span>
-        <a href="#" data-scroll-target="inicio">Inicio</a>
-        <a href="#" data-scroll-target="tiendas">Tiendas sin gluten</a>
+        <a href="#" data-scroll-target="inicio">Actualidad</a>
+        <a href="#" data-scroll-target="tiendas">Tiendas especializadas</a>
         <a href="#" data-scroll-target="recetas">Recetas</a>
         <a href="#" data-scroll-target="dietas">Dietas</a>
         <a href="#" data-scroll-target="calculadora">Calculadora calórica</a>

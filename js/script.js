@@ -35,25 +35,70 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Menú desplegable en móvil: en pantallas estrechas el menú de pestañas se convierte
+  // en un desplegable que se abre/cierra con este botón, a la altura del logo y la lupa.
+  const menuToggle = document.getElementById("menuToggle");
+
+  function closeMobileMenu() {
+    nav.classList.remove("nav-open");
+    if (menuToggle) {
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.querySelector("span").textContent = "☰";
+    }
+  }
+
+  function openMobileMenu() {
+    nav.classList.add("nav-open");
+    if (menuToggle) {
+      menuToggle.setAttribute("aria-expanded", "true");
+      menuToggle.querySelector("span").textContent = "✕";
+    }
+  }
+
+  if (menuToggle) {
+    menuToggle.addEventListener("click", () => {
+      if (nav.classList.contains("nav-open")) closeMobileMenu();
+      else openMobileMenu();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!nav.classList.contains("nav-open")) return;
+      if (nav.contains(event.target) || menuToggle.contains(event.target)) return;
+      closeMobileMenu();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && nav.classList.contains("nav-open")) closeMobileMenu();
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 640) closeMobileMenu();
+    });
+  }
+
   pillButtons.forEach((btn) => {
-    btn.addEventListener("click", () => activateTab(btn.dataset.target));
+    btn.addEventListener("click", () => {
+      activateTab(btn.dataset.target);
+      closeMobileMenu();
+    });
   });
 
   document.querySelectorAll("[data-scroll-target]").forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       activateTab(link.dataset.scrollTarget);
+      closeMobileMenu();
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
 
   // Al recargar, vuelve a abrir la última página visitada en este dispositivo en vez de
-  // ir siempre a Inicio.
+  // ir siempre a Actualidad.
   try {
     const lastTab = localStorage.getItem(ACTIVE_TAB_KEY);
     if (lastTab && pages.some((page) => page.id === lastTab)) activateTab(lastTab);
   } catch (err) {
-    // Almacenamiento no disponible: se queda en Inicio, la página por defecto.
+    // Almacenamiento no disponible: se queda en Actualidad, la página por defecto.
   }
 
   const activeBtn = nav.querySelector(".pill-btn.active") || pillButtons[0];

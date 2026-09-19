@@ -129,6 +129,16 @@ a:focus-visible {
   transform: translateY(-1px);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
 .pill-nav {
   justify-self: end;
 }
@@ -469,7 +479,7 @@ a:focus-visible {
 .rank-list > *:nth-child(5) { animation-delay: 0.14s; }
 .rank-list > *:nth-child(n+6) { animation-delay: 0.17s; }
 
-/* News (Inicio) */
+/* News (Actualidad) */
 .news-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1687,17 +1697,57 @@ a:focus-visible {
 /* Responsive */
 @media (max-width: 640px) {
   .header-inner {
+    position: relative;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
   }
 
+  .menu-toggle {
+    display: inline-flex;
+  }
+
   .pill-nav {
-    order: 3;
-    flex-basis: 100%;
+    position: absolute;
+    top: 100%;
+    left: 20px;
+    right: 20px;
+    margin-top: 8px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 0 8px;
+    transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease;
+  }
+
+  .pill-nav.nav-open {
+    max-height: 70vh;
+    opacity: 1;
+    overflow-y: auto;
+    padding: 8px;
+    pointer-events: auto;
+  }
+
+  .pill-indicator {
+    display: none;
+  }
+
+  .pill-btn {
     width: 100%;
     justify-content: flex-start;
+  }
+
+  .pill-btn.active {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   }
 
   .footer-inner {
