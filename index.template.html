@@ -43,6 +43,7 @@
         <button class="pill-btn" id="tab-tiendas" data-target="tiendas" type="button" role="tab" aria-selected="false" aria-controls="tiendas"><span class="pill-icon" aria-hidden="true">🏬</span>Tiendas sin gluten</button>
         <button class="pill-btn" id="tab-recetas" data-target="recetas" type="button" role="tab" aria-selected="false" aria-controls="recetas"><span class="pill-icon" aria-hidden="true">🍳</span>Recetas</button>
         <button class="pill-btn" id="tab-dietas" data-target="dietas" type="button" role="tab" aria-selected="false" aria-controls="dietas"><span class="pill-icon" aria-hidden="true">🍽️</span>Dietas</button>
+        <button class="pill-btn" id="tab-calculadora" data-target="calculadora" type="button" role="tab" aria-selected="false" aria-controls="calculadora"><span class="pill-icon" aria-hidden="true">🧮</span>Calculadora calórica</button>
         <button class="pill-btn" id="tab-restaurantes" data-target="restaurantes" type="button" role="tab" aria-selected="false" aria-controls="restaurantes"><span class="pill-icon" aria-hidden="true">⭐</span>Restaurantes</button>
         <button class="pill-btn" id="tab-escaner" data-target="escaner" type="button" role="tab" aria-selected="false" aria-controls="escaner"><span class="pill-icon" aria-hidden="true">📷</span>Escáner</button>
         <button class="pill-btn" id="tab-lista-compra" data-target="lista-compra" type="button" role="tab" aria-selected="false" aria-controls="lista-compra"><span class="pill-icon" aria-hidden="true">🛍️</span>Lista de la compra<span class="pill-badge" id="shoppingBadge" hidden>0</span></button>
@@ -92,7 +93,19 @@
 
     <section id="dietas" class="page" role="tabpanel" aria-labelledby="tab-dietas">
       <span class="eyebrow">🍽️ Dietas</span>
-      <h1 class="section-title">Calculadora de calorías y planes de 4 semanas</h1>
+      <h1 class="section-title">Planes de 4 semanas por calorías</h1>
+      <p class="section-hint">¿No sabes cuántas calorías necesitas? Usa la <a href="#" data-scroll-target="calculadora">calculadora calórica</a>. Toca cualquier alimento en negrita de un día para añadirlo automáticamente a tu lista de la compra, lista para cuando vayas al supermercado.</p>
+
+      <div class="filter-chips" id="calorieFilter" role="group" aria-label="Filtrar por nivel calórico"></div>
+      <p class="plan-meta" id="planMeta"></p>
+      <div class="filter-chips filter-chips-sub" id="semanaFilter" role="group" aria-label="Filtrar por semana"></div>
+
+      <div class="recipe-list" id="planDiasList"></div>
+    </section>
+
+    <section id="calculadora" class="page" role="tabpanel" aria-labelledby="tab-calculadora">
+      <span class="eyebrow">🧮 Calculadora calórica</span>
+      <h1 class="section-title">Calculadora calórica</h1>
 
       <div class="calc-panel">
         <div class="calc-grid">
@@ -130,14 +143,6 @@
         <p class="calc-error" id="calcError" hidden>Rellena edad, altura y peso con valores válidos.</p>
         <div class="calc-result" id="calcResult" hidden></div>
       </div>
-
-      <h3 class="subsection-title">Planes de 4 semanas por calorías</h3>
-
-      <div class="filter-chips" id="calorieFilter" role="group" aria-label="Filtrar por nivel calórico"></div>
-      <p class="plan-meta" id="planMeta"></p>
-      <div class="filter-chips filter-chips-sub" id="semanaFilter" role="group" aria-label="Filtrar por semana"></div>
-
-      <div class="recipe-list" id="planDiasList"></div>
     </section>
 
     <section id="restaurantes" class="page" role="tabpanel" aria-labelledby="tab-restaurantes">
@@ -335,6 +340,7 @@
         <a href="#" data-scroll-target="tiendas">Tiendas sin gluten</a>
         <a href="#" data-scroll-target="recetas">Recetas</a>
         <a href="#" data-scroll-target="dietas">Dietas</a>
+        <a href="#" data-scroll-target="calculadora">Calculadora calórica</a>
         <a href="#" data-scroll-target="restaurantes">Restaurantes</a>
         <a href="#" data-scroll-target="escaner">Escáner</a>
         <a href="#" data-scroll-target="lista-compra">Lista de la compra</a>

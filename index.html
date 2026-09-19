@@ -41,6 +41,7 @@
         <button class="pill-btn" id="tab-tiendas" data-target="tiendas" type="button" role="tab" aria-selected="false" aria-controls="tiendas"><span class="pill-icon" aria-hidden="true">🏬</span>Tiendas sin gluten</button>
         <button class="pill-btn" id="tab-recetas" data-target="recetas" type="button" role="tab" aria-selected="false" aria-controls="recetas"><span class="pill-icon" aria-hidden="true">🍳</span>Recetas</button>
         <button class="pill-btn" id="tab-dietas" data-target="dietas" type="button" role="tab" aria-selected="false" aria-controls="dietas"><span class="pill-icon" aria-hidden="true">🍽️</span>Dietas</button>
+        <button class="pill-btn" id="tab-calculadora" data-target="calculadora" type="button" role="tab" aria-selected="false" aria-controls="calculadora"><span class="pill-icon" aria-hidden="true">🧮</span>Calculadora calórica</button>
         <button class="pill-btn" id="tab-restaurantes" data-target="restaurantes" type="button" role="tab" aria-selected="false" aria-controls="restaurantes"><span class="pill-icon" aria-hidden="true">⭐</span>Restaurantes</button>
         <button class="pill-btn" id="tab-escaner" data-target="escaner" type="button" role="tab" aria-selected="false" aria-controls="escaner"><span class="pill-icon" aria-hidden="true">📷</span>Escáner</button>
         <button class="pill-btn" id="tab-lista-compra" data-target="lista-compra" type="button" role="tab" aria-selected="false" aria-controls="lista-compra"><span class="pill-icon" aria-hidden="true">🛍️</span>Lista de la compra<span class="pill-badge" id="shoppingBadge" hidden="">0</span></button>
@@ -869,46 +870,8 @@ The post Nuevos pasos para un etiquetado más seguro appeared first on Asociaci�
 
     <section id="dietas" class="page" role="tabpanel" aria-labelledby="tab-dietas">
       <span class="eyebrow">🍽️ Dietas</span>
-      <h1 class="section-title">Calculadora de calorías y planes de 4 semanas</h1>
-
-      <div class="calc-panel">
-        <div class="calc-grid">
-          <div class="calc-field">
-            <label for="calcSexo">Sexo</label>
-            <select id="calcSexo">
-              <option value="mujer">Mujer</option>
-              <option value="hombre">Hombre</option>
-            </select>
-          </div>
-          <div class="calc-field">
-            <label for="calcEdad">Edad (años)</label>
-            <input type="number" id="calcEdad" min="14" max="100" placeholder="Ej. 32">
-          </div>
-          <div class="calc-field">
-            <label for="calcAltura">Altura (cm)</label>
-            <input type="number" id="calcAltura" min="120" max="230" placeholder="Ej. 170">
-          </div>
-          <div class="calc-field">
-            <label for="calcPeso">Peso (kg)</label>
-            <input type="number" id="calcPeso" min="30" max="250" placeholder="Ej. 68">
-          </div>
-          <div class="calc-field calc-field-wide">
-            <label for="calcActividad">Nivel de actividad física</label>
-            <select id="calcActividad">
-              <option value="1.2">Sedentaria (poco o ningún ejercicio)</option>
-              <option value="1.375">Ligera (ejercicio suave 1-3 días/semana)</option>
-              <option value="1.55" selected="">Moderada (ejercicio moderado 3-5 días/semana)</option>
-              <option value="1.725">Alta (ejercicio intenso 6-7 días/semana)</option>
-              <option value="1.9">Muy alta (trabajo físico o entreno 2 veces al día)</option>
-            </select>
-          </div>
-        </div>
-        <button id="calcSubmit" class="btn-primary" type="button">Calcular calorías</button>
-        <p class="calc-error" id="calcError" hidden="">Rellena edad, altura y peso con valores válidos.</p>
-        <div class="calc-result" id="calcResult" hidden=""></div>
-      </div>
-
-      <h3 class="subsection-title">Planes de 4 semanas por calorías</h3>
+      <h1 class="section-title">Planes de 4 semanas por calorías</h1>
+      <p class="section-hint">¿No sabes cuántas calorías necesitas? Usa la <a href="#" data-scroll-target="calculadora">calculadora calórica</a>. Toca cualquier alimento en negrita de un día para añadirlo automáticamente a tu lista de la compra, lista para cuando vayas al supermercado.</p>
 
       <div class="filter-chips" id="calorieFilter" role="group" aria-label="Filtrar por nivel calórico"><button class="filter-chip active" data-kcal="1500" type="button">1500 kcal/día</button><button class="filter-chip" data-kcal="1750" type="button">1750 kcal/día</button><button class="filter-chip" data-kcal="2000" type="button">2000 kcal/día</button><button class="filter-chip" data-kcal="2250" type="button">2250 kcal/día</button><button class="filter-chip" data-kcal="2500" type="button">2500 kcal/día</button><button class="filter-chip" data-kcal="2750" type="button">2750 kcal/día</button></div>
       <p class="plan-meta" id="planMeta">Déficit calórico moderado: pensado para complexiones menudas o poca actividad física. Consulta la calculadora para saber si te encaja.</p>
@@ -1041,6 +1004,48 @@ The post Nuevos pasos para un etiquetado más seguro appeared first on Asociaci�
       </div>
     </div>
   </div>
+    </section>
+
+    <section id="calculadora" class="page" role="tabpanel" aria-labelledby="tab-calculadora">
+      <span class="eyebrow">🧮 Calculadora calórica</span>
+      <h1 class="section-title">Calculadora calórica</h1>
+
+      <div class="calc-panel">
+        <div class="calc-grid">
+          <div class="calc-field">
+            <label for="calcSexo">Sexo</label>
+            <select id="calcSexo">
+              <option value="mujer">Mujer</option>
+              <option value="hombre">Hombre</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label for="calcEdad">Edad (años)</label>
+            <input type="number" id="calcEdad" min="14" max="100" placeholder="Ej. 32">
+          </div>
+          <div class="calc-field">
+            <label for="calcAltura">Altura (cm)</label>
+            <input type="number" id="calcAltura" min="120" max="230" placeholder="Ej. 170">
+          </div>
+          <div class="calc-field">
+            <label for="calcPeso">Peso (kg)</label>
+            <input type="number" id="calcPeso" min="30" max="250" placeholder="Ej. 68">
+          </div>
+          <div class="calc-field calc-field-wide">
+            <label for="calcActividad">Nivel de actividad física</label>
+            <select id="calcActividad">
+              <option value="1.2">Sedentaria (poco o ningún ejercicio)</option>
+              <option value="1.375">Ligera (ejercicio suave 1-3 días/semana)</option>
+              <option value="1.55" selected="">Moderada (ejercicio moderado 3-5 días/semana)</option>
+              <option value="1.725">Alta (ejercicio intenso 6-7 días/semana)</option>
+              <option value="1.9">Muy alta (trabajo físico o entreno 2 veces al día)</option>
+            </select>
+          </div>
+        </div>
+        <button id="calcSubmit" class="btn-primary" type="button">Calcular calorías</button>
+        <p class="calc-error" id="calcError" hidden="">Rellena edad, altura y peso con valores válidos.</p>
+        <div class="calc-result" id="calcResult" hidden=""></div>
+      </div>
     </section>
 
     <section id="restaurantes" class="page" role="tabpanel" aria-labelledby="tab-restaurantes">
@@ -1355,6 +1360,7 @@ The post Nuevos pasos para un etiquetado más seguro appeared first on Asociaci�
         <a href="#" data-scroll-target="tiendas">Tiendas sin gluten</a>
         <a href="#" data-scroll-target="recetas">Recetas</a>
         <a href="#" data-scroll-target="dietas">Dietas</a>
+        <a href="#" data-scroll-target="calculadora">Calculadora calórica</a>
         <a href="#" data-scroll-target="restaurantes">Restaurantes</a>
         <a href="#" data-scroll-target="escaner">Escáner</a>
         <a href="#" data-scroll-target="lista-compra">Lista de la compra</a>

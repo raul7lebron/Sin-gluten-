@@ -142,8 +142,8 @@ document.addEventListener("DOMContentLoaded", () => {
       gotoBtn.addEventListener("click", () => {
         const chip = calorieFilter && calorieFilter.querySelector(`[data-kcal="${recomendado}"]`);
         if (chip) chip.click();
-        const target = document.getElementById("calorieFilter");
-        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        activateTab("dietas");
+        window.scrollTo({ top: 0, behavior: "smooth" });
       });
     });
   }
