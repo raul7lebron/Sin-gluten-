@@ -1838,7 +1838,7 @@ const comidasPoolMantenimiento = {
     merienda: [
       "Yogur griego con miel y granola sin gluten (~160 kcal).",
       "Fruta variada con un puñado grande de frutos secos (~160 kcal).",
-      "Tostada de pan sin gluten con mermelada y queso fresco (~160 kcal).",
+      "Tostada de pan sin gluten con mermelada y mantequilla (~160 kcal).",
       "Batido de cacao con leche entera (~160 kcal).",
       "Queso curado con nueces (~160 kcal).",
     ],
@@ -1875,7 +1875,7 @@ const comidasPoolMantenimiento = {
     merienda: [
       "Yogur griego con miel, granola sin gluten y frutos rojos (~190 kcal).",
       "Fruta variada con un puñado grande de frutos secos y miel (~190 kcal).",
-      "Tostada de pan sin gluten con mermelada, queso fresco y nueces (~190 kcal).",
+      "Tostada de pan sin gluten con mermelada, mantequilla y nueces (~190 kcal).",
       "Batido de cacao con leche entera y plátano (~190 kcal).",
       "Queso curado con nueces y una pieza de fruta (~190 kcal).",
     ],
@@ -1912,7 +1912,7 @@ const comidasPoolMantenimiento = {
     merienda: [
       "Yogur griego con miel, granola sin gluten, frutos rojos y nueces (~210 kcal).",
       "Fruta variada con un puñado grande de frutos secos y miel (~210 kcal).",
-      "Dos tostadas de pan sin gluten con mermelada, queso fresco y nueces (~210 kcal).",
+      "Dos tostadas de pan sin gluten con mermelada, mantequilla y nueces (~210 kcal).",
       "Batido de cacao con leche entera, plátano y avena certificada sin gluten (~210 kcal).",
       "Queso curado con nueces, pasas y una pieza de fruta (~210 kcal).",
     ],
@@ -1948,8 +1948,8 @@ const comidasPoolMantenimiento = {
     ],
     merienda: [
       "Yogur griego con miel, granola sin gluten, frutos rojos y nueces (~230 kcal).",
-      "Fruta variada con un puñado grande de frutos secos, miel y queso curado (~230 kcal).",
-      "Dos tostadas de pan sin gluten con mermelada, queso fresco y nueces (~230 kcal).",
+      "Fruta variada con un puñado grande de frutos secos y miel (~230 kcal).",
+      "Dos tostadas de pan sin gluten con mermelada, mantequilla y nueces (~230 kcal).",
       "Batido de cacao con leche entera, plátano y avena certificada sin gluten (~230 kcal).",
       "Queso curado con nueces, pasas y dos piezas de fruta (~230 kcal).",
     ],
@@ -1985,8 +1985,8 @@ const comidasPoolMantenimiento = {
     ],
     merienda: [
       "Yogur griego con miel, granola sin gluten, frutos rojos y nueces (~250 kcal).",
-      "Fruta variada con un puñado grande de frutos secos, miel y queso curado (~250 kcal).",
-      "Tres tostadas de pan sin gluten con mermelada, queso fresco y nueces (~250 kcal).",
+      "Fruta variada con un puñado grande de frutos secos y miel (~250 kcal).",
+      "Tres tostadas de pan sin gluten con mermelada, mantequilla y nueces (~250 kcal).",
       "Batido de cacao con leche entera, plátano, avena certificada sin gluten y miel (~250 kcal).",
       "Queso curado con nueces, pasas y dos piezas de fruta (~250 kcal).",
     ],
@@ -2035,26 +2035,83 @@ const SHOPPABLE_KEYWORDS = [
 
 const NOMBRES_DIAS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
 
+// Ingrediente/plato principal de cada opción, para no repetirlo el mismo día en otra
+// comida (p. ej. huevos en el desayuno Y en la cena) ni en los 2 días siguientes. Se
+// comprueba en este orden: el primero que aparezca en el texto manda. Los que no
+// coinciden con ninguno se marcan "otros" y nunca cuentan como repetidos entre sí.
+const TEMA_KEYWORDS = [
+  "requesón", "batido", "yogur", "huevo",
+  "pollo", "pavo", "salmón", "atún", "merluza", "bacalao", "caballa", "sardina", "boquerón",
+  "gambas", "calamar", "pulpo", "mejillón", "almeja",
+  "garbanzo", "lenteja", "alubia", "edamame", "hummus", "tofu",
+  "ternera", "cerdo", "cordero", "conejo", "jamón", "chorizo", "bacon", "panceta",
+  "queso", "pasta", "quinoa", "gazpacho", "vichyssoise", "calabaza", "curry",
+  "tortita", "granola", "avena", "crepe", "brownie", "tarta",
+  "ensalada", "tostada", "bocadillo", "arroz", "boniato", "patata",
+  "pan", "fruta", "plátano", "manzana", "fresa",
+];
+
+function detectTema(text) {
+  const lower = text.toLowerCase();
+  const kw = TEMA_KEYWORDS.find((k) => lower.includes(k));
+  return kw || "otros";
+}
+
 // pool.desayuno.length decide el ciclo: comidasPool tiene 10 opciones por comida,
 // comidasPoolGanarMusculo tiene 5 — así el mismo constructor sirve para ambas.
 function buildPlanSemanas(pool, objetivo, kcal) {
-  const n = pool.desayuno.length;
+  const slots = [
+    { key: "desayuno", label: "Desayuno", offset: 0 },
+    { key: "mediaManana", label: "Media mañana", offset: 3 },
+    { key: "comida", label: "Comida", offset: 7 },
+    { key: "merienda", label: "Merienda", offset: 5 },
+    { key: "cena", label: "Cena", offset: 2 },
+  ];
+  const temasPorSlot = {};
+  slots.forEach((s) => {
+    temasPorSlot[s.key] = pool[s.key].map(detectTema);
+  });
+
+  // Cada comida (desayuno, comida...) recuerda sus 2 últimos temas: no se repite antes
+  // de 3 días dentro de la misma comida. Aparte, ningún tema se repite dos veces el
+  // mismo día entre comidas distintas (el "requesón para desayunar y merendar" que se
+  // quería evitar).
+  const historialPorSlot = {};
+  slots.forEach((s) => {
+    historialPorSlot[s.key] = [];
+  });
+
   const semanas = [];
   for (let w = 0; w < 4; w++) {
     const dias = [];
     for (let i = 0; i < 7; i++) {
       const d = w * 7 + i;
-      dias.push({
-        dayKey: `${objetivo}-${kcal}-${w}-${i}`,
-        dia: NOMBRES_DIAS[i],
-        comidas: [
-          { label: "Desayuno", text: pool.desayuno[d % n] },
-          { label: "Media mañana", text: pool.mediaManana[(d + 3) % n] },
-          { label: "Comida", text: pool.comida[(d + 7) % n] },
-          { label: "Merienda", text: pool.merienda[(d + 5) % n] },
-          { label: "Cena", text: pool.cena[(d + 2) % n] },
-        ],
+      const temasHoy = new Set();
+      const comidas = slots.map((s) => {
+        const n = pool[s.key].length;
+        const temas = temasPorSlot[s.key];
+        const recientesSlot = historialPorSlot[s.key];
+        let elegido = null;
+        for (let attempt = 0; attempt < n && elegido === null; attempt++) {
+          const idx = (d + s.offset + attempt) % n;
+          const tema = temas[idx];
+          if (tema === "otros" || (!temasHoy.has(tema) && !recientesSlot.includes(tema))) elegido = idx;
+        }
+        if (elegido === null) {
+          for (let attempt = 0; attempt < n && elegido === null; attempt++) {
+            const idx = (d + s.offset + attempt) % n;
+            if (temas[idx] === "otros" || !temasHoy.has(temas[idx])) elegido = idx;
+          }
+        }
+        if (elegido === null) elegido = (d + s.offset) % n;
+        const temaElegido = temas[elegido];
+        temasHoy.add(temaElegido);
+        recientesSlot.push(temaElegido);
+        if (recientesSlot.length > 2) recientesSlot.shift();
+        return { label: s.label, text: pool[s.key][elegido] };
       });
+
+      dias.push({ dayKey: `${objetivo}-${kcal}-${w}-${i}`, dia: NOMBRES_DIAS[i], comidas });
     }
     semanas.push({ titulo: `Semana ${w + 1}`, dias });
   }
