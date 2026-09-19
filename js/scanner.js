@@ -119,12 +119,39 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
+  const SCORE_GRADE_COLORS = { a: "#1e8f4e", b: "#77b52c", c: "#eec300", d: "#ee8100", e: "#e63e11" };
+
+  function normalizeGrade(grade) {
+    const g = String(grade || "").toLowerCase();
+    return ["a", "b", "c", "d", "e"].includes(g) ? g : null;
+  }
+
+  function renderScoreBadge(label, icon, grade, extra) {
+    const g = normalizeGrade(grade);
+    if (!g) return "";
+    return `
+      <div class="score-badge" style="--score-color: ${SCORE_GRADE_COLORS[g]}">
+        <span class="score-badge-grade" aria-hidden="true">${g.toUpperCase()}</span>
+        <div class="score-badge-info">
+          <span class="score-badge-label"><span aria-hidden="true">${icon}</span> ${label}</span>
+          ${extra ? `<span class="score-badge-extra">${extra}</span>` : ""}
+        </div>
+      </div>
+    `;
+  }
+
   function renderResultado(product, code) {
     const veredicto = veredictoGluten(product);
     const nombre = product.product_name || "Producto sin nombre registrado";
     const marca = product.brands || "";
     const imagen = product.image_front_small_url || product.image_url || "";
     const ingredientes = product.ingredients_text_es || product.ingredients_text || "";
+
+    const nutriscoreGrade = product.nutriscore_grade || product.nutrition_grades;
+    const ecoscoreGrade = product.ecoscore_grade;
+    const ecoscoreValor = Number.isFinite(product.ecoscore_score) ? `${product.ecoscore_score}/100` : "";
+
+    const scoresHtml = `${renderScoreBadge("Nutri-Score", "🍎", nutriscoreGrade)}${renderScoreBadge("Green-Score", "🌱", ecoscoreGrade, ecoscoreValor)}`;
 
     resultBox.hidden = false;
     resultBox.innerHTML = `
@@ -137,6 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
         <div class="scanner-verdict"><span class="scanner-icon" aria-hidden="true">${veredicto.icono}</span> ${veredicto.texto}</div>
+        ${scoresHtml ? `<div class="scanner-scores">${scoresHtml}</div>` : ""}
         ${ingredientes ? `<p class="scanner-ingredients"><strong>Ingredientes:</strong> ${ingredientes}</p>` : ""}
         <a class="rank-link" href="https://world.openfoodfacts.org/product/${code}" target="_blank" rel="noopener noreferrer">Ver ficha completa en Open Food Facts ↗</a>
       </div>

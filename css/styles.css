@@ -1221,6 +1221,55 @@ a:focus-visible {
   margin: 0 0 10px;
 }
 
+.scanner-scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 12px;
+}
+
+.score-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+}
+
+.score-badge-grade {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--score-color);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.score-badge-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.score-badge-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.score-badge-extra {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
 /* Footer */
 .site-footer {
   margin-top: 24px;
