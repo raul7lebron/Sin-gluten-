@@ -219,6 +219,15 @@
       <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Esta lista se guarda solo en este dispositivo (no en un servidor). No mostramos precio ni peso/volumen por producto porque no disponemos de esos datos verificados para cada supermercado — escribe tú la cantidad que necesites en cada artículo.</span></p>
     </section>
 
+    <section id="comparador" class="page legal-page" aria-label="Comparador de producto">
+      <a href="#" class="legal-back" id="comparadorBack">← Volver</a>
+      <span class="eyebrow">🔎 ¿Qué necesitas para…?</span>
+      <h1 class="section-title" id="comparadorTitle"></h1>
+      <p class="comparador-hint">Estas son las opciones sin gluten verificadas que coinciden con este ingrediente, por supermercado. No mostramos precio ni peso/volumen porque no tenemos esos datos confirmados por producto.</p>
+      <div class="comparador-results" id="comparadorResults"></div>
+      <button type="button" id="comparadorGeneric" class="comparador-generic"></button>
+    </section>
+
     <section id="aviso-legal" class="page legal-page" aria-label="Aviso legal">
       <a href="#" class="legal-back" data-scroll-target="inicio">← Volver a Libre de Trigo</a>
       <span class="eyebrow">⚖️ Legal</span>
@@ -382,21 +391,6 @@
       </nav>
     </div>
   </footer>
-
-  <div class="ingredient-modal" id="ingredientModal" hidden>
-    <div class="ingredient-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="ingredientModalTitle">
-      <div class="ingredient-modal-header">
-        <div>
-          <span class="ingredient-modal-eyebrow">¿Qué necesitas para…?</span>
-          <h2 class="ingredient-modal-title" id="ingredientModalTitle"></h2>
-        </div>
-        <button type="button" id="ingredientModalClose" class="search-modal-close" aria-label="Cerrar">✕</button>
-      </div>
-      <p class="ingredient-modal-hint">Estas son las opciones sin gluten verificadas que coinciden con este ingrediente. No mostramos precio ni peso/volumen porque no tenemos esos datos confirmados por producto.</p>
-      <div class="ingredient-modal-results" id="ingredientModalResults"></div>
-      <button type="button" id="ingredientModalGeneric" class="ingredient-modal-generic"></button>
-    </div>
-  </div>
 
   <div class="cookie-banner" id="cookieBanner" hidden>
     <p>Usamos cookies de analítica (Google Analytics) para saber qué páginas se visitan más y mejorar el sitio. Solo se activan si las aceptas. Puedes leer más en nuestra <a href="#" data-scroll-target="cookies">Política de cookies</a>.</p>

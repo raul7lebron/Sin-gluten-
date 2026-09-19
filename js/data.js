@@ -1385,6 +1385,38 @@ const comidasPool = {
   },
 };
 
+// Palabras/frases de ingrediente que se resaltan en negrita y se vuelven tocables dentro
+// de las recetas y las comidas de los planes de dieta (ver highlightShoppable en render.js).
+// Las frases de varias palabras van primero para que "aceite de oliva" se detecte entera
+// en vez de solo "oliva".
+const SHOPPABLE_KEYWORDS = [
+  // Frases
+  "aceite de oliva virgen extra", "aceite de oliva y romero", "aceite de oliva",
+  "avena certificada sin gluten", "avena certificada", "pan rallado sin gluten", "pan sin gluten",
+  "pasta sin gluten", "salsa de soja sin gluten", "caldo de verduras sin gluten",
+  "cereales de maíz sin gluten", "granola sin gluten", "tortitas de maíz sin gluten",
+  "tortitas de arroz", "barrita de cereales sin gluten", "trigo sarraceno",
+  "queso fresco batido", "queso fresco", "queso parmesano", "queso curado", "queso feta",
+  "leche de coco", "leche entera", "crema de cacahuete", "arroz basmati", "arroz cocido",
+  "frutos rojos", "frutos secos", "huevo poché", "huevos duros", "huevo duro",
+  "pescado blanco", "salmón ahumado", "lomos de salmón", "tortilla francesa",
+  "gambas peladas", "carne picada", "poke bowl", "solomillo de cerdo",
+  "pechuga de pollo", "pechuga de pavo", "muslos de pollo", "jamón serrano", "jamón cocido",
+  "boniato asado", "ensalada verde", "ensalada de quinoa", "ensalada de pollo",
+  "verduras salteadas", "batido de proteína", "batido de frutos rojos", "batido de cacao puro",
+  "yogur griego", "yogur natural", "compota de manzana", "tomate triturado", "tomate rallado",
+  "tomates cherry", "patata cocida", "bebida vegetal", "atún fresco",
+  // Palabras sueltas
+  "huevos", "huevo", "espinacas", "avena", "leche", "plátano", "yogur", "granola", "arándanos",
+  "aguacate", "fresas", "almendras", "nueces", "manzana", "canela", "hummus", "zanahoria",
+  "pepino", "requesón", "arroz", "uvas", "orejones", "dátiles", "pollo", "brócoli", "salmón",
+  "lentejas", "verduras", "merluza", "patatas", "patata", "atún", "edamame", "garbanzos",
+  "quinoa", "tomates", "tomate", "albóndigas", "queso", "gambas", "espárragos", "tofu", "pavo",
+  "calabacín", "calabaza", "rúcula", "vichyssoise", "gazpacho", "miel", "anacardos", "pimientos",
+  "pimiento", "cebolla", "ajo", "eneldo", "perejil", "limón", "guisantes", "sal", "cerdo",
+  "boniatos", "boniato", "fruta", "cacao", "pasas", "romero", "nata",
+];
+
 const NOMBRES_DIAS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
 
 function buildPlanSemanas(kcal) {

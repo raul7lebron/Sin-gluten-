@@ -182,38 +182,40 @@ function updateShoppingBadge() {
   badge.hidden = count === 0;
 }
 
-/* ---------- Modal: "¿qué necesitas para X?" ---------- */
+/* ---------- Página comparador: "¿qué necesitas para X?" ---------- */
 
-function openIngredientPicker(text) {
-  const modal = document.getElementById("ingredientModal");
-  const title = document.getElementById("ingredientModalTitle");
-  const resultsEl = document.getElementById("ingredientModalResults");
-  const genericBtn = document.getElementById("ingredientModalGeneric");
-  if (!modal || !title || !resultsEl || !genericBtn) return;
+let comparadorReturnPage = "recetas";
+
+function renderComparador(text) {
+  const title = document.getElementById("comparadorTitle");
+  const resultsEl = document.getElementById("comparadorResults");
+  const genericBtn = document.getElementById("comparadorGeneric");
+  if (!title || !resultsEl || !genericBtn) return;
 
   title.textContent = text;
   const results = searchProducts(text);
 
   if (results.length === 0) {
-    resultsEl.innerHTML = `<p class="ingredient-modal-empty">No encontramos productos verificados que coincidan con este ingrediente.</p>`;
+    resultsEl.innerHTML = `<p class="comparador-empty">No encontramos productos verificados que coincidan con este ingrediente.</p>`;
   } else {
     resultsEl.innerHTML = results
       .map(
         (r, i) => `
-        <button class="ingredient-result" type="button" data-index="${i}">
-          <span class="ingredient-result-super">${escapeHtmlShop(r.supermercado)}</span>
-          <span class="ingredient-result-name">${escapeHtmlShop(r.producto)}</span>
-          <span class="ingredient-result-add" aria-hidden="true">+ Añadir</span>
+        <button class="comparador-result" type="button" data-index="${i}">
+          <span class="comparador-result-super">${escapeHtmlShop(r.supermercado)}</span>
+          <span class="comparador-result-name">${escapeHtmlShop(r.producto)}</span>
+          <span class="comparador-result-add" aria-hidden="true">+ Añadir</span>
         </button>
       `
       )
       .join("");
 
-    Array.from(resultsEl.querySelectorAll(".ingredient-result")).forEach((btn) => {
+    Array.from(resultsEl.querySelectorAll(".comparador-result")).forEach((btn) => {
       btn.addEventListener("click", () => {
         const r = results[Number(btn.dataset.index)];
         addToShoppingList({ label: r.producto, supermercado: r.supermercado, categoria: r.categoria });
-        closeIngredientPicker();
+        window.libreDeTrigo.activateTab("lista-compra");
+        window.scrollTo({ top: 0, behavior: "smooth" });
       });
     });
   }
@@ -222,22 +224,17 @@ function openIngredientPicker(text) {
   genericBtn.textContent = `Añadir "${shortText}" tal cual`;
   genericBtn.onclick = () => {
     addToShoppingList({ label: text, supermercado: "Sin especificar", categoria: "" });
-    closeIngredientPicker();
+    window.libreDeTrigo.activateTab("lista-compra");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
-  modal.hidden = false;
-  requestAnimationFrame(() => modal.classList.add("open"));
-  document.body.style.overflow = "hidden";
 }
 
-function closeIngredientPicker() {
-  const modal = document.getElementById("ingredientModal");
-  if (!modal) return;
-  modal.classList.remove("open");
-  document.body.style.overflow = "";
-  setTimeout(() => {
-    modal.hidden = true;
-  }, 200);
+function openComparador(text) {
+  const current = document.querySelector(".page.active");
+  if (current && current.id !== "comparador") comparadorReturnPage = current.id;
+  renderComparador(text);
+  window.libreDeTrigo.activateTab("comparador");
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 /* ---------- Arranque ---------- */
@@ -279,22 +276,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const shoppable = event.target.closest(".shoppable");
     if (!shoppable) return;
     const text = shoppable.dataset.shopText || shoppable.textContent.trim();
-    openIngredientPicker(text);
+    openComparador(text);
   });
 
-  const closeBtn = document.getElementById("ingredientModalClose");
-  if (closeBtn) closeBtn.addEventListener("click", closeIngredientPicker);
-
-  const overlay = document.getElementById("ingredientModal");
-  if (overlay) {
-    overlay.addEventListener("click", (event) => {
-      if (event.target === overlay) closeIngredientPicker();
+  const backBtn = document.getElementById("comparadorBack");
+  if (backBtn) {
+    backBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.libreDeTrigo.activateTab(comparadorReturnPage);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key !== "Escape") return;
-    const modal = document.getElementById("ingredientModal");
-    if (modal && !modal.hidden) closeIngredientPicker();
-  });
 });

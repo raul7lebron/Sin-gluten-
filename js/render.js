@@ -108,6 +108,52 @@ function renderTiendas() {
     .join("");
 }
 
+function escapeHtmlRender(str) {
+  return String(str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+function stripAccentsRender(str) {
+  return str.normalize("NFD").replace(/[̀-ͯ]/g, "");
+}
+
+// Envuelve en <strong class="shoppable"> las palabras/frases de ingrediente reconocidas
+// dentro de un texto libre (ingrediente de receta o comida de un plan de dieta), dejando
+// el resto del texto tal cual. Solo esas palabras quedan en negrita y son tocables.
+function highlightShoppable(text) {
+  if (typeof SHOPPABLE_KEYWORDS === "undefined") return escapeHtmlRender(text);
+  const normalizedText = stripAccentsRender(text).toLowerCase();
+  const isWordChar = (ch) => !!ch && /[a-z0-9]/i.test(stripAccentsRender(ch));
+  const matches = [];
+
+  SHOPPABLE_KEYWORDS.forEach((kw) => {
+    const normalizedKw = stripAccentsRender(kw).toLowerCase();
+    let fromIndex = 0;
+    for (;;) {
+      const pos = normalizedText.indexOf(normalizedKw, fromIndex);
+      if (pos === -1) break;
+      const end = pos + normalizedKw.length;
+      fromIndex = pos + 1;
+      if (isWordChar(normalizedText[pos - 1]) || isWordChar(normalizedText[end])) continue;
+      const overlaps = matches.some((m) => pos < m.end && end > m.start);
+      if (!overlaps) matches.push({ start: pos, end });
+    }
+  });
+
+  if (matches.length === 0) return escapeHtmlRender(text);
+
+  matches.sort((a, b) => a.start - b.start);
+  let html = "";
+  let cursor = 0;
+  matches.forEach((m) => {
+    html += escapeHtmlRender(text.slice(cursor, m.start));
+    const original = text.slice(m.start, m.end);
+    html += `<strong class="shoppable" data-shop-text="${escapeHtmlRender(original)}">${escapeHtmlRender(original)}</strong>`;
+    cursor = m.end;
+  });
+  html += escapeHtmlRender(text.slice(cursor));
+  return html;
+}
+
 function renderRecipeCard(item, extraClass, listHtml, dataKey) {
   return `
     <div class="recipe-card ${extraClass}" data-title="${dataKey || item.title}">
@@ -142,7 +188,7 @@ function renderRecetas(query = "") {
     .map((receta) => {
       const content = `
         <h4>Ingredientes</h4>
-        <ul>${receta.ingredientes.map((i) => `<li class="shoppable" data-shop-text="${i}">${i}</li>`).join("")}</ul>
+        <ul>${receta.ingredientes.map((i) => `<li>${highlightShoppable(i)}</li>`).join("")}</ul>
         <h4>Preparación</h4>
         <ol>${receta.pasos.map((p) => `<li>${p}</li>`).join("")}</ol>
       `;
@@ -191,7 +237,7 @@ function renderPlanDias(kcalKey, semanaIdx) {
       const content = `
         <ul class="meal-list">
           ${d.comidas
-            .map((c) => `<li class="shoppable" data-shop-text="${c.text}"><strong>${c.label}:</strong> ${c.text}</li>`)
+            .map((c) => `<li><strong>${c.label}:</strong> ${highlightShoppable(c.text)}</li>`)
             .join("")}
         </ul>
       `;
