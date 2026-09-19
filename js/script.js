@@ -63,31 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   bindRecipeToggles();
 
-  function bindInfoToggles() {
-    document.querySelectorAll(".info-toggle").forEach((toggle) => {
-      toggle.addEventListener("click", () => {
-        const card = toggle.closest(".info-card");
-        const isOpen = card.classList.toggle("open");
-        toggle.setAttribute("aria-expanded", String(isOpen));
-      });
-    });
-  }
-
-  bindInfoToggles();
-
-  const supermercadoFilter = document.getElementById("supermercadoFilter");
-  if (supermercadoFilter) {
-    supermercadoFilter.addEventListener("click", (event) => {
-      const chip = event.target.closest(".filter-chip");
-      if (!chip) return;
-
-      supermercadoFilter.querySelectorAll(".filter-chip").forEach((c) => c.classList.remove("active"));
-      chip.classList.add("active");
-      renderCatalogo(chip.dataset.super);
-      bindInfoToggles();
-    });
-  }
-
   const recetaSearch = document.getElementById("recetaSearch");
   if (recetaSearch) {
     recetaSearch.addEventListener("input", () => {
@@ -185,5 +160,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  window.libreDeTrigo = { activateTab, bindRecipeToggles, bindInfoToggles };
+  window.libreDeTrigo = { activateTab, bindRecipeToggles };
 });

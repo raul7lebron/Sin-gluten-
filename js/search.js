@@ -9,8 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const TYPE_LABELS = {
     receta: "Receta",
     dieta: "Plan de dieta",
-    categoria: "Supermercado",
-    producto: "Producto",
     tienda: "Tienda especializada",
     restaurante: "Restaurante",
     noticia: "Noticia",
@@ -34,32 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const el = title ? candidates.find((c) => c.dataset.title === title) : candidates[0];
       if (!el) return;
       el.scrollIntoView({ behavior: "smooth", block: "center" });
-      const toggleBtn = el.querySelector(".recipe-toggle, .info-toggle");
+      const toggleBtn = el.querySelector(".recipe-toggle");
       if (toggleBtn && !el.classList.contains("open")) toggleBtn.click();
       flashHighlight(el);
-    }, 200);
-  }
-
-  function openProduct(chainKey, catTitle, productText) {
-    if (window.libreDeTrigo) window.libreDeTrigo.activateTab("supermercado");
-    closeModal();
-    setTimeout(() => {
-      const chip = document.querySelector(`#supermercadoFilter [data-super="${chainKey}"]`);
-      if (chip) chip.click();
-      setTimeout(() => {
-        const cards = Array.from(document.querySelectorAll("#catalogoGrid .info-card"));
-        const card = cards.find((c) => c.dataset.title === catTitle);
-        if (!card) return;
-        card.scrollIntoView({ behavior: "smooth", block: "center" });
-        const toggleBtn = card.querySelector(".info-toggle");
-        if (toggleBtn && !card.classList.contains("open")) toggleBtn.click();
-        setTimeout(() => {
-          const lis = Array.from(card.querySelectorAll(".info-product-list li"));
-          const li = lis.find((x) => x.textContent === productText);
-          flashHighlight(li || card);
-          if (li) li.scrollIntoView({ behavior: "smooth", block: "center" });
-        }, 400);
-      }, 150);
     }, 200);
   }
 
@@ -108,30 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
             snippet: d.comidas[2] ? d.comidas[2].text : "",
             haystack: [d.dia, semana.titulo, plan.label, resumenComidas].join(" ").toLowerCase(),
             action: () => openPlanDia(kcal, weekIdx, d.dayKey),
-          });
-        });
-      });
-    });
-
-    (typeof supermercadoCategories !== "undefined" ? supermercadoCategories : []).forEach((cat) => {
-      items.push({
-        type: "categoria",
-        title: cat.title,
-        snippet: cat.text,
-        haystack: [cat.title, cat.text, ...(cat.productos || [])].join(" ").toLowerCase(),
-        action: () => openCard("supermercado", "#supermercadoGrid .info-card", cat.title),
-      });
-    });
-
-    Object.entries(typeof supermercadosCatalogo !== "undefined" ? supermercadosCatalogo : {}).forEach(([key, cadena]) => {
-      Object.entries(cadena.categorias).forEach(([catTitle, productos]) => {
-        productos.forEach((p) => {
-          items.push({
-            type: "producto",
-            title: p,
-            snippet: `${cadena.label} · ${catTitle}`,
-            haystack: `${p} ${cadena.label} ${catTitle}`.toLowerCase(),
-            action: () => openProduct(key, catTitle, p),
           });
         });
       });

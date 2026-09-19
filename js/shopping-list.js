@@ -1,14 +1,23 @@
 // Lista de la compra: se guarda solo en este dispositivo (localStorage), nunca en un
-// servidor. No incluye precio ni cantidad en gramos/litros porque no disponemos de esos
-// datos verificados por producto — el campo "cantidad" lo rellena la propia persona al
-// añadir el producto.
+// servidor. Es una lista genérica ("espinacas", "pan sin gluten"...), no productos de una
+// marca o supermercado concreto, para poder comprarla en cualquier sitio. Al tocar un
+// ingrediente en negrita en Recetas o Dietas se añade directamente (o se suma 1 si ya
+// estaba); la cantidad se ajusta luego con los botones +/- en la propia lista.
 const SHOPPING_LIST_KEY = "libreDeTrigoShoppingList";
 
 function loadShoppingList() {
   try {
     const raw = localStorage.getItem(SHOPPING_LIST_KEY);
     const parsed = raw ? JSON.parse(raw) : [];
-    return Array.isArray(parsed) ? parsed : [];
+    if (!Array.isArray(parsed)) return [];
+    return parsed
+      .filter((item) => item && item.label)
+      .map((item) => ({
+        id: item.id || `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+        label: String(item.label),
+        cantidad: Number.isFinite(item.cantidad) && item.cantidad > 0 ? Math.round(item.cantidad) : 1,
+        checked: !!item.checked,
+      }));
   } catch (err) {
     return [];
   }
@@ -24,60 +33,25 @@ function saveShoppingList() {
 
 let shoppingList = loadShoppingList();
 
-/* ---------- Búsqueda de productos a partir de un ingrediente/comida ---------- */
-
-const SHOP_STOPWORDS = new Set([
-  "de", "del", "la", "el", "los", "las", "y", "con", "sin", "a", "al", "en", "una", "un",
-  "unas", "unos", "para", "por", "su", "sus", "tu", "tus", "o", "u", "e", "kcal", "aceite",
-  "oliva", "extra", "gramos", "gr", "g", "ml", "ración", "raciones", "pieza", "piezas",
-  "puñado", "trozos", "trozo", "cucharada", "cucharadas", "cucharadita",
-]);
-
-function stripAccents(str) {
-  return str.normalize("NFD").replace(/[̀-ͯ]/g, "");
+function normalizeLabel(str) {
+  return str.trim().toLowerCase();
 }
 
-function extractKeywords(text) {
-  const cleaned = text.replace(/\(~?\d+[^)]*\)/g, ""); // quita "(~450 kcal)" etc.
-  const words = stripAccents(cleaned.toLowerCase())
-    .replace(/[^a-z0-9\s]/g, " ")
-    .split(/\s+/)
-    .filter((w) => w.length >= 4 && !SHOP_STOPWORDS.has(w));
-  return [...new Set(words)];
-}
+/* ---------- Estado: añadir / quitar / marcar / cantidad ---------- */
 
-function searchProducts(text) {
-  const keywords = extractKeywords(text);
-  if (keywords.length === 0 || typeof supermercadosCatalogo === "undefined") return [];
-
-  const results = [];
-  Object.values(supermercadosCatalogo).forEach((cadena) => {
-    Object.entries(cadena.categorias).forEach(([catTitle, productos]) => {
-      productos.forEach((producto) => {
-        const normalized = stripAccents(producto.toLowerCase());
-        const hits = keywords.filter((kw) => normalized.includes(kw)).length;
-        if (hits > 0) {
-          results.push({ supermercado: cadena.label, categoria: catTitle, producto, hits });
-        }
-      });
+function addOrIncrementShoppingItem(label) {
+  const key = normalizeLabel(label);
+  const existing = shoppingList.find((item) => normalizeLabel(item.label) === key);
+  if (existing) {
+    existing.cantidad += 1;
+  } else {
+    shoppingList.push({
+      id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+      label,
+      cantidad: 1,
+      checked: false,
     });
-  });
-
-  results.sort((a, b) => b.hits - a.hits);
-  return results.slice(0, 24);
-}
-
-/* ---------- Estado: añadir / quitar / marcar ---------- */
-
-function addToShoppingList({ label, supermercado, categoria }) {
-  shoppingList.push({
-    id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-    label,
-    supermercado: supermercado || "Sin especificar",
-    categoria: categoria || "",
-    cantidad: "",
-    checked: false,
-  });
+  }
   saveShoppingList();
   renderShoppingList();
   updateShoppingBadge();
@@ -97,10 +71,24 @@ function toggleShoppingItem(id) {
   renderShoppingList();
 }
 
-function updateShoppingItemQty(id, cantidad) {
+function incrementShoppingItem(id) {
   const item = shoppingList.find((i) => i.id === id);
-  if (item) item.cantidad = cantidad;
+  if (!item) return;
+  item.cantidad += 1;
   saveShoppingList();
+  renderShoppingList();
+}
+
+function decrementShoppingItem(id) {
+  const item = shoppingList.find((i) => i.id === id);
+  if (!item) return;
+  if (item.cantidad <= 1) {
+    removeFromShoppingList(id);
+    return;
+  }
+  item.cantidad -= 1;
+  saveShoppingList();
+  renderShoppingList();
 }
 
 function clearShoppingList() {
@@ -111,16 +99,6 @@ function clearShoppingList() {
 }
 
 /* ---------- Render: página "Lista de la compra" ---------- */
-
-function groupBySupermercado(list) {
-  const groups = {};
-  list.forEach((item) => {
-    const key = item.supermercado || "Sin especificar";
-    if (!groups[key]) groups[key] = [];
-    groups[key].push(item);
-  });
-  return groups;
-}
 
 function escapeHtmlShop(str) {
   return String(str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -145,33 +123,26 @@ function renderShoppingList() {
     countEl.textContent = `${checkedCount} de ${shoppingList.length} en el carrito`;
   }
 
-  const groups = groupBySupermercado(shoppingList);
-  container.innerHTML = Object.entries(groups)
-    .map(
-      ([supermercado, items]) => `
-      <div class="shopping-group">
-        <h3 class="shopping-group-title">${escapeHtmlShop(supermercado)}</h3>
-        <ul class="shopping-items">
-          ${items
-            .map(
-              (item) => `
-            <li class="shopping-item${item.checked ? " checked" : ""}" data-id="${item.id}">
-              <button class="shopping-check" type="button" aria-label="Marcar en el carrito" aria-pressed="${item.checked}"></button>
-              <div class="shopping-item-info">
-                <span class="shopping-item-label">${escapeHtmlShop(item.label)}</span>
-                ${item.categoria ? `<span class="shopping-item-meta">${escapeHtmlShop(item.categoria)}</span>` : ""}
-              </div>
-              <input type="text" class="shopping-item-qty" placeholder="Cantidad" value="${escapeHtmlShop(item.cantidad || "")}" aria-label="Cantidad" />
-              <button class="shopping-remove" type="button" aria-label="Quitar de la lista">✕</button>
-            </li>
-          `
-            )
-            .join("")}
-        </ul>
-      </div>
-    `
-    )
-    .join("");
+  container.innerHTML = `
+    <ul class="shopping-items">
+      ${shoppingList
+        .map(
+          (item) => `
+        <li class="shopping-item${item.checked ? " checked" : ""}" data-id="${item.id}">
+          <button class="shopping-check" type="button" aria-label="Marcar en el carrito" aria-pressed="${item.checked}"></button>
+          <span class="shopping-item-label">${escapeHtmlShop(item.label)}</span>
+          <div class="shopping-qty" role="group" aria-label="Cantidad">
+            <button class="qty-btn qty-minus" type="button" aria-label="Quitar una unidad">−</button>
+            <span class="qty-value">${item.cantidad}</span>
+            <button class="qty-btn qty-plus" type="button" aria-label="Añadir una unidad">+</button>
+          </div>
+          <button class="shopping-remove" type="button" aria-label="Quitar de la lista">✕</button>
+        </li>
+      `
+        )
+        .join("")}
+    </ul>
+  `;
 }
 
 function updateShoppingBadge() {
@@ -180,61 +151,6 @@ function updateShoppingBadge() {
   const count = shoppingList.length;
   badge.textContent = String(count);
   badge.hidden = count === 0;
-}
-
-/* ---------- Página comparador: "¿qué necesitas para X?" ---------- */
-
-let comparadorReturnPage = "recetas";
-
-function renderComparador(text) {
-  const title = document.getElementById("comparadorTitle");
-  const resultsEl = document.getElementById("comparadorResults");
-  const genericBtn = document.getElementById("comparadorGeneric");
-  if (!title || !resultsEl || !genericBtn) return;
-
-  title.textContent = text;
-  const results = searchProducts(text);
-
-  if (results.length === 0) {
-    resultsEl.innerHTML = `<p class="comparador-empty">No encontramos productos verificados que coincidan con este ingrediente.</p>`;
-  } else {
-    resultsEl.innerHTML = results
-      .map(
-        (r, i) => `
-        <button class="comparador-result" type="button" data-index="${i}">
-          <span class="comparador-result-super">${escapeHtmlShop(r.supermercado)}</span>
-          <span class="comparador-result-name">${escapeHtmlShop(r.producto)}</span>
-          <span class="comparador-result-add" aria-hidden="true">+ Añadir</span>
-        </button>
-      `
-      )
-      .join("");
-
-    Array.from(resultsEl.querySelectorAll(".comparador-result")).forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const r = results[Number(btn.dataset.index)];
-        addToShoppingList({ label: r.producto, supermercado: r.supermercado, categoria: r.categoria });
-        window.libreDeTrigo.activateTab("lista-compra");
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    });
-  }
-
-  const shortText = text.length > 44 ? `${text.slice(0, 44)}…` : text;
-  genericBtn.textContent = `Añadir "${shortText}" tal cual`;
-  genericBtn.onclick = () => {
-    addToShoppingList({ label: text, supermercado: "Sin especificar", categoria: "" });
-    window.libreDeTrigo.activateTab("lista-compra");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-}
-
-function openComparador(text) {
-  const current = document.querySelector(".page.active");
-  if (current && current.id !== "comparador") comparadorReturnPage = current.id;
-  renderComparador(text);
-  window.libreDeTrigo.activateTab("comparador");
-  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 /* ---------- Arranque ---------- */
@@ -246,20 +162,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const groupsContainer = document.getElementById("shoppingListGroups");
   if (groupsContainer) {
     groupsContainer.addEventListener("click", (event) => {
-      const checkBtn = event.target.closest(".shopping-check");
-      if (checkBtn) {
-        toggleShoppingItem(checkBtn.closest(".shopping-item").dataset.id);
-        return;
-      }
-      const removeBtn = event.target.closest(".shopping-remove");
-      if (removeBtn) {
-        removeFromShoppingList(removeBtn.closest(".shopping-item").dataset.id);
-      }
-    });
+      const li = event.target.closest(".shopping-item");
+      if (!li) return;
+      const id = li.dataset.id;
 
-    groupsContainer.addEventListener("input", (event) => {
-      if (event.target.classList.contains("shopping-item-qty")) {
-        updateShoppingItemQty(event.target.closest(".shopping-item").dataset.id, event.target.value);
+      if (event.target.closest(".shopping-check")) {
+        toggleShoppingItem(id);
+      } else if (event.target.closest(".shopping-remove")) {
+        removeFromShoppingList(id);
+      } else if (event.target.closest(".qty-plus")) {
+        incrementShoppingItem(id);
+      } else if (event.target.closest(".qty-minus")) {
+        decrementShoppingItem(id);
       }
     });
   }
@@ -276,15 +190,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const shoppable = event.target.closest(".shoppable");
     if (!shoppable) return;
     const text = shoppable.dataset.shopText || shoppable.textContent.trim();
-    openComparador(text);
+    addOrIncrementShoppingItem(text);
+    shoppable.classList.add("shoppable-added");
+    setTimeout(() => shoppable.classList.remove("shoppable-added"), 500);
   });
-
-  const backBtn = document.getElementById("comparadorBack");
-  if (backBtn) {
-    backBtn.addEventListener("click", (event) => {
-      event.preventDefault();
-      window.libreDeTrigo.activateTab(comparadorReturnPage);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
 });

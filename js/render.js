@@ -1,80 +1,3 @@
-function renderSupermercado() {
-  const grid = document.getElementById("supermercadoGrid");
-  grid.innerHTML = supermercadoCategories
-    .map((cat) => {
-      const hasProductos = cat.productos && cat.productos.length > 0;
-      const toggleHtml = hasProductos
-        ? `
-          <button class="info-toggle" type="button" aria-expanded="false">
-            <span>Ver ${cat.productos.length} productos</span>
-            <span class="chevron">⌄</span>
-          </button>
-          <div class="info-content">
-            <ul class="info-product-list">${cat.productos.map((p) => `<li>${p}</li>`).join("")}</ul>
-          </div>
-        `
-        : "";
-      return `
-        <article class="info-card" data-title="${cat.title}">
-          <span class="info-icon ${cat.iconClass}" aria-hidden="true">${cat.icon}</span>
-          <h3>${cat.title}</h3>
-          <p>${cat.text}</p>
-          ${toggleHtml}
-        </article>
-      `;
-    })
-    .join("");
-}
-
-function renderSupermercadoFilter() {
-  const chips = document.getElementById("supermercadoFilter");
-  if (!chips) return;
-  const keys = Object.keys(supermercadosCatalogo);
-  chips.innerHTML = keys
-    .map(
-      (key, i) =>
-        `<button class="filter-chip${i === 0 ? " active" : ""}" data-super="${key}" type="button">${supermercadosCatalogo[key].label}</button>`
-    )
-    .join("");
-}
-
-function renderCatalogo(superKey) {
-  const grid = document.getElementById("catalogoGrid");
-  const empty = document.getElementById("catalogoEmpty");
-  const cadena = supermercadosCatalogo[superKey];
-  if (!grid || !cadena) return;
-
-  const categoryMeta = {};
-  supermercadoCategories.forEach((c) => {
-    categoryMeta[c.title] = c;
-  });
-
-  const catTitles = Object.keys(cadena.categorias);
-
-  grid.innerHTML = catTitles
-    .map((catTitle) => {
-      const meta = categoryMeta[catTitle] || { icon: "🛒", iconClass: "icon-1" };
-      const productos = cadena.categorias[catTitle];
-      return `
-        <article class="info-card" data-title="${catTitle}">
-          <span class="info-icon ${meta.iconClass}" aria-hidden="true">${meta.icon}</span>
-          <h3>${catTitle}</h3>
-          <p>${productos.length} producto${productos.length === 1 ? "" : "s"} sin gluten verificados</p>
-          <button class="info-toggle" type="button" aria-expanded="false">
-            <span>Ver productos</span>
-            <span class="chevron">⌄</span>
-          </button>
-          <div class="info-content">
-            <ul class="info-product-list">${productos.map((p) => `<li>${p}</li>`).join("")}</ul>
-          </div>
-        </article>
-      `;
-    })
-    .join("");
-
-  empty.hidden = catTitles.length > 0;
-}
-
 function renderTiendas() {
   const list = document.getElementById("tiendasList");
   if (!list) return;
@@ -287,9 +210,6 @@ function renderRestaurantes(ciudadKey) {
     .join("");
 }
 
-renderSupermercado();
-renderSupermercadoFilter();
-renderCatalogo(Object.keys(supermercadosCatalogo)[0]);
 renderTiendas();
 renderRecetas();
 renderCalorieFilter();

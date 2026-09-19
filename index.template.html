@@ -40,7 +40,6 @@
       <nav class="pill-nav" id="pillNav" role="tablist" aria-label="Secciones">
         <span class="pill-indicator" id="pillIndicator"></span>
         <button class="pill-btn active" id="tab-inicio" data-target="inicio" type="button" role="tab" aria-selected="true" aria-controls="inicio"><span class="pill-icon" aria-hidden="true">📰</span>Inicio</button>
-        <button class="pill-btn" id="tab-supermercado" data-target="supermercado" type="button" role="tab" aria-selected="false" aria-controls="supermercado"><span class="pill-icon" aria-hidden="true">🛒</span>Supermercado</button>
         <button class="pill-btn" id="tab-tiendas" data-target="tiendas" type="button" role="tab" aria-selected="false" aria-controls="tiendas"><span class="pill-icon" aria-hidden="true">🏬</span>Tiendas sin gluten</button>
         <button class="pill-btn" id="tab-recetas" data-target="recetas" type="button" role="tab" aria-selected="false" aria-controls="recetas"><span class="pill-icon" aria-hidden="true">🍳</span>Recetas</button>
         <button class="pill-btn" id="tab-dietas" data-target="dietas" type="button" role="tab" aria-selected="false" aria-controls="dietas"><span class="pill-icon" aria-hidden="true">🍽️</span>Dietas</button>
@@ -69,24 +68,6 @@
 
       <div class="news-grid" id="newsGrid"></div>
       <p class="empty-state" id="newsEmpty" hidden>No se han podido cargar las noticias en este momento. Vuelve a intentarlo más tarde.</p>
-    </section>
-
-    <section id="supermercado" class="page" role="tabpanel" aria-labelledby="tab-supermercado">
-      <span class="eyebrow">🛒 Supermercado</span>
-      <h1 class="section-title">Catálogo sin gluten por supermercado</h1>
-
-      <div class="filter-chips" id="supermercadoFilter" role="group" aria-label="Filtrar por supermercado"></div>
-
-      <div class="card-grid" id="catalogoGrid"></div>
-      <p class="empty-state" id="catalogoEmpty" hidden>No tenemos datos verificados de este supermercado todavía.</p>
-
-      <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Catálogo recogido mediante búsqueda web en septiembre de 2026: solo se incluyen categorías y productos que pudimos verificar como reales de cada cadena — si una categoría no aparece para un supermercado es porque no encontramos datos fiables, no porque no tenga ninguna opción sin gluten. La disponibilidad varía por tienda y cambia con el tiempo; comprueba siempre el etiquetado antes de comprar.</span></p>
-
-      <h3 class="subsection-title">Categorías sin gluten</h3>
-
-      <div class="card-grid" id="supermercadoGrid"></div>
-
-      <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Comprueba siempre el sello o la etiqueta "sin gluten" del producto: las marcas y referencias disponibles varían según el supermercado y pueden cambiar con el tiempo.</span></p>
     </section>
 
     <section id="tiendas" class="page" role="tabpanel" aria-labelledby="tab-tiendas">
@@ -214,18 +195,9 @@
       </div>
 
       <div class="shopping-list-groups" id="shoppingListGroups"></div>
-      <p class="empty-state" id="shoppingListEmpty">Todavía no has añadido nada. Ve a Recetas o Dietas y toca un ingrediente para ver qué productos hay en cada supermercado.</p>
+      <p class="empty-state" id="shoppingListEmpty">Todavía no has añadido nada. Ve a Recetas o Dietas y toca cualquier ingrediente en negrita para añadirlo aquí.</p>
 
-      <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Esta lista se guarda solo en este dispositivo (no en un servidor). No mostramos precio ni peso/volumen por producto porque no disponemos de esos datos verificados para cada supermercado — escribe tú la cantidad que necesites en cada artículo.</span></p>
-    </section>
-
-    <section id="comparador" class="page legal-page" aria-label="Comparador de producto">
-      <a href="#" class="legal-back" id="comparadorBack">← Volver</a>
-      <span class="eyebrow">🔎 ¿Qué necesitas para…?</span>
-      <h1 class="section-title" id="comparadorTitle"></h1>
-      <p class="comparador-hint">Estas son las opciones sin gluten verificadas que coinciden con este ingrediente, por supermercado. No mostramos precio ni peso/volumen porque no tenemos esos datos confirmados por producto.</p>
-      <div class="comparador-results" id="comparadorResults"></div>
-      <button type="button" id="comparadorGeneric" class="comparador-generic"></button>
+      <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Esta lista se guarda solo en este dispositivo (no en un servidor). Es una lista genérica para saber qué comprar y en qué cantidad, no productos de una marca o supermercado concretos — puedes ir a comprarla a donde prefieras.</span></p>
     </section>
 
     <section id="aviso-legal" class="page legal-page" aria-label="Aviso legal">
@@ -368,7 +340,6 @@
       <nav class="footer-links" aria-label="Secciones">
         <span class="footer-links-title">Secciones</span>
         <a href="#" data-scroll-target="inicio">Inicio</a>
-        <a href="#" data-scroll-target="supermercado">Supermercado</a>
         <a href="#" data-scroll-target="tiendas">Tiendas sin gluten</a>
         <a href="#" data-scroll-target="recetas">Recetas</a>
         <a href="#" data-scroll-target="dietas">Dietas</a>
