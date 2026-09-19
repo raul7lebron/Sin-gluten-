@@ -16,14 +16,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function activateTab(target) {
     const btn = pillButtons.find((b) => b.dataset.target === target);
-    if (!btn) return;
     pillButtons.forEach((b) => {
-      b.classList.remove("active");
-      b.setAttribute("aria-selected", "false");
+      b.classList.toggle("active", b === btn);
+      b.setAttribute("aria-selected", b === btn ? "true" : "false");
     });
-    btn.classList.add("active");
-    btn.setAttribute("aria-selected", "true");
-    moveIndicator(btn);
+    if (btn) {
+      moveIndicator(btn);
+    } else {
+      indicator.style.width = "0px";
+    }
     setActivePage(target);
   }
 
@@ -41,7 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const activeBtn = nav.querySelector(".pill-btn.active") || pillButtons[0];
   moveIndicator(activeBtn);
-  window.addEventListener("resize", () => moveIndicator(nav.querySelector(".pill-btn.active")));
+  window.addEventListener("resize", () => {
+    const active = nav.querySelector(".pill-btn.active");
+    if (active) moveIndicator(active);
+  });
 
   window.addEventListener("scroll", () => {
     header.classList.toggle("scrolled", window.scrollY > 12);
