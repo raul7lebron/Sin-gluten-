@@ -15,7 +15,7 @@ function renderSupermercado() {
         `
         : "";
       return `
-        <article class="info-card">
+        <article class="info-card" data-title="${cat.title}">
           <span class="info-icon ${cat.iconClass}" aria-hidden="true">${cat.icon}</span>
           <h3>${cat.title}</h3>
           <p>${cat.text}</p>
@@ -56,7 +56,7 @@ function renderCatalogo(superKey) {
       const meta = categoryMeta[catTitle] || { icon: "🛒", iconClass: "icon-1" };
       const productos = cadena.categorias[catTitle];
       return `
-        <article class="info-card">
+        <article class="info-card" data-title="${catTitle}">
           <span class="info-icon ${meta.iconClass}" aria-hidden="true">${meta.icon}</span>
           <h3>${catTitle}</h3>
           <p>${productos.length} producto${productos.length === 1 ? "" : "s"} sin gluten verificados</p>
@@ -94,7 +94,7 @@ function renderTiendas() {
         ? `<a class="rank-link" href="${t.web}" target="_blank" rel="noopener noreferrer">Visitar web ↗</a>`
         : `<span class="shop-noweb">Sin web oficial verificada</span>`;
       return `
-        <article class="shop-card">
+        <article class="shop-card" data-title="${t.nombre}">
           <div class="rank-header">
             <h3>${t.nombre}</h3>
             ${ratingHtml}
@@ -110,7 +110,7 @@ function renderTiendas() {
 
 function renderRecipeCard(item, extraClass, listHtml) {
   return `
-    <div class="recipe-card ${extraClass}">
+    <div class="recipe-card ${extraClass}" data-title="${item.title}">
       <button class="recipe-toggle" type="button" aria-expanded="false">
         <span class="recipe-icon" aria-hidden="true">${item.icon}</span>
         <span class="recipe-title">
@@ -206,7 +206,7 @@ function renderRestaurantes(ciudadKey) {
       const mapsQuery = encodeURIComponent(`${r.nombre} ${ciudad.label}`);
       const topClass = i < 3 ? ` rank-top-${i + 1}` : "";
       return `
-        <article class="rank-card">
+        <article class="rank-card" data-title="${r.nombre}">
           <span class="rank-number${topClass}">${i + 1}</span>
           <div class="rank-info">
             <div class="rank-header">

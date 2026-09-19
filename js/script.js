@@ -121,4 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
       renderRestaurantes(chip.dataset.ciudad);
     });
   }
+
+  window.libreDeTrigo = { activateTab, bindRecipeToggles, bindInfoToggles };
 });

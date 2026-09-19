@@ -1,3 +1,5 @@
+let newsItems = [];
+
 function formatNewsDate(iso) {
   if (!iso) return null;
   const date = new Date(iso);
@@ -40,6 +42,7 @@ async function loadNews() {
 
     grid.innerHTML = items.map(renderNewsCard).join("");
     empty.hidden = true;
+    newsItems = items;
 
     const updatedDate = formatNewsDate(data.updatedAt);
     if (updatedDate && updated) {

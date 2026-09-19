@@ -26,6 +26,9 @@
         <img src="img/logo.png" alt="Libre de Trigo" class="logo-img" />
         <span class="logo-tagline">Guía práctica para vivir sin gluten</span>
       </a>
+      <button class="header-search-btn" id="searchToggle" type="button" aria-label="Buscar en toda la web" aria-haspopup="dialog">
+        <span aria-hidden="true">🔍</span>
+      </button>
       <nav class="pill-nav" id="pillNav" role="tablist" aria-label="Secciones">
         <span class="pill-indicator" id="pillIndicator"></span>
         <button class="pill-btn active" id="tab-inicio" data-target="inicio" type="button" role="tab" aria-selected="true" aria-controls="inicio"><span class="pill-icon" aria-hidden="true">📰</span>Inicio</button>
@@ -37,6 +40,17 @@
       </nav>
     </div>
   </header>
+
+  <div class="search-overlay" id="searchOverlay" hidden>
+    <div class="search-modal" role="dialog" aria-modal="true" aria-label="Buscar en toda la web">
+      <div class="search-modal-input-row">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input type="search" id="searchModalInput" placeholder="Buscar recetas, productos, restaurantes, noticias…" aria-label="Buscar en toda la web" autocomplete="off" />
+        <button class="search-modal-close" id="searchModalClose" type="button" aria-label="Cerrar búsqueda">✕</button>
+      </div>
+      <div class="search-modal-results" id="searchModalResults"></div>
+    </div>
+  </div>
 
   <main class="container">
     <section id="inicio" class="page active" role="tabpanel" aria-labelledby="tab-inicio">
@@ -208,6 +222,7 @@
   <script src="js/render.js"></script>
   <script src="js/news.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/search.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.20.0/umd/index.min.js"></script>
   <script src="js/scanner.js"></script>
 </body>
