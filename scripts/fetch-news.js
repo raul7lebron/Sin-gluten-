@@ -5,7 +5,10 @@ const Parser = require('rss-parser');
 const parser = new Parser({
   timeout: 20000,
   customFields: {
-    item: [['source', 'sourceName']],
+    item: [
+      ['source', 'sourceName'],
+      ['media:content', 'mediaContent', { keepArray: false }],
+    ],
   },
 });
 
@@ -50,6 +53,22 @@ function cleanTitle(item, feedName) {
   return (item.title || '').replace(/ - [^-]+$/, '').trim();
 }
 
+// Cada feed trae la foto de portada de una forma distinta: media:content
+// (WordPress con Yoast/RSS extendido), enclosure de tipo imagen, o el primer
+// <img> incrustado en el contenido/resumen HTML. Google Noticias normalmente
+// no incluye ninguna, así que esos artículos se quedan sin imagen.
+function extractImage(item) {
+  if (item.mediaContent && item.mediaContent.$ && item.mediaContent.$.url) {
+    return item.mediaContent.$.url;
+  }
+  if (item.enclosure && item.enclosure.url && /^image\//.test(item.enclosure.type || '')) {
+    return item.enclosure.url;
+  }
+  const html = item.content || item.summary || item.description || '';
+  const match = html.match(/<img[^>]+src="([^"]+)"/);
+  return match ? match[1] : null;
+}
+
 async function fetchFeed(feed, retries = 1) {
   try {
     const parsed = await parser.parseURL(feed.url);
@@ -61,6 +80,7 @@ async function fetchFeed(feed, retries = 1) {
         source: extractSource(item, feed.name),
         pubDate: item.pubDate || item.isoDate || null,
         summary: (item.contentSnippet || item.summary || '').slice(0, 240),
+        image: extractImage(item),
       }));
   } catch (err) {
     if (retries > 0) return fetchFeed(feed, retries - 1);

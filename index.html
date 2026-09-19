@@ -56,9 +56,6 @@
     <section id="inicio" class="page active" role="tabpanel" aria-labelledby="tab-inicio">
       <span class="eyebrow">📰 Inicio</span>
       <h1 class="section-title">Actualidad sobre el gluten</h1>
-      <p class="section-subtitle">Últimas noticias sobre celiaquía, alertas alimentarias e investigación sobre el gluten, actualizadas automáticamente varias veces al día.</p>
-
-      <p class="news-updated" id="newsUpdated" hidden></p>
 
       <div class="news-grid" id="newsGrid"></div>
       <p class="empty-state" id="newsEmpty" hidden>No se han podido cargar las noticias en este momento. Vuelve a intentarlo más tarde.</p>
@@ -69,14 +66,12 @@
     <section id="supermercado" class="page" role="tabpanel" aria-labelledby="tab-supermercado">
       <span class="eyebrow">🛒 Supermercado</span>
       <h1 class="section-title">Categorías sin gluten</h1>
-      <p class="section-subtitle">Categorías y ejemplos de productos certificados sin gluten para tu compra semanal.</p>
 
       <div class="card-grid" id="supermercadoGrid"></div>
 
       <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Comprueba siempre el sello o la etiqueta "sin gluten" del producto: las marcas y referencias disponibles varían según el supermercado y pueden cambiar con el tiempo.</span></p>
 
       <h3 class="subsection-title">Catálogo sin gluten por supermercado</h3>
-      <p class="section-subtitle">Elige un supermercado para ver, categoría por categoría, los productos sin gluten que tiene a la venta.</p>
 
       <div class="filter-chips" id="supermercadoFilter" role="group" aria-label="Filtrar por supermercado"></div>
 
@@ -86,7 +81,6 @@
       <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Catálogo recogido mediante búsqueda web en septiembre de 2026: solo se incluyen categorías y productos que pudimos verificar como reales de cada cadena — si una categoría no aparece para un supermercado es porque no encontramos datos fiables, no porque no tenga ninguna opción sin gluten. La disponibilidad varía por tienda y cambia con el tiempo; comprueba siempre el etiquetado antes de comprar.</span></p>
 
       <h3 class="subsection-title">Tiendas especializadas sin gluten</h3>
-      <p class="section-subtitle">Negocios cuyo producto principal es sin gluten: panaderías, obradores y tiendas online, no supermercados generalistas.</p>
 
       <div class="shop-list" id="tiendasList"></div>
 
@@ -96,7 +90,6 @@
     <section id="recetas" class="page" role="tabpanel" aria-labelledby="tab-recetas">
       <span class="eyebrow">🍳 Recetas</span>
       <h1 class="section-title">Recetas sin gluten</h1>
-      <p class="section-subtitle">Ideas rápidas y sabrosas, 100% aptas para celíacos.</p>
 
       <div class="search-box">
         <span class="search-icon">🔍</span>
@@ -110,7 +103,6 @@
     <section id="dietas" class="page" role="tabpanel" aria-labelledby="tab-dietas">
       <span class="eyebrow">🍽️ Dietas</span>
       <h1 class="section-title">Planes de dieta</h1>
-      <p class="section-subtitle">Menús diarios sin gluten organizados por objetivo.</p>
 
       <div class="filter-chips" id="dietGoalFilter" role="group" aria-label="Filtrar planes por objetivo">
         <button class="filter-chip active" data-goal="todos" type="button">Todos</button>
@@ -122,25 +114,21 @@
 
       <div class="diet-block" id="bajarPesoBlock" data-goal="perder">
         <h3 class="subsection-title">Planes para bajar de peso</h3>
-        <p class="section-subtitle">4 menús diarios sin gluten pensados para un déficit calórico moderado.</p>
         <div class="recipe-list diet-list" id="dietasList"></div>
       </div>
 
       <div class="diet-block" id="musculoBlock" data-goal="ganar">
         <h3 class="subsection-title">Planes para ganar músculo</h3>
-        <p class="section-subtitle">4 menús diarios sin gluten con superávit calórico y alto aporte de proteína.</p>
         <div class="recipe-list diet-list" id="musculoList"></div>
       </div>
 
       <div class="diet-block" id="mantenimientoBlock" data-goal="mantenimiento">
         <h3 class="subsection-title">Mantenimiento y energía</h3>
-        <p class="section-subtitle">2 menús diarios sin gluten equilibrados, para mantener el peso y rendir en el día a día.</p>
         <div class="recipe-list diet-list" id="mantenimientoList"></div>
       </div>
 
       <div class="diet-block" id="digestionBlock" data-goal="digestion">
         <h3 class="subsection-title">Digestión ligera</h3>
-        <p class="section-subtitle">2 menús diarios sin gluten con opciones suaves y antiinflamatorias.</p>
         <div class="recipe-list diet-list" id="digestionList"></div>
       </div>
 
@@ -150,7 +138,6 @@
     <section id="restaurantes" class="page" role="tabpanel" aria-labelledby="tab-restaurantes">
       <span class="eyebrow">⭐ Restaurantes</span>
       <h1 class="section-title">Ranking por ciudad</h1>
-      <p class="section-subtitle">Ordenado según su nota en Google, con foco en locales aptos para celíacos.</p>
 
       <div class="filter-chips" id="ciudadFilter" role="group" aria-label="Filtrar por ciudad"></div>
 
@@ -162,7 +149,6 @@
     <section id="escaner" class="page" role="tabpanel" aria-labelledby="tab-escaner">
       <span class="eyebrow">📷 Escáner</span>
       <h1 class="section-title">Escáner de gluten</h1>
-      <p class="section-subtitle">Escanea el código de barras de un producto para consultar si contiene gluten, según Open Food Facts.</p>
 
       <div class="scanner-panel">
         <div class="scanner-camera" id="scannerCamera" hidden>
