@@ -47,7 +47,18 @@ h1, h2, h3, h4 {
 .container {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 clamp(20px, 4vw, 32px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 a {
@@ -190,6 +201,12 @@ a:focus-visible {
   display: block;
 }
 
+@media (min-width: 1024px) {
+  .page {
+    padding: 48px 0 72px;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -220,25 +237,37 @@ a:focus-visible {
   font-weight: 700;
   font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
 }
 
 .section-title {
-  font-size: 1.55rem;
-  font-weight: 700;
-  margin: 0 0 4px;
+  font-size: clamp(1.75rem, 1.45rem + 1.3vw, 2.35rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
 }
 
 .subsection-title {
-  font-size: 1.2rem;
+  font-size: clamp(1.15rem, 1.05rem + 0.4vw, 1.35rem);
   font-weight: 700;
-  margin: 34px 0 2px;
+  letter-spacing: -0.01em;
+  margin: 40px 0 4px;
+}
+
+@media (min-width: 1024px) {
+  .subsection-title {
+    margin-top: 56px;
+  }
 }
 
 .section-subtitle {
   color: var(--text-muted);
-  margin: 0 0 24px;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 0 28px;
 }
 
 /* Card grid (Supermercado) */
@@ -357,8 +386,17 @@ a:focus-visible {
   gap: 6px;
 }
 
+@media (min-width: 480px) {
+  .info-product-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 10px;
+  }
+}
+
 .info-product-list li {
   font-size: 0.83rem;
+  line-height: 1.4;
   color: var(--text-muted);
   padding: 7px 10px;
   background: var(--surface-alt);
@@ -954,7 +992,17 @@ a:focus-visible {
   display: grid;
   grid-template-columns: 1.4fr 1fr 1fr;
   gap: 32px;
-  padding: 40px 20px 28px;
+  padding: 48px 20px 28px;
+}
+
+@media (max-width: 860px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
 }
 
 .footer-logo {
@@ -1036,10 +1084,6 @@ a:focus-visible {
   .pill-nav {
     width: 100%;
     justify-content: flex-start;
-  }
-
-  .section-title {
-    font-size: 1.35rem;
   }
 
   .footer-inner {

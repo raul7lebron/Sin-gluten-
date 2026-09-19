@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resultBox.hidden = false;
     resultBox.innerHTML = `
       <div class="scanner-card scanner-verdict-desconocido">
-        <div class="scanner-verdict"><span class="scanner-icon">❓</span> Producto no encontrado</div>
+        <div class="scanner-verdict"><span class="scanner-icon" aria-hidden="true">❓</span> Producto no encontrado</div>
         <p>No hay datos en Open Food Facts para el código <strong>${code}</strong>. Prueba a leer el etiquetado directamente o busca el producto por nombre en la web del fabricante.</p>
       </div>
     `;
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resultBox.hidden = false;
     resultBox.innerHTML = `
       <div class="scanner-card scanner-verdict-desconocido">
-        <div class="scanner-verdict"><span class="scanner-icon">⚠️</span> No se pudo consultar la base de datos</div>
+        <div class="scanner-verdict"><span class="scanner-icon" aria-hidden="true">⚠️</span> No se pudo consultar la base de datos</div>
         <p>Revisa tu conexión e inténtalo de nuevo en unos segundos.</p>
       </div>
     `;
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ${marca ? `<p class="scanner-brand">${marca}</p>` : ""}
           </div>
         </div>
-        <div class="scanner-verdict"><span class="scanner-icon">${veredicto.icono}</span> ${veredicto.texto}</div>
+        <div class="scanner-verdict"><span class="scanner-icon" aria-hidden="true">${veredicto.icono}</span> ${veredicto.texto}</div>
         ${ingredientes ? `<p class="scanner-ingredients"><strong>Ingredientes:</strong> ${ingredientes}</p>` : ""}
         <a class="rank-link" href="https://world.openfoodfacts.org/product/${code}" target="_blank" rel="noopener noreferrer">Ver ficha completa en Open Food Facts ↗</a>
       </div>

@@ -16,7 +16,7 @@ function renderSupermercado() {
         : "";
       return `
         <article class="info-card">
-          <span class="info-icon ${cat.iconClass}">${cat.icon}</span>
+          <span class="info-icon ${cat.iconClass}" aria-hidden="true">${cat.icon}</span>
           <h3>${cat.title}</h3>
           <p>${cat.text}</p>
           ${toggleHtml}
@@ -57,7 +57,7 @@ function renderCatalogo(superKey) {
       const productos = cadena.categorias[catTitle];
       return `
         <article class="info-card">
-          <span class="info-icon ${meta.iconClass}">${meta.icon}</span>
+          <span class="info-icon ${meta.iconClass}" aria-hidden="true">${meta.icon}</span>
           <h3>${catTitle}</h3>
           <p>${productos.length} producto${productos.length === 1 ? "" : "s"} sin gluten verificados</p>
           <button class="info-toggle" type="button" aria-expanded="false">
@@ -112,7 +112,7 @@ function renderRecipeCard(item, extraClass, listHtml) {
   return `
     <div class="recipe-card ${extraClass}">
       <button class="recipe-toggle" type="button" aria-expanded="false">
-        <span class="recipe-icon">${item.icon}</span>
+        <span class="recipe-icon" aria-hidden="true">${item.icon}</span>
         <span class="recipe-title">
           <strong>${item.title}</strong>
           <small>${item.meta}</small>

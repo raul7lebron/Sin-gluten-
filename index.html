@@ -28,11 +28,11 @@
       </a>
       <nav class="pill-nav" id="pillNav" role="tablist" aria-label="Secciones">
         <span class="pill-indicator" id="pillIndicator"></span>
-        <button class="pill-btn active" id="tab-supermercado" data-target="supermercado" type="button" role="tab" aria-selected="true" aria-controls="supermercado"><span class="pill-icon">🛒</span>Supermercado</button>
-        <button class="pill-btn" id="tab-recetas" data-target="recetas" type="button" role="tab" aria-selected="false" aria-controls="recetas"><span class="pill-icon">🍳</span>Recetas</button>
-        <button class="pill-btn" id="tab-dietas" data-target="dietas" type="button" role="tab" aria-selected="false" aria-controls="dietas"><span class="pill-icon">🍽️</span>Dietas</button>
-        <button class="pill-btn" id="tab-restaurantes" data-target="restaurantes" type="button" role="tab" aria-selected="false" aria-controls="restaurantes"><span class="pill-icon">⭐</span>Restaurantes</button>
-        <button class="pill-btn" id="tab-escaner" data-target="escaner" type="button" role="tab" aria-selected="false" aria-controls="escaner"><span class="pill-icon">📷</span>Escáner</button>
+        <button class="pill-btn active" id="tab-supermercado" data-target="supermercado" type="button" role="tab" aria-selected="true" aria-controls="supermercado"><span class="pill-icon" aria-hidden="true">🛒</span>Supermercado</button>
+        <button class="pill-btn" id="tab-recetas" data-target="recetas" type="button" role="tab" aria-selected="false" aria-controls="recetas"><span class="pill-icon" aria-hidden="true">🍳</span>Recetas</button>
+        <button class="pill-btn" id="tab-dietas" data-target="dietas" type="button" role="tab" aria-selected="false" aria-controls="dietas"><span class="pill-icon" aria-hidden="true">🍽️</span>Dietas</button>
+        <button class="pill-btn" id="tab-restaurantes" data-target="restaurantes" type="button" role="tab" aria-selected="false" aria-controls="restaurantes"><span class="pill-icon" aria-hidden="true">⭐</span>Restaurantes</button>
+        <button class="pill-btn" id="tab-escaner" data-target="escaner" type="button" role="tab" aria-selected="false" aria-controls="escaner"><span class="pill-icon" aria-hidden="true">📷</span>Escáner</button>
       </nav>
     </div>
   </header>
@@ -45,7 +45,7 @@
 
       <div class="card-grid" id="supermercadoGrid"></div>
 
-      <p class="disclaimer"><span class="disclaimer-icon">⚠️</span><span>Comprueba siempre el sello o la etiqueta "sin gluten" del producto: las marcas y referencias disponibles varían según el supermercado y pueden cambiar con el tiempo.</span></p>
+      <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Comprueba siempre el sello o la etiqueta "sin gluten" del producto: las marcas y referencias disponibles varían según el supermercado y pueden cambiar con el tiempo.</span></p>
 
       <h3 class="subsection-title">Catálogo sin gluten por supermercado</h3>
       <p class="section-subtitle">Elige un supermercado para ver, categoría por categoría, los productos sin gluten que tiene a la venta.</p>
@@ -55,14 +55,14 @@
       <div class="card-grid" id="catalogoGrid"></div>
       <p class="empty-state" id="catalogoEmpty" hidden>No tenemos datos verificados de este supermercado todavía.</p>
 
-      <p class="disclaimer"><span class="disclaimer-icon">⚠️</span><span>Catálogo recogido mediante búsqueda web en septiembre de 2026: solo se incluyen categorías y productos que pudimos verificar como reales de cada cadena — si una categoría no aparece para un supermercado es porque no encontramos datos fiables, no porque no tenga ninguna opción sin gluten. La disponibilidad varía por tienda y cambia con el tiempo; comprueba siempre el etiquetado antes de comprar.</span></p>
+      <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Catálogo recogido mediante búsqueda web en septiembre de 2026: solo se incluyen categorías y productos que pudimos verificar como reales de cada cadena — si una categoría no aparece para un supermercado es porque no encontramos datos fiables, no porque no tenga ninguna opción sin gluten. La disponibilidad varía por tienda y cambia con el tiempo; comprueba siempre el etiquetado antes de comprar.</span></p>
 
       <h3 class="subsection-title">Tiendas especializadas sin gluten</h3>
       <p class="section-subtitle">Negocios cuyo producto principal es sin gluten: panaderías, obradores y tiendas online, no supermercados generalistas.</p>
 
       <div class="shop-list" id="tiendasList"></div>
 
-      <p class="disclaimer"><span class="disclaimer-icon">⚠️</span><span>Datos recogidos mediante búsqueda web en septiembre de 2026: nombres y ubicaciones verificados, pero las notas de Google proceden en su mayoría de agregadores (no de una consulta directa a Maps) y se marcan con "≈" cuando la fuente lo advierte. No hemos visitado estas tiendas ni sus webs — confirma horarios, existencias y condiciones antes de comprar o desplazarte.</span></p>
+      <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Datos recogidos mediante búsqueda web en septiembre de 2026: nombres y ubicaciones verificados, pero las notas de Google proceden en su mayoría de agregadores (no de una consulta directa a Maps) y se marcan con "≈" cuando la fuente lo advierte. No hemos visitado estas tiendas ni sus webs — confirma horarios, existencias y condiciones antes de comprar o desplazarte.</span></p>
     </section>
 
     <section id="recetas" class="page" role="tabpanel" aria-labelledby="tab-recetas">
@@ -116,7 +116,7 @@
         <div class="recipe-list diet-list" id="digestionList"></div>
       </div>
 
-      <p class="disclaimer"><span class="disclaimer-icon">⚠️</span><span>Las calorías son orientativas. Ajusta las cantidades según tu actividad física, peso y objetivo, y consulta a un/a dietista-nutricionista antes de seguir cualquier plan.</span></p>
+      <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Las calorías son orientativas. Ajusta las cantidades según tu actividad física, peso y objetivo, y consulta a un/a dietista-nutricionista antes de seguir cualquier plan.</span></p>
     </section>
 
     <section id="restaurantes" class="page" role="tabpanel" aria-labelledby="tab-restaurantes">
@@ -128,7 +128,7 @@
 
       <div class="rank-list" id="restaurantesList"></div>
 
-      <p class="disclaimer"><span class="disclaimer-icon">⚠️</span><span>Notas y nº de reseñas recogidos mediante búsqueda web en septiembre de 2026 y pueden haber cambiado desde entonces — compruébalas en Google Maps antes de ir. Las marcadas con "≈" proceden de una fuente agregadora, no de una captura directa de Google Maps. La ausencia de un restaurante no implica que no sea apto para celíacos: solo se incluyen los que se pudieron verificar con una nota de Google razonablemente fiable.</span></p>
+      <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Notas y nº de reseñas recogidos mediante búsqueda web en septiembre de 2026 y pueden haber cambiado desde entonces — compruébalas en Google Maps antes de ir. Las marcadas con "≈" proceden de una fuente agregadora, no de una captura directa de Google Maps. La ausencia de un restaurante no implica que no sea apto para celíacos: solo se incluyen los que se pudieron verificar con una nota de Google razonablemente fiable.</span></p>
     </section>
 
     <section id="escaner" class="page" role="tabpanel" aria-labelledby="tab-escaner">
@@ -161,7 +161,7 @@
 
       <div class="scanner-result" id="scannerResult" hidden></div>
 
-      <p class="disclaimer"><span class="disclaimer-icon">⚠️</span><span>Esta herramienta consulta <a href="https://es.openfoodfacts.org" target="_blank" rel="noopener noreferrer">Open Food Facts</a>, una base de datos abierta y colaborativa: la información la añaden otros usuarios y puede estar incompleta, desactualizada o ser incorrecta. NO es una fuente médica ni sustituye la lectura del etiquetado real del producto ni la verificación con el fabricante. Ante cualquier duda, alergia grave o intolerancia severa, no te fíes únicamente de este resultado.</span></p>
+      <p class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">⚠️</span><span>Esta herramienta consulta <a href="https://es.openfoodfacts.org" target="_blank" rel="noopener noreferrer">Open Food Facts</a>, una base de datos abierta y colaborativa: la información la añaden otros usuarios y puede estar incompleta, desactualizada o ser incorrecta. NO es una fuente médica ni sustituye la lectura del etiquetado real del producto ni la verificación con el fabricante. Ante cualquier duda, alergia grave o intolerancia severa, no te fíes únicamente de este resultado.</span></p>
     </section>
   </main>
 
