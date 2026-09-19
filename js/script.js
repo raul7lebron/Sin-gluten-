@@ -209,6 +209,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const nutriSearch = document.getElementById("nutriSearch");
+  const nutriFilter = document.getElementById("nutriFilter");
+  if (nutriSearch && nutriFilter) {
+    function currentNutriCategoria() {
+      const active = nutriFilter.querySelector(".filter-chip.active");
+      return active ? active.dataset.categoria : "todos";
+    }
+
+    function refreshNutri() {
+      renderNutricion(nutriSearch.value, currentNutriCategoria());
+    }
+
+    nutriSearch.addEventListener("input", refreshNutri);
+
+    nutriFilter.addEventListener("click", (event) => {
+      const chip = event.target.closest(".filter-chip");
+      if (!chip) return;
+      nutriFilter.querySelectorAll(".filter-chip").forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      refreshNutri();
+    });
+  }
+
   const ciudadFilter = document.getElementById("ciudadFilter");
   if (ciudadFilter) {
     ciudadFilter.addEventListener("click", (event) => {

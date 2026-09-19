@@ -1559,6 +1559,57 @@ a:focus-visible {
   font-weight: 700;
 }
 
+/* Tabla nutricional */
+.nutri-table-wrap {
+  overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+}
+
+.nutri-table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.nutri-table th,
+.nutri-table td {
+  text-align: left;
+  padding: 10px 14px;
+  white-space: nowrap;
+}
+
+.nutri-table thead th {
+  background: var(--surface-alt);
+  color: var(--text);
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+}
+
+.nutri-table tbody tr {
+  border-top: 1px solid var(--border);
+}
+
+.nutri-table tbody tr:first-child {
+  border-top: none;
+}
+
+.nutri-table td.nutri-sub,
+.nutri-table th.nutri-sub {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.nutri-table th.nutri-sub {
+  font-size: 0.78rem;
+  font-style: italic;
+}
+
 .legal-content p.legal-updated {
   margin-top: 24px;
   font-style: italic;

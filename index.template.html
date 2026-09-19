@@ -49,6 +49,7 @@
         <button class="pill-btn" id="tab-recetas" data-target="recetas" type="button" role="tab" aria-selected="false" aria-controls="recetas"><span class="pill-icon" aria-hidden="true">🍳</span>Recetas</button>
         <button class="pill-btn" id="tab-dietas" data-target="dietas" type="button" role="tab" aria-selected="false" aria-controls="dietas"><span class="pill-icon" aria-hidden="true">🍽️</span>Dietas</button>
         <button class="pill-btn" id="tab-calculadora" data-target="calculadora" type="button" role="tab" aria-selected="false" aria-controls="calculadora"><span class="pill-icon" aria-hidden="true">🧮</span>Calculadora calórica</button>
+        <button class="pill-btn" id="tab-nutricion" data-target="nutricion" type="button" role="tab" aria-selected="false" aria-controls="nutricion"><span class="pill-icon" aria-hidden="true">🥗</span>Tabla nutricional</button>
         <button class="pill-btn" id="tab-restaurantes" data-target="restaurantes" type="button" role="tab" aria-selected="false" aria-controls="restaurantes"><span class="pill-icon" aria-hidden="true">⭐</span>Restaurantes</button>
         <button class="pill-btn" id="tab-escaner" data-target="escaner" type="button" role="tab" aria-selected="false" aria-controls="escaner"><span class="pill-icon" aria-hidden="true">📷</span>Escáner</button>
         <button class="pill-btn" id="tab-lista-compra" data-target="lista-compra" type="button" role="tab" aria-selected="false" aria-controls="lista-compra"><span class="pill-icon" aria-hidden="true">🛍️</span>Lista de la compra<span class="pill-badge" id="shoppingBadge" hidden>0</span></button>
@@ -148,6 +149,38 @@
         <p class="calc-error" id="calcError" hidden>Rellena edad, altura y peso con valores válidos.</p>
         <div class="calc-result" id="calcResult" hidden></div>
       </div>
+    </section>
+
+    <section id="nutricion" class="page" role="tabpanel" aria-labelledby="tab-nutricion">
+      <span class="eyebrow">🥗 Tabla nutricional</span>
+      <h1 class="section-title">Alimentos y su valor nutricional</h1>
+      <p class="section-hint">Valores de referencia por 100 g (crudo o cocido/preparado, según se indica en cada nombre); la composición real varía según la marca, el corte o el punto de cocción. Toca el nombre de un alimento en negrita para añadirlo a tu lista de la compra.</p>
+
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="search" id="nutriSearch" placeholder="Buscar alimento…" aria-label="Buscar alimento" />
+      </div>
+
+      <div class="filter-chips" id="nutriFilter" role="group" aria-label="Filtrar por categoría"></div>
+
+      <div class="nutri-table-wrap">
+        <table class="nutri-table" id="nutriTable">
+          <thead>
+            <tr>
+              <th scope="col">Alimento</th>
+              <th scope="col">Kcal</th>
+              <th scope="col">Proteínas (g)</th>
+              <th scope="col">Carbohidratos (g)</th>
+              <th scope="col" class="nutri-sub">· Azúcares (g)</th>
+              <th scope="col">Grasas (g)</th>
+              <th scope="col" class="nutri-sub">· Monoinsaturadas (g)</th>
+              <th scope="col" class="nutri-sub">· Poliinsaturadas (g)</th>
+            </tr>
+          </thead>
+          <tbody id="nutriTableBody"></tbody>
+        </table>
+      </div>
+      <p class="empty-state" id="nutriEmpty" hidden>No se encontraron alimentos con esa búsqueda.</p>
     </section>
 
     <section id="restaurantes" class="page" role="tabpanel" aria-labelledby="tab-restaurantes">
@@ -346,6 +379,7 @@
         <a href="#" data-scroll-target="recetas">Recetas</a>
         <a href="#" data-scroll-target="dietas">Dietas</a>
         <a href="#" data-scroll-target="calculadora">Calculadora calórica</a>
+        <a href="#" data-scroll-target="nutricion">Tabla nutricional</a>
         <a href="#" data-scroll-target="restaurantes">Restaurantes</a>
         <a href="#" data-scroll-target="escaner">Escáner</a>
         <a href="#" data-scroll-target="lista-compra">Lista de la compra</a>

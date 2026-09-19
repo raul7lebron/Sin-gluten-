@@ -210,6 +210,51 @@ function renderRestaurantes(ciudadKey) {
     .join("");
 }
 
+function renderNutriFilter() {
+  const chips = document.getElementById("nutriFilter");
+  if (!chips) return;
+  const categorias = [...new Set(alimentosNutricion.map((item) => item.categoria))];
+  chips.innerHTML = [`<button class="filter-chip active" data-categoria="todos" type="button">Todos</button>`]
+    .concat(categorias.map((c) => `<button class="filter-chip" data-categoria="${c}" type="button">${c}</button>`))
+    .join("");
+}
+
+function nutriMatches(item, query, categoria) {
+  if (categoria && categoria !== "todos" && item.categoria !== categoria) return false;
+  if (!query) return true;
+  return item.nombre.toLowerCase().includes(query);
+}
+
+function renderNutricion(query = "", categoria = "todos") {
+  const body = document.getElementById("nutriTableBody");
+  const table = document.getElementById("nutriTable");
+  const empty = document.getElementById("nutriEmpty");
+  if (!body) return;
+
+  const normalizedQuery = query.trim().toLowerCase();
+  const filtered = alimentosNutricion.filter((item) => nutriMatches(item, normalizedQuery, categoria));
+
+  body.innerHTML = filtered
+    .map(
+      (item) => `
+      <tr>
+        <td><strong class="shoppable" data-shop-text="${item.nombre}">${item.nombre}</strong></td>
+        <td>${item.kcal}</td>
+        <td>${item.proteinas}</td>
+        <td>${item.carbohidratos}</td>
+        <td class="nutri-sub">${item.azucares}</td>
+        <td>${item.grasas}</td>
+        <td class="nutri-sub">${item.monoinsaturadas}</td>
+        <td class="nutri-sub">${item.poliinsaturadas}</td>
+      </tr>
+    `
+    )
+    .join("");
+
+  if (table) table.hidden = filtered.length === 0;
+  if (empty) empty.hidden = filtered.length > 0;
+}
+
 renderTiendas();
 renderRecetas();
 renderCalorieFilter();
@@ -218,3 +263,5 @@ renderPlanMeta(Object.keys(planesCalorias)[0]);
 renderPlanDias(Object.keys(planesCalorias)[0], 0);
 renderCiudadChips();
 renderRestaurantes(Object.keys(restaurantesPorCiudad)[0]);
+renderNutriFilter();
+renderNutricion();

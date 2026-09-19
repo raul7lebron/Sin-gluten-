@@ -1756,3 +1756,69 @@ const tiendasEspecializadas = [
     web: "https://glutenfreeshop.es/",
   },
 ];
+
+// Valores nutricionales de referencia por 100 g (crudo o cocido/preparado según se indica
+// en el nombre). Son valores típicos de tablas de composición de alimentos, no de un
+// producto o marca concretos: la composición real varía según el corte, la variedad, el
+// punto de cocción o el fabricante.
+const alimentosNutricion = [
+  // Cereales y granos sin gluten
+  { categoria: "Cereales y granos", nombre: "Arroz blanco cocido", kcal: 130, proteinas: 2.7, carbohidratos: 28.2, azucares: 0.1, grasas: 0.3, monoinsaturadas: 0.1, poliinsaturadas: 0.1 },
+  { categoria: "Cereales y granos", nombre: "Arroz integral cocido", kcal: 123, proteinas: 2.6, carbohidratos: 25.6, azucares: 0.4, grasas: 1.0, monoinsaturadas: 0.3, poliinsaturadas: 0.4 },
+  { categoria: "Cereales y granos", nombre: "Quinoa cocida", kcal: 120, proteinas: 4.4, carbohidratos: 21.3, azucares: 0.9, grasas: 1.9, monoinsaturadas: 0.5, poliinsaturadas: 1.1 },
+  { categoria: "Cereales y granos", nombre: "Avena certificada sin gluten (cruda)", kcal: 379, proteinas: 13.5, carbohidratos: 62.0, azucares: 1.0, grasas: 7.0, monoinsaturadas: 2.4, poliinsaturadas: 2.5 },
+  { categoria: "Cereales y granos", nombre: "Maíz dulce cocido", kcal: 96, proteinas: 3.4, carbohidratos: 19.0, azucares: 3.2, grasas: 1.5, monoinsaturadas: 0.4, poliinsaturadas: 0.6 },
+  { categoria: "Cereales y granos", nombre: "Pan de molde sin gluten", kcal: 260, proteinas: 3.5, carbohidratos: 51.0, azucares: 3.5, grasas: 3.8, monoinsaturadas: 1.0, poliinsaturadas: 1.5 },
+  { categoria: "Cereales y granos", nombre: "Pasta sin gluten cocida (maíz/arroz)", kcal: 145, proteinas: 3.0, carbohidratos: 30.0, azucares: 0.5, grasas: 1.0, monoinsaturadas: 0.3, poliinsaturadas: 0.4 },
+
+  // Legumbres
+  { categoria: "Legumbres", nombre: "Lentejas cocidas", kcal: 116, proteinas: 9.0, carbohidratos: 20.1, azucares: 1.8, grasas: 0.4, monoinsaturadas: 0.1, poliinsaturadas: 0.2 },
+  { categoria: "Legumbres", nombre: "Garbanzos cocidos", kcal: 164, proteinas: 8.9, carbohidratos: 27.4, azucares: 4.8, grasas: 2.6, monoinsaturadas: 0.6, poliinsaturadas: 1.1 },
+  { categoria: "Legumbres", nombre: "Alubias blancas cocidas", kcal: 127, proteinas: 8.7, carbohidratos: 22.8, azucares: 0.6, grasas: 0.5, monoinsaturadas: 0.04, poliinsaturadas: 0.2 },
+  { categoria: "Legumbres", nombre: "Edamame cocido", kcal: 121, proteinas: 12.0, carbohidratos: 8.9, azucares: 2.2, grasas: 5.2, monoinsaturadas: 1.0, poliinsaturadas: 2.5 },
+  { categoria: "Legumbres", nombre: "Hummus", kcal: 166, proteinas: 7.9, carbohidratos: 14.3, azucares: 0.6, grasas: 9.6, monoinsaturadas: 4.0, poliinsaturadas: 3.9 },
+  { categoria: "Legumbres", nombre: "Tofu", kcal: 76, proteinas: 8.1, carbohidratos: 1.9, azucares: 0.6, grasas: 4.8, monoinsaturadas: 1.1, poliinsaturadas: 2.7 },
+
+  // Proteína animal
+  { categoria: "Proteína animal", nombre: "Pechuga de pollo a la plancha", kcal: 165, proteinas: 31.0, carbohidratos: 0, azucares: 0, grasas: 3.6, monoinsaturadas: 1.2, poliinsaturadas: 0.8 },
+  { categoria: "Proteína animal", nombre: "Pechuga de pavo a la plancha", kcal: 135, proteinas: 29.0, carbohidratos: 0, azucares: 0, grasas: 1.7, monoinsaturadas: 0.4, poliinsaturadas: 0.4 },
+  { categoria: "Proteína animal", nombre: "Huevo cocido", kcal: 155, proteinas: 12.6, carbohidratos: 1.1, azucares: 1.1, grasas: 10.6, monoinsaturadas: 4.1, poliinsaturadas: 1.4 },
+  { categoria: "Proteína animal", nombre: "Salmón al horno", kcal: 208, proteinas: 20.4, carbohidratos: 0, azucares: 0, grasas: 13.4, monoinsaturadas: 3.8, poliinsaturadas: 3.9 },
+  { categoria: "Proteína animal", nombre: "Atún al natural (lata)", kcal: 116, proteinas: 26.0, carbohidratos: 0, azucares: 0, grasas: 1.0, monoinsaturadas: 0.2, poliinsaturadas: 0.3 },
+  { categoria: "Proteína animal", nombre: "Merluza a la plancha", kcal: 90, proteinas: 17.8, carbohidratos: 0, azucares: 0, grasas: 1.3, monoinsaturadas: 0.2, poliinsaturadas: 0.4 },
+  { categoria: "Proteína animal", nombre: "Gambas cocidas", kcal: 99, proteinas: 20.9, carbohidratos: 0.2, azucares: 0, grasas: 1.5, monoinsaturadas: 0.3, poliinsaturadas: 0.5 },
+  { categoria: "Proteína animal", nombre: "Solomillo de cerdo a la plancha", kcal: 143, proteinas: 26.0, carbohidratos: 0, azucares: 0, grasas: 4.0, monoinsaturadas: 1.8, poliinsaturadas: 0.5 },
+  { categoria: "Proteína animal", nombre: "Ternera magra a la plancha", kcal: 172, proteinas: 27.0, carbohidratos: 0, azucares: 0, grasas: 6.5, monoinsaturadas: 2.7, poliinsaturadas: 0.3 },
+
+  // Lácteos
+  { categoria: "Lácteos", nombre: "Leche entera", kcal: 61, proteinas: 3.2, carbohidratos: 4.8, azucares: 4.8, grasas: 3.3, monoinsaturadas: 0.8, poliinsaturadas: 0.2 },
+  { categoria: "Lácteos", nombre: "Yogur griego natural", kcal: 97, proteinas: 9.0, carbohidratos: 4.0, azucares: 4.0, grasas: 5.0, monoinsaturadas: 1.3, poliinsaturadas: 0.1 },
+  { categoria: "Lácteos", nombre: "Queso fresco batido", kcal: 75, proteinas: 8.0, carbohidratos: 3.5, azucares: 3.5, grasas: 3.0, monoinsaturadas: 0.8, poliinsaturadas: 0.1 },
+  { categoria: "Lácteos", nombre: "Queso curado", kcal: 400, proteinas: 26.0, carbohidratos: 0.5, azucares: 0.5, grasas: 33.0, monoinsaturadas: 8.5, poliinsaturadas: 1.0 },
+
+  // Grasas y frutos secos
+  { categoria: "Grasas y frutos secos", nombre: "Aceite de oliva virgen extra", kcal: 884, proteinas: 0, carbohidratos: 0, azucares: 0, grasas: 100, monoinsaturadas: 73.0, poliinsaturadas: 10.5 },
+  { categoria: "Grasas y frutos secos", nombre: "Almendras", kcal: 579, proteinas: 21.2, carbohidratos: 21.6, azucares: 4.4, grasas: 49.9, monoinsaturadas: 31.6, poliinsaturadas: 12.2 },
+  { categoria: "Grasas y frutos secos", nombre: "Nueces", kcal: 654, proteinas: 15.2, carbohidratos: 13.7, azucares: 2.6, grasas: 65.2, monoinsaturadas: 8.9, poliinsaturadas: 47.2 },
+  { categoria: "Grasas y frutos secos", nombre: "Aguacate", kcal: 160, proteinas: 2.0, carbohidratos: 8.5, azucares: 0.7, grasas: 14.7, monoinsaturadas: 9.8, poliinsaturadas: 1.8 },
+  { categoria: "Grasas y frutos secos", nombre: "Crema de cacahuete", kcal: 588, proteinas: 25.0, carbohidratos: 20.0, azucares: 6.0, grasas: 50.0, monoinsaturadas: 24.0, poliinsaturadas: 15.0 },
+  { categoria: "Grasas y frutos secos", nombre: "Anacardos", kcal: 553, proteinas: 18.2, carbohidratos: 30.2, azucares: 5.9, grasas: 43.9, monoinsaturadas: 23.8, poliinsaturadas: 7.8 },
+
+  // Verduras y hortalizas
+  { categoria: "Verduras", nombre: "Espinacas cocidas", kcal: 23, proteinas: 2.9, carbohidratos: 3.6, azucares: 0.4, grasas: 0.3, monoinsaturadas: 0.01, poliinsaturadas: 0.2 },
+  { categoria: "Verduras", nombre: "Brócoli cocido", kcal: 35, proteinas: 2.4, carbohidratos: 7.2, azucares: 1.7, grasas: 0.4, monoinsaturadas: 0.03, poliinsaturadas: 0.2 },
+  { categoria: "Verduras", nombre: "Calabacín salteado", kcal: 20, proteinas: 1.2, carbohidratos: 3.1, azucares: 2.5, grasas: 0.3, monoinsaturadas: 0.05, poliinsaturadas: 0.1 },
+  { categoria: "Verduras", nombre: "Calabaza cocida", kcal: 26, proteinas: 1.0, carbohidratos: 6.5, azucares: 2.8, grasas: 0.1, monoinsaturadas: 0.01, poliinsaturadas: 0.03 },
+  { categoria: "Verduras", nombre: "Zanahoria cruda", kcal: 41, proteinas: 0.9, carbohidratos: 9.6, azucares: 4.7, grasas: 0.2, monoinsaturadas: 0.01, poliinsaturadas: 0.1 },
+  { categoria: "Verduras", nombre: "Tomate crudo", kcal: 18, proteinas: 0.9, carbohidratos: 3.9, azucares: 2.6, grasas: 0.2, monoinsaturadas: 0.03, poliinsaturadas: 0.1 },
+  { categoria: "Verduras", nombre: "Pepino crudo", kcal: 15, proteinas: 0.7, carbohidratos: 3.6, azucares: 1.7, grasas: 0.1, monoinsaturadas: 0.01, poliinsaturadas: 0.03 },
+  { categoria: "Verduras", nombre: "Boniato asado", kcal: 90, proteinas: 2.0, carbohidratos: 20.7, azucares: 6.5, grasas: 0.1, monoinsaturadas: 0.0, poliinsaturadas: 0.03 },
+  { categoria: "Verduras", nombre: "Patata cocida", kcal: 87, proteinas: 1.9, carbohidratos: 20.1, azucares: 0.8, grasas: 0.1, monoinsaturadas: 0.0, poliinsaturadas: 0.04 },
+
+  // Frutas
+  { categoria: "Frutas", nombre: "Plátano", kcal: 89, proteinas: 1.1, carbohidratos: 22.8, azucares: 12.2, grasas: 0.3, monoinsaturadas: 0.03, poliinsaturadas: 0.07 },
+  { categoria: "Frutas", nombre: "Manzana", kcal: 52, proteinas: 0.3, carbohidratos: 13.8, azucares: 10.4, grasas: 0.2, monoinsaturadas: 0.01, poliinsaturadas: 0.05 },
+  { categoria: "Frutas", nombre: "Fresas", kcal: 32, proteinas: 0.7, carbohidratos: 7.7, azucares: 4.9, grasas: 0.3, monoinsaturadas: 0.04, poliinsaturadas: 0.16 },
+  { categoria: "Frutas", nombre: "Arándanos", kcal: 57, proteinas: 0.7, carbohidratos: 14.5, azucares: 10.0, grasas: 0.3, monoinsaturadas: 0.05, poliinsaturadas: 0.15 },
+  { categoria: "Frutas", nombre: "Uvas", kcal: 69, proteinas: 0.7, carbohidratos: 18.1, azucares: 15.5, grasas: 0.2, monoinsaturadas: 0.01, poliinsaturadas: 0.06 },
+];

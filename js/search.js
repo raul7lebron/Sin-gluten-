@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const TYPE_LABELS = {
     receta: "Receta",
     dieta: "Plan de dieta",
+    alimento: "Valor nutricional",
     tienda: "Tienda especializada",
     restaurante: "Restaurante",
     noticia: "Noticia",
@@ -85,6 +86,26 @@ document.addEventListener("DOMContentLoaded", () => {
             action: () => openPlanDia(kcal, weekIdx, d.dayKey),
           });
         });
+      });
+    });
+
+    (typeof alimentosNutricion !== "undefined" ? alimentosNutricion : []).forEach((item) => {
+      items.push({
+        type: "alimento",
+        title: item.nombre,
+        snippet: `${item.kcal} kcal · ${item.proteinas} g proteínas por 100 g`,
+        haystack: [item.nombre, item.categoria].join(" ").toLowerCase(),
+        action: () => {
+          if (window.libreDeTrigo) window.libreDeTrigo.activateTab("nutricion");
+          closeModal();
+          setTimeout(() => {
+            const nutriSearch = document.getElementById("nutriSearch");
+            if (!nutriSearch) return;
+            nutriSearch.value = item.nombre;
+            nutriSearch.dispatchEvent(new Event("input"));
+            nutriSearch.scrollIntoView({ behavior: "smooth", block: "center" });
+          }, 200);
+        },
       });
     });
 

@@ -47,6 +47,7 @@
         <button class="pill-btn" id="tab-recetas" data-target="recetas" type="button" role="tab" aria-selected="false" aria-controls="recetas"><span class="pill-icon" aria-hidden="true">🍳</span>Recetas</button>
         <button class="pill-btn" id="tab-dietas" data-target="dietas" type="button" role="tab" aria-selected="false" aria-controls="dietas"><span class="pill-icon" aria-hidden="true">🍽️</span>Dietas</button>
         <button class="pill-btn" id="tab-calculadora" data-target="calculadora" type="button" role="tab" aria-selected="false" aria-controls="calculadora"><span class="pill-icon" aria-hidden="true">🧮</span>Calculadora calórica</button>
+        <button class="pill-btn" id="tab-nutricion" data-target="nutricion" type="button" role="tab" aria-selected="false" aria-controls="nutricion"><span class="pill-icon" aria-hidden="true">🥗</span>Tabla nutricional</button>
         <button class="pill-btn" id="tab-restaurantes" data-target="restaurantes" type="button" role="tab" aria-selected="false" aria-controls="restaurantes"><span class="pill-icon" aria-hidden="true">⭐</span>Restaurantes</button>
         <button class="pill-btn" id="tab-escaner" data-target="escaner" type="button" role="tab" aria-selected="false" aria-controls="escaner"><span class="pill-icon" aria-hidden="true">📷</span>Escáner</button>
         <button class="pill-btn" id="tab-lista-compra" data-target="lista-compra" type="button" role="tab" aria-selected="false" aria-controls="lista-compra"><span class="pill-icon" aria-hidden="true">🛍️</span>Lista de la compra<span class="pill-badge" id="shoppingBadge" hidden="">0</span></button>
@@ -1053,6 +1054,544 @@ The post Nuevos pasos para un etiquetado más seguro appeared first on Asociaci�
       </div>
     </section>
 
+    <section id="nutricion" class="page" role="tabpanel" aria-labelledby="tab-nutricion">
+      <span class="eyebrow">🥗 Tabla nutricional</span>
+      <h1 class="section-title">Alimentos y su valor nutricional</h1>
+      <p class="section-hint">Valores de referencia por 100 g (crudo o cocido/preparado, según se indica en cada nombre); la composición real varía según la marca, el corte o el punto de cocción. Toca el nombre de un alimento en negrita para añadirlo a tu lista de la compra.</p>
+
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="search" id="nutriSearch" placeholder="Buscar alimento…" aria-label="Buscar alimento">
+      </div>
+
+      <div class="filter-chips" id="nutriFilter" role="group" aria-label="Filtrar por categoría"><button class="filter-chip active" data-categoria="todos" type="button">Todos</button><button class="filter-chip" data-categoria="Cereales y granos" type="button">Cereales y granos</button><button class="filter-chip" data-categoria="Legumbres" type="button">Legumbres</button><button class="filter-chip" data-categoria="Proteína animal" type="button">Proteína animal</button><button class="filter-chip" data-categoria="Lácteos" type="button">Lácteos</button><button class="filter-chip" data-categoria="Grasas y frutos secos" type="button">Grasas y frutos secos</button><button class="filter-chip" data-categoria="Verduras" type="button">Verduras</button><button class="filter-chip" data-categoria="Frutas" type="button">Frutas</button></div>
+
+      <div class="nutri-table-wrap">
+        <table class="nutri-table" id="nutriTable">
+          <thead>
+            <tr>
+              <th scope="col">Alimento</th>
+              <th scope="col">Kcal</th>
+              <th scope="col">Proteínas (g)</th>
+              <th scope="col">Carbohidratos (g)</th>
+              <th scope="col" class="nutri-sub">· Azúcares (g)</th>
+              <th scope="col">Grasas (g)</th>
+              <th scope="col" class="nutri-sub">· Monoinsaturadas (g)</th>
+              <th scope="col" class="nutri-sub">· Poliinsaturadas (g)</th>
+            </tr>
+          </thead>
+          <tbody id="nutriTableBody">
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Arroz blanco cocido">Arroz blanco cocido</strong></td>
+        <td>130</td>
+        <td>2.7</td>
+        <td>28.2</td>
+        <td class="nutri-sub">0.1</td>
+        <td>0.3</td>
+        <td class="nutri-sub">0.1</td>
+        <td class="nutri-sub">0.1</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Arroz integral cocido">Arroz integral cocido</strong></td>
+        <td>123</td>
+        <td>2.6</td>
+        <td>25.6</td>
+        <td class="nutri-sub">0.4</td>
+        <td>1</td>
+        <td class="nutri-sub">0.3</td>
+        <td class="nutri-sub">0.4</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Quinoa cocida">Quinoa cocida</strong></td>
+        <td>120</td>
+        <td>4.4</td>
+        <td>21.3</td>
+        <td class="nutri-sub">0.9</td>
+        <td>1.9</td>
+        <td class="nutri-sub">0.5</td>
+        <td class="nutri-sub">1.1</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Avena certificada sin gluten (cruda)">Avena certificada sin gluten (cruda)</strong></td>
+        <td>379</td>
+        <td>13.5</td>
+        <td>62</td>
+        <td class="nutri-sub">1</td>
+        <td>7</td>
+        <td class="nutri-sub">2.4</td>
+        <td class="nutri-sub">2.5</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Maíz dulce cocido">Maíz dulce cocido</strong></td>
+        <td>96</td>
+        <td>3.4</td>
+        <td>19</td>
+        <td class="nutri-sub">3.2</td>
+        <td>1.5</td>
+        <td class="nutri-sub">0.4</td>
+        <td class="nutri-sub">0.6</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Pan de molde sin gluten">Pan de molde sin gluten</strong></td>
+        <td>260</td>
+        <td>3.5</td>
+        <td>51</td>
+        <td class="nutri-sub">3.5</td>
+        <td>3.8</td>
+        <td class="nutri-sub">1</td>
+        <td class="nutri-sub">1.5</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Pasta sin gluten cocida (maíz/arroz)">Pasta sin gluten cocida (maíz/arroz)</strong></td>
+        <td>145</td>
+        <td>3</td>
+        <td>30</td>
+        <td class="nutri-sub">0.5</td>
+        <td>1</td>
+        <td class="nutri-sub">0.3</td>
+        <td class="nutri-sub">0.4</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Lentejas cocidas">Lentejas cocidas</strong></td>
+        <td>116</td>
+        <td>9</td>
+        <td>20.1</td>
+        <td class="nutri-sub">1.8</td>
+        <td>0.4</td>
+        <td class="nutri-sub">0.1</td>
+        <td class="nutri-sub">0.2</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Garbanzos cocidos">Garbanzos cocidos</strong></td>
+        <td>164</td>
+        <td>8.9</td>
+        <td>27.4</td>
+        <td class="nutri-sub">4.8</td>
+        <td>2.6</td>
+        <td class="nutri-sub">0.6</td>
+        <td class="nutri-sub">1.1</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Alubias blancas cocidas">Alubias blancas cocidas</strong></td>
+        <td>127</td>
+        <td>8.7</td>
+        <td>22.8</td>
+        <td class="nutri-sub">0.6</td>
+        <td>0.5</td>
+        <td class="nutri-sub">0.04</td>
+        <td class="nutri-sub">0.2</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Edamame cocido">Edamame cocido</strong></td>
+        <td>121</td>
+        <td>12</td>
+        <td>8.9</td>
+        <td class="nutri-sub">2.2</td>
+        <td>5.2</td>
+        <td class="nutri-sub">1</td>
+        <td class="nutri-sub">2.5</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Hummus">Hummus</strong></td>
+        <td>166</td>
+        <td>7.9</td>
+        <td>14.3</td>
+        <td class="nutri-sub">0.6</td>
+        <td>9.6</td>
+        <td class="nutri-sub">4</td>
+        <td class="nutri-sub">3.9</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Tofu">Tofu</strong></td>
+        <td>76</td>
+        <td>8.1</td>
+        <td>1.9</td>
+        <td class="nutri-sub">0.6</td>
+        <td>4.8</td>
+        <td class="nutri-sub">1.1</td>
+        <td class="nutri-sub">2.7</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Pechuga de pollo a la plancha">Pechuga de pollo a la plancha</strong></td>
+        <td>165</td>
+        <td>31</td>
+        <td>0</td>
+        <td class="nutri-sub">0</td>
+        <td>3.6</td>
+        <td class="nutri-sub">1.2</td>
+        <td class="nutri-sub">0.8</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Pechuga de pavo a la plancha">Pechuga de pavo a la plancha</strong></td>
+        <td>135</td>
+        <td>29</td>
+        <td>0</td>
+        <td class="nutri-sub">0</td>
+        <td>1.7</td>
+        <td class="nutri-sub">0.4</td>
+        <td class="nutri-sub">0.4</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Huevo cocido">Huevo cocido</strong></td>
+        <td>155</td>
+        <td>12.6</td>
+        <td>1.1</td>
+        <td class="nutri-sub">1.1</td>
+        <td>10.6</td>
+        <td class="nutri-sub">4.1</td>
+        <td class="nutri-sub">1.4</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Salmón al horno">Salmón al horno</strong></td>
+        <td>208</td>
+        <td>20.4</td>
+        <td>0</td>
+        <td class="nutri-sub">0</td>
+        <td>13.4</td>
+        <td class="nutri-sub">3.8</td>
+        <td class="nutri-sub">3.9</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Atún al natural (lata)">Atún al natural (lata)</strong></td>
+        <td>116</td>
+        <td>26</td>
+        <td>0</td>
+        <td class="nutri-sub">0</td>
+        <td>1</td>
+        <td class="nutri-sub">0.2</td>
+        <td class="nutri-sub">0.3</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Merluza a la plancha">Merluza a la plancha</strong></td>
+        <td>90</td>
+        <td>17.8</td>
+        <td>0</td>
+        <td class="nutri-sub">0</td>
+        <td>1.3</td>
+        <td class="nutri-sub">0.2</td>
+        <td class="nutri-sub">0.4</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Gambas cocidas">Gambas cocidas</strong></td>
+        <td>99</td>
+        <td>20.9</td>
+        <td>0.2</td>
+        <td class="nutri-sub">0</td>
+        <td>1.5</td>
+        <td class="nutri-sub">0.3</td>
+        <td class="nutri-sub">0.5</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Solomillo de cerdo a la plancha">Solomillo de cerdo a la plancha</strong></td>
+        <td>143</td>
+        <td>26</td>
+        <td>0</td>
+        <td class="nutri-sub">0</td>
+        <td>4</td>
+        <td class="nutri-sub">1.8</td>
+        <td class="nutri-sub">0.5</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Ternera magra a la plancha">Ternera magra a la plancha</strong></td>
+        <td>172</td>
+        <td>27</td>
+        <td>0</td>
+        <td class="nutri-sub">0</td>
+        <td>6.5</td>
+        <td class="nutri-sub">2.7</td>
+        <td class="nutri-sub">0.3</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Leche entera">Leche entera</strong></td>
+        <td>61</td>
+        <td>3.2</td>
+        <td>4.8</td>
+        <td class="nutri-sub">4.8</td>
+        <td>3.3</td>
+        <td class="nutri-sub">0.8</td>
+        <td class="nutri-sub">0.2</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Yogur griego natural">Yogur griego natural</strong></td>
+        <td>97</td>
+        <td>9</td>
+        <td>4</td>
+        <td class="nutri-sub">4</td>
+        <td>5</td>
+        <td class="nutri-sub">1.3</td>
+        <td class="nutri-sub">0.1</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Queso fresco batido">Queso fresco batido</strong></td>
+        <td>75</td>
+        <td>8</td>
+        <td>3.5</td>
+        <td class="nutri-sub">3.5</td>
+        <td>3</td>
+        <td class="nutri-sub">0.8</td>
+        <td class="nutri-sub">0.1</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Queso curado">Queso curado</strong></td>
+        <td>400</td>
+        <td>26</td>
+        <td>0.5</td>
+        <td class="nutri-sub">0.5</td>
+        <td>33</td>
+        <td class="nutri-sub">8.5</td>
+        <td class="nutri-sub">1</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Aceite de oliva virgen extra">Aceite de oliva virgen extra</strong></td>
+        <td>884</td>
+        <td>0</td>
+        <td>0</td>
+        <td class="nutri-sub">0</td>
+        <td>100</td>
+        <td class="nutri-sub">73</td>
+        <td class="nutri-sub">10.5</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Almendras">Almendras</strong></td>
+        <td>579</td>
+        <td>21.2</td>
+        <td>21.6</td>
+        <td class="nutri-sub">4.4</td>
+        <td>49.9</td>
+        <td class="nutri-sub">31.6</td>
+        <td class="nutri-sub">12.2</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Nueces">Nueces</strong></td>
+        <td>654</td>
+        <td>15.2</td>
+        <td>13.7</td>
+        <td class="nutri-sub">2.6</td>
+        <td>65.2</td>
+        <td class="nutri-sub">8.9</td>
+        <td class="nutri-sub">47.2</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Aguacate">Aguacate</strong></td>
+        <td>160</td>
+        <td>2</td>
+        <td>8.5</td>
+        <td class="nutri-sub">0.7</td>
+        <td>14.7</td>
+        <td class="nutri-sub">9.8</td>
+        <td class="nutri-sub">1.8</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Crema de cacahuete">Crema de cacahuete</strong></td>
+        <td>588</td>
+        <td>25</td>
+        <td>20</td>
+        <td class="nutri-sub">6</td>
+        <td>50</td>
+        <td class="nutri-sub">24</td>
+        <td class="nutri-sub">15</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Anacardos">Anacardos</strong></td>
+        <td>553</td>
+        <td>18.2</td>
+        <td>30.2</td>
+        <td class="nutri-sub">5.9</td>
+        <td>43.9</td>
+        <td class="nutri-sub">23.8</td>
+        <td class="nutri-sub">7.8</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Espinacas cocidas">Espinacas cocidas</strong></td>
+        <td>23</td>
+        <td>2.9</td>
+        <td>3.6</td>
+        <td class="nutri-sub">0.4</td>
+        <td>0.3</td>
+        <td class="nutri-sub">0.01</td>
+        <td class="nutri-sub">0.2</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Brócoli cocido">Brócoli cocido</strong></td>
+        <td>35</td>
+        <td>2.4</td>
+        <td>7.2</td>
+        <td class="nutri-sub">1.7</td>
+        <td>0.4</td>
+        <td class="nutri-sub">0.03</td>
+        <td class="nutri-sub">0.2</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Calabacín salteado">Calabacín salteado</strong></td>
+        <td>20</td>
+        <td>1.2</td>
+        <td>3.1</td>
+        <td class="nutri-sub">2.5</td>
+        <td>0.3</td>
+        <td class="nutri-sub">0.05</td>
+        <td class="nutri-sub">0.1</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Calabaza cocida">Calabaza cocida</strong></td>
+        <td>26</td>
+        <td>1</td>
+        <td>6.5</td>
+        <td class="nutri-sub">2.8</td>
+        <td>0.1</td>
+        <td class="nutri-sub">0.01</td>
+        <td class="nutri-sub">0.03</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Zanahoria cruda">Zanahoria cruda</strong></td>
+        <td>41</td>
+        <td>0.9</td>
+        <td>9.6</td>
+        <td class="nutri-sub">4.7</td>
+        <td>0.2</td>
+        <td class="nutri-sub">0.01</td>
+        <td class="nutri-sub">0.1</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Tomate crudo">Tomate crudo</strong></td>
+        <td>18</td>
+        <td>0.9</td>
+        <td>3.9</td>
+        <td class="nutri-sub">2.6</td>
+        <td>0.2</td>
+        <td class="nutri-sub">0.03</td>
+        <td class="nutri-sub">0.1</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Pepino crudo">Pepino crudo</strong></td>
+        <td>15</td>
+        <td>0.7</td>
+        <td>3.6</td>
+        <td class="nutri-sub">1.7</td>
+        <td>0.1</td>
+        <td class="nutri-sub">0.01</td>
+        <td class="nutri-sub">0.03</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Boniato asado">Boniato asado</strong></td>
+        <td>90</td>
+        <td>2</td>
+        <td>20.7</td>
+        <td class="nutri-sub">6.5</td>
+        <td>0.1</td>
+        <td class="nutri-sub">0</td>
+        <td class="nutri-sub">0.03</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Patata cocida">Patata cocida</strong></td>
+        <td>87</td>
+        <td>1.9</td>
+        <td>20.1</td>
+        <td class="nutri-sub">0.8</td>
+        <td>0.1</td>
+        <td class="nutri-sub">0</td>
+        <td class="nutri-sub">0.04</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Plátano">Plátano</strong></td>
+        <td>89</td>
+        <td>1.1</td>
+        <td>22.8</td>
+        <td class="nutri-sub">12.2</td>
+        <td>0.3</td>
+        <td class="nutri-sub">0.03</td>
+        <td class="nutri-sub">0.07</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Manzana">Manzana</strong></td>
+        <td>52</td>
+        <td>0.3</td>
+        <td>13.8</td>
+        <td class="nutri-sub">10.4</td>
+        <td>0.2</td>
+        <td class="nutri-sub">0.01</td>
+        <td class="nutri-sub">0.05</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Fresas">Fresas</strong></td>
+        <td>32</td>
+        <td>0.7</td>
+        <td>7.7</td>
+        <td class="nutri-sub">4.9</td>
+        <td>0.3</td>
+        <td class="nutri-sub">0.04</td>
+        <td class="nutri-sub">0.16</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Arándanos">Arándanos</strong></td>
+        <td>57</td>
+        <td>0.7</td>
+        <td>14.5</td>
+        <td class="nutri-sub">10</td>
+        <td>0.3</td>
+        <td class="nutri-sub">0.05</td>
+        <td class="nutri-sub">0.15</td>
+      </tr>
+    
+      <tr>
+        <td><strong class="shoppable" data-shop-text="Uvas">Uvas</strong></td>
+        <td>69</td>
+        <td>0.7</td>
+        <td>18.1</td>
+        <td class="nutri-sub">15.5</td>
+        <td>0.2</td>
+        <td class="nutri-sub">0.01</td>
+        <td class="nutri-sub">0.06</td>
+      </tr>
+    </tbody>
+        </table>
+      </div>
+      <p class="empty-state" id="nutriEmpty" hidden="">No se encontraron alimentos con esa búsqueda.</p>
+    </section>
+
     <section id="restaurantes" class="page" role="tabpanel" aria-labelledby="tab-restaurantes">
       <span class="eyebrow">⭐ Restaurantes</span>
       <h1 class="section-title">Ranking por ciudad</h1>
@@ -1366,6 +1905,7 @@ The post Nuevos pasos para un etiquetado más seguro appeared first on Asociaci�
         <a href="#" data-scroll-target="recetas">Recetas</a>
         <a href="#" data-scroll-target="dietas">Dietas</a>
         <a href="#" data-scroll-target="calculadora">Calculadora calórica</a>
+        <a href="#" data-scroll-target="nutricion">Tabla nutricional</a>
         <a href="#" data-scroll-target="restaurantes">Restaurantes</a>
         <a href="#" data-scroll-target="escaner">Escáner</a>
         <a href="#" data-scroll-target="lista-compra">Lista de la compra</a>
