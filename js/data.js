@@ -2531,7 +2531,7 @@ const alimentosNutricion = [
   { categoria: "Cereales y granos", nombre: "Amaranto cocido", kcal: 102, proteinas: 3.8, carbohidratos: 18.7, azucares: 0.3, grasas: 1.6, monoinsaturadas: 0.35, poliinsaturadas: 0.7 },
   { categoria: "Cereales y granos", nombre: "Arroz basmati cocido", kcal: 121, proteinas: 2.5, carbohidratos: 25.9, azucares: 0.1, grasas: 0.3, monoinsaturadas: 0.1, poliinsaturadas: 0.1 },
   { categoria: "Cereales y granos", nombre: "Cuscús de maíz cocido", kcal: 112, proteinas: 2.5, carbohidratos: 23.2, azucares: 0.2, grasas: 0.5, monoinsaturadas: 0.1, poliinsaturadas: 0.2 },
-  { categoria: "Cereales y granos", nombre: "Copos de maíz sin azúcar (cereal)", kcal: 357, proteinas: 7.5, carbohidratos: 84.0, azucares: 8.0, grasas: 0.9, monoinsaturadas: 0.2, poliinsaturadas: 0.4 },
+  { categoria: "Cereales y granos", nombre: "Copos de maíz sin gluten (cereal)", kcal: 357, proteinas: 7.5, carbohidratos: 84.0, azucares: 8.0, grasas: 0.9, monoinsaturadas: 0.2, poliinsaturadas: 0.4 },
   { categoria: "Cereales y granos", nombre: "Harina de arroz", kcal: 366, proteinas: 6.0, carbohidratos: 80.1, azucares: 0.1, grasas: 1.4, monoinsaturadas: 0.4, poliinsaturadas: 0.4 },
   { categoria: "Cereales y granos", nombre: "Sorgo cocido", kcal: 111, proteinas: 3.7, carbohidratos: 23.5, azucares: 0.2, grasas: 1.0, monoinsaturadas: 0.3, poliinsaturadas: 0.5 },
   { categoria: "Cereales y granos", nombre: "Teff cocido", kcal: 101, proteinas: 3.7, carbohidratos: 19.9, azucares: 0.2, grasas: 0.7, monoinsaturadas: 0.1, poliinsaturadas: 0.3 },
@@ -2607,17 +2607,17 @@ const alimentosNutricion = [
 
   // Embutidos y curados
   { categoria: "Embutidos y curados", nombre: "Jamón serrano", kcal: 241, proteinas: 31.0, carbohidratos: 0.3, azucares: 0.3, grasas: 13.0, monoinsaturadas: 6.0, poliinsaturadas: 1.5 },
-  { categoria: "Embutidos y curados", nombre: "Jamón cocido", kcal: 111, proteinas: 18.0, carbohidratos: 1.5, azucares: 1.0, grasas: 3.5, monoinsaturadas: 1.6, poliinsaturadas: 0.4 },
+  { categoria: "Embutidos y curados", nombre: "Jamón cocido sin gluten", kcal: 111, proteinas: 18.0, carbohidratos: 1.5, azucares: 1.0, grasas: 3.5, monoinsaturadas: 1.6, poliinsaturadas: 0.4 },
   { categoria: "Embutidos y curados", nombre: "Lomo embutido", kcal: 246, proteinas: 34.0, carbohidratos: 1.0, azucares: 0.5, grasas: 12.0, monoinsaturadas: 5.5, poliinsaturadas: 1.4 },
   { categoria: "Embutidos y curados", nombre: "Chorizo curado", kcal: 380, proteinas: 24.0, carbohidratos: 2.0, azucares: 0.5, grasas: 31.0, monoinsaturadas: 14.5, poliinsaturadas: 3.5 },
   { categoria: "Embutidos y curados", nombre: "Bacon (panceta a la plancha)", kcal: 417, proteinas: 27.0, carbohidratos: 0.5, azucares: 0, grasas: 34.0, monoinsaturadas: 15.5, poliinsaturadas: 4.0 },
   { categoria: "Embutidos y curados", nombre: "Salchichón", kcal: 407, proteinas: 25.0, carbohidratos: 1.0, azucares: 0.5, grasas: 34.0, monoinsaturadas: 15.0, poliinsaturadas: 4.0 },
-  { categoria: "Embutidos y curados", nombre: "Mortadela", kcal: 288, proteinas: 15.0, carbohidratos: 2.5, azucares: 1.0, grasas: 24.0, monoinsaturadas: 11.0, poliinsaturadas: 2.5 },
+  { categoria: "Embutidos y curados", nombre: "Mortadela sin gluten", kcal: 288, proteinas: 15.0, carbohidratos: 2.5, azucares: 1.0, grasas: 24.0, monoinsaturadas: 11.0, poliinsaturadas: 2.5 },
   { categoria: "Embutidos y curados", nombre: "Cecina", kcal: 202, proteinas: 43.0, carbohidratos: 0, azucares: 0, grasas: 3.0, monoinsaturadas: 1.3, poliinsaturadas: 0.3 },
   { categoria: "Embutidos y curados", nombre: "Fuet", kcal: 434, proteinas: 24.0, carbohidratos: 1.5, azucares: 0.5, grasas: 37.0, monoinsaturadas: 16.5, poliinsaturadas: 4.2 },
-  { categoria: "Embutidos y curados", nombre: "Jamón de pavo", kcal: 100, proteinas: 17.0, carbohidratos: 1.5, azucares: 1.0, grasas: 3.0, monoinsaturadas: 1.0, poliinsaturadas: 0.5 },
-  { categoria: "Embutidos y curados", nombre: "Salchichas tipo frankfurt", kcal: 280, proteinas: 12.0, carbohidratos: 3.0, azucares: 1.0, grasas: 25.0, monoinsaturadas: 11.0, poliinsaturadas: 3.0 },
-  { categoria: "Embutidos y curados", nombre: "Morcilla", kcal: 379, proteinas: 14.0, carbohidratos: 15.0, azucares: 1.0, grasas: 30.0, monoinsaturadas: 13.0, poliinsaturadas: 3.0 },
+  { categoria: "Embutidos y curados", nombre: "Jamón de pavo sin gluten", kcal: 100, proteinas: 17.0, carbohidratos: 1.5, azucares: 1.0, grasas: 3.0, monoinsaturadas: 1.0, poliinsaturadas: 0.5 },
+  { categoria: "Embutidos y curados", nombre: "Salchichas tipo frankfurt sin gluten", kcal: 280, proteinas: 12.0, carbohidratos: 3.0, azucares: 1.0, grasas: 25.0, monoinsaturadas: 11.0, poliinsaturadas: 3.0 },
+  { categoria: "Embutidos y curados", nombre: "Morcilla de arroz sin gluten", kcal: 379, proteinas: 14.0, carbohidratos: 15.0, azucares: 1.0, grasas: 30.0, monoinsaturadas: 13.0, poliinsaturadas: 3.0 },
 
   // Lácteos
   { categoria: "Lácteos", nombre: "Leche entera", kcal: 61, proteinas: 3.2, carbohidratos: 4.8, azucares: 4.8, grasas: 3.3, monoinsaturadas: 0.8, poliinsaturadas: 0.2 },
@@ -2744,10 +2744,10 @@ const alimentosNutricion = [
   { categoria: "Panadería y snacks", nombre: "Mermelada", kcal: 250, proteinas: 0.3, carbohidratos: 62.0, azucares: 60.0, grasas: 0.1, monoinsaturadas: 0, poliinsaturadas: 0.02 },
   { categoria: "Panadería y snacks", nombre: "Turrón de Jijona sin gluten", kcal: 500, proteinas: 10.0, carbohidratos: 44.0, azucares: 40.0, grasas: 31.0, monoinsaturadas: 14.5, poliinsaturadas: 6.0 },
   { categoria: "Panadería y snacks", nombre: "Bizcocho sin gluten", kcal: 380, proteinas: 5.5, carbohidratos: 55.0, azucares: 30.0, grasas: 15.0, monoinsaturadas: 6.0, poliinsaturadas: 3.0 },
-  { categoria: "Panadería y snacks", nombre: "Crackers de arroz", kcal: 387, proteinas: 7.5, carbohidratos: 82.0, azucares: 1.0, grasas: 2.8, monoinsaturadas: 0.7, poliinsaturadas: 1.0 },
+  { categoria: "Panadería y snacks", nombre: "Crackers de arroz sin gluten", kcal: 387, proteinas: 7.5, carbohidratos: 82.0, azucares: 1.0, grasas: 2.8, monoinsaturadas: 0.7, poliinsaturadas: 1.0 },
   { categoria: "Panadería y snacks", nombre: "Helado de vainilla", kcal: 207, proteinas: 3.5, carbohidratos: 24.0, azucares: 21.0, grasas: 11.0, monoinsaturadas: 3.0, poliinsaturadas: 0.4 },
   { categoria: "Panadería y snacks", nombre: "Magdalenas sin gluten", kcal: 400, proteinas: 5.0, carbohidratos: 55.0, azucares: 28.0, grasas: 17.0, monoinsaturadas: 7.0, poliinsaturadas: 3.5 },
-  { categoria: "Panadería y snacks", nombre: "Cereales de arroz inflado con miel", kcal: 385, proteinas: 5.0, carbohidratos: 88.0, azucares: 30.0, grasas: 1.0, monoinsaturadas: 0.2, poliinsaturadas: 0.3 },
+  { categoria: "Panadería y snacks", nombre: "Cereales de arroz inflado con miel sin gluten", kcal: 385, proteinas: 5.0, carbohidratos: 88.0, azucares: 30.0, grasas: 1.0, monoinsaturadas: 0.2, poliinsaturadas: 0.3 },
   { categoria: "Panadería y snacks", nombre: "Donut sin gluten", kcal: 420, proteinas: 5.5, carbohidratos: 51.0, azucares: 24.0, grasas: 22.0, monoinsaturadas: 9.0, poliinsaturadas: 5.0 },
 
   // Bebidas
