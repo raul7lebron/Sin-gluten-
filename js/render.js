@@ -231,20 +231,18 @@ function renderNutriFilter() {
     .join("");
 }
 
-function nutriMatches(item, query, categoria) {
+function nutriMatches(item, categoria) {
   if (categoria && categoria !== "todos" && item.categoria !== categoria) return false;
-  if (!query) return true;
-  return item.nombre.toLowerCase().includes(query);
+  return true;
 }
 
-function renderNutricion(query = "", categoria = "todos") {
+function renderNutricion(categoria = "todos") {
   const body = document.getElementById("nutriTableBody");
   const table = document.getElementById("nutriTable");
   const empty = document.getElementById("nutriEmpty");
   if (!body) return;
 
-  const normalizedQuery = query.trim().toLowerCase();
-  const filtered = alimentosNutricion.filter((item) => nutriMatches(item, normalizedQuery, categoria));
+  const filtered = alimentosNutricion.filter((item) => nutriMatches(item, categoria));
 
   body.innerHTML = filtered
     .map(

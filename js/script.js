@@ -226,25 +226,52 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const nutriSearch = document.getElementById("nutriSearch");
   const nutriFilter = document.getElementById("nutriFilter");
-  if (nutriSearch && nutriFilter) {
+  const nutriCategoriaToggle = document.getElementById("nutriCategoriaToggle");
+  const nutriCategoriaPanel = document.getElementById("nutriCategoriaPanel");
+  const nutriCategoriaLabel = document.getElementById("nutriCategoriaLabel");
+  if (nutriFilter && nutriCategoriaToggle && nutriCategoriaPanel) {
     function currentNutriCategoria() {
       const active = nutriFilter.querySelector(".filter-chip.active");
       return active ? active.dataset.categoria : "todos";
     }
 
     function refreshNutri() {
-      renderNutricion(nutriSearch.value, currentNutriCategoria());
+      renderNutricion(currentNutriCategoria());
     }
 
-    nutriSearch.addEventListener("input", refreshNutri);
+    function closeNutriCategoria() {
+      nutriCategoriaPanel.classList.remove("open");
+      nutriCategoriaToggle.setAttribute("aria-expanded", "false");
+    }
+
+    function openNutriCategoria() {
+      nutriCategoriaPanel.classList.add("open");
+      nutriCategoriaToggle.setAttribute("aria-expanded", "true");
+    }
+
+    nutriCategoriaToggle.addEventListener("click", () => {
+      if (nutriCategoriaPanel.classList.contains("open")) closeNutriCategoria();
+      else openNutriCategoria();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!nutriCategoriaPanel.classList.contains("open")) return;
+      if (nutriCategoriaPanel.contains(event.target) || nutriCategoriaToggle.contains(event.target)) return;
+      closeNutriCategoria();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && nutriCategoriaPanel.classList.contains("open")) closeNutriCategoria();
+    });
 
     nutriFilter.addEventListener("click", (event) => {
       const chip = event.target.closest(".filter-chip");
       if (!chip) return;
       nutriFilter.querySelectorAll(".filter-chip").forEach((c) => c.classList.remove("active"));
       chip.classList.add("active");
+      if (nutriCategoriaLabel) nutriCategoriaLabel.textContent = chip.textContent;
+      closeNutriCategoria();
       refreshNutri();
     });
   }

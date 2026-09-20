@@ -162,15 +162,17 @@
 
     <section id="nutricion" class="page" role="tabpanel" aria-labelledby="tab-nutricion">
       <span class="eyebrow">🥗 Tabla nutricional</span>
-      <h1 class="section-title">Alimentos y su valor nutricional</h1>
       <p class="section-hint">Valores de referencia por 100 g (crudo o cocido/preparado, según se indica en cada nombre); la composición real varía según la marca, el corte o el punto de cocción. Toca el nombre de un alimento en negrita para añadirlo a tu lista de la compra.</p>
 
-      <div class="search-box">
-        <span class="search-icon">🔍</span>
-        <input type="search" id="nutriSearch" placeholder="Buscar alimento…" aria-label="Buscar alimento" />
+      <div class="nutri-category-select" id="nutriCategoriaSelect">
+        <button class="nutri-category-toggle" id="nutriCategoriaToggle" type="button" aria-expanded="false" aria-controls="nutriFilter">
+          <span id="nutriCategoriaLabel">Todos</span>
+          <span class="chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="nutri-category-panel" id="nutriCategoriaPanel">
+          <div class="filter-chips" id="nutriFilter" role="group" aria-label="Filtrar por categoría"></div>
+        </div>
       </div>
-
-      <div class="filter-chips" id="nutriFilter" role="group" aria-label="Filtrar por categoría"></div>
 
       <div class="nutri-table-wrap">
         <table class="nutri-table" id="nutriTable">
@@ -189,7 +191,7 @@
           <tbody id="nutriTableBody"></tbody>
         </table>
       </div>
-      <p class="empty-state" id="nutriEmpty" hidden>No se encontraron alimentos con esa búsqueda.</p>
+      <p class="empty-state" id="nutriEmpty" hidden>No se encontraron alimentos en esa categoría.</p>
     </section>
 
     <section id="restaurantes" class="page" role="tabpanel" aria-labelledby="tab-restaurantes">

@@ -105,11 +105,18 @@ document.addEventListener("DOMContentLoaded", () => {
           if (window.libreDeTrigo) window.libreDeTrigo.activateTab("nutricion");
           closeModal();
           setTimeout(() => {
-            const nutriSearch = document.getElementById("nutriSearch");
-            if (!nutriSearch) return;
-            nutriSearch.value = item.nombre;
-            nutriSearch.dispatchEvent(new Event("input"));
-            nutriSearch.scrollIntoView({ behavior: "smooth", block: "center" });
+            const todosChip = document.querySelector('#nutriFilter [data-categoria="todos"]');
+            if (todosChip) todosChip.click();
+            setTimeout(() => {
+              const rows = Array.from(document.querySelectorAll("#nutriTableBody tr"));
+              const row = rows.find((r) => {
+                const shoppable = r.querySelector(".shoppable");
+                return shoppable && shoppable.dataset.shopText === item.nombre;
+              });
+              if (!row) return;
+              row.scrollIntoView({ behavior: "smooth", block: "center" });
+              flashHighlight(row);
+            }, 150);
           }, 200);
         },
       });

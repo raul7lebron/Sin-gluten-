@@ -698,6 +698,52 @@ a:focus-visible {
   margin-top: -4px;
 }
 
+/* Selector de categoría desplegable (tabla nutricional) */
+.nutri-category-select {
+  margin: 8px 0 20px;
+}
+
+.nutri-category-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 13px 18px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xs);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nutri-category-toggle:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.nutri-category-toggle[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+.nutri-category-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.nutri-category-panel.open {
+  max-height: 400px;
+}
+
+.nutri-category-panel .filter-chips {
+  margin: 10px 0 0;
+}
+
 /* Filter chips */
 .filter-chips {
   display: flex;

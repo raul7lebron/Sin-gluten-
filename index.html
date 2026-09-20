@@ -1255,15 +1255,17 @@ The post Nuevos pasos para un etiquetado más seguro appeared first on Asociaci�
 
     <section id="nutricion" class="page" role="tabpanel" aria-labelledby="tab-nutricion">
       <span class="eyebrow">🥗 Tabla nutricional</span>
-      <h1 class="section-title">Alimentos y su valor nutricional</h1>
       <p class="section-hint">Valores de referencia por 100 g (crudo o cocido/preparado, según se indica en cada nombre); la composición real varía según la marca, el corte o el punto de cocción. Toca el nombre de un alimento en negrita para añadirlo a tu lista de la compra.</p>
 
-      <div class="search-box">
-        <span class="search-icon">🔍</span>
-        <input type="search" id="nutriSearch" placeholder="Buscar alimento…" aria-label="Buscar alimento">
+      <div class="nutri-category-select" id="nutriCategoriaSelect">
+        <button class="nutri-category-toggle" id="nutriCategoriaToggle" type="button" aria-expanded="false" aria-controls="nutriFilter">
+          <span id="nutriCategoriaLabel">Todos</span>
+          <span class="chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="nutri-category-panel" id="nutriCategoriaPanel">
+          <div class="filter-chips" id="nutriFilter" role="group" aria-label="Filtrar por categoría"><button class="filter-chip active" data-categoria="todos" type="button">Todos</button><button class="filter-chip" data-categoria="Cereales y granos" type="button">Cereales y granos</button><button class="filter-chip" data-categoria="Legumbres" type="button">Legumbres</button><button class="filter-chip" data-categoria="Proteína animal" type="button">Proteína animal</button><button class="filter-chip" data-categoria="Pescado y marisco" type="button">Pescado y marisco</button><button class="filter-chip" data-categoria="Embutidos y curados" type="button">Embutidos y curados</button><button class="filter-chip" data-categoria="Lácteos" type="button">Lácteos</button><button class="filter-chip" data-categoria="Grasas y frutos secos" type="button">Grasas y frutos secos</button><button class="filter-chip" data-categoria="Verduras" type="button">Verduras</button><button class="filter-chip" data-categoria="Frutas" type="button">Frutas</button><button class="filter-chip" data-categoria="Panadería y snacks" type="button">Panadería y snacks</button><button class="filter-chip" data-categoria="Bebidas" type="button">Bebidas</button></div>
+        </div>
       </div>
-
-      <div class="filter-chips" id="nutriFilter" role="group" aria-label="Filtrar por categoría"><button class="filter-chip active" data-categoria="todos" type="button">Todos</button><button class="filter-chip" data-categoria="Cereales y granos" type="button">Cereales y granos</button><button class="filter-chip" data-categoria="Legumbres" type="button">Legumbres</button><button class="filter-chip" data-categoria="Proteína animal" type="button">Proteína animal</button><button class="filter-chip" data-categoria="Pescado y marisco" type="button">Pescado y marisco</button><button class="filter-chip" data-categoria="Embutidos y curados" type="button">Embutidos y curados</button><button class="filter-chip" data-categoria="Lácteos" type="button">Lácteos</button><button class="filter-chip" data-categoria="Grasas y frutos secos" type="button">Grasas y frutos secos</button><button class="filter-chip" data-categoria="Verduras" type="button">Verduras</button><button class="filter-chip" data-categoria="Frutas" type="button">Frutas</button><button class="filter-chip" data-categoria="Panadería y snacks" type="button">Panadería y snacks</button><button class="filter-chip" data-categoria="Bebidas" type="button">Bebidas</button></div>
 
       <div class="nutri-table-wrap">
         <table class="nutri-table" id="nutriTable">
@@ -2635,7 +2637,7 @@ The post Nuevos pasos para un etiquetado más seguro appeared first on Asociaci�
     </tbody>
         </table>
       </div>
-      <p class="empty-state" id="nutriEmpty" hidden="">No se encontraron alimentos con esa búsqueda.</p>
+      <p class="empty-state" id="nutriEmpty" hidden="">No se encontraron alimentos en esa categoría.</p>
     </section>
 
     <section id="restaurantes" class="page" role="tabpanel" aria-labelledby="tab-restaurantes">
