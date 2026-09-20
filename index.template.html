@@ -45,6 +45,7 @@
       <nav class="pill-nav" id="pillNav" role="tablist" aria-label="Secciones">
         <span class="pill-indicator" id="pillIndicator"></span>
         <button class="pill-btn active" id="tab-inicio" data-target="inicio" type="button" role="tab" aria-selected="true" aria-controls="inicio"><span class="pill-icon" aria-hidden="true">📰</span>Actualidad</button>
+        <button class="pill-btn" id="tab-guia" data-target="guia" type="button" role="tab" aria-selected="false" aria-controls="guia"><span class="pill-icon" aria-hidden="true">🔰</span>Guía para principiantes</button>
         <button class="pill-btn" id="tab-tiendas" data-target="tiendas" type="button" role="tab" aria-selected="false" aria-controls="tiendas"><span class="pill-icon" aria-hidden="true">🏬</span>Tiendas especializadas</button>
         <button class="pill-btn" id="tab-recetas" data-target="recetas" type="button" role="tab" aria-selected="false" aria-controls="recetas"><span class="pill-icon" aria-hidden="true">🍳</span>Recetas</button>
         <button class="pill-btn" id="tab-dietas" data-target="dietas" type="button" role="tab" aria-selected="false" aria-controls="dietas"><span class="pill-icon" aria-hidden="true">🍽️</span>Dietas</button>
@@ -75,6 +76,157 @@
 
       <div class="news-grid" id="newsGrid"></div>
       <p class="empty-state" id="newsEmpty" hidden>No se han podido cargar las noticias en este momento. Vuelve a intentarlo más tarde.</p>
+    </section>
+
+    <section id="guia" class="page" role="tabpanel" aria-labelledby="tab-guia">
+      <span class="eyebrow">🔰 Guía</span>
+      <h1 class="section-title">Guía para principiantes</h1>
+      <p class="section-hint">Si te acaban de diagnosticar celiaquía o sensibilidad al gluten, o simplemente quieres reducir el gluten de tu dieta, esta guía resume lo esencial para empezar con seguridad. No sustituye el consejo de tu médico o dietista.</p>
+
+      <div class="recipe-list" id="guiaList">
+        <div class="recipe-card" data-title="¿Qué es el gluten y quién debe evitarlo?">
+          <button class="recipe-toggle" type="button" aria-expanded="false">
+            <span class="recipe-icon" aria-hidden="true">🌾</span>
+            <span class="recipe-title">
+              <strong>¿Qué es el gluten y quién debe evitarlo?</strong>
+              <small>Lo básico antes de empezar</small>
+            </span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="recipe-content">
+            <p>El gluten es un conjunto de proteínas presentes en el trigo, la cebada, el centeno y sus variedades o derivados (espelta, kamut, triticale). Da elasticidad a las masas de pan y pasta, por eso está tan extendido en la alimentación.</p>
+            <h4>¿Quién necesita evitarlo?</h4>
+            <ul>
+              <li><strong>Enfermedad celíaca:</strong> una enfermedad autoinmune crónica, no una alergia ni una intolerancia alimentaria. El gluten daña el intestino delgado incluso en cantidades mínimas.</li>
+              <li><strong>Sensibilidad al gluten no celíaca:</strong> produce síntomas similares (digestivos, cansancio, dolor de cabeza) pero sin el daño intestinal ni los anticuerpos propios de la celiaquía.</li>
+              <li><strong>Alergia al trigo:</strong> una reacción del sistema inmunitario distinta, que puede incluir síntomas respiratorios o cutáneos.</li>
+              <li><strong>Dermatitis herpetiforme:</strong> una manifestación cutánea de la celiaquía.</li>
+            </ul>
+            <p>Importante: si sospechas que puedes ser celíaco, no elimines el gluten de tu dieta antes de hacerte las pruebas médicas, porque puede alterar el resultado del diagnóstico. Consulta siempre con un profesional sanitario.</p>
+          </div>
+        </div>
+
+        <div class="recipe-card" data-title="Alimentos con gluten y alimentos sin gluten">
+          <button class="recipe-toggle" type="button" aria-expanded="false">
+            <span class="recipe-icon" aria-hidden="true">🥗</span>
+            <span class="recipe-title">
+              <strong>Alimentos con gluten y alimentos sin gluten</strong>
+              <small>Qué evitar y qué es seguro por naturaleza</small>
+            </span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="recipe-content">
+            <h4>Naturalmente sin gluten</h4>
+            <p>Arroz, maíz, quinoa, trigo sarraceno (a pesar del nombre, no lleva gluten), mijo, sorgo, teff, tapioca, legumbres, carne y pescado frescos, huevos, lácteos naturales, frutas, verduras y frutos secos. Puedes ver los valores nutricionales de muchos de ellos en la <a href="#" data-scroll-target="nutricion">tabla nutricional</a>.</p>
+            <h4>Llevan gluten</h4>
+            <p>El trigo, la cebada, el centeno, la espelta y el triticale, y todo lo elaborado con ellos: pan, pasta y bollería tradicionales, la mayoría de la cerveza, los rebozados y empanados, el seitán y buena parte de la salsa de soja.</p>
+            <h4>Casos especiales</h4>
+            <ul>
+              <li><strong>Avena:</strong> el grano en sí no lleva gluten, pero suele contaminarse con trigo durante el cultivo o el procesado. Solo es segura si está certificada "sin gluten".</li>
+              <li><strong>Gluten oculto:</strong> embutidos, salsas, caldos concentrados, helados y cereales de desayuno pueden llevar gluten como espesante o saborizante (a veces en forma de malta de cebada) aunque no lo esperes. Revisa siempre la etiqueta.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="recipe-card" data-title="Cómo leer las etiquetas">
+          <button class="recipe-toggle" type="button" aria-expanded="false">
+            <span class="recipe-icon" aria-hidden="true">🏷️</span>
+            <span class="recipe-title">
+              <strong>Cómo leer las etiquetas</strong>
+              <small>Lo que dice (y lo que no dice) un envase</small>
+            </span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="recipe-content">
+            <ul>
+              <li><strong>Alérgenos en negrita:</strong> en la Unión Europea es obligatorio resaltar en la lista de ingredientes los alérgenos, incluidos los cereales con gluten. Es lo primero que debes mirar.</li>
+              <li><strong>"Puede contener trazas de...":</strong> es un aviso voluntario del fabricante sobre riesgo de contaminación cruzada en la fábrica. Cada persona, según su sensibilidad, decide si lo asume o no.</li>
+              <li><strong>Símbolo de la espiga barrada:</strong> es un sello de licencia (no obligatorio) que certifica un control más estricto. Su ausencia no significa que el producto lleve gluten, igual que su presencia no es la única garantía válida.</li>
+              <li><strong>Límite legal "sin gluten":</strong> un producto solo puede etiquetarse como "sin gluten" si contiene menos de 20 mg/kg (20 ppm), según el Codex Alimentarius.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="recipe-card" data-title="Contaminación cruzada en casa">
+          <button class="recipe-toggle" type="button" aria-expanded="false">
+            <span class="recipe-icon" aria-hidden="true">🍞</span>
+            <span class="recipe-title">
+              <strong>Contaminación cruzada en casa</strong>
+              <small>Cómo evitarla en la cocina</small>
+            </span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="recipe-content">
+            <ul>
+              <li>Usa una tostadora, tabla de cortar y utensilios distintos para productos con y sin gluten, o límpialos a fondo entre usos.</li>
+              <li>No reutilices el aceite de freír de un alimento con gluten (por ejemplo, empanado) para freír algo sin gluten.</li>
+              <li>Guarda los productos sin gluten en un estante propio, por encima de los demás, para evitar que caigan migas o harina sobre ellos.</li>
+              <li>Lava bien las superficies y las manos después de manipular harina de trigo, antes de preparar algo sin gluten.</li>
+              <li>Si vives en un hogar donde no todos comen sin gluten, etiqueta claramente los productos para evitar confusiones.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="recipe-card" data-title="Comer fuera de casa">
+          <button class="recipe-toggle" type="button" aria-expanded="false">
+            <span class="recipe-icon" aria-hidden="true">🍽️</span>
+            <span class="recipe-title">
+              <strong>Comer fuera de casa</strong>
+              <small>Restaurantes, viajes y comidas con amigos</small>
+            </span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="recipe-content">
+            <ul>
+              <li>Avisa siempre al personal de que es una necesidad médica, no una preferencia: influye en cómo se toman las precauciones en cocina.</li>
+              <li>Pregunta por el proceso de cocinado (si usan la misma freidora o plancha para productos con gluten) además de por los ingredientes.</li>
+              <li>Consulta el <a href="#" data-scroll-target="restaurantes">ranking de restaurantes</a> de esta web antes de elegir dónde ir.</li>
+              <li>Lleva contigo algún snack seguro para imprevistos, sobre todo en viajes o desplazamientos largos.</li>
+              <li>Las asociaciones de celíacos locales suelen publicar listados de establecimientos verificados.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="recipe-card" data-title="Primeros pasos para hacer la compra">
+          <button class="recipe-toggle" type="button" aria-expanded="false">
+            <span class="recipe-icon" aria-hidden="true">🛒</span>
+            <span class="recipe-title">
+              <strong>Primeros pasos para hacer la compra</strong>
+              <small>Qué mirar en el supermercado</small>
+            </span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="recipe-content">
+            <ul>
+              <li>Busca un sello o certificación "sin gluten" reconocida, y en su ausencia, revisa siempre la lista de ingredientes.</li>
+              <li>Echa un vistazo a nuestras <a href="#" data-scroll-target="tiendas">tiendas especializadas</a>, con más variedad y personal habituado a resolver dudas.</li>
+              <li>Ten especial cuidado con los productos donde el gluten se esconde más a menudo: embutidos, salsas y especias mezcladas, caldos concentrados, helados, patatas fritas de bolsa saborizadas, chocolates con galleta o barquillo, cerveza y algunos medicamentos o suplementos (por los excipientes).</li>
+              <li>Ante la duda con un producto envasado, usa el <a href="#" data-scroll-target="escaner">escáner de códigos de barras</a> de esta web.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="recipe-card" data-title="Glosario rápido">
+          <button class="recipe-toggle" type="button" aria-expanded="false">
+            <span class="recipe-icon" aria-hidden="true">📖</span>
+            <span class="recipe-title">
+              <strong>Glosario rápido</strong>
+              <small>Términos que verás a menudo</small>
+            </span>
+            <span class="chevron" aria-hidden="true">⌄</span>
+          </button>
+          <div class="recipe-content">
+            <ul>
+              <li><strong>Celiaquía:</strong> enfermedad autoinmune crónica en la que el gluten daña el intestino delgado.</li>
+              <li><strong>Sensibilidad al gluten no celíaca (SGNC):</strong> síntomas similares a la celiaquía pero sin el daño intestinal ni los marcadores propios de esta.</li>
+              <li><strong>Alergia al trigo:</strong> reacción del sistema inmunitario al trigo, distinta de la celiaquía.</li>
+              <li><strong>Contaminación cruzada:</strong> contacto accidental de un alimento sin gluten con restos de otro que sí lo contiene.</li>
+              <li><strong>ppm (partes por millón):</strong> unidad usada para medir la cantidad de gluten en un alimento; el límite legal para "sin gluten" es 20 ppm.</li>
+              <li><strong>Espiga barrada:</strong> símbolo internacional de licencia que certifica controles adicionales sobre un producto sin gluten.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="tiendas" class="page" role="tabpanel" aria-labelledby="tab-tiendas">

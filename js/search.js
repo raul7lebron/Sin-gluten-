@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tienda: "Tienda especializada",
     restaurante: "Restaurante",
     noticia: "Noticia",
+    guia: "Guía",
   };
 
   function escapeHtml(str) {
@@ -67,6 +68,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function buildIndex() {
     const items = [];
+
+    Array.from(document.querySelectorAll("#guiaList .recipe-card")).forEach((card) => {
+      const title = card.dataset.title || card.querySelector(".recipe-title strong")?.textContent || "";
+      const snippetSmall = card.querySelector(".recipe-title small")?.textContent || "";
+      items.push({
+        type: "guia",
+        title,
+        snippet: snippetSmall,
+        haystack: [title, snippetSmall, card.querySelector(".recipe-content")?.textContent || ""].join(" ").toLowerCase(),
+        action: () => openCard("guia", ".recipe-card", title),
+      });
+    });
 
     (typeof recetas !== "undefined" ? recetas : []).forEach((r) => {
       items.push({
