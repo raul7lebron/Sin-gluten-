@@ -18,6 +18,7 @@
 // edita la plantilla y vuelve a ejecutar "npm run prerender".
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const { JSDOM } = require('jsdom');
 
 const ROOT = path.join(__dirname, '..');
@@ -69,6 +70,29 @@ async function main() {
   if (window.__newsRenderPromise) {
     await window.__newsRenderPromise;
   }
+
+  // Cache-busting: a cada <link>/<script> que apunte a un archivo local (css/js
+  // propios, no CDNs externos) se le añade "?v=<hash del contenido>". Sin esto, un
+  // navegador que ya tenga cacheado un styles.css o script antiguo puede seguir
+  // usándolo aunque el HTML nuevo (con markup que depende de esos cambios) ya esté
+  // desplegado, dando lugar a una mezcla incoherente de HTML nuevo + CSS/JS viejo.
+  function fileHash(relPath) {
+    const content = fs.readFileSync(path.join(ROOT, relPath));
+    return crypto.createHash('md5').update(content).digest('hex').slice(0, 10);
+  }
+
+  function addCacheBusting(selector, attr) {
+    window.document.querySelectorAll(selector).forEach((el) => {
+      const value = el.getAttribute(attr);
+      if (!value || /^https?:\/\//.test(value)) return;
+      const relPath = value.split('?')[0];
+      if (!fs.existsSync(path.join(ROOT, relPath))) return;
+      el.setAttribute(attr, `${relPath}?v=${fileHash(relPath)}`);
+    });
+  }
+
+  addCacheBusting('link[rel="stylesheet"]', 'href');
+  addCacheBusting('script[src]', 'src');
 
   const generatedNotice = `<!-- Generado automáticamente por scripts/prerender.js a partir de index.template.html. No edites este archivo a mano: los cambios se perderán en la próxima ejecución de "npm run prerender". -->\n`;
   const html = generatedNotice + dom.serialize();
