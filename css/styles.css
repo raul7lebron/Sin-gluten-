@@ -1554,6 +1554,10 @@ a:focus-visible {
   border-left-color: #f08c00;
 }
 
+.scanner-verdict-probable-sin-gluten {
+  border-left-color: #0c8599;
+}
+
 .scanner-verdict-desconocido {
   border-left-color: var(--text-muted);
 }

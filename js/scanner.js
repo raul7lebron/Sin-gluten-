@@ -91,7 +91,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (traces.includes("en:gluten")) {
       return { tipo: "trazas", icono: "⚠️", texto: "Puede contener trazas de gluten" };
     }
-    return { tipo: "desconocido", icono: "❓", texto: "Sin información suficiente sobre el gluten" };
+    // El fabricante ha declarado alérgenos (obligatorio por ley si los hay) y
+    // el gluten no está entre ellos: no es una certificación "sin gluten",
+    // pero es un dato más fiable que la ausencia total de información.
+    if (allergens.length > 0) {
+      return {
+        tipo: "probable-sin-gluten",
+        icono: "🟡",
+        texto: "El gluten no figura entre los alérgenos declarados (no es una certificación \"sin gluten\")",
+      };
+    }
+    return { tipo: "desconocido", icono: "❓", texto: "El fabricante no ha declarado alérgenos en Open Food Facts: sin información suficiente sobre el gluten" };
   }
 
   function renderLoading() {
@@ -140,6 +150,60 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
+  const NOVA_INFO = {
+    1: { icono: "🌿", texto: "Sin procesar o mínimamente procesado", color: "#1e8f4e" },
+    2: { icono: "🧂", texto: "Ingrediente culinario procesado", color: "#77b52c" },
+    3: { icono: "🥫", texto: "Alimento procesado", color: "#ee8100" },
+    4: { icono: "🏭", texto: "Ultraprocesado", color: "#e63e11" },
+  };
+
+  function renderNovaBadge(novaGroup) {
+    const info = NOVA_INFO[Number(novaGroup)];
+    if (!info) return "";
+    return `
+      <div class="score-badge" style="--score-color: ${info.color}">
+        <span class="score-badge-grade" aria-hidden="true">${novaGroup}</span>
+        <div class="score-badge-info">
+          <span class="score-badge-label"><span aria-hidden="true">${info.icono}</span> Grado NOVA</span>
+          <span class="score-badge-extra">${info.texto}</span>
+        </div>
+      </div>
+    `;
+  }
+
+  // Traducción de los 14 alérgenos de declaración obligatoria en la UE (a
+  // partir de las etiquetas canónicas "en:..." de Open Food Facts, estables
+  // desde hace años). Se usa en vez del campo de texto libre "allergens"/
+  // "traces" porque ese no siempre viene traducido al español.
+  const ALLERGEN_LABELS = {
+    "en:gluten": "Gluten",
+    "en:milk": "Leche",
+    "en:eggs": "Huevo",
+    "en:fish": "Pescado",
+    "en:crustaceans": "Crustáceos",
+    "en:molluscs": "Moluscos",
+    "en:peanuts": "Cacahuetes",
+    "en:soybeans": "Soja",
+    "en:nuts": "Frutos de cáscara",
+    "en:celery": "Apio",
+    "en:mustard": "Mostaza",
+    "en:sesame-seeds": "Sésamo",
+    "en:sulphur-dioxide-and-sulphites": "Sulfitos",
+    "en:lupin": "Altramuces",
+  };
+
+  function translateAllergenTag(tag) {
+    if (ALLERGEN_LABELS[tag]) return ALLERGEN_LABELS[tag];
+    const sinPrefijo = tag.replace(/^\w+:/, "").replace(/-/g, " ");
+    return sinPrefijo.charAt(0).toUpperCase() + sinPrefijo.slice(1);
+  }
+
+  // El gluten ya tiene su propia línea de veredicto más arriba: se excluye
+  // aquí para no repetirlo.
+  function otrosAlergenos(tags) {
+    return (tags || []).filter((t) => t !== "en:gluten").map(translateAllergenTag).join(", ");
+  }
+
   function renderResultado(product, code) {
     const veredicto = veredictoGluten(product);
     const nombre = product.product_name || "Producto sin nombre registrado";
@@ -151,7 +215,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const ecoscoreGrade = product.ecoscore_grade;
     const ecoscoreValor = Number.isFinite(product.ecoscore_score) ? `${product.ecoscore_score}/100` : "";
 
-    const scoresHtml = `${renderScoreBadge("Nutri-Score", "🍎", nutriscoreGrade)}${renderScoreBadge("Green-Score", "🌱", ecoscoreGrade, ecoscoreValor)}`;
+    const scoresHtml = `${renderScoreBadge("Nutri-Score", "🍎", nutriscoreGrade)}${renderScoreBadge("Green-Score", "🌱", ecoscoreGrade, ecoscoreValor)}${renderNovaBadge(product.nova_group)}`;
+
+    const metaPartes = [product.quantity, product.categories ? product.categories.split(",")[0].trim() : ""].filter(Boolean);
+    const metaHtml = metaPartes.length ? `<p class="scanner-brand">${metaPartes.join(" · ")}</p>` : "";
+
+    const alergenos = otrosAlergenos(product.allergens_tags);
+    const trazas = otrosAlergenos(product.traces_tags);
 
     resultBox.hidden = false;
     resultBox.innerHTML = `
@@ -161,11 +231,14 @@ document.addEventListener("DOMContentLoaded", () => {
           <div>
             <h3>${nombre}</h3>
             ${marca ? `<p class="scanner-brand">${marca}</p>` : ""}
+            ${metaHtml}
           </div>
         </div>
         <div class="scanner-verdict"><span class="scanner-icon" aria-hidden="true">${veredicto.icono}</span> ${veredicto.texto}</div>
         ${scoresHtml ? `<div class="scanner-scores">${scoresHtml}</div>` : ""}
         ${ingredientes ? `<p class="scanner-ingredients"><strong>Ingredientes:</strong> ${ingredientes}</p>` : ""}
+        ${alergenos ? `<p class="scanner-ingredients"><strong>Alérgenos declarados:</strong> ${alergenos}</p>` : ""}
+        ${trazas ? `<p class="scanner-ingredients"><strong>Puede contener trazas de:</strong> ${trazas}</p>` : ""}
         <a class="rank-link" href="https://world.openfoodfacts.org/product/${code}" target="_blank" rel="noopener noreferrer">Ver ficha completa en Open Food Facts ↗</a>
       </div>
     `;
