@@ -469,6 +469,23 @@ a:focus-visible {
   background: var(--surface-alt);
 }
 
+/* Provisional hasta disponer de fotografía editorial real (ver informe
+   final): un panel con el mismo color de marca en vez de una foto
+   genérica de stock. */
+.hero-media-placeholder {
+  aspect-ratio: 4 / 4.6;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--primary-light), var(--surface-alt));
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-media-placeholder span {
+  font-size: 4.5rem;
+}
+
 .home-section {
   padding: clamp(44px, 7vw, 80px) 0;
 }
