@@ -26,9 +26,10 @@ const TEMPLATE_PATH = path.join(ROOT, 'index.template.html');
 const OUTPUT_PATH = path.join(ROOT, 'index.html');
 const NEWS_PATH = path.join(ROOT, 'data', 'news.json');
 const SITE_URL = 'https://www.libredetrigo.com';
+const buildGuias = require('./build-guias.js');
 
-// URLs indexables reales del sitio. Se amplía a mano según se crean páginas
-// estáticas nuevas (ver scripts/build-guias.js para las páginas de guías).
+// URLs indexables reales del sitio: la home, más las páginas de guía y de
+// cluster que genera build-guias.js (se ejecuta como parte de este script).
 const SITEMAP_PAGES = [{ path: '/', changefreq: 'daily', priority: '1.0' }];
 
 // Orden exacto en el que se cargan en el navegador real (ver index.template.html).
@@ -104,20 +105,24 @@ async function main() {
   fs.writeFileSync(OUTPUT_PATH, `${html}\n`);
   console.log(`[prerender] index.html generado (${(html.length / 1024).toFixed(0)} KB) a partir de index.template.html`);
 
-  writeSitemap();
+  const guiaUrls = buildGuias.main();
+  writeSitemap(guiaUrls);
 
   window.close();
 }
 
 // sitemap.xml con fecha de build real, para que lastmod no quede desactualizado.
-function writeSitemap() {
+function writeSitemap(extraUrls) {
   const today = new Date().toISOString().slice(0, 10);
-  const urlsXml = SITEMAP_PAGES.map(
+  const pages = SITEMAP_PAGES.concat(
+    (extraUrls || []).map((p) => ({ path: p, changefreq: 'monthly', priority: '0.7' }))
+  );
+  const urlsXml = pages.map(
     (p) => `  <url>\n    <loc>${SITE_URL}${p.path}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${p.changefreq}</changefreq>\n    <priority>${p.priority}</priority>\n  </url>`
   ).join('\n');
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urlsXml}\n</urlset>\n`;
   fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), xml);
-  console.log(`[prerender] sitemap.xml generado con ${SITEMAP_PAGES.length} URL(s)`);
+  console.log(`[prerender] sitemap.xml generado con ${pages.length} URL(s)`);
 }
 
 main()

@@ -69,15 +69,18 @@ document.addEventListener("DOMContentLoaded", () => {
   function buildIndex() {
     const items = [];
 
-    Array.from(document.querySelectorAll("#guiaList .recipe-card")).forEach((card) => {
-      const title = card.dataset.title || card.querySelector(".recipe-title strong")?.textContent || "";
-      const snippetSmall = card.querySelector(".recipe-title small")?.textContent || "";
+    Array.from(document.querySelectorAll("#guiaList .guide-card")).forEach((card) => {
+      const title = card.querySelector("h3")?.textContent || "";
+      const category = card.querySelector(".guide-category")?.textContent || "";
+      const summary = card.querySelector("p")?.textContent || "";
       items.push({
         type: "guia",
         title,
-        snippet: snippetSmall,
-        haystack: [title, snippetSmall, card.querySelector(".recipe-content")?.textContent || ""].join(" ").toLowerCase(),
-        action: () => openCard("guia", ".recipe-card", title),
+        snippet: category,
+        haystack: [title, category, summary].join(" ").toLowerCase(),
+        action: () => {
+          window.location.href = card.href;
+        },
       });
     });
 
