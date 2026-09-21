@@ -14,7 +14,6 @@
 const { SITE_URL, escapeHtml, fileHash, headerHtml, searchOverlayHtml, footerHtml, adsenseHeadHtml, writeFile } = require("./site-layout.js");
 
 const TODAY = new Date().toISOString().slice(0, 10);
-const UPDATED_LABEL = "21 de septiembre de 2026";
 
 const CLUSTERS = {
   celiaquia: { label: "Celiaquía", path: "/celiaquia/" },
@@ -411,7 +410,6 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
     <span class="eyebrow">${escapeHtml(CLUSTERS[guia.cluster].label)}</span>
     <h1 class="section-title">${escapeHtml(guia.title)}</h1>
     <p class="article-lead">${escapeHtml(guia.lead)}</p>
-    <p class="article-meta">Actualizado: ${UPDATED_LABEL}</p>
 
     <div class="article-body legal-content">
       ${guia.body}

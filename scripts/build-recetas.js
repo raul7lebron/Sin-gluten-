@@ -15,15 +15,7 @@
 // después de cambiar js/data.js.
 const { SITE_URL, escapeHtml, fileHash, headerHtml, searchOverlayHtml, footerHtml, adsenseHeadHtml, writeFile } = require("./site-layout.js");
 
-const TODAY = new Date().toISOString().slice(0, 10);
 const RECETAS_PATH = "/recetas/";
-
-const MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
-function formatDateEs(isoDate) {
-  const [y, m, d] = isoDate.split("-").map(Number);
-  return `${d} de ${MESES[m - 1]} de ${y}`;
-}
-const UPDATED_LABEL = formatDateEs(TODAY);
 
 function urlFor(receta) {
   return `${RECETAS_PATH}${receta.slug}/`;
@@ -159,7 +151,6 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
     <span class="eyebrow">${receta.icon} Receta</span>
     <h1 class="section-title">${escapeHtml(receta.title)}</h1>
     <p class="article-lead">${escapeHtml(receta.meta)}</p>
-    <p class="article-meta">Actualizado: ${UPDATED_LABEL}</p>
 
     <div class="article-body legal-content">
       <h2>Ingredientes</h2>
