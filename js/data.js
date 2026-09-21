@@ -2852,6 +2852,52 @@ const restaurantesPorCiudad = {
   },
 };
 
+// Hoteles con acuerdo o experiencia contrastada en atención a celíacos
+// (desayuno y/o menú sin gluten), uno por ciudad. Investigados vía búsqueda
+// web en septiembre de 2026: nombres y cadenas verificados, pero las notas y
+// el nº de reseñas proceden en su mayoría de TripAdvisor/Booking (no de una
+// consulta directa a Google Maps) — trátalas como orientativas
+// ("aprox: true" cuando la fuente lo advierte explícitamente). Antes de
+// reservar, avisa siempre al hotel de que viajas siendo celíaco.
+const hotelesPorCiudad = {
+  madrid: {
+    label: "Madrid",
+    hoteles: [
+      { nombre: "Hospes Puerta de Alcalá", nota: 4.0, resenas: null, zona: "Retiro, junto a la Puerta de Alcalá", desc: "Cadena Hospes, con acuerdo con la Asociación de Celíacos de Madrid: personal formado y rincón sin gluten en el desayuno.", aprox: true },
+    ],
+  },
+  sevilla: {
+    label: "Sevilla",
+    hoteles: [
+      { nombre: "Hospes Las Casas del Rey de Baeza", nota: 4.0, resenas: 1620, zona: "Santa Catalina, casco histórico", desc: "Antiguas casas señoriales reconvertidas en hotel, con el mismo acuerdo de la cadena Hospes para atender a celíacos en desayuno y restaurante.", aprox: true },
+    ],
+  },
+  alicante: {
+    label: "Alicante",
+    hoteles: [
+      { nombre: "Hospes Amérigo", nota: 4.5, resenas: 2077, zona: "Centro (Calle Rafael Altamira)", desc: "Antiguo convento dominico convertido en hotel de diseño; ofrece opciones sin gluten en el desayuno y la carta del restaurante.", aprox: true },
+    ],
+  },
+  palma: {
+    label: "Palma de Mallorca",
+    hoteles: [
+      { nombre: "Hospes Maricel & Spa", nota: 4.0, resenas: 1608, zona: "Cas Català, junto al mar", desc: "Hotel frente al mar de la cadena Hospes, con protocolos y personal formado para atender a huéspedes celíacos.", aprox: true },
+    ],
+  },
+  zaragoza: {
+    label: "Zaragoza",
+    hoteles: [
+      { nombre: "Hotel Sauce", nota: 4.6, resenas: 2109, zona: "Centro, junto a la Basílica del Pilar", desc: "Hotel familiar en el centro histórico, conocido por su desayuno casero con amplias opciones sin gluten y repostería propia apta para celíacos." },
+    ],
+  },
+  granada: {
+    label: "Granada",
+    hoteles: [
+      { nombre: "Parador de Granada", nota: 4.4, resenas: null, zona: "Recinto de la Alhambra", desc: "Antiguo convento de San Francisco dentro de la Alhambra; la red de Paradores tiene acuerdo con FACE y ofrece el \"Rincón de los celíacos\" en el desayuno." },
+    ],
+  },
+};
+
 // Tiendas cuyo negocio principal es la venta de productos sin gluten (no
 // supermercados generalistas). Investigadas vía búsqueda web en septiembre de
 // 2026: nombres y ubicaciones verificados, pero las notas de Google y el nº de

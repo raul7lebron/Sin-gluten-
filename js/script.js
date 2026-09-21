@@ -279,6 +279,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const hotelCiudadFilter = document.getElementById("hotelCiudadFilter");
+  if (hotelCiudadFilter) {
+    hotelCiudadFilter.addEventListener("click", (event) => {
+      const chip = event.target.closest(".filter-chip");
+      if (!chip) return;
+
+      hotelCiudadFilter.querySelectorAll(".filter-chip").forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderHoteles(chip.dataset.ciudad);
+    });
+  }
+
   const recetaCategoriaFilter = document.getElementById("recetaCategoriaFilter");
   const recetaIngredienteSearch = document.getElementById("recetaIngredienteSearch");
   if (recetaCategoriaFilter && recetaIngredienteSearch) {

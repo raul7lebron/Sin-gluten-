@@ -44,6 +44,7 @@ function headerHtml() {
         <a class="pill-btn" href="${SITE_URL}/#nutricion"><span class="pill-icon" aria-hidden="true">🥗</span>Tabla nutricional</a>
         <a class="pill-btn" href="${SITE_URL}/#tiendas"><span class="pill-icon" aria-hidden="true">🏬</span>Tiendas especializadas</a>
         <a class="pill-btn" href="${SITE_URL}/#restaurantes"><span class="pill-icon" aria-hidden="true">📍</span>Comer fuera</a>
+        <a class="pill-btn" href="${SITE_URL}/#hoteles"><span class="pill-icon" aria-hidden="true">🛏️</span>Hoteles</a>
         <a class="pill-btn" href="${SITE_URL}/#escaner"><span class="pill-icon" aria-hidden="true">📷</span>Escáner</a>
         <a class="pill-btn" href="${SITE_URL}/#lista-compra"><span class="pill-icon" aria-hidden="true">🛍️</span>Lista de la compra</a>
         <a class="pill-btn" href="${SITE_URL}/vivir-sin-gluten/productos-recomendados/"><span class="pill-icon" aria-hidden="true">🔪</span>Productos recomendados</a>
@@ -85,6 +86,7 @@ function footerHtml() {
         <a href="${SITE_URL}/#guia">Guías</a>
         <a href="${SITE_URL}/#tiendas">Tiendas especializadas</a>
         <a href="${SITE_URL}/#restaurantes">Restaurantes</a>
+        <a href="${SITE_URL}/#hoteles">Hoteles</a>
         <a href="${SITE_URL}/#nutricion">Tabla nutricional</a>
         <a href="${SITE_URL}/#actualidad">Actualidad</a>
       </div>

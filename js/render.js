@@ -255,6 +255,47 @@ function renderRestaurantes(ciudadKey) {
     .join("");
 }
 
+function renderHotelCiudadChips() {
+  const chips = document.getElementById("hotelCiudadFilter");
+  if (!chips) return;
+  const cityKeys = Object.keys(hotelesPorCiudad);
+  chips.innerHTML = cityKeys
+    .map(
+      (key, i) =>
+        `<button class="filter-chip${i === 0 ? " active" : ""}" data-ciudad="${key}" type="button">${hotelesPorCiudad[key].label}</button>`
+    )
+    .join("");
+}
+
+function renderHoteles(ciudadKey) {
+  const list = document.getElementById("hotelesList");
+  const ciudad = hotelesPorCiudad[ciudadKey];
+  if (!list || !ciudad) return;
+
+  list.innerHTML = ciudad.hoteles
+    .map((h, i) => {
+      const notaTexto = `${h.aprox ? "≈ " : ""}${h.nota.toFixed(1)}`;
+      const resenasTexto = h.resenas ? `${h.resenas.toLocaleString("es-ES")} reseñas` : "nº de reseñas no confirmado";
+      const mapsQuery = encodeURIComponent(`${h.nombre} ${ciudad.label}`);
+      const topClass = i < 3 ? ` rank-top-${i + 1}` : "";
+      return `
+        <article class="rank-card" data-title="${h.nombre}">
+          <span class="rank-number${topClass}">${i + 1}</span>
+          <div class="rank-info">
+            <div class="rank-header">
+              <h3>${h.nombre}</h3>
+              <span class="rank-rating">⭐ ${notaTexto}</span>
+            </div>
+            <p class="rank-meta">${h.zona} · ${resenasTexto}</p>
+            <p class="rank-desc">${h.desc}</p>
+            <a class="rank-link" href="https://www.google.com/maps/search/?api=1&query=${mapsQuery}" target="_blank" rel="noopener noreferrer">Ver en Google Maps ↗</a>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+}
+
 function renderNutriFilter() {
   const chips = document.getElementById("nutriFilter");
   if (!chips) return;
@@ -310,5 +351,7 @@ renderPlanMeta(primerObjetivo, primerKcal);
 renderPlanDias(primerObjetivo, primerKcal, 0);
 renderCiudadChips();
 renderRestaurantes(Object.keys(restaurantesPorCiudad)[0]);
+renderHotelCiudadChips();
+renderHoteles(Object.keys(hotelesPorCiudad)[0]);
 renderNutriFilter();
 renderNutricion();
