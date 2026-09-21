@@ -2832,6 +2832,24 @@ const restaurantesPorCiudad = {
       { nombre: "Lino Gastronomic", nota: 4.4, resenas: null, zona: "Casco histórico", desc: "Carta de arroces con opciones aptas para celíacos." },
     ],
   },
+  murcia: {
+    label: "Murcia",
+    restaurantes: [
+      { nombre: "Polea Restaurante", nota: 4.8, resenas: 89, zona: "Barrio del Carmen", desc: "Alta cocina de mercado con menú degustación que cambia a diario y solo usa pescado de pesca sostenible; incluido en el listado de restaurantes aptos para celíacos de TheFork Murcia.", aprox: true },
+      { nombre: "Udon Murcia", nota: 4.6, resenas: 2675, zona: "Centro (San Cristóbal)", desc: "Especialistas en noodles, ramen y cocina asiática recién hecha; forma parte de los restaurantes con opciones sin gluten señalados en Murcia, aunque conviene confirmar el plato en sala.", aprox: true },
+      { nombre: "Por Herencia", nota: 4.4, resenas: 634, zona: "Barrio Santa Eulalia, junto a la Catedral", desc: "Cocina murciana de autor con menú degustación (verduras, embutidos y pescado del Mar Menor), reconocida por la Guía Michelin y presente en los listados de restaurantes aptos para celíacos de Murcia." },
+    ],
+  },
+  palma: {
+    label: "Palma de Mallorca",
+    restaurantes: [
+      { nombre: "Avocado Mallorca", nota: 4.8, resenas: null, zona: "Cala Major", desc: "Cafetería-brunch 100% sin gluten con opciones vegetarianas y veganas; toda la carta, de los wraps a los dulces, está libre de gluten." },
+      { nombre: "Harajuku Gastro Sushi", nota: 4.7, resenas: 718, zona: "Ponent", desc: "Japonés de fusión con técnicas tradicionales y producto de calidad; uno de los restaurantes sin gluten mejor valorados de Palma." },
+      { nombre: "Sweet Violet", nota: 4.7, resenas: 93, zona: "Jesús, cerca del centro", desc: "Cafetería-pastelería 100% sin gluten avalada por ACIB, con bollería artesana, panes y brunch aptos para celíacos." },
+      { nombre: "Il Capriccio", nota: 4.7, resenas: null, zona: "Llevant, cerca de Plaza España", desc: "Pizzería y restaurante 100% sin gluten con cerveza artesana sin gluten elaborada en Mallorca y protocolos contra la contaminación cruzada.", aprox: true },
+      { nombre: "Forn de Sant Joan", nota: 4.4, resenas: null, zona: "La Llotja-Born", desc: "Cocina mediterránea de tapas con variedad de platos sin gluten en carta, del entrante al postre." },
+    ],
+  },
 };
 
 // Tiendas cuyo negocio principal es la venta de productos sin gluten (no
