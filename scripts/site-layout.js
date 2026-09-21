@@ -29,6 +29,9 @@ function headerHtml() {
         <span class="logo-tagline">Guía práctica para vivir sin gluten</span>
       </a>
       <div class="header-actions">
+        <button class="header-search-btn" id="searchToggle" type="button" aria-label="Buscar guías y recetas" aria-haspopup="dialog">
+          <span aria-hidden="true">🔍</span>
+        </button>
         <div class="tools-menu-wrap">
           <button class="header-search-btn tools-toggle" id="toolsToggle" type="button" aria-label="Más herramientas" aria-haspopup="true" aria-expanded="false" aria-controls="toolsMenu">
             <span aria-hidden="true">⚙️</span>
@@ -55,6 +58,23 @@ function headerHtml() {
       </nav>
     </div>
   </header>`;
+}
+
+// Modal de búsqueda para las páginas estáticas: solo busca en guías y
+// recetas (js/static-search.js), no en todo el contenido de la SPA — ver esa
+// nota en prerender.js, función writeSearchIndex.
+function searchOverlayHtml() {
+  return `
+  <div class="search-overlay" id="searchOverlay" hidden>
+    <div class="search-modal" role="dialog" aria-modal="true" aria-label="Buscar guías y recetas">
+      <div class="search-modal-input-row">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input type="search" id="searchModalInput" placeholder="Buscar guías y recetas…" aria-label="Buscar guías y recetas" autocomplete="off" />
+        <button class="search-modal-close" id="searchModalClose" type="button" aria-label="Cerrar búsqueda">✕</button>
+      </div>
+      <div class="search-modal-results" id="searchModalResults"></div>
+    </div>
+  </div>`;
 }
 
 function footerHtml() {
@@ -136,4 +156,4 @@ function writeFile(urlPath, html) {
   fs.writeFileSync(filePath, html);
 }
 
-module.exports = { ROOT, SITE_URL, escapeHtml, fileHash, headerHtml, footerHtml, adsenseHeadHtml, writeFile };
+module.exports = { ROOT, SITE_URL, escapeHtml, fileHash, headerHtml, searchOverlayHtml, footerHtml, adsenseHeadHtml, writeFile };

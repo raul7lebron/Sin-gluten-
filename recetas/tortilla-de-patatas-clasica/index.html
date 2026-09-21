@@ -116,6 +116,9 @@
         <span class="logo-tagline">Guía práctica para vivir sin gluten</span>
       </a>
       <div class="header-actions">
+        <button class="header-search-btn" id="searchToggle" type="button" aria-label="Buscar guías y recetas" aria-haspopup="dialog">
+          <span aria-hidden="true">🔍</span>
+        </button>
         <div class="tools-menu-wrap">
           <button class="header-search-btn tools-toggle" id="toolsToggle" type="button" aria-label="Más herramientas" aria-haspopup="true" aria-expanded="false" aria-controls="toolsMenu">
             <span aria-hidden="true">⚙️</span>
@@ -142,6 +145,16 @@
       </nav>
     </div>
   </header>
+  <div class="search-overlay" id="searchOverlay" hidden>
+    <div class="search-modal" role="dialog" aria-modal="true" aria-label="Buscar guías y recetas">
+      <div class="search-modal-input-row">
+        <span class="search-modal-icon" aria-hidden="true">🔍</span>
+        <input type="search" id="searchModalInput" placeholder="Buscar guías y recetas…" aria-label="Buscar guías y recetas" autocomplete="off" />
+        <button class="search-modal-close" id="searchModalClose" type="button" aria-label="Cerrar búsqueda">✕</button>
+      </div>
+      <div class="search-modal-results" id="searchModalResults"></div>
+    </div>
+  </div>
   <main class="container article-page">
     <span class="eyebrow">🍳 Receta</span>
     <h1 class="section-title">Tortilla de patatas clásica</h1>
@@ -227,6 +240,7 @@
     </div>
   </div>
   <script src="https://www.libredetrigo.com/js/analytics.js?v=900a6b9715"></script>
+  <script src="https://www.libredetrigo.com/js/static-search.js?v=c2246249f7"></script>
   <script src="https://www.libredetrigo.com/js/static-page.js?v=c8c8eeb6de"></script>
 </body>
 </html>

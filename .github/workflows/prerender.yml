@@ -33,7 +33,7 @@ jobs:
 
       - name: Publicar cambios generados si los hay
         run: |
-          git add index.html sitemap.xml celiaquia vivir-sin-gluten etiquetado-sin-gluten restaurantes-sin-gluten recetas
+          git add index.html sitemap.xml data/search-index.json celiaquia vivir-sin-gluten etiquetado-sin-gluten restaurantes-sin-gluten recetas
           if git diff --cached --quiet; then
             echo "Sin cambios generados"
             exit 0

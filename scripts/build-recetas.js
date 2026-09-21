@@ -13,7 +13,7 @@
 //
 // No edites los .html generados a mano: vuelve a ejecutar "npm run prerender"
 // después de cambiar js/data.js.
-const { SITE_URL, escapeHtml, fileHash, headerHtml, footerHtml, adsenseHeadHtml, writeFile } = require("./site-layout.js");
+const { SITE_URL, escapeHtml, fileHash, headerHtml, searchOverlayHtml, footerHtml, adsenseHeadHtml, writeFile } = require("./site-layout.js");
 
 const TODAY = new Date().toISOString().slice(0, 10);
 const RECETAS_PATH = "/recetas/";
@@ -154,7 +154,7 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
   <link rel="stylesheet" href="${SITE_URL}/css/styles.css?v=${cssHash}" />
   ${adsenseHeadHtml()}
 </head>
-<body>${headerHtml()}
+<body>${headerHtml()}${searchOverlayHtml()}
   <main class="container article-page">
     <span class="eyebrow">${receta.icon} Receta</span>
     <h1 class="section-title">${escapeHtml(receta.title)}</h1>
@@ -171,6 +171,7 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
     ${relatedHtml(receta, recetas)}
   </main>${footerHtml()}
   <script src="${SITE_URL}/js/analytics.js?v=${fileHash("js/analytics.js")}"></script>
+  <script src="${SITE_URL}/js/static-search.js?v=${fileHash("js/static-search.js")}"></script>
   <script src="${SITE_URL}/js/static-page.js?v=${jsHash}"></script>
 </body>
 </html>
@@ -228,7 +229,7 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
   <link rel="stylesheet" href="${SITE_URL}/css/styles.css?v=${cssHash}" />
   ${adsenseHeadHtml()}
 </head>
-<body>${headerHtml()}
+<body>${headerHtml()}${searchOverlayHtml()}
   <main class="container article-page">
     <span class="eyebrow">Recetas</span>
     <h1 class="section-title">Recetas sin gluten</h1>
@@ -237,6 +238,7 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
     <div class="guide-grid hub-grid">${cards}</div>
   </main>${footerHtml()}
   <script src="${SITE_URL}/js/analytics.js?v=${fileHash("js/analytics.js")}"></script>
+  <script src="${SITE_URL}/js/static-search.js?v=${fileHash("js/static-search.js")}"></script>
   <script src="${SITE_URL}/js/static-page.js?v=${jsHash}"></script>
 </body>
 </html>

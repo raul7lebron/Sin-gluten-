@@ -118,8 +118,33 @@ async function main() {
   const guiaUrls = buildGuias.main();
   const recetaUrls = buildRecetas.main(recetasData);
   writeSitemap(guiaUrls.concat(recetaUrls));
+  writeSearchIndex(recetasData);
 
   window.close();
+}
+
+// Índice de búsqueda ligero (solo guías y recetas, no los ~200 KB de
+// js/data.js con dietas/tabla nutricional/tiendas/restaurantes) para que las
+// páginas estáticas de guía y receta puedan tener su propio buscador sin
+// cargar datos que no necesitan. Lo consume js/static-search.js.
+function writeSearchIndex(recetas) {
+  const guiaItems = buildGuias.GUIAS.map((g) => ({
+    type: 'guia',
+    title: g.title,
+    snippet: g.lead,
+    haystack: [g.title, g.lead, buildGuias.CLUSTERS[g.cluster].label].join(' ').toLowerCase(),
+    url: `${SITE_URL}${buildGuias.urlFor(g)}`,
+  }));
+  const recetaItems = recetas.map((r) => ({
+    type: 'receta',
+    title: r.title,
+    snippet: r.meta,
+    haystack: [r.title, r.meta, ...(r.ingredientes || [])].join(' ').toLowerCase(),
+    url: `${SITE_URL}${buildRecetas.urlFor(r)}`,
+  }));
+  const items = guiaItems.concat(recetaItems);
+  fs.writeFileSync(path.join(ROOT, 'data', 'search-index.json'), JSON.stringify(items));
+  console.log(`[prerender] data/search-index.json generado (${items.length} elementos)`);
 }
 
 // sitemap.xml con fecha de build real, para que lastmod no quede desactualizado.

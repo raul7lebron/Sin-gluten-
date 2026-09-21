@@ -30,7 +30,7 @@ jobs:
 
       - name: Publicar cambios si algo cambió
         run: |
-          git add data/news.json index.html sitemap.xml
+          git add data/news.json data/search-index.json index.html sitemap.xml
           if git diff --cached --quiet; then
             echo "Sin cambios en data/news.json, index.html ni sitemap.xml"
             exit 0

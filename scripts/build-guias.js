@@ -11,7 +11,7 @@
 //
 // No edites los .html generados a mano: vuelve a ejecutar "npm run build-guias"
 // después de cambiar los datos de este archivo.
-const { SITE_URL, escapeHtml, fileHash, headerHtml, footerHtml, adsenseHeadHtml, writeFile } = require("./site-layout.js");
+const { SITE_URL, escapeHtml, fileHash, headerHtml, searchOverlayHtml, footerHtml, adsenseHeadHtml, writeFile } = require("./site-layout.js");
 
 const TODAY = new Date().toISOString().slice(0, 10);
 const UPDATED_LABEL = "21 de septiembre de 2026";
@@ -406,7 +406,7 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
   <link rel="stylesheet" href="${SITE_URL}/css/styles.css?v=${cssHash}" />
   ${adsenseHeadHtml()}
 </head>
-<body>${headerHtml()}
+<body>${headerHtml()}${searchOverlayHtml()}
   <main class="container article-page">
     <span class="eyebrow">${escapeHtml(CLUSTERS[guia.cluster].label)}</span>
     <h1 class="section-title">${escapeHtml(guia.title)}</h1>
@@ -420,6 +420,7 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
     ${relatedHtml(guia)}
   </main>${footerHtml()}
   <script src="${SITE_URL}/js/analytics.js?v=${fileHash("js/analytics.js")}"></script>
+  <script src="${SITE_URL}/js/static-search.js?v=${fileHash("js/static-search.js")}"></script>
   <script src="${SITE_URL}/js/static-page.js?v=${jsHash}"></script>
 </body>
 </html>
@@ -479,7 +480,7 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
   <link rel="stylesheet" href="${SITE_URL}/css/styles.css?v=${cssHash}" />
   ${adsenseHeadHtml()}
 </head>
-<body>${headerHtml()}
+<body>${headerHtml()}${searchOverlayHtml()}
   <main class="container article-page">
     <span class="eyebrow">Guías</span>
     <h1 class="section-title">${escapeHtml(cluster.label)}</h1>
@@ -488,6 +489,7 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
     <div class="guide-grid hub-grid">${cards}</div>
   </main>${footerHtml()}
   <script src="${SITE_URL}/js/analytics.js?v=${fileHash("js/analytics.js")}"></script>
+  <script src="${SITE_URL}/js/static-search.js?v=${fileHash("js/static-search.js")}"></script>
   <script src="${SITE_URL}/js/static-page.js?v=${jsHash}"></script>
 </body>
 </html>
