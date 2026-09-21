@@ -191,7 +191,7 @@ const GUIAS = [
     cluster: "vivir-sin-gluten",
     icon: "🔪",
     title: "Utensilios de cocina que ayudan a evitar la contaminación cruzada",
-    description: "Qué utensilios de cocina facilitan evitar la contaminación cruzada en una cocina compartida (airfryer de dos cestas, tabla de cortar de metal, recipientes herméticos...) y por qué ayuda cada uno.",
+    description: "Qué utensilios de cocina facilitan evitar la contaminación cruzada en una cocina compartida (airfryer de dos cestas, bolsas de tostadora, tabla de cortar de metal, colador exclusivo, botes individuales para untables...) y por qué ayuda cada uno.",
     lead: "No hace falta comprarlo todo de golpe: estos son los utensilios que más ayudan a evitar la contaminación cruzada en una cocina donde conviven productos con y sin gluten, y el motivo concreto de cada uno.",
     body: `
       <p>La guía de <a href="${SITE_URL}/vivir-sin-gluten/contaminacion-cruzada/">contaminación cruzada en casa</a> explica los riesgos más habituales. Esta página se centra en algo más concreto: qué utensilios facilitan evitarlos, y por qué ayuda cada uno específicamente.</p>
@@ -199,11 +199,20 @@ const GUIAS = [
       <h2>Airfryer con dos cestas independientes</h2>
       <p>Si en casa se cocina con y sin gluten, una freidora de aire con dos cestas separadas (que no comparten resistencia ni bandeja) evita el problema habitual de una sola cesta: las migas de un rebozado con gluten quedan pegadas y contaminan lo siguiente que se fríe, por mucho que se limpie entre usos.</p>
 
+      <h2>Bolsas reutilizables para tostadora</h2>
+      <p>Si no quieres tener una segunda tostadora, una bolsa reutilizable de tostadora (de fibra de vidrio con PTFE, apta para lavavajillas) resuelve el mismo problema: dentro de la bolsa, el pan sin gluten no toca las resistencias ni las migas que quedan atrapadas en el fondo del aparato.</p>
+
       <h2>Tabla de cortar de metal o vidrio</h2>
       <p>Una tabla de madera, por bien que se lave, tiene poros microscópicos donde pueden quedar restos de harina o migas después de cortar pan o masa. El metal y el vidrio son superficies no porosas: lo que se limpia, se limpia del todo. Es la misma razón por la que conviene tener una tabla exclusiva y, si es de madera, no usarla nunca para cortar pan con gluten.</p>
 
+      <h2>Colador de pasta exclusivo</h2>
+      <p>Los agujeros de un colador metálico son difíciles de limpiar a fondo y pueden retener restos diminutos de pasta con gluten de un uso anterior. Tener un colador aparte, solo para pasta o verdura sin gluten, evita depender de que el fregado haya sido perfecto cada vez.</p>
+
       <h2>Recipientes herméticos y etiquetados para la despensa</h2>
       <p>Guardar la harina, la pasta o el pan sin gluten en botes herméticos y claramente etiquetados evita dos problemas a la vez: que caiga harina con gluten desde una balda superior, y que alguien coja por error el paquete equivocado en una despensa compartida.</p>
+
+      <h2>Botes o dosificadores individuales para untables</h2>
+      <p>La mantequilla, la mermelada, la crema de cacao o el paté son un foco de contaminación cruzada muy habitual: basta un cuchillo que antes ha tocado pan con gluten para contaminar todo el bote al volver a untar. Tener un bote individual (o un dosificador tipo squeeze) solo para untar sin gluten evita ese doble contacto sin tener que estar pendiente cada vez de con qué cuchillo se ha untado antes.</p>
 
       <h2>Utensilios de un color distinto para identificarlos a simple vista</h2>
       <p>Tener una espátula, unas pinzas o un cucharón de un color llamativo reservados solo para cocinar sin gluten hace que, en una cocina con prisas o con varias personas cocinando, sea evidente cuál es cuál sin tener que preguntar cada vez.</p>
