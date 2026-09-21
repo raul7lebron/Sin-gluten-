@@ -95,31 +95,22 @@ function renderRecipeCard(item, extraClass, listHtml, dataKey) {
   `;
 }
 
-function recetaMatches(receta, query) {
-  if (!query) return true;
-  const haystack = [receta.title, ...receta.ingredientes].join(" ").toLowerCase();
-  return haystack.includes(query);
-}
-
-function renderRecetas(query = "") {
+// Cada receta tiene su propia página real en /recetas/<slug>/ (ver
+// scripts/build-recetas.js), así que aquí solo se muestra un directorio de
+// enlaces hacia ellas, igual que la pestaña "Guías" enlaza a sus páginas.
+function renderRecetasDirectory() {
   const list = document.getElementById("recetasList");
-  const empty = document.getElementById("recetasEmpty");
-  const normalizedQuery = query.trim().toLowerCase();
-  const filtered = recetas.filter((receta) => recetaMatches(receta, normalizedQuery));
-
-  list.innerHTML = filtered
-    .map((receta) => {
-      const content = `
-        <h4>Ingredientes</h4>
-        <ul>${receta.ingredientes.map((i) => `<li>${highlightShoppable(i)}</li>`).join("")}</ul>
-        <h4>Preparación</h4>
-        <ol>${receta.pasos.map((p) => `<li>${p}</li>`).join("")}</ol>
-      `;
-      return renderRecipeCard(receta, "", content);
-    })
+  if (!list) return;
+  list.innerHTML = recetas
+    .map(
+      (receta) => `
+        <a class="guide-card" href="https://www.libredetrigo.com/recetas/${receta.slug}/">
+          <span class="guide-category">${receta.icon} Receta</span>
+          <h3>${receta.title}</h3>
+          <p>${receta.meta}</p>
+        </a>`
+    )
     .join("");
-
-  empty.hidden = filtered.length > 0;
 }
 
 function renderObjetivoFilter() {
@@ -266,7 +257,7 @@ function renderNutricion(categoria = "todos") {
 }
 
 renderTiendas();
-renderRecetas();
+renderRecetasDirectory();
 renderObjetivoFilter();
 const primerObjetivo = Object.keys(planesPorObjetivo)[0];
 const primerKcal = Object.keys(planesPorObjetivo[primerObjetivo].planes)[0];

@@ -122,29 +122,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Enlaces de la portada que, además de cambiar de pestaña, abren y
-  // enseñan una tarjeta concreta (p. ej. "Empieza por aquí" -> una guía
-  // específica, o un plato destacado -> su receta en la pestaña Recetas).
-  function openSpecificCard(title) {
-    setTimeout(() => {
-      const card = Array.from(document.querySelectorAll(".page.active .recipe-card")).find((c) => c.dataset.title === title);
-      if (!card) return;
-      const toggleBtn = card.querySelector(".recipe-toggle");
-      if (toggleBtn && !card.classList.contains("open")) toggleBtn.click();
-      card.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 150);
-  }
-
   document.querySelectorAll("[data-scroll-target]").forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       activateTab(link.dataset.scrollTarget);
       closeMobileMenu();
-      if (link.dataset.openCard) {
-        openSpecificCard(link.dataset.openCard);
-      } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   });
 
@@ -180,14 +163,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   bindRecipeToggles();
-
-  const recetaSearch = document.getElementById("recetaSearch");
-  if (recetaSearch) {
-    recetaSearch.addEventListener("input", () => {
-      renderRecetas(recetaSearch.value);
-      bindRecipeToggles();
-    });
-  }
 
   const objetivoFilter = document.getElementById("objetivoFilter");
   const calorieFilter = document.getElementById("calorieFilter");

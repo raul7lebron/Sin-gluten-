@@ -90,7 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
         title: r.title,
         snippet: r.meta,
         haystack: [r.title, r.meta, ...(r.ingredientes || [])].join(" ").toLowerCase(),
-        action: () => openCard("recetas", ".recipe-card", r.title),
+        action: () => {
+          window.location.href = `https://www.libredetrigo.com/recetas/${r.slug}/`;
+        },
       });
     });
 

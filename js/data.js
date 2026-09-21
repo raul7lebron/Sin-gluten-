@@ -729,6 +729,7 @@ const recetas = [
   {
     icon: "🍳",
     title: "Tortilla de patatas clásica",
+    slug: "tortilla-de-patatas-clasica",
     meta: "~320 kcal · 35 min · Para 4 personas",
     ingredientes: ["4 patatas medianas", "5 huevos", "1 cebolla", "Aceite de oliva virgen extra", "Sal"],
     pasos: [
@@ -745,6 +746,7 @@ const recetas = [
   {
     icon: "🍗",
     title: "Pollo al horno con verduras",
+    slug: "pollo-al-horno-con-verduras",
     meta: "~410 kcal · 45 min · Para 4 personas",
     ingredientes: ["4 muslos de pollo", "1 calabacín", "1 pimiento rojo", "2 patatas", "Aceite de oliva y romero"],
     pasos: [
@@ -761,6 +763,7 @@ const recetas = [
   {
     icon: "🍤",
     title: "Arroz con verduras y gambas",
+    slug: "arroz-con-verduras-y-gambas",
     meta: "~380 kcal · 30 min · Para 4 personas",
     ingredientes: ["300 g de arroz", "200 g de gambas peladas", "1 pimiento verde", "Guisantes", "Caldo de verduras sin gluten"],
     pasos: [
@@ -776,6 +779,7 @@ const recetas = [
   {
     icon: "🥑",
     title: "Ensalada de quinoa y aguacate",
+    slug: "ensalada-de-quinoa-y-aguacate",
     meta: "~340 kcal · 20 min · Para 2 personas",
     ingredientes: ["150 g de quinoa", "1 aguacate", "Tomates cherry", "Pepino", "Limón y aceite de oliva"],
     pasos: [
@@ -791,6 +795,7 @@ const recetas = [
   {
     icon: "🎃",
     title: "Crema de calabaza",
+    slug: "crema-de-calabaza",
     meta: "~210 kcal · 30 min · Para 4 personas",
     ingredientes: ["500 g de calabaza", "1 cebolla", "1 zanahoria", "Caldo de verduras sin gluten", "Un chorrito de nata ligera (opcional)"],
     pasos: [
@@ -806,6 +811,7 @@ const recetas = [
   {
     icon: "🐟",
     title: "Salmón a la plancha con puré de boniato",
+    slug: "salmon-a-la-plancha-con-pure-de-boniato",
     meta: "~430 kcal · 30 min · Para 2 personas",
     ingredientes: ["2 lomos de salmón", "2 boniatos", "Leche o bebida vegetal", "Aceite de oliva", "Eneldo"],
     pasos: [
@@ -822,6 +828,7 @@ const recetas = [
   {
     icon: "🍅",
     title: "Gazpacho andaluz",
+    slug: "gazpacho-andaluz",
     meta: "~150 kcal · 15 min · Para 4 personas",
     ingredientes: ["1 kg de tomates maduros", "1 pepino", "1 pimiento verde", "1 diente de ajo", "Aceite de oliva, vinagre y sal"],
     pasos: [
@@ -837,6 +844,7 @@ const recetas = [
   {
     icon: "🍖",
     title: "Albóndigas en salsa de tomate",
+    slug: "albondigas-en-salsa-de-tomate",
     meta: "~450 kcal · 50 min · Para 4 personas",
     ingredientes: ["500 g de carne picada", "1 huevo", "Pan rallado sin gluten", "Tomate triturado", "Ajo, perejil y aceite de oliva"],
     pasos: [
@@ -853,6 +861,7 @@ const recetas = [
   {
     icon: "🥙",
     title: "Poke bowl de atún",
+    slug: "poke-bowl-de-atun",
     meta: "~420 kcal · 25 min · Para 2 personas",
     ingredientes: ["200 g de atún fresco", "Arroz cocido", "Edamame", "Aguacate y zanahoria", "Salsa de soja sin gluten (tamari)"],
     pasos: [
@@ -868,6 +877,7 @@ const recetas = [
   {
     icon: "🥞",
     title: "Crepes de trigo sarraceno con fruta",
+    slug: "crepes-de-trigo-sarraceno-con-fruta",
     meta: "~280 kcal · 20 min · Para 2 personas",
     ingredientes: [
       "150 g de harina de trigo sarraceno (naturalmente sin gluten)",
@@ -890,6 +900,7 @@ const recetas = [
   {
     icon: "🥣",
     title: "Porridge de avena con frutos rojos",
+    slug: "porridge-de-avena-con-frutos-rojos",
     meta: "~320 kcal · 10 min · Para 1 persona",
     ingredientes: [
       "80 g de copos de avena certificados sin gluten",
@@ -909,6 +920,7 @@ const recetas = [
   {
     icon: "🥔",
     title: "Vichyssoise (crema fría de puerro y patata)",
+    slug: "vichyssoise-crema-fria-de-puerro-y-patata",
     meta: "~230 kcal · 40 min + enfriado · Para 4 personas",
     ingredientes: ["3 puerros (solo la parte blanca)", "2 patatas medianas", "1 cebolla pequeña", "Caldo de verduras sin gluten", "Nata líquida o bebida vegetal"],
     pasos: [
@@ -925,6 +937,7 @@ const recetas = [
   {
     icon: "🍖",
     title: "Solomillo de cerdo con salsa de mostaza",
+    slug: "solomillo-de-cerdo-con-salsa-de-mostaza",
     meta: "~410 kcal · 35 min · Para 4 personas",
     ingredientes: ["1 solomillo de cerdo (~500 g)", "2 cucharadas de mostaza sin gluten", "200 ml de nata para cocinar", "1 cebolla", "Aceite de oliva"],
     pasos: [
@@ -941,6 +954,7 @@ const recetas = [
   {
     icon: "🐠",
     title: "Merluza en salsa verde",
+    slug: "merluza-en-salsa-verde",
     meta: "~280 kcal · 30 min · Para 4 personas",
     ingredientes: ["4 lomos de merluza", "3 dientes de ajo", "Perejil fresco", "200 ml de caldo de pescado sin gluten", "Aceite de oliva y 1 cucharada de harina de arroz (opcional)"],
     pasos: [
@@ -957,6 +971,7 @@ const recetas = [
   {
     icon: "🍛",
     title: "Curry de garbanzos y espinacas",
+    slug: "curry-de-garbanzos-y-espinacas",
     meta: "~360 kcal · 30 min · Para 4 personas",
     ingredientes: ["400 g de garbanzos cocidos sin gluten", "200 g de espinacas frescas", "1 cebolla", "400 ml de leche de coco", "2 cucharaditas de curry en polvo sin gluten", "1 diente de ajo"],
     pasos: [
@@ -972,6 +987,7 @@ const recetas = [
   {
     icon: "🍝",
     title: "Carbonara sin gluten",
+    slug: "carbonara-sin-gluten",
     meta: "~520 kcal · 20 min · Para 4 personas",
     ingredientes: ["350 g de pasta sin gluten (espagueti)", "150 g de panceta o bacon", "3 huevos", "50 g de queso parmesano rallado", "Pimienta negra"],
     pasos: [
@@ -989,6 +1005,7 @@ const recetas = [
   {
     icon: "🍫",
     title: "Brownie sin gluten",
+    slug: "brownie-sin-gluten",
     meta: "~290 kcal por ración · 40 min · Para 9 raciones",
     ingredientes: ["200 g de chocolate negro sin gluten", "150 g de mantequilla", "3 huevos", "180 g de azúcar", "80 g de harina de arroz o mezcla panificable sin gluten", "Nueces troceadas (opcional)"],
     pasos: [
@@ -1006,6 +1023,7 @@ const recetas = [
   {
     icon: "🥗",
     title: "Ensalada César con pollo (sin gluten)",
+    slug: "ensalada-cesar-con-pollo-sin-gluten",
     meta: "~380 kcal · 25 min · Para 2 personas",
     ingredientes: ["2 pechugas de pollo", "1 lechuga romana", "50 g de pan sin gluten (para picatostes)", "30 g de queso parmesano rallado", "Salsa César sin gluten (o yogur, limón, ajo y anchoa)"],
     pasos: [
@@ -1021,6 +1039,7 @@ const recetas = [
   {
     icon: "🍖",
     title: "Pastel de carne sin gluten",
+    slug: "pastel-de-carne-sin-gluten",
     meta: "~380 kcal · 60 min · Para 4 personas",
     ingredientes: ["600 g de carne picada de ternera", "1 huevo", "50 g de copos de avena certificados sin gluten", "1 cebolla", "2 cucharadas de kétchup sin gluten"],
     pasos: [
@@ -1037,6 +1056,7 @@ const recetas = [
   {
     icon: "🍄",
     title: "Risotto de champiñones",
+    slug: "risotto-de-champinones",
     meta: "~420 kcal · 35 min · Para 4 personas",
     ingredientes: ["320 g de arroz arborio", "300 g de champiñones", "1 cebolla", "1 litro de caldo de verduras sin gluten", "50 g de queso parmesano rallado"],
     pasos: [
@@ -1053,6 +1073,7 @@ const recetas = [
   {
     icon: "🥞",
     title: "Tortitas de plátano sin gluten",
+    slug: "tortitas-de-platano-sin-gluten",
     meta: "~300 kcal · 15 min · Para 2 personas",
     ingredientes: ["2 plátanos maduros", "3 huevos", "50 g de harina de avena certificada sin gluten", "1 cucharadita de levadura sin gluten", "Canela al gusto"],
     pasos: [
@@ -1068,6 +1089,7 @@ const recetas = [
   {
     icon: "🥢",
     title: "Wok de ternera y verduras",
+    slug: "wok-de-ternera-y-verduras",
     meta: "~400 kcal · 25 min · Para 3 personas",
     ingredientes: ["400 g de ternera en tiras finas", "1 pimiento rojo", "1 zanahoria", "150 g de brócoli", "Salsa de soja sin gluten (tamari)"],
     pasos: [
@@ -1083,6 +1105,7 @@ const recetas = [
   {
     icon: "🍆",
     title: "Lasaña de calabacín (sin pasta)",
+    slug: "lasana-de-calabacin-sin-pasta",
     meta: "~310 kcal · 55 min · Para 4 personas",
     ingredientes: ["3 calabacines grandes", "400 g de carne picada", "400 g de tomate triturado", "200 g de queso mozzarella rallado", "1 cebolla"],
     pasos: [
@@ -1100,6 +1123,7 @@ const recetas = [
   {
     icon: "🥗",
     title: "Buddha bowl de garbanzos asados",
+    slug: "buddha-bowl-de-garbanzos-asados",
     meta: "~450 kcal · 35 min · Para 2 personas",
     ingredientes: ["400 g de garbanzos cocidos", "1 boniato", "100 g de espinacas frescas", "1 aguacate", "Tahini y limón para la salsa"],
     pasos: [
@@ -1116,6 +1140,7 @@ const recetas = [
   {
     icon: "🍲",
     title: "Sopa de miso con tofu",
+    slug: "sopa-de-miso-con-tofu",
     meta: "~140 kcal · 15 min · Para 2 personas",
     ingredientes: ["2 cucharadas de pasta de miso", "150 g de tofu firme", "1 lámina de alga wakame", "500 ml de agua o caldo suave", "1 cebolleta"],
     pasos: [
@@ -1131,6 +1156,7 @@ const recetas = [
   {
     icon: "🍰",
     title: "Tarta de queso sin gluten",
+    slug: "tarta-de-queso-sin-gluten",
     meta: "~340 kcal por ración · 70 min + enfriado · Para 8 raciones",
     ingredientes: ["600 g de queso crema", "3 huevos", "150 g de azúcar", "200 ml de nata para montar", "20 g de maicena (fécula de maíz)"],
     pasos: [
@@ -1147,6 +1173,7 @@ const recetas = [
   {
     icon: "🧆",
     title: "Falafel al horno con salsa de yogur",
+    slug: "falafel-al-horno-con-salsa-de-yogur",
     meta: "~360 kcal · 40 min + remojo · Para 4 personas",
     ingredientes: ["250 g de garbanzos secos (en remojo 12 h)", "1 cebolla", "2 dientes de ajo", "Perejil y comino", "Yogur griego natural para la salsa"],
     pasos: [
@@ -1164,6 +1191,7 @@ const recetas = [
   {
     icon: "🍆",
     title: "Pisto manchego con huevo escalfado",
+    slug: "pisto-manchego-con-huevo-escalfado",
     meta: "~220 kcal · 40 min · Para 4 personas",
     ingredientes: ["2 calabacines", "1 berenjena", "2 pimientos (rojo y verde)", "1 cebolla", "400 g de tomate triturado", "4 huevos"],
     pasos: [
@@ -1179,6 +1207,7 @@ const recetas = [
   {
     icon: "🐟",
     title: "Bacalao al horno con pimientos",
+    slug: "bacalao-al-horno-con-pimientos",
     meta: "~230 kcal · 35 min · Para 4 personas",
     ingredientes: ["4 lomos de bacalao desalado", "2 pimientos rojos", "1 cebolla", "3 dientes de ajo", "Aceite de oliva virgen extra", "Perejil fresco"],
     pasos: [
@@ -1193,6 +1222,7 @@ const recetas = [
   {
     icon: "🍲",
     title: "Estofado de ternera con patatas",
+    slug: "estofado-de-ternera-con-patatas",
     meta: "~380 kcal · 90 min · Para 4 personas",
     ingredientes: ["600 g de carne de ternera para guisar", "3 patatas", "2 zanahorias", "1 cebolla", "2 dientes de ajo", "Caldo de carne sin gluten"],
     pasos: [
@@ -1208,6 +1238,7 @@ const recetas = [
   {
     icon: "🍋",
     title: "Ceviche de corvina",
+    slug: "ceviche-de-corvina",
     meta: "~150 kcal · 25 min + reposo · Para 4 personas",
     ingredientes: ["500 g de corvina fresca", "6 limas", "1 cebolla morada", "1 guindilla fresca", "Cilantro fresco", "Sal"],
     pasos: [
@@ -1222,6 +1253,7 @@ const recetas = [
   {
     icon: "🌽",
     title: "Arepas de maíz rellenas de pollo",
+    slug: "arepas-de-maiz-rellenas-de-pollo",
     meta: "~310 kcal · 40 min · Para 4 personas",
     ingredientes: ["2 tazas de harina de maíz precocida", "2 tazas de agua templada", "Sal", "2 pechugas de pollo cocidas y desmechadas", "1 aguacate", "Queso fresco"],
     pasos: [
@@ -1236,6 +1268,7 @@ const recetas = [
   {
     icon: "🍠",
     title: "Boniato asado relleno de garbanzos y espinacas",
+    slug: "boniato-asado-relleno-de-garbanzos-y-espinacas",
     meta: "~290 kcal · 55 min · Para 4 personas",
     ingredientes: ["4 boniatos medianos", "400 g de garbanzos cocidos", "200 g de espinacas frescas", "1 diente de ajo", "Comino molido", "Aceite de oliva virgen extra"],
     pasos: [
@@ -1250,6 +1283,7 @@ const recetas = [
   {
     icon: "🦐",
     title: "Sopa de pescado y marisco",
+    slug: "sopa-de-pescado-y-marisco",
     meta: "~210 kcal · 50 min · Para 4 personas",
     ingredientes: ["400 g de pescado de roca", "200 g de gambas", "200 g de mejillones", "1 cebolla", "2 tomates maduros", "Caldo de pescado sin gluten"],
     pasos: [
@@ -1264,6 +1298,7 @@ const recetas = [
   {
     icon: "🍎",
     title: "Tarta de manzana sin gluten",
+    slug: "tarta-de-manzana-sin-gluten",
     meta: "~280 kcal · 70 min · Para 8 personas",
     ingredientes: ["250 g de harina sin gluten", "100 g de mantequilla", "3 manzanas", "2 huevos", "80 g de azúcar", "Canela"],
     pasos: [
@@ -1279,6 +1314,7 @@ const recetas = [
   {
     icon: "🧁",
     title: "Bizcocho de yogur sin gluten",
+    slug: "bizcocho-de-yogur-sin-gluten",
     meta: "~230 kcal · 50 min · Para 8 personas",
     ingredientes: ["1 yogur natural", "3 medidas de harina sin gluten (el vaso del yogur)", "2 medidas de azúcar", "1 medida de aceite de girasol", "3 huevos", "1 sobre de levadura sin gluten"],
     pasos: [
@@ -1294,6 +1330,7 @@ const recetas = [
   {
     icon: "🥗",
     title: "Ensalada templada de lentejas",
+    slug: "ensalada-templada-de-lentejas",
     meta: "~260 kcal · 20 min · Para 4 personas",
     ingredientes: ["400 g de lentejas cocidas", "1 pimiento rojo", "100 g de espinacas baby", "50 g de queso feta", "Vinagre de Jerez", "Aceite de oliva virgen extra"],
     pasos: [
@@ -1308,6 +1345,7 @@ const recetas = [
   {
     icon: "🍛",
     title: "Pollo al curry con leche de coco",
+    slug: "pollo-al-curry-con-leche-de-coco",
     meta: "~390 kcal · 35 min · Para 4 personas",
     ingredientes: ["4 contramuslos de pollo deshuesados", "400 ml de leche de coco", "2 cucharadas de curry en polvo", "1 cebolla", "2 dientes de ajo", "Arroz basmati para acompañar"],
     pasos: [
@@ -1322,6 +1360,7 @@ const recetas = [
   {
     icon: "🥘",
     title: "Croquetas de jamón sin gluten",
+    slug: "croquetas-de-jamon-sin-gluten",
     meta: "~320 kcal · 60 min + enfriado · Para 6 personas",
     ingredientes: ["100 g de jamón serrano picado", "50 g de harina de arroz", "50 g de maicena", "500 ml de leche", "50 g de mantequilla", "Pan rallado sin gluten", "2 huevos"],
     pasos: [

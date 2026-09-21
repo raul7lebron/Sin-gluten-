@@ -27,6 +27,7 @@ const OUTPUT_PATH = path.join(ROOT, 'index.html');
 const NEWS_PATH = path.join(ROOT, 'data', 'news.json');
 const SITE_URL = 'https://www.libredetrigo.com';
 const buildGuias = require('./build-guias.js');
+const buildRecetas = require('./build-recetas.js');
 
 // URLs indexables reales del sitio: la home, más las páginas de guía y de
 // cluster que genera build-guias.js (se ejecuta como parte de este script).
@@ -63,8 +64,17 @@ async function main() {
   // ámbito léxico entre llamadas a window.eval() independientes (aunque el spec de
   // eval indirecto sí lo permitiría en un navegador real) — juntarlo todo en un único
   // eval evita el problema sin cambiar el código real de cada script.
-  const combinedCode = CONTENT_SCRIPTS.map((rel) => fs.readFileSync(path.join(ROOT, rel), 'utf8')).join('\n;\n');
+  // "const recetas" de data.js vive en el ámbito léxico del script, no como
+  // propiedad de window — se añade esta línea al mismo eval (ver comentario de
+  // arriba: un eval aparte no comparte ese ámbito) para poder leerla después.
+  const combinedCode = CONTENT_SCRIPTS.map((rel) => fs.readFileSync(path.join(ROOT, rel), 'utf8')).join('\n;\n') + '\n;\nwindow.__recetasData = recetas;';
   window.eval(combinedCode);
+
+  // Se extraen las recetas ya cargadas (objetos planos: icon/title/slug/meta/
+  // ingredientes/pasos) para generarles página propia sin duplicar los datos
+  // en un segundo sitio. JSON.parse(JSON.stringify(...)) las saca del "realm"
+  // de jsdom para poder usarlas con normalidad en el resto de este script.
+  const recetasData = JSON.parse(JSON.stringify(window.__recetasData || []));
 
   // script.js y search.js registran su lógica en el evento DOMContentLoaded, que ya
   // se disparó (sin oyentes) al analizar el HTML inicial, antes de que estos scripts
@@ -106,7 +116,8 @@ async function main() {
   console.log(`[prerender] index.html generado (${(html.length / 1024).toFixed(0)} KB) a partir de index.template.html`);
 
   const guiaUrls = buildGuias.main();
-  writeSitemap(guiaUrls);
+  const recetaUrls = buildRecetas.main(recetasData);
+  writeSitemap(guiaUrls.concat(recetaUrls));
 
   window.close();
 }
