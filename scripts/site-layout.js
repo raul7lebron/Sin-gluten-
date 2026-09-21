@@ -29,6 +29,19 @@ function headerHtml() {
         <span class="logo-tagline">Guía práctica para vivir sin gluten</span>
       </a>
       <div class="header-actions">
+        <div class="tools-menu-wrap">
+          <button class="header-search-btn tools-toggle" id="toolsToggle" type="button" aria-label="Más herramientas" aria-haspopup="true" aria-expanded="false" aria-controls="toolsMenu">
+            <span aria-hidden="true">⚙️</span>
+          </button>
+          <div class="tools-menu" id="toolsMenu" hidden>
+            <a href="${SITE_URL}/#dietas"><span aria-hidden="true">🍽️</span> Dietas</a>
+            <a href="${SITE_URL}/#calculadora"><span aria-hidden="true">🧮</span> Calculadora calórica</a>
+            <a href="${SITE_URL}/#recetas"><span aria-hidden="true">🍳</span> Recetas</a>
+            <a href="${SITE_URL}/#escaner"><span aria-hidden="true">📷</span> Escáner</a>
+            <a href="${SITE_URL}/#lista-compra"><span aria-hidden="true">🛍️</span> Lista de la compra</a>
+            <a href="${SITE_URL}/vivir-sin-gluten/productos-recomendados/"><span aria-hidden="true">🔪</span> Productos recomendados</a>
+          </div>
+        </div>
         <button class="header-search-btn menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-haspopup="true" aria-expanded="false" aria-controls="pillNav">
           <span aria-hidden="true">☰</span>
         </button>
