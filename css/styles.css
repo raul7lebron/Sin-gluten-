@@ -1,25 +1,32 @@
 :root {
-  --bg: #f4f6f7;
+  /* Sistema de color estricto: crema de fondo, texto verde casi negro,
+     verde para cabeceras/navegación/confianza, terracota solo para
+     llamadas a la acción y detalles puntuales. */
+  --bg: #faf6ec;
   --surface: #ffffff;
-  --surface-alt: #eef1f3;
-  --text: #131a20;
-  --text-muted: #5a6672;
+  --surface-alt: #f2ead9;
+  --text: #16221d;
+  --text-muted: #5f6b62;
   --primary: #0e6e5f;
   --primary-dark: #0a4f44;
   --primary-light: #e2f2ef;
-  --border: #dde3e7;
+  --accent: #c1552e;
+  --accent-dark: #9c4020;
+  --accent-light: #f6e2d6;
+  --border: #e6dcc6;
   --note-bg: #fbf7ea;
   --note-border: #e6dcb8;
   --note-text: #6b5511;
-  --shadow-xs: 0 1px 2px rgba(15, 23, 30, 0.05);
-  --shadow-sm: 0 2px 6px rgba(15, 23, 30, 0.06);
-  --shadow-md: 0 8px 20px rgba(15, 23, 30, 0.08);
-  --shadow-lg: 0 16px 36px rgba(15, 23, 30, 0.10);
+  --shadow-xs: 0 1px 2px rgba(22, 34, 29, 0.06);
+  --shadow-sm: 0 2px 6px rgba(22, 34, 29, 0.07);
+  --shadow-md: 0 8px 20px rgba(22, 34, 29, 0.09);
+  --shadow-lg: 0 16px 36px rgba(22, 34, 29, 0.11);
   --radius-sm: 8px;
   --radius-md: 10px;
   --radius-lg: 14px;
-  --font-display: "Plus Jakarta Sans", "Manrope", system-ui, -apple-system, sans-serif;
-  --font-body: "Manrope", "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  /* Dos únicas familias: serif editorial para títulos, sans limpia para interfaz y texto. */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Manrope", "Inter", system-ui, -apple-system, sans-serif;
 }
 
 * {
@@ -214,7 +221,7 @@ a:focus-visible {
   background: transparent;
   padding: 10px 18px;
   border-radius: 999px;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-muted);
@@ -343,7 +350,7 @@ a:focus-visible {
 }
 
 .search-result-type {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.68rem;
   text-transform: uppercase;
@@ -451,7 +458,7 @@ a:focus-visible {
 }
 
 .section-hint a {
-  color: var(--primary-dark);
+  color: var(--accent-dark);
   font-weight: 600;
 }
 
@@ -533,7 +540,7 @@ a:focus-visible {
 }
 
 .news-source {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.72rem;
   text-transform: uppercase;
@@ -559,7 +566,7 @@ a:focus-visible {
 }
 
 .news-title a:hover {
-  color: var(--primary-dark);
+  color: var(--accent-dark);
   text-decoration: underline;
 }
 
@@ -575,7 +582,7 @@ a:focus-visible {
   align-self: flex-start;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--primary-dark);
+  color: var(--accent-dark);
   text-decoration: none;
 }
 
@@ -838,7 +845,7 @@ a:focus-visible {
 }
 
 .recipe-title strong {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 700;
 }
 
@@ -1019,7 +1026,7 @@ a:focus-visible {
 .rank-link {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--primary-dark);
+  color: var(--accent-dark);
   text-decoration: none;
 }
 
@@ -1105,7 +1112,7 @@ a:focus-visible {
   border-radius: 999px;
   padding: 12px 22px;
   font: inherit;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.9rem;
   cursor: pointer;
@@ -1113,7 +1120,7 @@ a:focus-visible {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
   color: #fff;
 }
 
@@ -1293,7 +1300,7 @@ a:focus-visible {
   border-radius: 50%;
   background: var(--score-color);
   color: #fff;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 800;
   font-size: 0.95rem;
   flex-shrink: 0;
@@ -1329,7 +1336,7 @@ a:focus-visible {
 
 .footer-links-title {
   display: block;
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -1374,7 +1381,7 @@ a:focus-visible {
 }
 
 .footer-legal-links a:hover {
-  color: var(--primary-dark);
+  color: var(--accent-dark);
   text-decoration: underline;
 }
 
@@ -1390,7 +1397,7 @@ a:focus-visible {
 }
 
 .footer-cookie-prefs:hover {
-  color: var(--primary-dark);
+  color: var(--accent-dark);
 }
 
 /* Cookie consent banner */
@@ -1430,7 +1437,7 @@ a:focus-visible {
 }
 
 .cookie-banner p a {
-  color: var(--primary-dark);
+  color: var(--accent-dark);
   font-weight: 600;
 }
 
@@ -1468,7 +1475,7 @@ a:focus-visible {
 }
 
 .legal-back:hover {
-  color: var(--primary-dark);
+  color: var(--accent-dark);
 }
 
 .legal-banner {
@@ -1527,7 +1534,7 @@ a:focus-visible {
 }
 
 .legal-content a {
-  color: var(--primary-dark);
+  color: var(--accent-dark);
   font-weight: 600;
 }
 
@@ -1666,12 +1673,12 @@ a:focus-visible {
 }
 
 .shoppable:hover {
-  background: var(--primary-light);
-  color: var(--primary-dark);
+  background: var(--accent-light);
+  color: var(--accent-dark);
 }
 
 @keyframes shoppableAdded {
-  0% { background: var(--primary); color: #fff; }
+  0% { background: var(--accent); color: #fff; }
   100% { background: transparent; color: inherit; }
 }
 
