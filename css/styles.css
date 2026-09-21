@@ -103,9 +103,7 @@ a:focus-visible {
 }
 
 .header-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  position: relative;
   padding: 14px 20px;
 }
 
@@ -154,10 +152,6 @@ a:focus-visible {
   transform: translateY(-1px);
 }
 
-.menu-toggle {
-  display: none;
-}
-
 .logo {
   display: flex;
   align-items: center;
@@ -186,51 +180,63 @@ a:focus-visible {
   }
 }
 
-/* Pill navigation: fila propia a todo lo ancho del header, con las 11
-   páginas del sitio; se envuelve en varias líneas y se centra. */
+/* Pill navigation: menú desplegable con las 11 páginas del sitio, siempre
+   colapsado hasta que se abre con el botón de menú (antes esto solo pasaba
+   en móvil; ahora es igual en cualquier tamaño de pantalla). */
 .pill-nav {
-  position: relative;
+  position: absolute;
+  top: 100%;
+  left: 20px;
+  right: 20px;
+  margin-top: 8px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  min-width: 0;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 6px;
-  box-shadow: var(--shadow-xs);
-  gap: 4px;
+  box-shadow: var(--shadow-lg);
+  padding: 0 8px;
+  transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease;
+  z-index: 50;
+}
+
+.pill-nav.nav-open {
+  max-height: 70vh;
+  opacity: 1;
+  overflow-y: auto;
+  padding: 8px;
+  pointer-events: auto;
 }
 
 .pill-indicator {
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  width: 0;
-  height: 0;
-  border-radius: 999px;
-  background: var(--primary);
-  transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1), width 0.35s cubic-bezier(0.65, 0, 0.35, 1);
-  z-index: 0;
+  display: none;
 }
 
 .pill-btn {
   position: relative;
   z-index: 1;
   display: inline-flex;
+  width: 100%;
   align-items: center;
-  gap: 4px;
+  justify-content: flex-start;
+  gap: 8px;
   white-space: nowrap;
   border: none;
   background: transparent;
-  padding: 9px 8px;
+  padding: 10px 12px;
   border-radius: 999px;
   font-family: var(--font-body);
-  font-size: 0.76rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-muted);
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, background 0.2s ease;
 }
 
 .pill-icon {
@@ -239,6 +245,7 @@ a:focus-visible {
 
 .pill-btn.active {
   color: #fff;
+  background: var(--primary);
 }
 
 /* Search modal */
@@ -1945,7 +1952,15 @@ a:focus-visible {
 
 /* Tabla nutricional */
 .nutri-table-wrap {
-  overflow-x: auto;
+  /* Panel con scroll interno propio (en vez de que la tabla crezca y sea
+     la página entera la que se desplaza): el spec de CSS obliga a que
+     "overflow-x" y "overflow-y" sean coherentes (no se puede combinar
+     "auto" en un eje con "visible" en el otro, el navegador iguala
+     ambos), así que la única forma fiable de que la cabecera quede fija
+     es que este contenedor tenga una altura máxima y sea él mismo quien
+     scrollea, con la cabecera pegada arriba dentro de su propio scroll. */
+  max-height: 70vh;
+  overflow: auto;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -2244,61 +2259,6 @@ a:focus-visible {
 
 /* Responsive */
 @media (max-width: 640px) {
-  .header-inner {
-    position: relative;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .menu-toggle {
-    display: inline-flex;
-  }
-
-  .pill-nav {
-    position: absolute;
-    top: 100%;
-    left: 20px;
-    right: 20px;
-    margin-top: 8px;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 2px;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    pointer-events: none;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-    padding: 0 8px;
-    transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease;
-  }
-
-  .pill-nav.nav-open {
-    max-height: 70vh;
-    opacity: 1;
-    overflow-y: auto;
-    padding: 8px;
-    pointer-events: auto;
-  }
-
-  .pill-indicator {
-    display: none;
-  }
-
-  .pill-btn {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .pill-btn.active {
-    background: var(--primary);
-  }
-
-
   .shopping-qty {
     gap: 4px;
   }

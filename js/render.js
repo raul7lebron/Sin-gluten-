@@ -1,6 +1,7 @@
 function renderTiendas() {
-  const list = document.getElementById("tiendasList");
-  if (!list) return;
+  const listOnline = document.getElementById("tiendasListOnline");
+  const listFisica = document.getElementById("tiendasListFisica");
+  if (!listOnline || !listFisica) return;
 
   const tipoIcono = {
     Física: "🏬",
@@ -8,26 +9,35 @@ function renderTiendas() {
     "Física y online": "🏬💻",
   };
 
-  list.innerHTML = tiendasEspecializadas
-    .map((t) => {
-      const ratingHtml = t.nota
-        ? `<span class="rank-rating">⭐ ${t.aprox ? "≈ " : ""}${t.nota.toFixed(1)}${t.resenas ? ` · ${t.resenas.toLocaleString("es-ES")} reseñas` : ""}</span>`
-        : "";
-      const linkHtml = t.web
-        ? `<a class="rank-link" href="${t.web}" target="_blank" rel="noopener noreferrer">Visitar web ↗</a>`
-        : `<span class="shop-noweb">Sin web oficial verificada</span>`;
-      return `
-        <article class="shop-card" data-title="${t.nombre}">
-          <div class="rank-header">
-            <h3>${t.nombre}</h3>
-            ${ratingHtml}
-          </div>
-          <p class="rank-meta">${tipoIcono[t.tipo] || ""} ${t.tipo} · ${t.ciudad}</p>
-          <p class="rank-desc">${t.desc}</p>
-          ${linkHtml}
-        </article>
-      `;
-    })
+  function shopCardHtml(t) {
+    const ratingHtml = t.nota
+      ? `<span class="rank-rating">⭐ ${t.aprox ? "≈ " : ""}${t.nota.toFixed(1)}${t.resenas ? ` · ${t.resenas.toLocaleString("es-ES")} reseñas` : ""}</span>`
+      : "";
+    const linkHtml = t.web
+      ? `<a class="rank-link" href="${t.web}" target="_blank" rel="noopener noreferrer">Visitar web ↗</a>`
+      : `<span class="shop-noweb">Sin web oficial verificada</span>`;
+    return `
+      <article class="shop-card" data-title="${t.nombre}">
+        <div class="rank-header">
+          <h3>${t.nombre}</h3>
+          ${ratingHtml}
+        </div>
+        <p class="rank-meta">${tipoIcono[t.tipo] || ""} ${t.tipo} · ${t.ciudad}</p>
+        <p class="rank-desc">${t.desc}</p>
+        ${linkHtml}
+      </article>
+    `;
+  }
+
+  // Las tiendas "Física y online" aparecen en ambas listas: es la realidad
+  // de cómo operan, no hace falta forzarlas a elegir un único grupo.
+  listOnline.innerHTML = tiendasEspecializadas
+    .filter((t) => t.tipo === "Online" || t.tipo === "Física y online")
+    .map(shopCardHtml)
+    .join("");
+  listFisica.innerHTML = tiendasEspecializadas
+    .filter((t) => t.tipo === "Física" || t.tipo === "Física y online")
+    .map(shopCardHtml)
     .join("");
 }
 
