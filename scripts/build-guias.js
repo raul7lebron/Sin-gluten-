@@ -291,7 +291,7 @@ function headerHtml() {
         <a class="pill-btn" href="${SITE_URL}/#guia"><span class="pill-icon" aria-hidden="true">🔰</span>Guías</a>
         <a class="pill-btn" href="${SITE_URL}/#tiendas"><span class="pill-icon" aria-hidden="true">🏬</span>Tiendas especializadas</a>
         <a class="pill-btn" href="${SITE_URL}/#restaurantes"><span class="pill-icon" aria-hidden="true">📍</span>Comer fuera</a>
-        <a class="pill-btn" href="${SITE_URL}/#recetas"><span class="pill-icon" aria-hidden="true">🍳</span>Recetas</a>
+        <a class="pill-btn" href="${SITE_URL}/#nutricion"><span class="pill-icon" aria-hidden="true">🥗</span>Tabla nutricional</a>
         <a class="pill-btn" href="${SITE_URL}/#actualidad"><span class="pill-icon" aria-hidden="true">📰</span>Actualidad</a>
       </nav>
     </div>
@@ -313,7 +313,7 @@ function footerHtml() {
         <a href="${SITE_URL}/#guia">Guías</a>
         <a href="${SITE_URL}/#tiendas">Tiendas especializadas</a>
         <a href="${SITE_URL}/#restaurantes">Restaurantes</a>
-        <a href="${SITE_URL}/#recetas">Recetas</a>
+        <a href="${SITE_URL}/#nutricion">Tabla nutricional</a>
         <a href="${SITE_URL}/#actualidad">Actualidad</a>
       </div>
       <div class="footer-col">

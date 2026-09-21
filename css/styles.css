@@ -217,14 +217,14 @@ a:focus-visible {
   z-index: 1;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   white-space: nowrap;
   border: none;
   background: transparent;
-  padding: 10px 11px;
+  padding: 9px 8px;
   border-radius: 999px;
   font-family: var(--font-body);
-  font-size: 0.81rem;
+  font-size: 0.76rem;
   font-weight: 600;
   color: var(--text-muted);
   cursor: pointer;
