@@ -289,7 +289,7 @@ function headerHtml() {
       </div>
       <nav class="pill-nav" id="pillNav" aria-label="Secciones">
         <a class="pill-btn" href="${SITE_URL}/#guia"><span class="pill-icon" aria-hidden="true">🔰</span>Guías</a>
-        <a class="pill-btn" href="${SITE_URL}/#tiendas"><span class="pill-icon" aria-hidden="true">🏬</span>Productos</a>
+        <a class="pill-btn" href="${SITE_URL}/#tiendas"><span class="pill-icon" aria-hidden="true">🏬</span>Tiendas especializadas</a>
         <a class="pill-btn" href="${SITE_URL}/#restaurantes"><span class="pill-icon" aria-hidden="true">📍</span>Comer fuera</a>
         <a class="pill-btn" href="${SITE_URL}/#recetas"><span class="pill-icon" aria-hidden="true">🍳</span>Recetas</a>
         <a class="pill-btn" href="${SITE_URL}/#actualidad"><span class="pill-icon" aria-hidden="true">📰</span>Actualidad</a>
@@ -311,7 +311,7 @@ function footerHtml() {
       <div class="footer-col">
         <span class="footer-links-title">Explora</span>
         <a href="${SITE_URL}/#guia">Guías</a>
-        <a href="${SITE_URL}/#tiendas">Productos</a>
+        <a href="${SITE_URL}/#tiendas">Tiendas especializadas</a>
         <a href="${SITE_URL}/#restaurantes">Restaurantes</a>
         <a href="${SITE_URL}/#recetas">Recetas</a>
         <a href="${SITE_URL}/#actualidad">Actualidad</a>
