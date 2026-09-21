@@ -358,7 +358,7 @@ function buildArticlePage(guia) {
   const canonicalUrl = `${SITE_URL}${urlPath}`;
   const cssHash = fileHash("css/styles.css");
   const jsHash = fileHash("js/static-page.js");
-  const { linksHtml, breadcrumbJsonLd } = breadcrumbsHtml(guia);
+  const { breadcrumbJsonLd } = breadcrumbsHtml(guia);
 
   const articleJsonLd = {
     "@context": "https://schema.org",
@@ -408,8 +408,6 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
 </head>
 <body>${headerHtml()}
   <main class="container article-page">
-    <nav class="breadcrumbs" aria-label="Migas de pan">${linksHtml}</nav>
-
     <span class="eyebrow">${escapeHtml(CLUSTERS[guia.cluster].label)}</span>
     <h1 class="section-title">${escapeHtml(guia.title)}</h1>
     <p class="article-lead">${escapeHtml(guia.lead)}</p>
@@ -483,10 +481,6 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
 </head>
 <body>${headerHtml()}
   <main class="container article-page">
-    <nav class="breadcrumbs" aria-label="Migas de pan">
-      <a href="${SITE_URL}/">Inicio</a> <span class="breadcrumb-sep" aria-hidden="true">/</span> <span aria-current="page">${escapeHtml(cluster.label)}</span>
-    </nav>
-
     <span class="eyebrow">Guías</span>
     <h1 class="section-title">${escapeHtml(cluster.label)}</h1>
     <p class="article-lead">${escapeHtml(description)}</p>

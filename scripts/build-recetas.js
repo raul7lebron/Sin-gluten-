@@ -106,7 +106,7 @@ function buildRecetaPage(receta, recetas) {
   const canonicalUrl = `${SITE_URL}${urlPath}`;
   const cssHash = fileHash("css/styles.css");
   const jsHash = fileHash("js/static-page.js");
-  const { linksHtml, breadcrumbJsonLd } = breadcrumbsHtml(receta);
+  const { breadcrumbJsonLd } = breadcrumbsHtml(receta);
   const description = descriptionFor(receta);
   const { calories, totalTimeIso, recipeYield } = parseMeta(receta.meta);
   const pageTitle = /gluten/i.test(receta.title) ? `${receta.title} | Libre de Trigo` : `${receta.title} (receta sin gluten) | Libre de Trigo`;
@@ -156,8 +156,6 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
 </head>
 <body>${headerHtml()}
   <main class="container article-page">
-    <nav class="breadcrumbs" aria-label="Migas de pan">${linksHtml}</nav>
-
     <span class="eyebrow">${receta.icon} Receta</span>
     <h1 class="section-title">${escapeHtml(receta.title)}</h1>
     <p class="article-lead">${escapeHtml(receta.meta)}</p>
@@ -232,10 +230,6 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
 </head>
 <body>${headerHtml()}
   <main class="container article-page">
-    <nav class="breadcrumbs" aria-label="Migas de pan">
-      <a href="${SITE_URL}/">Inicio</a> <span class="breadcrumb-sep" aria-hidden="true">/</span> <span aria-current="page">Recetas</span>
-    </nav>
-
     <span class="eyebrow">Recetas</span>
     <h1 class="section-title">Recetas sin gluten</h1>
     <p class="article-lead">${escapeHtml(description)}</p>
