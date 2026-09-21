@@ -91,6 +91,108 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.libredetrigo.com/recetas/poke-bowl-de-atun/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.libredetrigo.com/recetas/ceviche-de-corvina/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.libredetrigo.com/recetas/arepas-de-maiz-rellenas-de-pollo/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.libredetrigo.com/recetas/curry-de-garbanzos-y-espinacas/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.libredetrigo.com/recetas/pollo-al-curry-con-leche-de-coco/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.libredetrigo.com/recetas/dal-de-lentejas-rojas-al-curry/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.libredetrigo.com/recetas/sopa-de-miso-con-tofu/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.libredetrigo.com/recetas/wok-de-ternera-y-verduras/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.libredetrigo.com/recetas/pad-thai-de-arroz-con-gambas/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.libredetrigo.com/recetas/bibimbap-de-arroz-con-verduras/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.libredetrigo.com/recetas/pho-vietnamita-de-pollo/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.libredetrigo.com/recetas/falafel-al-horno-con-salsa-de-yogur/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.libredetrigo.com/recetas/shakshuka/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.libredetrigo.com/recetas/tajin-de-pollo-con-limon-y-aceitunas/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.libredetrigo.com/recetas/buddha-bowl-de-garbanzos-asados/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.libredetrigo.com/recetas/boniato-asado-relleno-de-garbanzos-y-espinacas/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.libredetrigo.com/recetas/crepes-de-trigo-sarraceno-con-fruta/</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.libredetrigo.com/recetas/tortilla-de-patatas-clasica/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -139,18 +241,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.libredetrigo.com/recetas/poke-bowl-de-atun/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.libredetrigo.com/recetas/crepes-de-trigo-sarraceno-con-fruta/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.libredetrigo.com/recetas/porridge-de-avena-con-frutos-rojos/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -170,12 +260,6 @@
   </url>
   <url>
     <loc>https://www.libredetrigo.com/recetas/merluza-en-salsa-verde/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.libredetrigo.com/recetas/curry-de-garbanzos-y-espinacas/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -217,37 +301,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.libredetrigo.com/recetas/wok-de-ternera-y-verduras/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.libredetrigo.com/recetas/lasana-de-calabacin-sin-pasta/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.libredetrigo.com/recetas/buddha-bowl-de-garbanzos-asados/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.libredetrigo.com/recetas/sopa-de-miso-con-tofu/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.libredetrigo.com/recetas/tarta-de-queso-sin-gluten/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.libredetrigo.com/recetas/falafel-al-horno-con-salsa-de-yogur/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -266,24 +326,6 @@
   </url>
   <url>
     <loc>https://www.libredetrigo.com/recetas/estofado-de-ternera-con-patatas/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.libredetrigo.com/recetas/ceviche-de-corvina/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.libredetrigo.com/recetas/arepas-de-maiz-rellenas-de-pollo/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.libredetrigo.com/recetas/boniato-asado-relleno-de-garbanzos-y-espinacas/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -308,12 +350,6 @@
   </url>
   <url>
     <loc>https://www.libredetrigo.com/recetas/ensalada-templada-de-lentejas/</loc>
-    <lastmod>2026-09-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.libredetrigo.com/recetas/pollo-al-curry-con-leche-de-coco/</loc>
     <lastmod>2026-09-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
