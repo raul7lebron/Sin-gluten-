@@ -98,6 +98,21 @@ function footerHtml() {
   </div>`;
 }
 
+// Google AdSense: de momento el sitio no tiene cuenta de editor (falta el ID
+// "ca-pub-XXXXXXXXXXXXXXXX", que solo puede generar el titular al darse de
+// alta en https://www.google.com/adsense/). En cuanto exista, sustituye la
+// cadena vacía de abajo por el meta tag de verificación y el script de
+// Auto ads, y ejecuta "npm run prerender": al estar centralizado aquí, se
+// añade de golpe a todas las páginas (home, guías y recetas) sin tocarlas
+// una por una. No se genera ads.txt con un ID inventado: ver el ads.txt real
+// del repo, que solo lleva un comentario recordando este mismo paso.
+//
+// <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX" />
+// <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+function adsenseHeadHtml() {
+  return "";
+}
+
 function fileFor(urlPath) {
   return path.join(ROOT, urlPath.replace(/^\//, ""), "index.html");
 }
@@ -108,4 +123,4 @@ function writeFile(urlPath, html) {
   fs.writeFileSync(filePath, html);
 }
 
-module.exports = { ROOT, SITE_URL, escapeHtml, fileHash, headerHtml, footerHtml, writeFile };
+module.exports = { ROOT, SITE_URL, escapeHtml, fileHash, headerHtml, footerHtml, adsenseHeadHtml, writeFile };

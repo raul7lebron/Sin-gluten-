@@ -1,0 +1,6 @@
+# Este sitio todavía no tiene cuenta de editor de Google AdSense.
+# En cuanto exista el ID "pub-XXXXXXXXXXXXXXXX" (solo lo genera Google al dar
+# de alta la cuenta en https://www.google.com/adsense/), sustituye este
+# comentario por la línea real, con el formato exacto que indique AdSense:
+#
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

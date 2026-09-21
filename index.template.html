@@ -46,6 +46,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+  <!--
+    Google AdSense: todavía no hay cuenta de editor (falta el ID
+    "ca-pub-XXXXXXXXXXXXXXXX", que solo puede generar el titular dándose de
+    alta en https://www.google.com/adsense/). En cuanto exista, añade aquí
+    el meta tag de verificación y el script de Auto ads:
+
+    <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXXXXXXXX" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+    Las páginas de guías y recetas usan el mismo bloque de forma centralizada
+    en scripts/site-layout.js (función adsenseHeadHtml): actualiza ahí
+    también para que se propague a las 50 páginas generadas con
+    "npm run prerender".
+  -->
 </head>
 <body>
   <header class="site-header" id="siteHeader">
@@ -581,7 +595,7 @@
           <li><strong>Proveedor de alojamiento web</strong> — sirve los archivos del sitio.</li>
           <li><strong>Google Analytics</strong> (Google Ireland Limited / Google LLC) — estadísticas de uso agregadas (páginas más visitadas, procedencia del tráfico). <strong>Solo se activa si aceptas las cookies de analítica</strong> en el aviso que aparece en tu primera visita; si lo rechazas, este servicio no se carga en absoluto. Google puede transferir estos datos a EE. UU. bajo sus propias garantías (cláusulas contractuales tipo). <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Política de privacidad de Google</a>.</li>
         </ul>
-        <p>No compartimos datos con terceros para fines publicitarios ni de perfilado.</p>
+        <p>Actualmente no compartimos datos con terceros para fines publicitarios ni de perfilado. Si esto cambia, lo explicamos en el apartado 9, "Publicidad".</p>
 
         <h3>5. Base legal y finalidad</h3>
         <p>El tratamiento de los datos técnicos de navegación descritos en el punto 2 se basa en el interés legítimo del titular en garantizar el correcto funcionamiento, seguridad y accesibilidad del sitio (art. 6.1.f del Reglamento (UE) 2016/679, RGPD). El uso de Google Analytics se basa, en cambio, en tu <strong>consentimiento</strong> (art. 6.1.a RGPD), que otorgas o rechazas libremente en el aviso de cookies y puedes retirar en cualquier momento — ver la <a href="#" data-scroll-target="cookies">Política de cookies</a>.</p>
@@ -594,6 +608,9 @@
 
         <h3>8. Menores de edad</h3>
         <p>Este sitio no está dirigido específicamente a menores de 14 años. Los contenidos son de carácter informativo general sobre alimentación sin gluten.</p>
+
+        <h3>9. Publicidad</h3>
+        <p>Actualmente este sitio no muestra publicidad. Si en el futuro incorporamos anuncios (por ejemplo, a través de Google AdSense), esos proveedores podrán instalar sus propias cookies o tecnologías similares para mostrar anuncios generales o, si lo aceptas, personalizados según tu navegación, y podrán compartir esa información con otros socios publicitarios. Antes de activarlo, actualizaremos este apartado y la <a href="#" data-scroll-target="cookies">Política de cookies</a> con el detalle de qué proveedor se usa y qué cookies instala, y te pediremos tu consentimiento igual que hacemos con Google Analytics. Si activamos Google AdSense, podrás gestionar la publicidad personalizada en cualquier momento desde <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener noreferrer">la configuración de anuncios de tu cuenta de Google</a>.</p>
 
         <p class="legal-updated">Última actualización: septiembre de 2026.</p>
       </div>
