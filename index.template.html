@@ -336,9 +336,17 @@
 
     <section id="recetas" class="page" role="tabpanel" aria-labelledby="tab-recetas">
       <span class="eyebrow">🍳 Recetas</span>
-      <p class="section-hint">Recetas sin gluten explicadas paso a paso, con ingredientes y tiempo de preparación.</p>
+      <p class="section-hint">Recetas sin gluten explicadas paso a paso, con ingredientes y tiempo de preparación. ¿Tienes algún ingrediente en la nevera que quieres aprovechar y no sabes qué hacer con él? Búscalo con la lupa para coger ideas.</p>
+
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="search" id="recetaIngredienteSearch" placeholder="Buscar por ingrediente, p. ej. «calabacín»…" aria-label="Buscar recetas por ingrediente" />
+      </div>
+
+      <div class="filter-chips" id="recetaCategoriaFilter" role="group" aria-label="Filtrar por tipo de plato"></div>
 
       <div class="guide-grid" id="recetasList"></div>
+      <p class="empty-state" id="recetasEmpty" hidden>No se encontraron recetas con esa búsqueda.</p>
     </section>
 
     <section id="dietas" class="page" role="tabpanel" aria-labelledby="tab-dietas">

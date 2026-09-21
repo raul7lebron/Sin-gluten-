@@ -296,5 +296,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const recetaCategoriaFilter = document.getElementById("recetaCategoriaFilter");
+  const recetaIngredienteSearch = document.getElementById("recetaIngredienteSearch");
+  if (recetaCategoriaFilter && recetaIngredienteSearch) {
+    function currentRecetaCategoria() {
+      const active = recetaCategoriaFilter.querySelector(".filter-chip.active");
+      return active ? active.dataset.categoria : "todas";
+    }
+
+    recetaCategoriaFilter.addEventListener("click", (event) => {
+      const chip = event.target.closest(".filter-chip");
+      if (!chip) return;
+
+      recetaCategoriaFilter.querySelectorAll(".filter-chip").forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderRecetasDirectory(chip.dataset.categoria, recetaIngredienteSearch.value);
+    });
+
+    recetaIngredienteSearch.addEventListener("input", () => {
+      renderRecetasDirectory(currentRecetaCategoria(), recetaIngredienteSearch.value);
+    });
+  }
+
   window.libreDeTrigo = { activateTab, bindRecipeToggles };
 });

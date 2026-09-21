@@ -108,18 +108,50 @@ function renderRecipeCard(item, extraClass, listHtml, dataKey) {
 // Cada receta tiene su propia página real en /recetas/<slug>/ (ver
 // scripts/build-recetas.js), así que aquí solo se muestra un directorio de
 // enlaces hacia ellas, igual que la pestaña "Guías" enlaza a sus páginas.
-function renderRecetasDirectory() {
+const RECETA_CATEGORIA_LABEL = {
+  todas: "Todas",
+  principal: "Principal",
+  entrante: "Entrante",
+  postre: "Postre",
+};
+
+function recetaMatchesIngrediente(receta, query) {
+  if (!query) return true;
+  const haystack = receta.ingredientes.join(" ").toLowerCase();
+  return haystack.includes(query);
+}
+
+// Cada receta tiene su propia página real en /recetas/<slug>/ (ver
+// scripts/build-recetas.js), así que aquí solo se muestra un directorio de
+// enlaces hacia ellas, filtrable por tipo de plato y por ingrediente.
+function renderRecetasDirectory(categoria = "todas", query = "") {
   const list = document.getElementById("recetasList");
+  const empty = document.getElementById("recetasEmpty");
   if (!list) return;
-  list.innerHTML = recetas
+  const normalizedQuery = query.trim().toLowerCase();
+  const filtradas = recetas.filter(
+    (r) => (categoria === "todas" || r.categoria === categoria) && recetaMatchesIngrediente(r, normalizedQuery)
+  );
+
+  list.innerHTML = filtradas
     .map(
       (receta) => `
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/${receta.slug}/">
-          <span class="guide-category">${receta.icon} Receta</span>
+          <span class="guide-category">${receta.icon} ${RECETA_CATEGORIA_LABEL[receta.categoria] || "Receta"}</span>
           <h3>${receta.title}</h3>
           <p>${receta.meta}</p>
         </a>`
     )
+    .join("");
+
+  if (empty) empty.hidden = filtradas.length > 0;
+}
+
+function renderRecetaCategoriaFilter() {
+  const chips = document.getElementById("recetaCategoriaFilter");
+  if (!chips) return;
+  chips.innerHTML = Object.entries(RECETA_CATEGORIA_LABEL)
+    .map(([key, label], i) => `<button class="filter-chip${i === 0 ? " active" : ""}" data-categoria="${key}" type="button">${label}</button>`)
     .join("");
 }
 
@@ -267,6 +299,7 @@ function renderNutricion(categoria = "todos") {
 }
 
 renderTiendas();
+renderRecetaCategoriaFilter();
 renderRecetasDirectory();
 renderObjetivoFilter();
 const primerObjetivo = Object.keys(planesPorObjetivo)[0];
