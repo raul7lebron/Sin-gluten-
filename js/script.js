@@ -76,6 +76,45 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Menú "Herramientas" del header: Dietas, Calculadora, Tabla nutricional,
+  // Escáner y Lista de la compra, como acceso secundario frente a las 5
+  // secciones principales del pill-nav.
+  const toolsToggle = document.getElementById("toolsToggle");
+  const toolsMenu = document.getElementById("toolsMenu");
+
+  function closeToolsMenu() {
+    if (!toolsMenu) return;
+    toolsMenu.hidden = true;
+    if (toolsToggle) toolsToggle.setAttribute("aria-expanded", "false");
+  }
+
+  function openToolsMenu() {
+    if (!toolsMenu) return;
+    toolsMenu.hidden = false;
+    if (toolsToggle) toolsToggle.setAttribute("aria-expanded", "true");
+  }
+
+  if (toolsToggle && toolsMenu) {
+    toolsToggle.addEventListener("click", () => {
+      if (toolsMenu.hidden) openToolsMenu();
+      else closeToolsMenu();
+    });
+
+    toolsMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeToolsMenu);
+    });
+
+    document.addEventListener("click", (event) => {
+      if (toolsMenu.hidden) return;
+      if (toolsMenu.contains(event.target) || toolsToggle.contains(event.target)) return;
+      closeToolsMenu();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !toolsMenu.hidden) closeToolsMenu();
+    });
+  }
+
   pillButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       activateTab(btn.dataset.target);
@@ -83,26 +122,44 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Enlaces de la portada que, además de cambiar de pestaña, abren y
+  // enseñan una tarjeta concreta (p. ej. "Empieza por aquí" -> una guía
+  // específica, o un plato destacado -> su receta en la pestaña Recetas).
+  function openSpecificCard(title) {
+    setTimeout(() => {
+      const card = Array.from(document.querySelectorAll(".page.active .recipe-card")).find((c) => c.dataset.title === title);
+      if (!card) return;
+      const toggleBtn = card.querySelector(".recipe-toggle");
+      if (toggleBtn && !card.classList.contains("open")) toggleBtn.click();
+      card.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 150);
+  }
+
   document.querySelectorAll("[data-scroll-target]").forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       activateTab(link.dataset.scrollTarget);
       closeMobileMenu();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (link.dataset.openCard) {
+        openSpecificCard(link.dataset.openCard);
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     });
   });
 
   // Al recargar, vuelve a abrir la última página visitada en este dispositivo en vez de
-  // ir siempre a Actualidad.
+  // ir siempre a la portada.
   try {
     const lastTab = localStorage.getItem(ACTIVE_TAB_KEY);
     if (lastTab && pages.some((page) => page.id === lastTab)) activateTab(lastTab);
   } catch (err) {
-    // Almacenamiento no disponible: se queda en Actualidad, la página por defecto.
+    // Almacenamiento no disponible: se queda en la portada, la página por defecto.
   }
 
-  const activeBtn = nav.querySelector(".pill-btn.active") || pillButtons[0];
-  moveIndicator(activeBtn);
+  const activeBtn = nav.querySelector(".pill-btn.active");
+  if (activeBtn) moveIndicator(activeBtn);
+  else indicator.style.width = "0px";
   window.addEventListener("resize", () => {
     const active = nav.querySelector(".pill-btn.active");
     if (active) moveIndicator(active);

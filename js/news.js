@@ -31,6 +31,8 @@ function renderNewsCard(item) {
 async function loadNews() {
   const grid = document.getElementById("newsGrid");
   const empty = document.getElementById("newsEmpty");
+  const gridHome = document.getElementById("newsGridHome");
+  const emptyHome = document.getElementById("newsEmptyHome");
   if (!grid) return;
 
   try {
@@ -42,15 +44,25 @@ async function loadNews() {
     if (items.length === 0) {
       grid.innerHTML = "";
       empty.hidden = false;
+      if (gridHome) gridHome.innerHTML = "";
+      if (emptyHome) emptyHome.hidden = false;
       return;
     }
 
     grid.innerHTML = items.map(renderNewsCard).join("");
     empty.hidden = true;
     newsItems = items;
+
+    // Extracto de portada: solo las 3 noticias más recientes.
+    if (gridHome) {
+      gridHome.innerHTML = items.slice(0, 3).map(renderNewsCard).join("");
+      if (emptyHome) emptyHome.hidden = true;
+    }
   } catch (err) {
     grid.innerHTML = "";
     empty.hidden = false;
+    if (gridHome) gridHome.innerHTML = "";
+    if (emptyHome) emptyHome.hidden = false;
   }
 }
 
