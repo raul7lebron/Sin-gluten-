@@ -81,7 +81,7 @@ const GUIAS = [
         <li><strong>Alérgenos en negrita:</strong> en la Unión Europea es obligatorio resaltar en la lista de ingredientes los alérgenos, incluidos los cereales con gluten. Es lo primero que debes mirar.</li>
         <li><strong>«Puede contener trazas de...»:</strong> es un aviso voluntario del fabricante sobre riesgo de contaminación cruzada en la fábrica. Cada persona, según su sensibilidad, decide si lo asume o no.</li>
         <li><strong>Símbolo de la espiga barrada:</strong> es un sello de licencia (no obligatorio) que certifica un control más estricto. Su ausencia no significa que el producto lleve gluten, igual que su presencia no es la única garantía válida.</li>
-        <li><strong>Límite legal «sin gluten»:</strong> un producto solo puede etiquetarse como «sin gluten» si contiene menos de 20 mg/kg (20 ppm), según el Codex Alimentarius.</li>
+        <li><strong>Límite legal «sin gluten»:</strong> un producto solo puede etiquetarse como «sin gluten» si contiene menos de 20 mg/kg (20 ppm), según el Codex Alimentarius y la normativa que recoge la <a href="https://www.aesan.gob.es/AECOSAN/web/seguridad_alimentaria/subdetalle/informacion_gluten.htm" target="_blank" rel="noopener noreferrer">AESAN (Agencia Española de Seguridad Alimentaria y Nutrición)</a>.</li>
       </ul>
     `,
     related: ["alimentos-con-y-sin-gluten", "contaminacion-cruzada", "hacer-la-compra"],
@@ -279,8 +279,8 @@ const GUIAS = [
     lead: "Dónde encontrar más apoyo, más allá de lo que puede ofrecer un solo sitio web.",
     body: `
       <ul>
-        <li><strong>FACE (Federación de Asociaciones de Celíacos de España):</strong> agrupa a las asociaciones autonómicas y publica listados de establecimientos y marcas de confianza.</li>
-        <li><strong>Asociación de celíacos de tu comunidad autónoma:</strong> cada una suele mantener su propio listado local de restaurantes, tiendas y eventos, más detallado que el nacional.</li>
+        <li><strong><a href="https://celiacos.org/" target="_blank" rel="noopener noreferrer">FACE (Federación de Asociaciones de Celíacos de España)</a>:</strong> agrupa a las asociaciones autonómicas y publica listados de establecimientos y marcas de confianza.</li>
+        <li><strong>Asociación de celíacos de tu comunidad autónoma:</strong> cada una suele mantener su propio listado local de restaurantes, tiendas y eventos, más detallado que el nacional — por ejemplo, la <a href="https://www.asociaciondeceliacos.org/" target="_blank" rel="noopener noreferrer">Asociación de Celíacos y Sensibles al Gluten</a> en la Comunidad de Madrid.</li>
         <li><strong>Tu centro de salud:</strong> el pediatra, digestivo o dietista-nutricionista pueden derivarte a asociaciones y recursos de tu zona, y resolver dudas médicas que esta guía no cubre.</li>
         <li>Esta web complementa esos recursos con <a href="${SITE_URL}/#tiendas">tiendas especializadas</a>, un <a href="${SITE_URL}/#restaurantes">ranking de restaurantes</a>, una <a href="${SITE_URL}/#nutricion">tabla nutricional</a> y un <a href="${SITE_URL}/#escaner">escáner de productos</a>.</li>
       </ul>
@@ -417,9 +417,9 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
 
     ${relatedHtml(guia)}
   </main>${footerHtml()}
-  <script src="${SITE_URL}/js/analytics.js?v=${fileHash("js/analytics.js")}"></script>
-  <script src="${SITE_URL}/js/static-search.js?v=${fileHash("js/static-search.js")}"></script>
-  <script src="${SITE_URL}/js/static-page.js?v=${jsHash}"></script>
+  <script defer src="${SITE_URL}/js/analytics.js?v=${fileHash("js/analytics.js")}"></script>
+  <script defer src="${SITE_URL}/js/static-search.js?v=${fileHash("js/static-search.js")}"></script>
+  <script defer src="${SITE_URL}/js/static-page.js?v=${jsHash}"></script>
 </body>
 </html>
 `;
@@ -486,9 +486,9 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
 
     <div class="guide-grid hub-grid">${cards}</div>
   </main>${footerHtml()}
-  <script src="${SITE_URL}/js/analytics.js?v=${fileHash("js/analytics.js")}"></script>
-  <script src="${SITE_URL}/js/static-search.js?v=${fileHash("js/static-search.js")}"></script>
-  <script src="${SITE_URL}/js/static-page.js?v=${jsHash}"></script>
+  <script defer src="${SITE_URL}/js/analytics.js?v=${fileHash("js/analytics.js")}"></script>
+  <script defer src="${SITE_URL}/js/static-search.js?v=${fileHash("js/static-search.js")}"></script>
+  <script defer src="${SITE_URL}/js/static-page.js?v=${jsHash}"></script>
 </body>
 </html>
 `;

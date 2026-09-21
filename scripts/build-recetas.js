@@ -161,9 +161,9 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
 
     ${relatedHtml(receta, recetas)}
   </main>${footerHtml()}
-  <script src="${SITE_URL}/js/analytics.js?v=${fileHash("js/analytics.js")}"></script>
-  <script src="${SITE_URL}/js/static-search.js?v=${fileHash("js/static-search.js")}"></script>
-  <script src="${SITE_URL}/js/static-page.js?v=${jsHash}"></script>
+  <script defer src="${SITE_URL}/js/analytics.js?v=${fileHash("js/analytics.js")}"></script>
+  <script defer src="${SITE_URL}/js/static-search.js?v=${fileHash("js/static-search.js")}"></script>
+  <script defer src="${SITE_URL}/js/static-page.js?v=${jsHash}"></script>
 </body>
 </html>
 `;
@@ -228,9 +228,9 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
 
     <div class="guide-grid hub-grid">${cards}</div>
   </main>${footerHtml()}
-  <script src="${SITE_URL}/js/analytics.js?v=${fileHash("js/analytics.js")}"></script>
-  <script src="${SITE_URL}/js/static-search.js?v=${fileHash("js/static-search.js")}"></script>
-  <script src="${SITE_URL}/js/static-page.js?v=${jsHash}"></script>
+  <script defer src="${SITE_URL}/js/analytics.js?v=${fileHash("js/analytics.js")}"></script>
+  <script defer src="${SITE_URL}/js/static-search.js?v=${fileHash("js/static-search.js")}"></script>
+  <script defer src="${SITE_URL}/js/static-page.js?v=${jsHash}"></script>
 </body>
 </html>
 `;
