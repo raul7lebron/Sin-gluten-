@@ -444,7 +444,7 @@ a:focus-visible {
 }
 
 .section-hint {
-  margin: -12px 0 24px;
+  margin: 0 0 24px;
   color: var(--text-muted);
   font-size: 0.92rem;
   line-height: 1.5;
