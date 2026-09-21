@@ -102,8 +102,9 @@ const GUIAS = [
         <li>Lava bien las superficies y las manos después de manipular harina de trigo, antes de preparar algo sin gluten.</li>
         <li>Si vives en un hogar donde no todos comen sin gluten, etiqueta claramente los productos para evitar confusiones.</li>
       </ul>
+      <p>Si buscas qué utensilios concretos ayudan más a evitarla, tenemos una <a href="${SITE_URL}/vivir-sin-gluten/productos-recomendados/">recomendación práctica al respecto</a>.</p>
     `,
-    related: ["ingesta-accidental", "20-ppm", "hacer-la-compra"],
+    related: ["ingesta-accidental", "20-ppm", "productos-recomendados"],
   },
   {
     slug: "ingesta-accidental",
@@ -184,6 +185,37 @@ const GUIAS = [
       </ul>
     `,
     related: ["alimentos-con-y-sin-gluten", "20-ppm", "que-es-el-gluten"],
+  },
+  {
+    slug: "productos-recomendados",
+    cluster: "vivir-sin-gluten",
+    icon: "🔪",
+    title: "Utensilios de cocina que ayudan a evitar la contaminación cruzada",
+    description: "Qué utensilios de cocina facilitan evitar la contaminación cruzada en una cocina compartida (airfryer de dos cestas, tabla de cortar de metal, recipientes herméticos...) y por qué ayuda cada uno.",
+    lead: "No hace falta comprarlo todo de golpe: estos son los utensilios que más ayudan a evitar la contaminación cruzada en una cocina donde conviven productos con y sin gluten, y el motivo concreto de cada uno.",
+    body: `
+      <p>La guía de <a href="${SITE_URL}/vivir-sin-gluten/contaminacion-cruzada/">contaminación cruzada en casa</a> explica los riesgos más habituales. Esta página se centra en algo más concreto: qué utensilios facilitan evitarlos, y por qué ayuda cada uno específicamente.</p>
+
+      <h2>Airfryer con dos cestas independientes</h2>
+      <p>Si en casa se cocina con y sin gluten, una freidora de aire con dos cestas separadas (que no comparten resistencia ni bandeja) evita el problema habitual de una sola cesta: las migas de un rebozado con gluten quedan pegadas y contaminan lo siguiente que se fríe, por mucho que se limpie entre usos.</p>
+
+      <h2>Tabla de cortar de metal o vidrio</h2>
+      <p>Una tabla de madera, por bien que se lave, tiene poros microscópicos donde pueden quedar restos de harina o migas después de cortar pan o masa. El metal y el vidrio son superficies no porosas: lo que se limpia, se limpia del todo. Es la misma razón por la que conviene tener una tabla exclusiva y, si es de madera, no usarla nunca para cortar pan con gluten.</p>
+
+      <h2>Recipientes herméticos y etiquetados para la despensa</h2>
+      <p>Guardar la harina, la pasta o el pan sin gluten en botes herméticos y claramente etiquetados evita dos problemas a la vez: que caiga harina con gluten desde una balda superior, y que alguien coja por error el paquete equivocado en una despensa compartida.</p>
+
+      <h2>Utensilios de un color distinto para identificarlos a simple vista</h2>
+      <p>Tener una espátula, unas pinzas o un cucharón de un color llamativo reservados solo para cocinar sin gluten hace que, en una cocina con prisas o con varias personas cocinando, sea evidente cuál es cuál sin tener que preguntar cada vez.</p>
+
+      <h2>Sartén o wok antiadherente exclusivo</h2>
+      <p>Una superficie antiadherente rayada puede acumular restos en los surcos que no siempre salen con el fregado normal. Reservar una sartén solo para uso sin gluten (y sustituirla si se raya) es más fiable que confiar en un lavado a fondo cada vez.</p>
+
+      <div class="editorial-callout">
+        <strong>No hace falta comprarlo todo de golpe.</strong> Si convives con personas que sí comen gluten, prioriza según lo que más se use en tu cocina: la tabla de cortar y los utensilios de identificación rápida suelen ser el cambio más barato y con más impacto; el resto puede esperar.
+      </div>
+    `,
+    related: ["contaminacion-cruzada", "hacer-la-compra", "ingesta-accidental"],
   },
   {
     slug: "celiaquia-en-ninos",
