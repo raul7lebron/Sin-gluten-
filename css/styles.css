@@ -103,15 +103,32 @@ a:focus-visible {
 }
 
 .header-inner {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   padding: 14px 20px;
 }
 
-.logo {
+/* Fila superior: logo, lupa (centrada) y botón de menú móvil. El menú de
+   secciones va debajo, en su propia fila a todo lo ancho (ver .pill-nav),
+   porque con las 11 páginas que agrupa ya no cabe compartiendo fila. */
+.header-top {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-top .logo {
   justify-self: start;
+}
+
+#searchToggle {
+  justify-self: center;
+}
+
+.header-top .menu-toggle {
+  justify-self: end;
 }
 
 .header-search-btn {
@@ -137,19 +154,8 @@ a:focus-visible {
   transform: translateY(-1px);
 }
 
-.header-actions {
-  display: flex;
-  align-items: center;
-  justify-self: end;
-  gap: 10px;
-}
-
 .menu-toggle {
   display: none;
-}
-
-.pill-nav {
-  justify-self: end;
 }
 
 .logo {
@@ -180,32 +186,28 @@ a:focus-visible {
   }
 }
 
-/* Pill navigation */
+/* Pill navigation: fila propia a todo lo ancho del header, con las 11
+   páginas del sitio; se envuelve en varias líneas y se centra. */
 .pill-nav {
   position: relative;
-  display: inline-flex;
-  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   min-width: 0;
-  overflow-x: auto;
-  scrollbar-width: none;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: 4px;
+  border-radius: var(--radius-lg);
+  padding: 6px;
   box-shadow: var(--shadow-xs);
-  gap: 2px;
-}
-
-.pill-nav::-webkit-scrollbar {
-  display: none;
+  gap: 4px;
 }
 
 .pill-indicator {
   position: absolute;
   top: 4px;
-  bottom: 4px;
   left: 4px;
   width: 0;
+  height: 0;
   border-radius: 999px;
   background: var(--primary);
   transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1), width 0.35s cubic-bezier(0.65, 0, 0.35, 1);
@@ -2049,53 +2051,15 @@ a:focus-visible {
   background: rgba(255, 255, 255, 0.35);
 }
 
-/* Menú "Herramientas" del header: desplegable con Dietas, Calculadora,
-   Tabla nutricional, Escáner y Lista de la compra, accesos secundarios
-   frente a las 5 secciones principales del pill-nav. */
-.tools-menu-wrap {
-  position: relative;
-}
-
-.tools-toggle {
-  position: relative;
-}
-
-.tools-toggle .pill-badge {
+/* Aviso de la lista de la compra, ahora sobre el propio botón "Lista de la
+   compra" del menú principal (antes vivía en el botón de Herramientas). */
+.pill-btn .pill-badge {
   position: absolute;
   top: -2px;
   right: -2px;
   min-width: 16px;
   height: 16px;
   font-size: 0.62rem;
-}
-
-.tools-menu {
-  position: absolute;
-  top: calc(100% + 8px);
-  right: 0;
-  min-width: 220px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  padding: 6px;
-  z-index: 60;
-}
-
-.tools-menu a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px;
-  border-radius: var(--radius-sm);
-  color: var(--text);
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.tools-menu a:hover {
-  background: var(--surface-alt);
 }
 
 /* Ingredientes tocables en Recetas y Dietas */

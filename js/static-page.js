@@ -36,35 +36,4 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", () => {
     if (window.innerWidth > 640) closeMenu();
   });
-
-  // Menú "Herramientas" (engranaje): mismo comportamiento que en index.html.
-  const toolsToggle = document.getElementById("toolsToggle");
-  const toolsMenu = document.getElementById("toolsMenu");
-
-  if (toolsToggle && toolsMenu) {
-    function closeToolsMenu() {
-      toolsMenu.hidden = true;
-      toolsToggle.setAttribute("aria-expanded", "false");
-    }
-
-    function openToolsMenu() {
-      toolsMenu.hidden = false;
-      toolsToggle.setAttribute("aria-expanded", "true");
-    }
-
-    toolsToggle.addEventListener("click", () => {
-      if (toolsMenu.hidden) openToolsMenu();
-      else closeToolsMenu();
-    });
-
-    document.addEventListener("click", (event) => {
-      if (toolsMenu.hidden) return;
-      if (toolsMenu.contains(event.target) || toolsToggle.contains(event.target)) return;
-      closeToolsMenu();
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && !toolsMenu.hidden) closeToolsMenu();
-    });
-  }
 });

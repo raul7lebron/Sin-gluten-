@@ -24,36 +24,29 @@ function headerHtml() {
   return `
   <header class="site-header" id="siteHeader">
     <div class="header-inner container">
-      <a href="${SITE_URL}/" class="logo">
-        <img src="${SITE_URL}/img/logo.png" alt="Libre de Trigo" class="logo-img" />
-        <span class="logo-tagline">Guía práctica para vivir sin gluten</span>
-      </a>
-      <div class="header-actions">
+      <div class="header-top">
+        <a href="${SITE_URL}/" class="logo">
+          <img src="${SITE_URL}/img/logo.png" alt="Libre de Trigo" class="logo-img" />
+          <span class="logo-tagline">Guía práctica para vivir sin gluten</span>
+        </a>
         <button class="header-search-btn" id="searchToggle" type="button" aria-label="Buscar guías y recetas" aria-haspopup="dialog">
           <span aria-hidden="true">🔍</span>
         </button>
-        <div class="tools-menu-wrap">
-          <button class="header-search-btn tools-toggle" id="toolsToggle" type="button" aria-label="Más herramientas" aria-haspopup="true" aria-expanded="false" aria-controls="toolsMenu">
-            <span aria-hidden="true">⚙️</span>
-          </button>
-          <div class="tools-menu" id="toolsMenu" hidden>
-            <a href="${SITE_URL}/#dietas"><span aria-hidden="true">🍽️</span> Dietas</a>
-            <a href="${SITE_URL}/#calculadora"><span aria-hidden="true">🧮</span> Calculadora calórica</a>
-            <a href="${SITE_URL}/#recetas"><span aria-hidden="true">🍳</span> Recetas</a>
-            <a href="${SITE_URL}/#escaner"><span aria-hidden="true">📷</span> Escáner</a>
-            <a href="${SITE_URL}/#lista-compra"><span aria-hidden="true">🛍️</span> Lista de la compra</a>
-            <a href="${SITE_URL}/vivir-sin-gluten/productos-recomendados/"><span aria-hidden="true">🔪</span> Productos recomendados</a>
-          </div>
-        </div>
         <button class="header-search-btn menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-haspopup="true" aria-expanded="false" aria-controls="pillNav">
           <span aria-hidden="true">☰</span>
         </button>
       </div>
       <nav class="pill-nav" id="pillNav" aria-label="Secciones">
         <a class="pill-btn" href="${SITE_URL}/#guia"><span class="pill-icon" aria-hidden="true">🔰</span>Guías</a>
+        <a class="pill-btn" href="${SITE_URL}/#recetas"><span class="pill-icon" aria-hidden="true">🍳</span>Recetas</a>
+        <a class="pill-btn" href="${SITE_URL}/#dietas"><span class="pill-icon" aria-hidden="true">🍽️</span>Dietas</a>
+        <a class="pill-btn" href="${SITE_URL}/#calculadora"><span class="pill-icon" aria-hidden="true">🧮</span>Calculadora calórica</a>
+        <a class="pill-btn" href="${SITE_URL}/#nutricion"><span class="pill-icon" aria-hidden="true">🥗</span>Tabla nutricional</a>
         <a class="pill-btn" href="${SITE_URL}/#tiendas"><span class="pill-icon" aria-hidden="true">🏬</span>Tiendas especializadas</a>
         <a class="pill-btn" href="${SITE_URL}/#restaurantes"><span class="pill-icon" aria-hidden="true">📍</span>Comer fuera</a>
-        <a class="pill-btn" href="${SITE_URL}/#nutricion"><span class="pill-icon" aria-hidden="true">🥗</span>Tabla nutricional</a>
+        <a class="pill-btn" href="${SITE_URL}/#escaner"><span class="pill-icon" aria-hidden="true">📷</span>Escáner</a>
+        <a class="pill-btn" href="${SITE_URL}/#lista-compra"><span class="pill-icon" aria-hidden="true">🛍️</span>Lista de la compra</a>
+        <a class="pill-btn" href="${SITE_URL}/vivir-sin-gluten/productos-recomendados/"><span class="pill-icon" aria-hidden="true">🔪</span>Productos recomendados</a>
         <a class="pill-btn" href="${SITE_URL}/#actualidad"><span class="pill-icon" aria-hidden="true">📰</span>Actualidad</a>
       </nav>
     </div>

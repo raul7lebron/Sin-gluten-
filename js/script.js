@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function moveIndicator(btn) {
     indicator.style.width = `${btn.offsetWidth}px`;
-    indicator.style.transform = `translateX(${btn.offsetLeft - 4}px)`;
+    indicator.style.height = `${btn.offsetHeight}px`;
+    indicator.style.transform = `translate(${btn.offsetLeft - 4}px, ${btn.offsetTop - 4}px)`;
   }
 
   function setActivePage(target) {
@@ -76,46 +77,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Menú "Herramientas" del header: Dietas, Calculadora, Tabla nutricional,
-  // Escáner y Lista de la compra, como acceso secundario frente a las 5
-  // secciones principales del pill-nav.
-  const toolsToggle = document.getElementById("toolsToggle");
-  const toolsMenu = document.getElementById("toolsMenu");
-
-  function closeToolsMenu() {
-    if (!toolsMenu) return;
-    toolsMenu.hidden = true;
-    if (toolsToggle) toolsToggle.setAttribute("aria-expanded", "false");
-  }
-
-  function openToolsMenu() {
-    if (!toolsMenu) return;
-    toolsMenu.hidden = false;
-    if (toolsToggle) toolsToggle.setAttribute("aria-expanded", "true");
-  }
-
-  if (toolsToggle && toolsMenu) {
-    toolsToggle.addEventListener("click", () => {
-      if (toolsMenu.hidden) openToolsMenu();
-      else closeToolsMenu();
-    });
-
-    toolsMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", closeToolsMenu);
-    });
-
-    document.addEventListener("click", (event) => {
-      if (toolsMenu.hidden) return;
-      if (toolsMenu.contains(event.target) || toolsToggle.contains(event.target)) return;
-      closeToolsMenu();
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && !toolsMenu.hidden) closeToolsMenu();
-    });
-  }
-
   pillButtons.forEach((btn) => {
+    // "Productos recomendados" vive en este mismo menú pero es una página
+    // real aparte (un <a> con href, no una pestaña de la SPA): se deja que
+    // navegue con normalidad en vez de intentar activarla como pestaña.
+    if (!btn.dataset.target) return;
     btn.addEventListener("click", () => {
       activateTab(btn.dataset.target);
       closeMobileMenu();
