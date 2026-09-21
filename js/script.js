@@ -15,8 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     pages.forEach((page) => page.classList.toggle("active", page.id === target));
   }
 
-  const ACTIVE_TAB_KEY = "libreDeTrigoActiveTab";
-
   function activateTab(target) {
     const btn = pillButtons.find((b) => b.dataset.target === target);
     pillButtons.forEach((b) => {
@@ -29,11 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
       indicator.style.width = "0px";
     }
     setActivePage(target);
-    try {
-      localStorage.setItem(ACTIVE_TAB_KEY, target);
-    } catch (err) {
-      // Almacenamiento no disponible (navegación privada, etc.): no se recuerda la página.
-    }
   }
 
   // Menú desplegable en móvil: en pantallas estrechas el menú de pestañas se convierte
@@ -99,21 +92,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Si se llega con un hash en la URL (p. ej. desde el enlace "#nutricion" del
   // menú en una página de guía o receta, que son documentos aparte sin esas
-  // pestañas), abre esa pestaña directamente. Tiene prioridad sobre la última
-  // pestaña visitada: un enlace explícito pesa más que el recuerdo de la
-  // sesión anterior.
+  // pestañas), abre esa pestaña directamente. Si no hay hash, se queda en la
+  // portada (la pestaña marcada como activa por defecto en el HTML).
   const hashTarget = window.location.hash.slice(1);
   if (hashTarget && pages.some((page) => page.id === hashTarget)) {
     activateTab(hashTarget);
-  } else {
-    // Si no, al recargar, vuelve a abrir la última página visitada en este
-    // dispositivo en vez de ir siempre a la portada.
-    try {
-      const lastTab = localStorage.getItem(ACTIVE_TAB_KEY);
-      if (lastTab && pages.some((page) => page.id === lastTab)) activateTab(lastTab);
-    } catch (err) {
-      // Almacenamiento no disponible: se queda en la portada, la página por defecto.
-    }
   }
 
   const activeBtn = nav.querySelector(".pill-btn.active");
