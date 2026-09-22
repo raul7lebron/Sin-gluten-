@@ -43,7 +43,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=6660c0dd49">
+  <link rel="stylesheet" href="css/styles.css?v=5a143f6080">
   <!--
     Google AdSense: todavía no hay cuenta de editor (falta el ID
     "ca-pub-XXXXXXXXXXXXXXXX", que solo puede generar el titular dándose de
@@ -4006,6 +4006,22 @@ The post Nuevos pasos para un etiquetado más seguro appeared first on Asociaci�
             <button id="barcodeLookup" class="btn-primary" type="button">Buscar</button>
           </div>
         </div>
+
+        <div class="scanner-divider"><span>o</span></div>
+
+        <div class="scanner-manual">
+          <label for="productNameInput">¿No tienes el envase a mano? Busca por nombre o marca:</label>
+          <div class="scanner-manual-row">
+            <input type="text" id="productNameInput" placeholder="Ej. galletas María sin gluten" aria-label="Nombre o marca del producto">
+            <button id="productNameSearchBtn" class="btn-primary" type="button">Buscar</button>
+          </div>
+          <div class="scanner-name-results" id="scannerNameResults" hidden=""></div>
+        </div>
+      </div>
+
+      <div class="scanner-history" id="scannerHistory" hidden="">
+        <h3 class="scanner-history-title">Escaneado recientemente</h3>
+        <div class="scanner-history-list" id="scannerHistoryList"></div>
       </div>
 
       <div class="scanner-result" id="scannerResult" hidden=""></div>
@@ -4256,7 +4272,7 @@ The post Nuevos pasos para un etiquetado más seguro appeared first on Asociaci�
   <script defer="" src="js/shopping-list.js?v=1a42b2b2f4"></script>
   <script defer="" src="js/analytics.js?v=900a6b9715"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/@zxing/library@0.20.0/umd/index.min.js"></script>
-  <script defer="" src="js/scanner.js?v=b69c76d762"></script>
+  <script defer="" src="js/scanner.js?v=bc04b283c3"></script>
 
 
 </body></html>

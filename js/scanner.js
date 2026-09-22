@@ -7,8 +7,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const barcodeInput = document.getElementById("barcodeInput");
   const lookupBtn = document.getElementById("barcodeLookup");
   const resultBox = document.getElementById("scannerResult");
+  const productNameInput = document.getElementById("productNameInput");
+  const productNameSearchBtn = document.getElementById("productNameSearchBtn");
+  const nameResultsBox = document.getElementById("scannerNameResults");
+  const historyBox = document.getElementById("scannerHistory");
+  const historyList = document.getElementById("scannerHistoryList");
 
   if (!startBtn) return; // scanner section not on this page
+
+  // Los nombres, marcas e ingredientes vienen de Open Food Facts, una base de
+  // datos abierta que cualquiera puede editar: se escapan antes de insertarlos
+  // como HTML para no confiar en ese texto libre.
+  function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
 
   let reader = null;
   let scanning = false;
@@ -218,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const scoresHtml = `${renderScoreBadge("Nutri-Score", "🍎", nutriscoreGrade)}${renderScoreBadge("Green-Score", "🌱", ecoscoreGrade, ecoscoreValor)}${renderNovaBadge(product.nova_group)}`;
 
     const metaPartes = [product.quantity, product.categories ? product.categories.split(",")[0].trim() : ""].filter(Boolean);
-    const metaHtml = metaPartes.length ? `<p class="scanner-brand">${metaPartes.join(" · ")}</p>` : "";
+    const metaHtml = metaPartes.length ? `<p class="scanner-brand">${escapeHtml(metaPartes.join(" · "))}</p>` : "";
 
     const alergenos = otrosAlergenos(product.allergens_tags);
     const trazas = otrosAlergenos(product.traces_tags);
@@ -227,22 +239,41 @@ document.addEventListener("DOMContentLoaded", () => {
     resultBox.innerHTML = `
       <div class="scanner-card scanner-verdict-${veredicto.tipo}">
         <div class="scanner-product">
-          ${imagen ? `<img class="scanner-thumb" src="${imagen}" alt="" loading="lazy" />` : ""}
+          ${imagen ? `<img class="scanner-thumb" src="${escapeHtml(imagen)}" alt="" loading="lazy" />` : ""}
           <div>
-            <h3>${nombre}</h3>
-            ${marca ? `<p class="scanner-brand">${marca}</p>` : ""}
+            <h3>${escapeHtml(nombre)}</h3>
+            ${marca ? `<p class="scanner-brand">${escapeHtml(marca)}</p>` : ""}
             ${metaHtml}
           </div>
         </div>
         <div class="scanner-verdict"><span class="scanner-icon" aria-hidden="true">${veredicto.icono}</span> ${veredicto.texto}</div>
         ${scoresHtml ? `<div class="scanner-scores">${scoresHtml}</div>` : ""}
-        ${ingredientes ? `<p class="scanner-ingredients"><strong>Ingredientes:</strong> ${ingredientes}</p>` : ""}
+        ${ingredientes ? `<p class="scanner-ingredients"><strong>Ingredientes:</strong> ${escapeHtml(ingredientes)}</p>` : ""}
         ${alergenos ? `<p class="scanner-ingredients"><strong>Alérgenos declarados:</strong> ${alergenos}</p>` : ""}
         ${trazas ? `<p class="scanner-ingredients"><strong>Puede contener trazas de:</strong> ${trazas}</p>` : ""}
-        <a class="rank-link" href="https://world.openfoodfacts.org/product/${code}" target="_blank" rel="noopener noreferrer">Ver ficha completa en Open Food Facts ↗</a>
+        <div class="scanner-actions">
+          <button type="button" class="btn-secondary scanner-add-shopping" data-shop-label="${escapeHtml(nombre)}">🛒 Añadir a la lista de la compra</button>
+          <a class="rank-link" href="https://world.openfoodfacts.org/product/${encodeURIComponent(code)}" target="_blank" rel="noopener noreferrer">Ver ficha completa en Open Food Facts ↗</a>
+        </div>
       </div>
     `;
+
+    addToHistory(product, code, veredicto);
   }
+
+  resultBox.addEventListener("click", (event) => {
+    const btn = event.target.closest(".scanner-add-shopping");
+    if (!btn || btn.disabled) return;
+    if (typeof addOrIncrementShoppingItem !== "function") return;
+    addOrIncrementShoppingItem(btn.dataset.shopLabel);
+    const textoOriginal = btn.textContent;
+    btn.textContent = "✓ Añadido a la lista";
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = textoOriginal;
+      btn.disabled = false;
+    }, 1500);
+  });
 
   async function handleBarcode(code) {
     renderLoading();
@@ -258,5 +289,133 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (err) {
       renderError();
     }
+  }
+
+  /* ---------- Historial de escaneos recientes (solo en este dispositivo) ---------- */
+
+  const HISTORY_KEY = "libreDeTrigoScannerHistory";
+  const HISTORY_MAX = 8;
+
+  function loadScannerHistory() {
+    try {
+      const raw = localStorage.getItem(HISTORY_KEY);
+      const parsed = raw ? JSON.parse(raw) : [];
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (err) {
+      return [];
+    }
+  }
+
+  function saveScannerHistory() {
+    try {
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(scannerHistory));
+    } catch (err) {
+      // Almacenamiento no disponible (navegación privada, etc.): el historial solo dura esta sesión.
+    }
+  }
+
+  let scannerHistory = loadScannerHistory();
+
+  function addToHistory(product, code, veredicto) {
+    if (!historyBox) return;
+    scannerHistory = scannerHistory.filter((item) => item.code !== code);
+    scannerHistory.unshift({
+      code,
+      nombre: product.product_name || "Producto sin nombre registrado",
+      imagen: product.image_front_small_url || product.image_url || "",
+      tipo: veredicto.tipo,
+      icono: veredicto.icono,
+    });
+    scannerHistory = scannerHistory.slice(0, HISTORY_MAX);
+    saveScannerHistory();
+    renderHistory();
+  }
+
+  function renderHistory() {
+    if (!historyBox || !historyList) return;
+    if (scannerHistory.length === 0) {
+      historyBox.hidden = true;
+      return;
+    }
+    historyBox.hidden = false;
+    historyList.innerHTML = scannerHistory
+      .map(
+        (item) => `
+        <button type="button" class="scanner-history-item scanner-verdict-${item.tipo}" data-code="${escapeHtml(item.code)}" title="${escapeHtml(item.nombre)}">
+          ${item.imagen ? `<img src="${escapeHtml(item.imagen)}" alt="" loading="lazy" />` : `<span class="scanner-history-icon" aria-hidden="true">${item.icono}</span>`}
+          <span class="scanner-history-name">${escapeHtml(item.nombre)}</span>
+        </button>
+      `
+      )
+      .join("");
+  }
+
+  if (historyList) {
+    historyList.addEventListener("click", (event) => {
+      const btn = event.target.closest(".scanner-history-item");
+      if (!btn) return;
+      handleBarcode(btn.dataset.code);
+      resultBox.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
+  renderHistory();
+
+  /* ---------- Búsqueda por nombre o marca ---------- */
+
+  async function searchByName(query) {
+    if (!nameResultsBox) return;
+    nameResultsBox.hidden = false;
+    nameResultsBox.innerHTML = `<p class="scanner-status">Buscando…</p>`;
+    try {
+      const url = `https://world.openfoodfacts.org/cgi/search.pl?search_terms=${encodeURIComponent(query)}&search_simple=1&action=process&json=1&page_size=8&fields=code,product_name,brands,image_front_small_url`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error("network");
+      const data = await res.json();
+      const productos = (Array.isArray(data.products) ? data.products : []).filter((p) => p.code);
+      if (productos.length === 0) {
+        nameResultsBox.innerHTML = `<p class="scanner-status">No se encontraron productos con ese nombre. Prueba con otra búsqueda o usa el código de barras.</p>`;
+        return;
+      }
+      nameResultsBox.innerHTML = productos
+        .map(
+          (p) => `
+          <button type="button" class="scanner-name-result" data-code="${escapeHtml(p.code)}">
+            ${p.image_front_small_url ? `<img src="${escapeHtml(p.image_front_small_url)}" alt="" loading="lazy" />` : `<span class="scanner-name-result-noimg" aria-hidden="true">📦</span>`}
+            <span>
+              <strong>${escapeHtml(p.product_name || "Producto sin nombre")}</strong>
+              ${p.brands ? `<span class="scanner-name-result-brand">${escapeHtml(p.brands)}</span>` : ""}
+            </span>
+          </button>
+        `
+        )
+        .join("");
+    } catch (err) {
+      nameResultsBox.innerHTML = `<p class="scanner-status">No se pudo buscar. Revisa tu conexión e inténtalo de nuevo.</p>`;
+    }
+  }
+
+  if (productNameSearchBtn && productNameInput) {
+    function runNameSearch() {
+      const query = productNameInput.value.trim();
+      if (!query) return;
+      searchByName(query);
+    }
+    productNameSearchBtn.addEventListener("click", runNameSearch);
+    productNameInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") runNameSearch();
+    });
+  }
+
+  if (nameResultsBox) {
+    nameResultsBox.addEventListener("click", (event) => {
+      const btn = event.target.closest(".scanner-name-result");
+      if (!btn) return;
+      nameResultsBox.hidden = true;
+      nameResultsBox.innerHTML = "";
+      productNameInput.value = "";
+      setStatus("");
+      handleBarcode(btn.dataset.code);
+    });
   }
 });

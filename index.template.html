@@ -486,6 +486,22 @@
             <button id="barcodeLookup" class="btn-primary" type="button">Buscar</button>
           </div>
         </div>
+
+        <div class="scanner-divider"><span>o</span></div>
+
+        <div class="scanner-manual">
+          <label for="productNameInput">¿No tienes el envase a mano? Busca por nombre o marca:</label>
+          <div class="scanner-manual-row">
+            <input type="text" id="productNameInput" placeholder="Ej. galletas María sin gluten" aria-label="Nombre o marca del producto" />
+            <button id="productNameSearchBtn" class="btn-primary" type="button">Buscar</button>
+          </div>
+          <div class="scanner-name-results" id="scannerNameResults" hidden></div>
+        </div>
+      </div>
+
+      <div class="scanner-history" id="scannerHistory" hidden>
+        <h3 class="scanner-history-title">Escaneado recientemente</h3>
+        <div class="scanner-history-list" id="scannerHistoryList"></div>
       </div>
 
       <div class="scanner-result" id="scannerResult" hidden></div>
