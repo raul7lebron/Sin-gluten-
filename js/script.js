@@ -27,6 +27,18 @@ document.addEventListener("DOMContentLoaded", () => {
       indicator.style.width = "0px";
     }
     setActivePage(target);
+
+    // Refleja la pestaña activa en la URL (sin añadir una entrada nueva al
+    // historial) para que, si refrescas la página, se reabra la misma
+    // pestaña en la que estabas: es el mismo hash que ya usan los enlaces
+    // externos con "#nutricion", etc. La portada se deja sin hash para no
+    // ensuciar la URL de la home con "#inicio".
+    try {
+      const url = target === "inicio" ? window.location.pathname + window.location.search : `#${target}`;
+      history.replaceState(null, "", url);
+    } catch (err) {
+      // history.replaceState no disponible (muy improbable): no es crítico.
+    }
   }
 
   // Menú desplegable en móvil: en pantallas estrechas el menú de pestañas se convierte
