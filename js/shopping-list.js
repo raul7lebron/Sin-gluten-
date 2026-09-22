@@ -1,7 +1,7 @@
 // Lista de la compra: se guarda solo en este dispositivo (localStorage), nunca en un
 // servidor. Es una lista genérica ("espinacas", "pan sin gluten"...), no productos de una
 // marca o supermercado concreto, para poder comprarla en cualquier sitio. Al tocar un
-// ingrediente en negrita en Recetas o Dietas se añade directamente (o se suma 1 si ya
+// ingrediente en negrita en Recetas, Dietas o la Tabla nutricional se añade directamente (o se suma 1 si ya
 // estaba); la cantidad se ajusta luego con los botones +/- en la propia lista.
 const SHOPPING_LIST_KEY = "libreDeTrigoShoppingList";
 
