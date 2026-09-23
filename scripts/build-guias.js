@@ -391,7 +391,11 @@ function buildArticlePage(guia) {
   <meta property="og:title" content="${escapeHtml(guia.title)} | Libre de Trigo" />
   <meta property="og:description" content="${escapeHtml(guia.description)}" />
   <meta property="og:url" content="${canonicalUrl}" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="${SITE_URL}/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="${SITE_URL}/img/og-image.png" />
   <link rel="icon" type="image/png" href="${SITE_URL}/img/favicon.png" />
   <script type="application/ld+json">
 ${JSON.stringify(articleJsonLd, null, 2)}
@@ -467,7 +471,11 @@ function buildHubPage(clusterKey) {
   <meta property="og:title" content="${escapeHtml(cluster.label)} | Guías | Libre de Trigo" />
   <meta property="og:description" content="${escapeHtml(description)}" />
   <meta property="og:url" content="${canonicalUrl}" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="${SITE_URL}/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="${SITE_URL}/img/og-image.png" />
   <link rel="icon" type="image/png" href="${SITE_URL}/img/favicon.png" />
   <script type="application/ld+json">
 ${JSON.stringify(breadcrumbJsonLd, null, 2)}

@@ -109,6 +109,7 @@ function buildRecetaPage(receta, recetas) {
     name: receta.title,
     description,
     url: canonicalUrl,
+    image: `${SITE_URL}/img/og-image.png`,
     inLanguage: "es-ES",
     author: { "@type": "Organization", name: "Libre de Trigo", url: `${SITE_URL}/` },
     recipeIngredient: receta.ingredientes,
@@ -132,7 +133,11 @@ function buildRecetaPage(receta, recetas) {
   <meta property="og:title" content="${escapeHtml(pageTitle)}" />
   <meta property="og:description" content="${escapeHtml(description)}" />
   <meta property="og:url" content="${canonicalUrl}" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="${SITE_URL}/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="${SITE_URL}/img/og-image.png" />
   <link rel="icon" type="image/png" href="${SITE_URL}/img/favicon.png" />
   <script type="application/ld+json">
 ${JSON.stringify(recipeJsonLd, null, 2)}
@@ -209,7 +214,11 @@ function buildHubPage(recetas) {
   <meta property="og:title" content="Recetas sin gluten | Libre de Trigo" />
   <meta property="og:description" content="${escapeHtml(description)}" />
   <meta property="og:url" content="${canonicalUrl}" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="${SITE_URL}/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="${SITE_URL}/img/og-image.png" />
   <link rel="icon" type="image/png" href="${SITE_URL}/img/favicon.png" />
   <script type="application/ld+json">
 ${JSON.stringify(breadcrumbJsonLd, null, 2)}
