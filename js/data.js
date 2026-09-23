@@ -1739,6 +1739,104 @@ const recetas = [
       "Dejar enfriar sobre una rejilla antes de servir; se conservan varios días en un bote hermético.",
     ],
   },
+  {
+    icon: "🥬",
+    title: "Crema de calabacín y puerro",
+    slug: "crema-de-calabacin-y-puerro",
+    categoria: "entrante",
+    meta: "~140 kcal · 30 min · Para 4 personas",
+    ingredientes: ["3 calabacines", "2 puerros", "1 patata pequeña", "Caldo de verduras sin gluten", "Queso crema (opcional)", "Aceite de oliva virgen extra"],
+    pasos: [
+      "Lavar y trocear los calabacines, los puerros y la patata.",
+      "Rehogar el puerro en una olla con un poco de aceite de oliva 5 minutos, hasta que esté transparente.",
+      "Añadir el calabacín y la patata, y rehogar 2 minutos más.",
+      "Cubrir con caldo de verduras y cocinar 20 minutos, hasta que las verduras estén tiernas.",
+      "Triturar hasta obtener una crema fina, añadiendo el queso crema si se desea más untuosidad.",
+      "Servir caliente con un hilo de aceite de oliva por encima.",
+    ],
+  },
+  {
+    icon: "🌿",
+    title: "Rollitos vietnamitas de arroz con gambas",
+    slug: "rollitos-vietnamitas-de-arroz-con-gambas",
+    categoria: "entrante",
+    meta: "~160 kcal · 30 min · Para 4 personas",
+    ingredientes: ["8 obleas de papel de arroz", "200 g de gambas cocidas", "Fideos de arroz", "Zanahoria y pepino en juliana", "Hojas de menta y cilantro", "Salsa de soja sin gluten (tamari) para mojar"],
+    pasos: [
+      "Cocer los fideos de arroz según las instrucciones del paquete, escurrir y dejar templar.",
+      "Cortar la zanahoria y el pepino en juliana fina.",
+      "Humedecer una oblea de papel de arroz en agua templada unos segundos, hasta que esté flexible.",
+      "Colocar en el centro unas gambas, fideos, verduras y hierbas frescas.",
+      "Doblar los laterales de la oblea hacia dentro y enrollar apretando bien, como si fuera un rollito de primavera.",
+      "Repetir con el resto de obleas y servir con tamari para mojar.",
+    ],
+  },
+  {
+    icon: "🦑",
+    title: "Arroz negro con sepia",
+    slug: "arroz-negro-con-sepia",
+    categoria: "principal",
+    meta: "~450 kcal · 45 min · Para 4 personas",
+    ingredientes: ["350 g de arroz redondo", "2 sepias limpias con su tinta", "1 cebolla", "1 pimiento verde", "2 tomates rallados", "Caldo de pescado sin gluten", "Alioli para acompañar"],
+    pasos: [
+      "Cortar la sepia en trozos y sofreírla en la paellera con aceite de oliva hasta que dore.",
+      "Añadir la cebolla y el pimiento picados finos, y sofreír 5 minutos.",
+      "Incorporar el tomate rallado y cocinar hasta que pierda el agua.",
+      "Añadir el arroz y sofreírlo 2 minutos removiendo para que se impregne bien.",
+      "Disolver la tinta de sepia en un poco de caldo y añadirla junto con el resto del caldo caliente.",
+      "Cocinar 16-18 minutos sin remover, hasta que el arroz esté en su punto y el caldo se haya absorbido.",
+      "Dejar reposar 5 minutos y servir con alioli aparte.",
+    ],
+  },
+  {
+    icon: "🍋",
+    title: "Muslos de pollo al horno con limón y romero",
+    slug: "pollo-al-horno-con-limon-y-romero",
+    categoria: "principal",
+    meta: "~380 kcal · 50 min · Para 4 personas",
+    ingredientes: ["8 muslos de pollo", "2 limones", "4 dientes de ajo", "Romero fresco", "Patatas pequeñas", "Aceite de oliva virgen extra", "Sal y pimienta"],
+    pasos: [
+      "Precalentar el horno a 200 °C.",
+      "Colocar los muslos de pollo en una fuente de horno junto con las patatas cortadas en cuartos y los ajos sin pelar.",
+      "Regar con aceite de oliva, el zumo de un limón y el otro limón cortado en rodajas.",
+      "Añadir ramitas de romero fresco, sal y pimienta, y mezclar bien con las manos.",
+      "Hornear 40-45 minutos, dando la vuelta a las patatas a mitad de cocción, hasta que el pollo esté dorado y las patatas tiernas.",
+      "Servir caliente con los jugos de la fuente por encima.",
+    ],
+  },
+  {
+    icon: "🍫",
+    title: "Mousse de chocolate",
+    slug: "mousse-de-chocolate-sin-gluten",
+    categoria: "postre",
+    meta: "~250 kcal · 20 min + enfriado · Para 4 personas",
+    ingredientes: ["200 g de chocolate negro sin gluten", "4 huevos", "30 g de azúcar", "Una pizca de sal"],
+    pasos: [
+      "Derretir el chocolate al baño maría o en el microondas en golpes cortos, y dejar templar.",
+      "Separar las yemas de las claras.",
+      "Mezclar las yemas con el chocolate derretido hasta integrar bien.",
+      "Montar las claras a punto de nieve con una pizca de sal, añadiendo el azúcar poco a poco.",
+      "Incorporar las claras montadas a la mezcla de chocolate con movimientos envolventes, para que no baje el aire.",
+      "Repartir en vasitos individuales y refrigerar al menos 3 horas antes de servir.",
+    ],
+  },
+  {
+    icon: "🍏",
+    title: "Crumble de manzana sin gluten",
+    slug: "crumble-de-manzana-sin-gluten",
+    categoria: "postre",
+    meta: "~310 kcal · 45 min · Para 6 personas",
+    ingredientes: ["5 manzanas", "1 cucharadita de canela", "100 g de harina de almendra", "80 g de copos de avena sin gluten", "80 g de mantequilla fría en dados", "60 g de azúcar moreno"],
+    pasos: [
+      "Precalentar el horno a 180 °C.",
+      "Pelar y cortar las manzanas en láminas, y colocarlas en una fuente de horno con la canela.",
+      "Mezclar la harina de almendra, los copos de avena y el azúcar moreno en un bol.",
+      "Añadir la mantequilla fría y desmigar con los dedos hasta obtener una textura de migas gruesas.",
+      "Repartir la mezcla de migas sobre las manzanas de manera uniforme.",
+      "Hornear 30-35 minutos, hasta que la superficie esté dorada y crujiente.",
+      "Servir templado, solo o con una bola de helado.",
+    ],
+  },
 ];
 
 // Planes de dieta de 4 semanas (28 días), en 3 niveles calóricos (1500/2000/2500
@@ -2966,6 +3064,14 @@ const restaurantesPorCiudad = {
       { nombre: "Forn de Sant Joan", nota: 4.4, resenas: null, zona: "La Llotja-Born", desc: "Cocina mediterránea de tapas con variedad de platos sin gluten en carta, del entrante al postre." },
     ],
   },
+  granada: {
+    label: "Granada",
+    restaurantes: [
+      { nombre: "Cala", nota: 4.7, resenas: 539, zona: "Zona Fórum, junto al parque de los Lagos", desc: "Cocina de autor con solo cuatro mesas, reconocida por la Guía Michelin; TheFork señala que ofrece opciones sin gluten.", aprox: true },
+      { nombre: "Biloba", nota: 4.6, resenas: 766, zona: "Realejo-San Matías, centro", desc: "Cocina mediterránea de fusión con terraza; uno de los restaurantes sin gluten mejor valorados de Granada en TheFork." },
+      { nombre: "Bongo", nota: 4.6, resenas: 562, zona: "Plaza Isabel la Católica, centro", desc: "Brunch y cocina mediterránea de fusión; aparece en el listado de restaurantes sin gluten de TheFork Granada.", aprox: true },
+    ],
+  },
 };
 
 // Hoteles con acuerdo o experiencia contrastada en atención a celíacos
@@ -3010,6 +3116,18 @@ const hotelesPorCiudad = {
     label: "Granada",
     hoteles: [
       { nombre: "Parador de Granada", nota: 4.4, resenas: null, zona: "Recinto de la Alhambra", desc: "Antiguo convento de San Francisco dentro de la Alhambra; la red de Paradores tiene acuerdo con FACE y ofrece el \"Rincón de los celíacos\" en el desayuno." },
+    ],
+  },
+  barcelona: {
+    label: "Barcelona",
+    hoteles: [
+      { nombre: "Evenia Rosselló", nota: 4.0, resenas: null, zona: "Eixample", desc: "Hotel acreditado por la Associació de Celíacs de Catalunya, con desayuno buffet que incluye opciones para celíacos.", aprox: true },
+    ],
+  },
+  valencia: {
+    label: "Valencia",
+    hoteles: [
+      { nombre: "Hospes Palau de la Mar", nota: 4.0, resenas: null, zona: "L'Eixample, junto a los Jardines del Turia", desc: "Palacete del siglo XIX de la cadena Hospes, con el mismo acuerdo de la cadena para atender a celíacos en desayuno y restaurante.", aprox: true },
     ],
   },
 };
