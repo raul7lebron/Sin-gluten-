@@ -3130,6 +3130,18 @@ const hotelesPorCiudad = {
       { nombre: "Hospes Palau de la Mar", nota: 4.0, resenas: null, zona: "L'Eixample, junto a los Jardines del Turia", desc: "Palacete del siglo XIX de la cadena Hospes, con el mismo acuerdo de la cadena para atender a celíacos en desayuno y restaurante.", aprox: true },
     ],
   },
+  malaga: {
+    label: "Málaga",
+    hoteles: [
+      { nombre: "Parador de Málaga Gibralfaro", nota: 4.4, resenas: null, zona: "Monte Gibralfaro, junto al castillo", desc: "Parador con vistas a la ciudad y el puerto; la red de Paradores tiene acuerdo con FACE y ofrece el \"Rincón de los celíacos\" en el desayuno." },
+    ],
+  },
+  bilbao: {
+    label: "Bilbao",
+    hoteles: [
+      { nombre: "Hotel Ilunion Bilbao", nota: 4.1, resenas: 3802, zona: "Ensanche, junto a San Mamés", desc: "La cadena Ilunion tiene acuerdo con FACE, con formación y supervisión del menú sin gluten ofrecido en sus restaurantes." },
+    ],
+  },
 };
 
 // Tiendas cuyo negocio principal es la venta de productos sin gluten (no
