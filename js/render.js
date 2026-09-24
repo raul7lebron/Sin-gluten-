@@ -113,6 +113,7 @@ const RECETA_CATEGORIA_LABEL = {
   principal: "Principal",
   entrante: "Entrante",
   postre: "Postre",
+  favoritas: "❤️ Favoritas",
 };
 
 function recetaMatchesIngrediente(receta, query) {
@@ -123,28 +124,39 @@ function recetaMatchesIngrediente(receta, query) {
 
 // Cada receta tiene su propia página real en /recetas/<slug>/ (ver
 // scripts/build-recetas.js), así que aquí solo se muestra un directorio de
-// enlaces hacia ellas, filtrable por tipo de plato y por ingrediente.
+// enlaces hacia ellas, filtrable por tipo de plato, favoritas y por
+// ingrediente. Los favoritos viven en localStorage (ver js/favorites.js) y
+// cada tarjeta incluye un corazón para marcarlos sin salir del directorio.
 function renderRecetasDirectory(categoria = "todas", query = "") {
   const list = document.getElementById("recetasList");
   const empty = document.getElementById("recetasEmpty");
   if (!list) return;
   const normalizedQuery = query.trim().toLowerCase();
-  const filtradas = recetas.filter(
-    (r) => (categoria === "todas" || r.categoria === categoria) && recetaMatchesIngrediente(r, normalizedQuery)
-  );
+  const favoritos = typeof getFavoritos === "function" ? getFavoritos() : [];
+  const filtradas = recetas.filter((r) => {
+    const matchCategoria = categoria === "favoritas" ? favoritos.includes(r.slug) : categoria === "todas" || r.categoria === categoria;
+    return matchCategoria && recetaMatchesIngrediente(r, normalizedQuery);
+  });
 
   list.innerHTML = filtradas
-    .map(
-      (receta) => `
+    .map((receta) => {
+      const activo = favoritos.includes(receta.slug);
+      return `
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/${receta.slug}/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card${activo ? " active" : ""}" type="button" data-slug="${receta.slug}" aria-pressed="${activo}" aria-label="${activo ? "Quitar de favoritas" : "Guardar en favoritas"}">${activo ? "❤️" : "🤍"}</button>
           <span class="guide-category">${receta.icon} ${RECETA_CATEGORIA_LABEL[receta.categoria] || "Receta"}</span>
           <h3>${receta.title}</h3>
           <p>${receta.meta}</p>
-        </a>`
-    )
+        </a>`;
+    })
     .join("");
 
   if (empty) empty.hidden = filtradas.length > 0;
+  if (empty && categoria === "favoritas" && filtradas.length === 0) {
+    empty.textContent = "Todavía no has guardado ninguna receta como favorita. Toca el corazón de una receta para guardarla aquí.";
+  } else if (empty) {
+    empty.textContent = "No se encontraron recetas con esa búsqueda.";
+  }
 }
 
 function renderRecetaCategoriaFilter() {

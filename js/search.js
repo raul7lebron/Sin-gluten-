@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     alimento: "Valor nutricional",
     tienda: "Tienda especializada",
     restaurante: "Restaurante",
+    hotel: "Hotel",
     noticia: "Noticia",
     guia: "Guía",
   };
@@ -161,6 +162,22 @@ document.addEventListener("DOMContentLoaded", () => {
             const chip = document.querySelector(`#ciudadFilter [data-ciudad="${key}"]`);
             if (chip) chip.click();
             openCard("restaurantes", ".rank-card", r.nombre);
+          },
+        });
+      });
+    });
+
+    Object.entries(typeof hotelesPorCiudad !== "undefined" ? hotelesPorCiudad : {}).forEach(([key, ciudad]) => {
+      ciudad.hoteles.forEach((h) => {
+        items.push({
+          type: "hotel",
+          title: h.nombre,
+          snippet: `${ciudad.label} · ${h.zona}`,
+          haystack: [h.nombre, ciudad.label, h.zona, h.desc].join(" ").toLowerCase(),
+          action: () => {
+            const chip = document.querySelector(`#hotelCiudadFilter [data-ciudad="${key}"]`);
+            if (chip) chip.click();
+            openCard("hoteles", ".rank-card", h.nombre);
           },
         });
       });

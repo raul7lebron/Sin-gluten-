@@ -126,7 +126,8 @@ document.addEventListener("DOMContentLoaded", () => {
     resultBox.innerHTML = `
       <div class="scanner-card scanner-verdict-desconocido">
         <div class="scanner-verdict"><span class="scanner-icon" aria-hidden="true">❓</span> Producto no encontrado</div>
-        <p>No hay datos en Open Food Facts para el código <strong>${code}</strong>. Prueba a leer el etiquetado directamente o busca el producto por nombre en la web del fabricante.</p>
+        <p>No hay datos en Open Food Facts para el código <strong>${escapeHtml(code)}</strong>. Prueba a leer el etiquetado directamente o busca el producto por nombre en la web del fabricante.</p>
+        <p>Si es una marca española pequeña o artesana, es habitual que todavía no esté en la base de datos. <button type="button" class="scanner-inline-link scanner-goto-contacto">Dinos qué producto es</button> y lo añadimos a Open Food Facts para que aparezca aquí en el futuro.</p>
       </div>
     `;
   }
@@ -262,17 +263,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   resultBox.addEventListener("click", (event) => {
-    const btn = event.target.closest(".scanner-add-shopping");
-    if (!btn || btn.disabled) return;
-    if (typeof addOrIncrementShoppingItem !== "function") return;
-    addOrIncrementShoppingItem(btn.dataset.shopLabel);
-    const textoOriginal = btn.textContent;
-    btn.textContent = "✓ Añadido a la lista";
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = textoOriginal;
-      btn.disabled = false;
-    }, 1500);
+    const shopBtn = event.target.closest(".scanner-add-shopping");
+    if (shopBtn && !shopBtn.disabled) {
+      if (typeof addOrIncrementShoppingItem !== "function") return;
+      addOrIncrementShoppingItem(shopBtn.dataset.shopLabel);
+      const textoOriginal = shopBtn.textContent;
+      shopBtn.textContent = "✓ Añadido a la lista";
+      shopBtn.disabled = true;
+      setTimeout(() => {
+        shopBtn.textContent = textoOriginal;
+        shopBtn.disabled = false;
+      }, 1500);
+      return;
+    }
+
+    const contactoBtn = event.target.closest(".scanner-goto-contacto");
+    if (contactoBtn && window.libreDeTrigo) {
+      window.libreDeTrigo.activateTab("sobre-libredetrigo");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   });
 
   async function handleBarcode(code) {

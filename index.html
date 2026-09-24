@@ -47,7 +47,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=5a143f6080">
+  <link rel="stylesheet" href="css/styles.css?v=0c4de296ad">
   <!--
     Google AdSense: todavía no hay cuenta de editor (falta el ID
     "ca-pub-XXXXXXXXXXXXXXXX", que solo puede generar el titular dándose de
@@ -861,335 +861,401 @@ The post Nuevos pasos para un etiquetado más seguro appeared first on Asociaci�
         <input type="search" id="recetaIngredienteSearch" placeholder="Buscar por ingrediente, p. ej. «calabacín»…" aria-label="Buscar recetas por ingrediente">
       </div>
 
-      <div class="filter-chips" id="recetaCategoriaFilter" role="group" aria-label="Filtrar por tipo de plato"><button class="filter-chip active" data-categoria="todas" type="button">Todas</button><button class="filter-chip" data-categoria="principal" type="button">Principal</button><button class="filter-chip" data-categoria="entrante" type="button">Entrante</button><button class="filter-chip" data-categoria="postre" type="button">Postre</button></div>
+      <div class="filter-chips" id="recetaCategoriaFilter" role="group" aria-label="Filtrar por tipo de plato"><button class="filter-chip active" data-categoria="todas" type="button">Todas</button><button class="filter-chip" data-categoria="principal" type="button">Principal</button><button class="filter-chip" data-categoria="entrante" type="button">Entrante</button><button class="filter-chip" data-categoria="postre" type="button">Postre</button><button class="filter-chip" data-categoria="favoritas" type="button">❤️ Favoritas</button></div>
 
       <div class="guide-grid" id="recetasList">
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/poke-bowl-de-atun/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="poke-bowl-de-atun" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🥙 Principal</span>
           <h3>Poke bowl de atún</h3>
           <p>~420 kcal · 25 min · Para 2 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/ceviche-de-corvina/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="ceviche-de-corvina" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍋 Entrante</span>
           <h3>Ceviche de corvina</h3>
           <p>~150 kcal · 25 min + reposo · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/arepas-de-maiz-rellenas-de-pollo/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="arepas-de-maiz-rellenas-de-pollo" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🌽 Principal</span>
           <h3>Arepas de maíz rellenas de pollo</h3>
           <p>~310 kcal · 40 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/curry-de-garbanzos-y-espinacas/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="curry-de-garbanzos-y-espinacas" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍛 Principal</span>
           <h3>Curry de garbanzos y espinacas</h3>
           <p>~360 kcal · 30 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/pollo-al-curry-con-leche-de-coco/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="pollo-al-curry-con-leche-de-coco" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍛 Principal</span>
           <h3>Pollo al curry con leche de coco</h3>
           <p>~390 kcal · 35 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/dal-de-lentejas-rojas-al-curry/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="dal-de-lentejas-rojas-al-curry" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🫘 Principal</span>
           <h3>Dal de lentejas rojas al curry</h3>
           <p>~320 kcal · 35 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/sopa-de-miso-con-tofu/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="sopa-de-miso-con-tofu" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍲 Entrante</span>
           <h3>Sopa de miso con tofu</h3>
           <p>~140 kcal · 15 min · Para 2 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/wok-de-ternera-y-verduras/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="wok-de-ternera-y-verduras" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🥢 Principal</span>
           <h3>Wok de ternera y verduras</h3>
           <p>~400 kcal · 25 min · Para 3 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/pad-thai-de-arroz-con-gambas/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="pad-thai-de-arroz-con-gambas" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍜 Principal</span>
           <h3>Pad thai de arroz con gambas</h3>
           <p>~420 kcal · 30 min · Para 2 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/bibimbap-de-arroz-con-verduras/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="bibimbap-de-arroz-con-verduras" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍚 Principal</span>
           <h3>Bibimbap de arroz con verduras</h3>
           <p>~450 kcal · 40 min · Para 2 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/pho-vietnamita-de-pollo/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="pho-vietnamita-de-pollo" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍲 Principal</span>
           <h3>Pho vietnamita de pollo</h3>
           <p>~380 kcal · 60 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/falafel-al-horno-con-salsa-de-yogur/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="falafel-al-horno-con-salsa-de-yogur" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🧆 Principal</span>
           <h3>Falafel al horno con salsa de yogur</h3>
           <p>~360 kcal · 40 min + remojo · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/shakshuka/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="shakshuka" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🌶️ Principal</span>
           <h3>Shakshuka</h3>
           <p>~280 kcal · 30 min · Para 2 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/tajin-de-pollo-con-limon-y-aceitunas/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="tajin-de-pollo-con-limon-y-aceitunas" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍋 Principal</span>
           <h3>Tajín de pollo con limón y aceitunas</h3>
           <p>~360 kcal · 55 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/buddha-bowl-de-garbanzos-asados/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="buddha-bowl-de-garbanzos-asados" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🥗 Principal</span>
           <h3>Buddha bowl de garbanzos asados</h3>
           <p>~450 kcal · 35 min · Para 2 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/boniato-asado-relleno-de-garbanzos-y-espinacas/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="boniato-asado-relleno-de-garbanzos-y-espinacas" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍠 Principal</span>
           <h3>Boniato asado relleno de garbanzos y espinacas</h3>
           <p>~290 kcal · 55 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/crepes-de-trigo-sarraceno-con-fruta/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="crepes-de-trigo-sarraceno-con-fruta" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🥞 Postre</span>
           <h3>Crepes de trigo sarraceno con fruta</h3>
           <p>~280 kcal · 20 min · Para 2 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/tortilla-de-patatas-clasica/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="tortilla-de-patatas-clasica" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍳 Principal</span>
           <h3>Tortilla de patatas clásica</h3>
           <p>~320 kcal · 35 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/pollo-al-horno-con-verduras/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="pollo-al-horno-con-verduras" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍗 Principal</span>
           <h3>Pollo al horno con verduras</h3>
           <p>~410 kcal · 45 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/arroz-con-verduras-y-gambas/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="arroz-con-verduras-y-gambas" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍤 Principal</span>
           <h3>Arroz con verduras y gambas</h3>
           <p>~380 kcal · 30 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/ensalada-de-quinoa-y-aguacate/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="ensalada-de-quinoa-y-aguacate" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🥑 Entrante</span>
           <h3>Ensalada de quinoa y aguacate</h3>
           <p>~340 kcal · 20 min · Para 2 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/crema-de-calabaza/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="crema-de-calabaza" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🎃 Entrante</span>
           <h3>Crema de calabaza</h3>
           <p>~210 kcal · 30 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/salmon-a-la-plancha-con-pure-de-boniato/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="salmon-a-la-plancha-con-pure-de-boniato" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🐟 Principal</span>
           <h3>Salmón a la plancha con puré de boniato</h3>
           <p>~430 kcal · 30 min · Para 2 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/gazpacho-andaluz/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="gazpacho-andaluz" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍅 Entrante</span>
           <h3>Gazpacho andaluz</h3>
           <p>~150 kcal · 15 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/albondigas-en-salsa-de-tomate/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="albondigas-en-salsa-de-tomate" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍖 Principal</span>
           <h3>Albóndigas en salsa de tomate</h3>
           <p>~450 kcal · 50 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/porridge-de-avena-con-frutos-rojos/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="porridge-de-avena-con-frutos-rojos" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🥣 Postre</span>
           <h3>Porridge de avena con frutos rojos</h3>
           <p>~320 kcal · 10 min · Para 1 persona</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/vichyssoise-crema-fria-de-puerro-y-patata/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="vichyssoise-crema-fria-de-puerro-y-patata" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🥔 Entrante</span>
           <h3>Vichyssoise (crema fría de puerro y patata)</h3>
           <p>~230 kcal · 40 min + enfriado · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/solomillo-de-cerdo-con-salsa-de-mostaza/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="solomillo-de-cerdo-con-salsa-de-mostaza" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍖 Principal</span>
           <h3>Solomillo de cerdo con salsa de mostaza</h3>
           <p>~410 kcal · 35 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/merluza-en-salsa-verde/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="merluza-en-salsa-verde" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🐠 Principal</span>
           <h3>Merluza en salsa verde</h3>
           <p>~280 kcal · 30 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/carbonara-sin-gluten/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="carbonara-sin-gluten" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍝 Principal</span>
           <h3>Carbonara sin gluten</h3>
           <p>~520 kcal · 20 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/brownie-sin-gluten/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="brownie-sin-gluten" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍫 Postre</span>
           <h3>Brownie sin gluten</h3>
           <p>~290 kcal por ración · 40 min · Para 9 raciones</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/ensalada-cesar-con-pollo-sin-gluten/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="ensalada-cesar-con-pollo-sin-gluten" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🥗 Principal</span>
           <h3>Ensalada César con pollo (sin gluten)</h3>
           <p>~380 kcal · 25 min · Para 2 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/pastel-de-carne-sin-gluten/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="pastel-de-carne-sin-gluten" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍖 Principal</span>
           <h3>Pastel de carne sin gluten</h3>
           <p>~380 kcal · 60 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/risotto-de-champinones/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="risotto-de-champinones" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍄 Principal</span>
           <h3>Risotto de champiñones</h3>
           <p>~420 kcal · 35 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/tortitas-de-platano-sin-gluten/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="tortitas-de-platano-sin-gluten" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🥞 Postre</span>
           <h3>Tortitas de plátano sin gluten</h3>
           <p>~300 kcal · 15 min · Para 2 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/lasana-de-calabacin-sin-pasta/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="lasana-de-calabacin-sin-pasta" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍆 Principal</span>
           <h3>Lasaña de calabacín (sin pasta)</h3>
           <p>~310 kcal · 55 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/tarta-de-queso-sin-gluten/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="tarta-de-queso-sin-gluten" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍰 Postre</span>
           <h3>Tarta de queso sin gluten</h3>
           <p>~340 kcal por ración · 70 min + enfriado · Para 8 raciones</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/pisto-manchego-con-huevo-escalfado/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="pisto-manchego-con-huevo-escalfado" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍆 Principal</span>
           <h3>Pisto manchego con huevo escalfado</h3>
           <p>~220 kcal · 40 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/bacalao-al-horno-con-pimientos/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="bacalao-al-horno-con-pimientos" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🐟 Principal</span>
           <h3>Bacalao al horno con pimientos</h3>
           <p>~230 kcal · 35 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/estofado-de-ternera-con-patatas/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="estofado-de-ternera-con-patatas" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍲 Principal</span>
           <h3>Estofado de ternera con patatas</h3>
           <p>~380 kcal · 90 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/sopa-de-pescado-y-marisco/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="sopa-de-pescado-y-marisco" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🦐 Entrante</span>
           <h3>Sopa de pescado y marisco</h3>
           <p>~210 kcal · 50 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/tarta-de-manzana-sin-gluten/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="tarta-de-manzana-sin-gluten" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍎 Postre</span>
           <h3>Tarta de manzana sin gluten</h3>
           <p>~280 kcal · 70 min · Para 8 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/bizcocho-de-yogur-sin-gluten/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="bizcocho-de-yogur-sin-gluten" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🧁 Postre</span>
           <h3>Bizcocho de yogur sin gluten</h3>
           <p>~230 kcal · 50 min · Para 8 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/ensalada-templada-de-lentejas/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="ensalada-templada-de-lentejas" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🥗 Entrante</span>
           <h3>Ensalada templada de lentejas</h3>
           <p>~260 kcal · 20 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/croquetas-de-jamon-sin-gluten/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="croquetas-de-jamon-sin-gluten" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🥘 Entrante</span>
           <h3>Croquetas de jamón sin gluten</h3>
           <p>~320 kcal · 60 min + enfriado · Para 6 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/hummus-de-remolacha-con-crudites/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="hummus-de-remolacha-con-crudites" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🫘 Entrante</span>
           <h3>Hummus de remolacha con crudités</h3>
           <p>~180 kcal · 15 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/tabule-de-quinoa-con-menta-y-limon/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="tabule-de-quinoa-con-menta-y-limon" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🌿 Entrante</span>
           <h3>Tabulé de quinoa con menta y limón</h3>
           <p>~210 kcal · 25 min + enfriado · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/tosta-de-aguacate-y-huevo-poche/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="tosta-de-aguacate-y-huevo-poche" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🥑 Entrante</span>
           <h3>Tosta de aguacate y huevo poché</h3>
           <p>~290 kcal · 15 min · Para 2 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/paella-de-marisco-sin-gluten/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="paella-de-marisco-sin-gluten" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🥘 Principal</span>
           <h3>Paella de marisco sin gluten</h3>
           <p>~430 kcal · 50 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/chili-con-carne-sin-gluten/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="chili-con-carne-sin-gluten" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🌶️ Principal</span>
           <h3>Chili con carne sin gluten</h3>
           <p>~390 kcal · 45 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/flan-de-coco/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="flan-de-coco" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍮 Postre</span>
           <h3>Flan de coco</h3>
           <p>~260 kcal · 30 min + enfriado · Para 6 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/trufas-de-chocolate-y-datiles/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="trufas-de-chocolate-y-datiles" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍫 Postre</span>
           <h3>Trufas de chocolate y dátiles</h3>
           <p>~90 kcal por unidad · 20 min + reposo · Para 15 unidades</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/helado-casero-de-platano-y-fresa/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="helado-casero-de-platano-y-fresa" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍓 Postre</span>
           <h3>Helado casero de plátano y fresa</h3>
           <p>~140 kcal · 10 min + congelación previa · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/ensaladilla-rusa-sin-gluten/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="ensaladilla-rusa-sin-gluten" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🥔 Entrante</span>
           <h3>Ensaladilla rusa sin gluten</h3>
           <p>~220 kcal · 35 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/croquetas-de-setas-sin-gluten/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="croquetas-de-setas-sin-gluten" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍄 Entrante</span>
           <h3>Croquetas de setas sin gluten</h3>
           <p>~290 kcal · 60 min + enfriado · Para 6 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/tartar-de-aguacate-y-mango/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="tartar-de-aguacate-y-mango" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🥭 Entrante</span>
           <h3>Tartar de aguacate y mango</h3>
           <p>~180 kcal · 20 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/fideua-de-marisco-sin-gluten/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="fideua-de-marisco-sin-gluten" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🥘 Principal</span>
           <h3>Fideuá de marisco sin gluten</h3>
           <p>~410 kcal · 45 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/pollo-teriyaki-con-arroz/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="pollo-teriyaki-con-arroz" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍗 Principal</span>
           <h3>Pollo teriyaki con arroz</h3>
           <p>~440 kcal · 30 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/natillas-caseras-sin-gluten/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="natillas-caseras-sin-gluten" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍮 Postre</span>
           <h3>Natillas caseras sin gluten</h3>
           <p>~180 kcal · 25 min + enfriado · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/galletas-de-avena-sin-gluten/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="galletas-de-avena-sin-gluten" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍪 Postre</span>
           <h3>Galletas de avena sin gluten</h3>
           <p>~95 kcal por unidad · 25 min · Para 16 unidades</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/crema-de-calabacin-y-puerro/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="crema-de-calabacin-y-puerro" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🥬 Entrante</span>
           <h3>Crema de calabacín y puerro</h3>
           <p>~140 kcal · 30 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/rollitos-vietnamitas-de-arroz-con-gambas/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="rollitos-vietnamitas-de-arroz-con-gambas" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🌿 Entrante</span>
           <h3>Rollitos vietnamitas de arroz con gambas</h3>
           <p>~160 kcal · 30 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/arroz-negro-con-sepia/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="arroz-negro-con-sepia" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🦑 Principal</span>
           <h3>Arroz negro con sepia</h3>
           <p>~450 kcal · 45 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/pollo-al-horno-con-limon-y-romero/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="pollo-al-horno-con-limon-y-romero" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍋 Principal</span>
           <h3>Muslos de pollo al horno con limón y romero</h3>
           <p>~380 kcal · 50 min · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/mousse-de-chocolate-sin-gluten/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="mousse-de-chocolate-sin-gluten" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍫 Postre</span>
           <h3>Mousse de chocolate</h3>
           <p>~250 kcal · 20 min + enfriado · Para 4 personas</p>
         </a>
         <a class="guide-card" href="https://www.libredetrigo.com/recetas/crumble-de-manzana-sin-gluten/">
+          <button class="recipe-fav-toggle recipe-fav-toggle-card" type="button" data-slug="crumble-de-manzana-sin-gluten" aria-pressed="false" aria-label="Guardar en favoritas">🤍</button>
           <span class="guide-category">🍏 Postre</span>
           <h3>Crumble de manzana sin gluten</h3>
           <p>~310 kcal · 45 min · Para 6 personas</p>
@@ -4334,14 +4400,15 @@ The post Nuevos pasos para un etiquetado más seguro appeared first on Asociaci�
   </div>
 
   <script defer="" src="js/data.js?v=0fd889b8f1"></script>
-  <script defer="" src="js/render.js?v=a201e57793"></script>
+  <script defer="" src="js/favorites.js?v=d1f84ad1de"></script>
+  <script defer="" src="js/render.js?v=a4aaad5284"></script>
   <script defer="" src="js/news.js?v=4b7c50bf6c"></script>
-  <script defer="" src="js/script.js?v=fe042d5168"></script>
-  <script defer="" src="js/search.js?v=4071857692"></script>
+  <script defer="" src="js/script.js?v=e7cfc37933"></script>
+  <script defer="" src="js/search.js?v=4aa90abd98"></script>
   <script defer="" src="js/shopping-list.js?v=771f201e31"></script>
   <script defer="" src="js/analytics.js?v=900a6b9715"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/@zxing/library@0.20.0/umd/index.min.js"></script>
-  <script defer="" src="js/scanner.js?v=bc04b283c3"></script>
+  <script defer="" src="js/scanner.js?v=c01f2faf0a"></script>
 
 
 </body></html>

@@ -34,7 +34,7 @@ const buildRecetas = require('./build-recetas.js');
 const SITEMAP_PAGES = [{ path: '/', changefreq: 'daily', priority: '1.0' }];
 
 // Orden exacto en el que se cargan en el navegador real (ver index.template.html).
-const CONTENT_SCRIPTS = ['js/data.js', 'js/render.js', 'js/news.js', 'js/script.js', 'js/search.js'];
+const CONTENT_SCRIPTS = ['js/data.js', 'js/favorites.js', 'js/render.js', 'js/news.js', 'js/script.js', 'js/search.js'];
 
 async function main() {
   const templateHtml = fs.readFileSync(TEMPLATE_PATH, 'utf8');

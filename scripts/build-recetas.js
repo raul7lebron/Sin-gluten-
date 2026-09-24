@@ -156,6 +156,7 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
     <span class="eyebrow">${receta.icon} Receta</span>
     <h1 class="section-title">${escapeHtml(receta.title)}</h1>
     <p class="article-lead">${escapeHtml(receta.meta)}</p>
+    <button class="recipe-fav-toggle" type="button" data-standalone data-slug="${receta.slug}" aria-pressed="false">🤍 Guardar en favoritas</button>
 
     <div class="article-body legal-content">
       <h2>Ingredientes</h2>
@@ -168,6 +169,7 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
   </main>${footerHtml()}
   <script defer src="${SITE_URL}/js/analytics.js?v=${fileHash("js/analytics.js")}"></script>
   <script defer src="${SITE_URL}/js/static-search.js?v=${fileHash("js/static-search.js")}"></script>
+  <script defer src="${SITE_URL}/js/favorites.js?v=${fileHash("js/favorites.js")}"></script>
   <script defer src="${SITE_URL}/js/static-page.js?v=${jsHash}"></script>
 </body>
 </html>

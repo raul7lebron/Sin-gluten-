@@ -323,6 +323,18 @@ document.addEventListener("DOMContentLoaded", () => {
     recetaIngredienteSearch.addEventListener("input", () => {
       renderRecetasDirectory(currentRecetaCategoria(), recetaIngredienteSearch.value);
     });
+
+    const recetasList = document.getElementById("recetasList");
+    if (recetasList) {
+      recetasList.addEventListener("click", (event) => {
+        const favBtn = event.target.closest(".recipe-fav-toggle");
+        if (!favBtn) return;
+        event.preventDefault();
+        event.stopPropagation();
+        toggleFavorito(favBtn.dataset.slug);
+        renderRecetasDirectory(currentRecetaCategoria(), recetaIngredienteSearch.value);
+      });
+    }
   }
 
   window.libreDeTrigo = { activateTab, bindRecipeToggles };
