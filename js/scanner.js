@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resultBox.innerHTML = `
       <div class="scanner-card scanner-verdict-${veredicto.tipo}">
         <div class="scanner-product">
-          ${imagen ? `<img class="scanner-thumb" src="${escapeHtml(imagen)}" alt="" loading="lazy" />` : ""}
+          ${imagen ? `<img class="scanner-thumb" src="${escapeHtml(imagen)}" alt="${escapeHtml(nombre)}" loading="lazy" />` : ""}
           <div>
             <h3>${escapeHtml(nombre)}</h3>
             ${marca ? `<p class="scanner-brand">${escapeHtml(marca)}</p>` : ""}

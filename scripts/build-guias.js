@@ -397,6 +397,8 @@ function buildArticlePage(guia) {
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="${SITE_URL}/img/og-image.png" />
   <link rel="icon" type="image/png" href="${SITE_URL}/img/favicon.png" />
+  <link rel="apple-touch-icon" href="${SITE_URL}/img/apple-touch-icon.png" />
+  <link rel="manifest" href="${SITE_URL}/manifest.json" />
   <script type="application/ld+json">
 ${JSON.stringify(articleJsonLd, null, 2)}
   </script>
@@ -477,6 +479,8 @@ function buildHubPage(clusterKey) {
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="${SITE_URL}/img/og-image.png" />
   <link rel="icon" type="image/png" href="${SITE_URL}/img/favicon.png" />
+  <link rel="apple-touch-icon" href="${SITE_URL}/img/apple-touch-icon.png" />
+  <link rel="manifest" href="${SITE_URL}/manifest.json" />
   <script type="application/ld+json">
 ${JSON.stringify(breadcrumbJsonLd, null, 2)}
   </script>

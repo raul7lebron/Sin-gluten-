@@ -4,6 +4,7 @@
 // directamente para pintar y gestionar varios corazones a la vez. En las
 // páginas estáticas de receta (build-recetas.js) hay un único botón por
 // página, marcado con data-standalone, que este archivo inicializa solo.
+// También inicializa ahí el botón "Compartir" de cada receta.
 const FAVORITOS_KEY = "libreDeTrigoFavoritos";
 
 function getFavoritos() {
@@ -52,6 +53,34 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       toggleFavorito(slug);
       render();
+    });
+  });
+
+  // Botón "Compartir" de cada página de receta: usa el diálogo nativo del
+  // sistema si está disponible (móvil, sobre todo) y si no, copia el enlace.
+  document.querySelectorAll(".recipe-share-toggle").forEach((btn) => {
+    const title = btn.dataset.shareTitle;
+    const url = btn.dataset.shareUrl;
+
+    btn.addEventListener("click", async () => {
+      if (navigator.share) {
+        try {
+          await navigator.share({ title, url });
+        } catch (err) {
+          // El usuario cerró el diálogo de compartir sin elegir nada.
+        }
+        return;
+      }
+      try {
+        await navigator.clipboard.writeText(url);
+        const textoOriginal = btn.textContent;
+        btn.textContent = "✓ Enlace copiado";
+        setTimeout(() => {
+          btn.textContent = textoOriginal;
+        }, 1500);
+      } catch (err) {
+        // Portapapeles no disponible: no se puede ofrecer una alternativa mejor.
+      }
     });
   });
 });

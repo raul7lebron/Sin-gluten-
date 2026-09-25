@@ -9,7 +9,7 @@
 //
 // No genera su propia copia de los datos: recibe el array `recetas` ya
 // cargado (ver prerender.js, que lo obtiene ejecutando js/data.js) para que
-// los 39 platos sigan viviendo en un único sitio.
+// las recetas sigan viviendo en un único sitio.
 //
 // No edites los .html generados a mano: vuelve a ejecutar "npm run prerender"
 // después de cambiar js/data.js.
@@ -139,6 +139,8 @@ function buildRecetaPage(receta, recetas) {
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="${SITE_URL}/img/og-image.png" />
   <link rel="icon" type="image/png" href="${SITE_URL}/img/favicon.png" />
+  <link rel="apple-touch-icon" href="${SITE_URL}/img/apple-touch-icon.png" />
+  <link rel="manifest" href="${SITE_URL}/manifest.json" />
   <script type="application/ld+json">
 ${JSON.stringify(recipeJsonLd, null, 2)}
   </script>
@@ -156,7 +158,10 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
     <span class="eyebrow">${receta.icon} Receta</span>
     <h1 class="section-title">${escapeHtml(receta.title)}</h1>
     <p class="article-lead">${escapeHtml(receta.meta)}</p>
-    <button class="recipe-fav-toggle" type="button" data-standalone data-slug="${receta.slug}" aria-pressed="false">🤍 Guardar en favoritas</button>
+    <div class="recipe-actions">
+      <button class="recipe-fav-toggle" type="button" data-standalone data-slug="${receta.slug}" aria-pressed="false">🤍 Guardar en favoritas</button>
+      <button class="recipe-share-toggle" type="button" data-share-title="${escapeHtml(receta.title)}" data-share-url="${canonicalUrl}">🔗 Compartir</button>
+    </div>
 
     <div class="article-body legal-content">
       <h2>Ingredientes</h2>
@@ -222,6 +227,8 @@ function buildHubPage(recetas) {
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="${SITE_URL}/img/og-image.png" />
   <link rel="icon" type="image/png" href="${SITE_URL}/img/favicon.png" />
+  <link rel="apple-touch-icon" href="${SITE_URL}/img/apple-touch-icon.png" />
+  <link rel="manifest" href="${SITE_URL}/manifest.json" />
   <script type="application/ld+json">
 ${JSON.stringify(breadcrumbJsonLd, null, 2)}
   </script>

@@ -2445,7 +2445,15 @@ a:focus-visible {
   margin: 0 0 10px;
 }
 
-.recipe-fav-toggle {
+.recipe-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 24px;
+}
+
+.recipe-fav-toggle,
+.recipe-share-toggle {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -2458,10 +2466,11 @@ a:focus-visible {
   font-size: 0.85rem;
   color: var(--text);
   cursor: pointer;
-  margin: 0 0 24px;
+  margin: 0;
 }
 
-.recipe-fav-toggle:hover {
+.recipe-fav-toggle:hover,
+.recipe-share-toggle:hover {
   border-color: var(--accent);
 }
 
@@ -2473,10 +2482,10 @@ a:focus-visible {
 
 .recipe-fav-toggle-card {
   position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 34px;
-  height: 34px;
+  top: 10px;
+  right: 10px;
+  width: 44px;
+  height: 44px;
   padding: 0;
   margin: 0;
   display: flex;
@@ -2485,7 +2494,7 @@ a:focus-visible {
   border-radius: 50%;
   border: 1px solid var(--border);
   background: var(--surface);
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
   z-index: 1;
 }
@@ -2536,4 +2545,51 @@ a:focus-visible {
 
 .hub-grid {
   margin-top: 8px;
+}
+
+/* ============================================================
+   IMPRESIÓN — pensado sobre todo para Dietas (plan semanal) y Lista
+   de la compra: se imprime solo el contenido útil, sin cabecera,
+   menú, buscador ni controles interactivos. Los días de dieta se
+   fuerzan a "abiertos" para que salgan las comidas completas aunque
+   en pantalla estuvieran plegados.
+   ============================================================ */
+@media print {
+  .site-header,
+  .site-footer,
+  .search-overlay,
+  .cookie-banner,
+  .scanner-history,
+  .filter-chips,
+  .shopping-add-row,
+  .shopping-list-toolbar button,
+  .qty-btn,
+  .shopping-remove,
+  .recipe-actions,
+  .recipe-fav-toggle-card,
+  .empty-state[hidden] {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .page {
+    padding: 0;
+  }
+
+  .recipe-content {
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 20px 16px !important;
+  }
+
+  .recipe-card,
+  .shopping-item,
+  .guide-card {
+    break-inside: avoid;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
 }
