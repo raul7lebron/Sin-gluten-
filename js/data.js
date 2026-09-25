@@ -732,7 +732,7 @@ const recetas = [
     slug: "poke-bowl-de-atun",
     categoria: "principal",
     meta: "~420 kcal · 25 min · Para 2 personas",
-    ingredientes: ["200 g de atún fresco", "Arroz cocido", "Edamame", "Aguacate y zanahoria", "Salsa de soja sin gluten (tamari)"],
+    ingredientes: ["200 g de atún fresco", "200 g de arroz cocido", "100 g de edamame", "1 aguacate (200 g)", "1 zanahoria (80 g)", "30 ml de salsa de soja sin gluten (tamari)"],
     pasos: [
       "Cortar el atún fresco en dados de 1-2 cm.",
       "Marinar el atún con la salsa de soja sin gluten (tamari) durante 10-15 minutos en la nevera.",
@@ -749,7 +749,7 @@ const recetas = [
     slug: "ceviche-de-corvina",
     categoria: "entrante",
     meta: "~150 kcal · 25 min + reposo · Para 4 personas",
-    ingredientes: ["500 g de corvina fresca", "6 limas", "1 cebolla morada", "1 guindilla fresca", "Cilantro fresco", "Sal"],
+    ingredientes: ["500 g de corvina fresca", "6 limas (≈420 g, para el zumo)", "1 cebolla morada (150 g)", "1 guindilla fresca (10 g)", "15 g de cilantro fresco", "5 g de sal"],
     pasos: [
       "Cortar el pescado en dados pequeños y colocarlo en un bol.",
       "Cortar la cebolla morada en juliana muy fina y la guindilla en aros finos.",
@@ -765,7 +765,7 @@ const recetas = [
     slug: "arepas-de-maiz-rellenas-de-pollo",
     categoria: "principal",
     meta: "~310 kcal · 40 min · Para 4 personas",
-    ingredientes: ["2 tazas de harina de maíz precocida", "2 tazas de agua templada", "Sal", "2 pechugas de pollo cocidas y desmechadas", "1 aguacate", "Queso fresco"],
+    ingredientes: ["250 g de harina de maíz precocida (2 tazas)", "480 ml de agua templada (2 tazas)", "5 g de sal", "300 g de pechugas de pollo cocidas y desmechadas", "1 aguacate (200 g)", "100 g de queso fresco"],
     pasos: [
       "Mezclar la harina de maíz con el agua templada y una pizca de sal hasta formar una masa lisa y sin grumos.",
       "Dejar reposar la masa 5 minutos.",
@@ -781,7 +781,7 @@ const recetas = [
     slug: "curry-de-garbanzos-y-espinacas",
     categoria: "principal",
     meta: "~360 kcal · 30 min · Para 4 personas",
-    ingredientes: ["400 g de garbanzos cocidos sin gluten", "200 g de espinacas frescas", "1 cebolla", "400 ml de leche de coco", "2 cucharaditas de curry en polvo sin gluten", "1 diente de ajo"],
+    ingredientes: ["400 g de garbanzos cocidos sin gluten", "200 g de espinacas frescas", "1 cebolla (150 g)", "400 ml de leche de coco", "10 g de curry en polvo sin gluten (2 cucharaditas)", "1 diente de ajo (5 g)"],
     pasos: [
       "Picar la cebolla y el ajo finamente.",
       "Calentar aceite de oliva en una sartén honda y sofreír la cebolla y el ajo a fuego medio 5 minutos.",
@@ -798,7 +798,7 @@ const recetas = [
     slug: "pollo-al-curry-con-leche-de-coco",
     categoria: "principal",
     meta: "~390 kcal · 35 min · Para 4 personas",
-    ingredientes: ["4 contramuslos de pollo deshuesados", "400 ml de leche de coco", "2 cucharadas de curry en polvo", "1 cebolla", "2 dientes de ajo", "Arroz basmati para acompañar"],
+    ingredientes: ["600 g de contramuslos de pollo deshuesados (4 unidades)", "400 ml de leche de coco", "15 g de curry en polvo (2 cucharadas)", "1 cebolla (150 g)", "2 dientes de ajo (10 g)", "200 g de arroz basmati para acompañar"],
     pasos: [
       "Cortar el pollo en trozos y salpimentar.",
       "Sofreír la cebolla y el ajo picados en una sartén amplia 5 minutos.",
@@ -814,7 +814,7 @@ const recetas = [
     slug: "dal-de-lentejas-rojas-al-curry",
     categoria: "principal",
     meta: "~320 kcal · 35 min · Para 4 personas",
-    ingredientes: ["300 g de lentejas rojas", "1 cebolla", "2 dientes de ajo", "1 trozo de jengibre fresco", "400 ml de leche de coco", "2 cucharadas de curry en polvo", "1 cucharadita de cúrcuma", "Aceite de oliva", "Cilantro fresco"],
+    ingredientes: ["300 g de lentejas rojas", "1 cebolla (150 g)", "2 dientes de ajo (10 g)", "15 g de jengibre fresco", "400 ml de leche de coco", "15 g de curry en polvo (2 cucharadas)", "5 g de cúrcuma (1 cucharadita)", "30 ml de aceite de oliva", "15 g de cilantro fresco"],
     pasos: [
       "Lavar las lentejas rojas bajo el grifo hasta que el agua salga clara.",
       "Picar la cebolla, el ajo y el jengibre, y sofreírlos en aceite 5 minutos.",
@@ -829,7 +829,7 @@ const recetas = [
     slug: "sopa-de-miso-con-tofu",
     categoria: "entrante",
     meta: "~140 kcal · 15 min · Para 2 personas",
-    ingredientes: ["2 cucharadas de pasta de miso", "150 g de tofu firme", "1 lámina de alga wakame", "500 ml de agua o caldo suave", "1 cebolleta"],
+    ingredientes: ["30 g de pasta de miso (2 cucharadas)", "150 g de tofu firme", "5 g de alga wakame (1 lámina)", "500 ml de agua o caldo suave", "1 cebolleta (30 g)"],
     pasos: [
       "Hidratar el alga wakame en agua fría 5 minutos y escurrir.",
       "Cortar el tofu en dados pequeños y la cebolleta en aros finos.",
@@ -846,7 +846,7 @@ const recetas = [
     slug: "wok-de-ternera-y-verduras",
     categoria: "principal",
     meta: "~400 kcal · 25 min · Para 3 personas",
-    ingredientes: ["400 g de ternera en tiras finas", "1 pimiento rojo", "1 zanahoria", "150 g de brócoli", "Salsa de soja sin gluten (tamari)"],
+    ingredientes: ["400 g de ternera en tiras finas", "1 pimiento rojo (150 g)", "1 zanahoria (80 g)", "150 g de brócoli", "30 ml de salsa de soja sin gluten (tamari)"],
     pasos: [
       "Cortar el pimiento y la zanahoria en tiras finas y el brócoli en arbolitos pequeños.",
       "Calentar un wok o sartén amplia a fuego fuerte con un poco de aceite.",
@@ -863,7 +863,7 @@ const recetas = [
     slug: "pad-thai-de-arroz-con-gambas",
     categoria: "principal",
     meta: "~420 kcal · 30 min · Para 2 personas",
-    ingredientes: ["200 g de fideos de arroz", "200 g de gambas peladas", "2 huevos", "100 g de brotes de soja", "2 zanahorias en juliana", "3 cucharadas de salsa de soja sin gluten (tamari)", "1 lima", "Cacahuetes picados", "Aceite de girasol"],
+    ingredientes: ["200 g de fideos de arroz", "200 g de gambas peladas", "2 huevos (≈120 g)", "100 g de brotes de soja", "2 zanahorias en juliana (160 g)", "45 ml de salsa de soja sin gluten (tamari, 3 cucharadas)", "1 lima (70 g)", "30 g de cacahuetes picados", "20 ml de aceite de girasol"],
     pasos: [
       "Poner los fideos de arroz en remojo en agua caliente 10 minutos, hasta que estén flexibles, y escurrir.",
       "Calentar aceite en un wok o sartén amplia y saltear las gambas 2-3 minutos, hasta que cojan color; reservar.",
@@ -879,7 +879,7 @@ const recetas = [
     slug: "bibimbap-de-arroz-con-verduras",
     categoria: "principal",
     meta: "~450 kcal · 40 min · Para 2 personas",
-    ingredientes: ["300 g de arroz cocido", "1 zanahoria en tiras", "100 g de espinacas", "100 g de brotes de soja", "1 calabacín en tiras", "2 huevos", "2 cucharadas de salsa de soja sin gluten (tamari)", "Aceite de sésamo", "Semillas de sésamo"],
+    ingredientes: ["300 g de arroz cocido", "1 zanahoria en tiras (80 g)", "100 g de espinacas", "100 g de brotes de soja", "1 calabacín en tiras (200 g)", "2 huevos (≈120 g)", "30 ml de salsa de soja sin gluten (tamari, 2 cucharadas)", "15 ml de aceite de sésamo", "10 g de semillas de sésamo"],
     pasos: [
       "Saltear por separado la zanahoria, el calabacín y los brotes de soja, cada uno 2-3 minutos con un poco de aceite, salpimentando ligeramente; reservar cada verdura aparte.",
       "Escaldar las espinacas 1 minuto en agua hirviendo, escurrir bien y aliñar con unas gotas de aceite de sésamo.",
@@ -895,7 +895,7 @@ const recetas = [
     slug: "pho-vietnamita-de-pollo",
     categoria: "principal",
     meta: "~380 kcal · 60 min · Para 4 personas",
-    ingredientes: ["200 g de fideos de arroz", "2 pechugas de pollo", "1,5 l de caldo de pollo", "1 cebolla", "1 trozo de jengibre fresco", "2 anises estrellados", "1 rama de canela", "Salsa de pescado sin gluten", "Brotes de soja, cilantro y lima para servir"],
+    ingredientes: ["200 g de fideos de arroz", "300 g de pechugas de pollo (2 unidades)", "1,5 l de caldo de pollo", "1 cebolla (150 g)", "15 g de jengibre fresco", "2 anises estrellados (2 g)", "1 rama de canela (3 g)", "15 ml de salsa de pescado sin gluten", "Brotes de soja, cilantro y lima para servir (50 g en total, al gusto)"],
     pasos: [
       "Tostar la cebolla partida por la mitad y el jengibre en una sartén seca hasta que se doren ligeramente.",
       "Poner el caldo a hervir con la cebolla y el jengibre tostados, el anís estrellado y la canela; cocinar 20 minutos a fuego bajo para que coja aroma.",
@@ -912,7 +912,7 @@ const recetas = [
     slug: "falafel-al-horno-con-salsa-de-yogur",
     categoria: "principal",
     meta: "~360 kcal · 40 min + remojo · Para 4 personas",
-    ingredientes: ["250 g de garbanzos secos (en remojo 12 h)", "1 cebolla", "2 dientes de ajo", "Perejil y comino", "Yogur griego natural para la salsa"],
+    ingredientes: ["250 g de garbanzos secos (en remojo 12 h)", "1 cebolla (150 g)", "2 dientes de ajo (10 g)", "15 g de perejil fresco y 5 g de comino molido", "100 g de yogur griego natural para la salsa"],
     pasos: [
       "Escurrir bien los garbanzos, que deben llevar en remojo con agua fría al menos 12 horas (no usar garbanzos ya cocidos, quedan demasiado blandos para el falafel).",
       "Triturar los garbanzos escurridos junto con la cebolla, el ajo, el perejil, el comino, sal y pimienta hasta obtener una masa espesa y algo granulada.",
@@ -931,7 +931,7 @@ const recetas = [
     slug: "shakshuka",
     categoria: "principal",
     meta: "~280 kcal · 30 min · Para 2 personas",
-    ingredientes: ["4 huevos", "1 lata de tomate triturado (400 g)", "1 pimiento rojo", "1 cebolla", "2 dientes de ajo", "1 cucharadita de comino molido", "1 cucharadita de pimentón", "Aceite de oliva", "Perejil fresco"],
+    ingredientes: ["4 huevos (≈240 g)", "1 lata de tomate triturado (400 g)", "1 pimiento rojo (150 g)", "1 cebolla (150 g)", "2 dientes de ajo (10 g)", "5 g de comino molido (1 cucharadita)", "5 g de pimentón (1 cucharadita)", "30 ml de aceite de oliva", "10 g de perejil fresco"],
     pasos: [
       "Picar la cebolla, el pimiento y el ajo, y sofreírlos en aceite de oliva a fuego medio 8-10 minutos, hasta que estén blandos.",
       "Añadir el comino y el pimentón, remover un minuto para que suelten aroma.",
@@ -947,7 +947,7 @@ const recetas = [
     slug: "tajin-de-pollo-con-limon-y-aceitunas",
     categoria: "principal",
     meta: "~360 kcal · 55 min · Para 4 personas",
-    ingredientes: ["4 muslos de pollo", "1 limón en conserva (o 1 limón fresco)", "100 g de aceitunas verdes", "1 cebolla", "2 dientes de ajo", "1 cucharadita de jengibre molido", "1 cucharadita de cúrcuma", "1 rama de canela", "Aceite de oliva", "Cilantro fresco"],
+    ingredientes: ["800 g de muslos de pollo (4 unidades)", "1 limón en conserva o fresco (100 g)", "100 g de aceitunas verdes", "1 cebolla (150 g)", "2 dientes de ajo (10 g)", "3 g de jengibre molido (1 cucharadita)", "3 g de cúrcuma (1 cucharadita)", "1 rama de canela (3 g)", "30 ml de aceite de oliva", "15 g de cilantro fresco"],
     pasos: [
       "Salpimentar los muslos de pollo y dorarlos en una cazuela con aceite de oliva por ambos lados; reservar.",
       "En la misma cazuela, sofreír la cebolla y el ajo picados 5 minutos.",
@@ -963,7 +963,7 @@ const recetas = [
     slug: "buddha-bowl-de-garbanzos-asados",
     categoria: "principal",
     meta: "~450 kcal · 35 min · Para 2 personas",
-    ingredientes: ["400 g de garbanzos cocidos", "1 boniato", "100 g de espinacas frescas", "1 aguacate", "Tahini y limón para la salsa"],
+    ingredientes: ["400 g de garbanzos cocidos", "1 boniato (200 g)", "100 g de espinacas frescas", "1 aguacate (200 g)", "30 g de tahini y el zumo de 1/2 limón para la salsa"],
     pasos: [
       "Precalentar el horno a 200 °C.",
       "Escurrir y secar bien los garbanzos; mezclarlos con aceite de oliva, sal y las especias que se prefieran.",
@@ -981,7 +981,7 @@ const recetas = [
     slug: "boniato-asado-relleno-de-garbanzos-y-espinacas",
     categoria: "principal",
     meta: "~290 kcal · 55 min · Para 4 personas",
-    ingredientes: ["4 boniatos medianos", "400 g de garbanzos cocidos", "200 g de espinacas frescas", "1 diente de ajo", "Comino molido", "Aceite de oliva virgen extra"],
+    ingredientes: ["800 g de boniatos medianos (4 unidades)", "400 g de garbanzos cocidos", "200 g de espinacas frescas", "1 diente de ajo (5 g)", "5 g de comino molido", "30 ml de aceite de oliva virgen extra"],
     pasos: [
       "Precalentar el horno a 200 °C.",
       "Lavar los boniatos, pincharlos con un tenedor y hornearlos 40-45 minutos hasta que estén tiernos.",
@@ -997,7 +997,7 @@ const recetas = [
     slug: "crepes-de-trigo-sarraceno-con-fruta",
     categoria: "postre",
     meta: "~280 kcal · 20 min · Para 2 personas",
-    ingredientes: ["150 g de harina de trigo sarraceno (naturalmente sin gluten)", "2 huevos", "250 ml de leche o bebida vegetal", "Fruta fresca al gusto", "Una pizca de sal"],
+    ingredientes: ["150 g de harina de trigo sarraceno (naturalmente sin gluten)", "2 huevos (≈120 g)", "250 ml de leche o bebida vegetal", "150 g de fruta fresca al gusto", "2 g de sal (una pizca)"],
     pasos: [
       "Tamizar la harina de trigo sarraceno en un bol grande para evitar grumos.",
       "Batir los huevos aparte y añadirlos a la harina poco a poco, alternando con la leche, hasta conseguir una masa homogénea.",
@@ -1015,7 +1015,7 @@ const recetas = [
     slug: "tortilla-de-patatas-clasica",
     categoria: "principal",
     meta: "~320 kcal · 35 min · Para 4 personas",
-    ingredientes: ["4 patatas medianas", "5 huevos", "1 cebolla", "Aceite de oliva virgen extra", "Sal"],
+    ingredientes: ["600 g de patatas medianas (4 unidades)", "5 huevos (≈300 g)", "1 cebolla (150 g)", "200 ml de aceite de oliva virgen extra (para confitar)", "5 g de sal"],
     pasos: [
       "Pelar las patatas y cortarlas en láminas finas (2-3 mm); cortar la cebolla en juliana fina.",
       "Calentar abundante aceite de oliva en una sartén amplia a fuego medio-bajo.",
@@ -1033,7 +1033,7 @@ const recetas = [
     slug: "pollo-al-horno-con-verduras",
     categoria: "principal",
     meta: "~410 kcal · 45 min · Para 4 personas",
-    ingredientes: ["4 muslos de pollo", "1 calabacín", "1 pimiento rojo", "2 patatas", "Aceite de oliva y romero"],
+    ingredientes: ["800 g de muslos de pollo (4 unidades)", "1 calabacín (200 g)", "1 pimiento rojo (150 g)", "2 patatas (300 g)", "30 ml de aceite de oliva y romero fresco al gusto"],
     pasos: [
       "Precalentar el horno a 200 °C con calor arriba y abajo.",
       "Lavar y cortar el calabacín, el pimiento y las patatas en trozos regulares de tamaño similar.",
@@ -1051,7 +1051,7 @@ const recetas = [
     slug: "arroz-con-verduras-y-gambas",
     categoria: "principal",
     meta: "~380 kcal · 30 min · Para 4 personas",
-    ingredientes: ["300 g de arroz", "200 g de gambas peladas", "1 pimiento verde", "Guisantes", "Caldo de verduras sin gluten"],
+    ingredientes: ["300 g de arroz", "200 g de gambas peladas", "1 pimiento verde (120 g)", "100 g de guisantes", "600 ml de caldo de verduras sin gluten"],
     pasos: [
       "Picar el ajo y el pimiento verde en trozos pequeños.",
       "Calentar aceite de oliva en una cazuela ancha y sofreír el ajo y el pimiento 4-5 minutos, hasta que estén blandos.",
@@ -1068,7 +1068,7 @@ const recetas = [
     slug: "ensalada-de-quinoa-y-aguacate",
     categoria: "entrante",
     meta: "~340 kcal · 20 min · Para 2 personas",
-    ingredientes: ["150 g de quinoa", "1 aguacate", "Tomates cherry", "Pepino", "Limón y aceite de oliva"],
+    ingredientes: ["150 g de quinoa", "1 aguacate (200 g)", "150 g de tomates cherry", "1 pepino (150 g)", "El zumo de 1 limón y 20 ml de aceite de oliva"],
     pasos: [
       "Enjuagar la quinoa con un colador fino bajo el grifo para quitar el sabor amargo de la saponina.",
       "Cocerla en agua con una pizca de sal (1 parte de quinoa por 2 de agua) 12-15 minutos, hasta que los granos se abran.",
@@ -1085,7 +1085,7 @@ const recetas = [
     slug: "crema-de-calabaza",
     categoria: "entrante",
     meta: "~210 kcal · 30 min · Para 4 personas",
-    ingredientes: ["500 g de calabaza", "1 cebolla", "1 zanahoria", "Caldo de verduras sin gluten", "Un chorrito de nata ligera (opcional)"],
+    ingredientes: ["500 g de calabaza", "1 cebolla (150 g)", "1 zanahoria (80 g)", "800 ml de caldo de verduras sin gluten", "30 ml de nata ligera (opcional)"],
     pasos: [
       "Pelar y trocear la calabaza, la cebolla y la zanahoria en trozos medianos.",
       "Calentar un chorro de aceite de oliva en una olla y pochar la cebolla y la zanahoria a fuego medio-bajo 8-10 minutos.",
@@ -1102,7 +1102,7 @@ const recetas = [
     slug: "salmon-a-la-plancha-con-pure-de-boniato",
     categoria: "principal",
     meta: "~430 kcal · 30 min · Para 2 personas",
-    ingredientes: ["2 lomos de salmón", "2 boniatos", "Leche o bebida vegetal", "Aceite de oliva", "Eneldo"],
+    ingredientes: ["2 lomos de salmón (≈350 g)", "2 boniatos (400 g)", "100 ml de leche o bebida vegetal", "20 ml de aceite de oliva", "5 g de eneldo fresco"],
     pasos: [
       "Pelar los boniatos y cortarlos en trozos medianos.",
       "Cocerlos en agua con sal 15-18 minutos, hasta que estén muy tiernos al pincharlos.",
@@ -1120,7 +1120,7 @@ const recetas = [
     slug: "gazpacho-andaluz",
     categoria: "entrante",
     meta: "~150 kcal · 15 min · Para 4 personas",
-    ingredientes: ["1 kg de tomates maduros", "1 pepino", "1 pimiento verde", "1 diente de ajo", "Aceite de oliva, vinagre y sal"],
+    ingredientes: ["1 kg de tomates maduros", "1 pepino (150 g)", "1 pimiento verde (120 g)", "1 diente de ajo (5 g)", "50 ml de aceite de oliva, 20 ml de vinagre y 5 g de sal"],
     pasos: [
       "Lavar los tomates y quitarles el pedúnculo; trocear junto con el pepino, el pimiento verde y el ajo.",
       "Colocar todas las verduras en el vaso de la batidora junto con el aceite de oliva, el vinagre y la sal.",
@@ -1137,7 +1137,7 @@ const recetas = [
     slug: "albondigas-en-salsa-de-tomate",
     categoria: "principal",
     meta: "~450 kcal · 50 min · Para 4 personas",
-    ingredientes: ["500 g de carne picada", "1 huevo", "Pan rallado sin gluten", "Tomate triturado", "Ajo, perejil y aceite de oliva"],
+    ingredientes: ["500 g de carne picada", "1 huevo (≈60 g)", "50 g de pan rallado sin gluten", "400 g de tomate triturado", "2 dientes de ajo (10 g), 10 g de perejil y 20 ml de aceite de oliva"],
     pasos: [
       "Picar finamente el ajo y el perejil.",
       "En un bol grande, mezclar la carne picada con el huevo, el pan rallado sin gluten, el ajo y el perejil; salpimentar y amasar bien.",
@@ -1155,7 +1155,7 @@ const recetas = [
     slug: "porridge-de-avena-con-frutos-rojos",
     categoria: "postre",
     meta: "~320 kcal · 10 min · Para 1 persona",
-    ingredientes: ["80 g de copos de avena certificados sin gluten", "250 ml de leche o bebida vegetal", "Un puñado de frutos rojos (fresas, arándanos, frambuesas)", "1 cucharadita de miel", "Canela al gusto"],
+    ingredientes: ["80 g de copos de avena certificados sin gluten", "250 ml de leche o bebida vegetal", "80 g de frutos rojos (fresas, arándanos, frambuesas)", "7 g de miel (1 cucharadita)", "2 g de canela al gusto"],
     pasos: [
       "Verter la avena y la leche en un cazo pequeño.",
       "Calentar a fuego medio, removiendo con frecuencia para que no se pegue.",
@@ -1170,7 +1170,7 @@ const recetas = [
     slug: "vichyssoise-crema-fria-de-puerro-y-patata",
     categoria: "entrante",
     meta: "~230 kcal · 40 min + enfriado · Para 4 personas",
-    ingredientes: ["3 puerros (solo la parte blanca)", "2 patatas medianas", "1 cebolla pequeña", "Caldo de verduras sin gluten", "Nata líquida o bebida vegetal"],
+    ingredientes: ["3 puerros, solo la parte blanca (300 g)", "2 patatas medianas (300 g)", "1 cebolla pequeña (100 g)", "700 ml de caldo de verduras sin gluten", "100 ml de nata líquida o bebida vegetal"],
     pasos: [
       "Lavar bien los puerros entre las capas y cortarlos en rodajas finas, junto con la cebolla.",
       "Pelar y trocear las patatas en dados medianos.",
@@ -1188,7 +1188,7 @@ const recetas = [
     slug: "solomillo-de-cerdo-con-salsa-de-mostaza",
     categoria: "principal",
     meta: "~410 kcal · 35 min · Para 4 personas",
-    ingredientes: ["1 solomillo de cerdo (~500 g)", "2 cucharadas de mostaza sin gluten", "200 ml de nata para cocinar", "1 cebolla", "Aceite de oliva"],
+    ingredientes: ["1 solomillo de cerdo (~500 g)", "30 g de mostaza sin gluten (2 cucharadas)", "200 ml de nata para cocinar", "1 cebolla (150 g)", "20 ml de aceite de oliva"],
     pasos: [
       "Salpimentar el solomillo y cortarlo en medallones de 2-3 cm.",
       "Picar la cebolla finamente.",
@@ -1206,7 +1206,7 @@ const recetas = [
     slug: "merluza-en-salsa-verde",
     categoria: "principal",
     meta: "~280 kcal · 30 min · Para 4 personas",
-    ingredientes: ["4 lomos de merluza", "3 dientes de ajo", "Perejil fresco", "200 ml de caldo de pescado sin gluten", "Aceite de oliva y 1 cucharada de harina de arroz (opcional)"],
+    ingredientes: ["600 g de lomos de merluza (4 unidades)", "3 dientes de ajo (15 g)", "15 g de perejil fresco", "200 ml de caldo de pescado sin gluten", "30 ml de aceite de oliva y 10 g de harina de arroz (opcional)"],
     pasos: [
       "Salar los lomos de merluza y reservar.",
       "Picar el ajo y el perejil finamente.",
@@ -1224,7 +1224,7 @@ const recetas = [
     slug: "carbonara-sin-gluten",
     categoria: "principal",
     meta: "~520 kcal · 20 min · Para 4 personas",
-    ingredientes: ["350 g de pasta sin gluten (espagueti)", "150 g de panceta o bacon", "3 huevos", "50 g de queso parmesano rallado", "Pimienta negra"],
+    ingredientes: ["350 g de pasta sin gluten (espagueti)", "150 g de panceta o bacon", "3 huevos (≈180 g)", "50 g de queso parmesano rallado", "2 g de pimienta negra"],
     pasos: [
       "Poner una olla grande con agua y sal a hervir para la pasta.",
       "Cortar la panceta en tiras o dados pequeños.",
@@ -1243,7 +1243,7 @@ const recetas = [
     slug: "brownie-sin-gluten",
     categoria: "postre",
     meta: "~290 kcal por ración · 40 min · Para 9 raciones",
-    ingredientes: ["200 g de chocolate negro sin gluten", "150 g de mantequilla", "3 huevos", "180 g de azúcar", "80 g de harina de arroz o mezcla panificable sin gluten", "Nueces troceadas (opcional)"],
+    ingredientes: ["200 g de chocolate negro sin gluten", "150 g de mantequilla", "3 huevos (≈180 g)", "180 g de azúcar", "80 g de harina de arroz o mezcla panificable sin gluten", "50 g de nueces troceadas (opcional)"],
     pasos: [
       "Precalentar el horno a 180 °C y forrar un molde rectangular con papel de horno.",
       "Trocear el chocolate y derretirlo junto con la mantequilla al baño maría o en el microondas en golpes cortos.",
@@ -1262,7 +1262,7 @@ const recetas = [
     slug: "ensalada-cesar-con-pollo-sin-gluten",
     categoria: "principal",
     meta: "~380 kcal · 25 min · Para 2 personas",
-    ingredientes: ["2 pechugas de pollo", "1 lechuga romana", "50 g de pan sin gluten (para picatostes)", "30 g de queso parmesano rallado", "Salsa César sin gluten (o yogur, limón, ajo y anchoa)"],
+    ingredientes: ["300 g de pechugas de pollo (2 unidades)", "1 lechuga romana (250 g)", "50 g de pan sin gluten (para picatostes)", "30 g de queso parmesano rallado", "80 g de salsa César sin gluten (o yogur, limón, ajo y anchoa)"],
     pasos: [
       "Salpimentar las pechugas de pollo y cocinarlas a la plancha 5-6 minutos por cada lado, hasta que estén doradas y hechas por dentro.",
       "Dejar reposar el pollo 5 minutos y cortarlo en tiras.",
@@ -1279,7 +1279,7 @@ const recetas = [
     slug: "pastel-de-carne-sin-gluten",
     categoria: "principal",
     meta: "~380 kcal · 60 min · Para 4 personas",
-    ingredientes: ["600 g de carne picada de ternera", "1 huevo", "50 g de copos de avena certificados sin gluten", "1 cebolla", "2 cucharadas de kétchup sin gluten"],
+    ingredientes: ["600 g de carne picada de ternera", "1 huevo (≈60 g)", "50 g de copos de avena certificados sin gluten", "1 cebolla (150 g)", "30 g de kétchup sin gluten (2 cucharadas)"],
     pasos: [
       "Precalentar el horno a 180 °C.",
       "Picar la cebolla muy fina y rehogarla 5 minutos en una sartén con un poco de aceite hasta que esté transparente; dejar enfriar.",
@@ -1297,7 +1297,7 @@ const recetas = [
     slug: "risotto-de-champinones",
     categoria: "principal",
     meta: "~420 kcal · 35 min · Para 4 personas",
-    ingredientes: ["320 g de arroz arborio", "300 g de champiñones", "1 cebolla", "1 litro de caldo de verduras sin gluten", "50 g de queso parmesano rallado"],
+    ingredientes: ["320 g de arroz arborio", "300 g de champiñones", "1 cebolla (150 g)", "1 litro de caldo de verduras sin gluten", "50 g de queso parmesano rallado"],
     pasos: [
       "Calentar el caldo de verduras en un cazo y mantenerlo caliente a fuego muy bajo.",
       "Picar la cebolla finamente y laminar los champiñones.",
@@ -1315,7 +1315,7 @@ const recetas = [
     slug: "tortitas-de-platano-sin-gluten",
     categoria: "postre",
     meta: "~300 kcal · 15 min · Para 2 personas",
-    ingredientes: ["2 plátanos maduros", "3 huevos", "50 g de harina de avena certificada sin gluten", "1 cucharadita de levadura sin gluten", "Canela al gusto"],
+    ingredientes: ["2 plátanos maduros (240 g)", "3 huevos (≈180 g)", "50 g de harina de avena certificada sin gluten", "5 g de levadura sin gluten (1 cucharadita)", "2 g de canela al gusto"],
     pasos: [
       "Chafar los plátanos con un tenedor hasta obtener un puré.",
       "Batir los huevos y mezclarlos con el puré de plátano.",
@@ -1332,7 +1332,7 @@ const recetas = [
     slug: "lasana-de-calabacin-sin-pasta",
     categoria: "principal",
     meta: "~310 kcal · 55 min · Para 4 personas",
-    ingredientes: ["3 calabacines grandes", "400 g de carne picada", "400 g de tomate triturado", "200 g de queso mozzarella rallado", "1 cebolla"],
+    ingredientes: ["3 calabacines grandes (900 g)", "400 g de carne picada", "400 g de tomate triturado", "200 g de queso mozzarella rallado", "1 cebolla (150 g)"],
     pasos: [
       "Cortar los calabacines en láminas finas a lo largo, con ayuda de una mandolina o un pelador.",
       "Salar las láminas y dejarlas reposar 10 minutos sobre papel de cocina para que suelten agua; secar bien.",
@@ -1351,7 +1351,7 @@ const recetas = [
     slug: "tarta-de-queso-sin-gluten",
     categoria: "postre",
     meta: "~340 kcal por ración · 70 min + enfriado · Para 8 raciones",
-    ingredientes: ["600 g de queso crema", "3 huevos", "150 g de azúcar", "200 ml de nata para montar", "20 g de maicena (fécula de maíz)"],
+    ingredientes: ["600 g de queso crema", "3 huevos (≈180 g)", "150 g de azúcar", "200 ml de nata para montar", "20 g de maicena (fécula de maíz)"],
     pasos: [
       "Precalentar el horno a 180 °C y forrar un molde desmontable con papel de horno.",
       "Batir el queso crema con el azúcar hasta que quede una mezcla homogénea y sin grumos.",
@@ -1369,7 +1369,7 @@ const recetas = [
     slug: "pisto-manchego-con-huevo-escalfado",
     categoria: "principal",
     meta: "~220 kcal · 40 min · Para 4 personas",
-    ingredientes: ["2 calabacines", "1 berenjena", "2 pimientos (rojo y verde)", "1 cebolla", "400 g de tomate triturado", "4 huevos"],
+    ingredientes: ["2 calabacines (400 g)", "1 berenjena (250 g)", "2 pimientos, rojo y verde (270 g)", "1 cebolla (150 g)", "400 g de tomate triturado", "4 huevos (≈240 g)"],
     pasos: [
       "Cortar todas las verduras en dados pequeños y homogéneos.",
       "Calentar un buen chorro de aceite de oliva en una sartén amplia y pochar la cebolla y los pimientos 8-10 minutos a fuego medio.",
@@ -1386,7 +1386,7 @@ const recetas = [
     slug: "bacalao-al-horno-con-pimientos",
     categoria: "principal",
     meta: "~230 kcal · 35 min · Para 4 personas",
-    ingredientes: ["4 lomos de bacalao desalado", "2 pimientos rojos", "1 cebolla", "3 dientes de ajo", "Aceite de oliva virgen extra", "Perejil fresco"],
+    ingredientes: ["600 g de lomos de bacalao desalado (4 unidades)", "2 pimientos rojos (300 g)", "1 cebolla (150 g)", "3 dientes de ajo (15 g)", "40 ml de aceite de oliva virgen extra", "10 g de perejil fresco"],
     pasos: [
       "Precalentar el horno a 190 °C.",
       "Cortar los pimientos y la cebolla en tiras finas, y laminar el ajo.",
@@ -1402,7 +1402,7 @@ const recetas = [
     slug: "estofado-de-ternera-con-patatas",
     categoria: "principal",
     meta: "~380 kcal · 90 min · Para 4 personas",
-    ingredientes: ["600 g de carne de ternera para guisar", "3 patatas", "2 zanahorias", "1 cebolla", "2 dientes de ajo", "Caldo de carne sin gluten"],
+    ingredientes: ["600 g de carne de ternera para guisar", "3 patatas (450 g)", "2 zanahorias (160 g)", "1 cebolla (150 g)", "2 dientes de ajo (10 g)", "600 ml de caldo de carne sin gluten"],
     pasos: [
       "Salpimentar la carne y dorarla en una olla con aceite de oliva por tandas; reservar.",
       "En la misma olla, pochar la cebolla y el ajo picados 5 minutos.",
@@ -1419,7 +1419,7 @@ const recetas = [
     slug: "sopa-de-pescado-y-marisco",
     categoria: "entrante",
     meta: "~210 kcal · 50 min · Para 4 personas",
-    ingredientes: ["400 g de pescado de roca", "200 g de gambas", "200 g de mejillones", "1 cebolla", "2 tomates maduros", "Caldo de pescado sin gluten"],
+    ingredientes: ["400 g de pescado de roca", "200 g de gambas", "200 g de mejillones", "1 cebolla (150 g)", "2 tomates maduros (200 g)", "800 ml de caldo de pescado sin gluten"],
     pasos: [
       "Sofreír la cebolla y un diente de ajo picados en una olla con aceite de oliva 8 minutos.",
       "Añadir el tomate rallado y cocinar 5 minutos más.",
@@ -1435,7 +1435,7 @@ const recetas = [
     slug: "tarta-de-manzana-sin-gluten",
     categoria: "postre",
     meta: "~280 kcal · 70 min · Para 8 personas",
-    ingredientes: ["250 g de harina sin gluten", "100 g de mantequilla", "3 manzanas", "2 huevos", "80 g de azúcar", "Canela"],
+    ingredientes: ["250 g de harina sin gluten", "100 g de mantequilla", "3 manzanas (450 g)", "2 huevos (≈120 g)", "80 g de azúcar", "3 g de canela"],
     pasos: [
       "Precalentar el horno a 180 °C y engrasar un molde desmontable.",
       "Mezclar la harina, la mantequilla derretida, un huevo y la mitad del azúcar hasta formar una masa; extenderla en la base del molde.",
@@ -1452,7 +1452,7 @@ const recetas = [
     slug: "bizcocho-de-yogur-sin-gluten",
     categoria: "postre",
     meta: "~230 kcal · 50 min · Para 8 personas",
-    ingredientes: ["1 yogur natural", "3 medidas de harina sin gluten (el vaso del yogur)", "2 medidas de azúcar", "1 medida de aceite de girasol", "3 huevos", "1 sobre de levadura sin gluten"],
+    ingredientes: ["1 yogur natural (125 g)", "375 g de harina sin gluten (3 medidas del vaso de yogur)", "250 g de azúcar (2 medidas del vaso de yogur)", "125 ml de aceite de girasol (1 medida del vaso de yogur)", "3 huevos (≈180 g)", "16 g de levadura sin gluten (1 sobre)"],
     pasos: [
       "Precalentar el horno a 180 °C y engrasar un molde alargado.",
       "Batir el yogur con el azúcar y los huevos hasta que espume ligeramente.",
@@ -1469,7 +1469,7 @@ const recetas = [
     slug: "ensalada-templada-de-lentejas",
     categoria: "entrante",
     meta: "~260 kcal · 20 min · Para 4 personas",
-    ingredientes: ["400 g de lentejas cocidas", "1 pimiento rojo", "100 g de espinacas baby", "50 g de queso feta", "Vinagre de Jerez", "Aceite de oliva virgen extra"],
+    ingredientes: ["400 g de lentejas cocidas", "1 pimiento rojo (150 g)", "100 g de espinacas baby", "50 g de queso feta", "15 ml de vinagre de Jerez", "30 ml de aceite de oliva virgen extra"],
     pasos: [
       "Cortar el pimiento rojo en dados pequeños y saltearlo 5 minutos en una sartén con un poco de aceite.",
       "Añadir las lentejas cocidas y calentar todo junto 3-4 minutos.",
@@ -1485,7 +1485,7 @@ const recetas = [
     slug: "croquetas-de-jamon-sin-gluten",
     categoria: "entrante",
     meta: "~320 kcal · 60 min + enfriado · Para 6 personas",
-    ingredientes: ["100 g de jamón serrano picado", "50 g de harina de arroz", "50 g de maicena", "500 ml de leche", "50 g de mantequilla", "Pan rallado sin gluten", "2 huevos"],
+    ingredientes: ["100 g de jamón serrano picado", "50 g de harina de arroz", "50 g de maicena", "500 ml de leche", "50 g de mantequilla", "60 g de pan rallado sin gluten", "2 huevos (≈120 g)"],
     pasos: [
       "Derretir la mantequilla en un cazo y añadir la harina de arroz y la maicena, removiendo 2 minutos para tostar sin que cojan color.",
       "Añadir la leche poco a poco sin dejar de remover, para evitar grumos.",
@@ -1502,7 +1502,7 @@ const recetas = [
     slug: "hummus-de-remolacha-con-crudites",
     categoria: "entrante",
     meta: "~180 kcal · 15 min · Para 4 personas",
-    ingredientes: ["400 g de garbanzos cocidos", "1 remolacha cocida pequeña", "2 cucharadas de tahini", "1 diente de ajo", "Zumo de 1 limón", "Aceite de oliva virgen extra", "Zanahoria, pepino y apio para mojar"],
+    ingredientes: ["400 g de garbanzos cocidos", "1 remolacha cocida pequeña (100 g)", "30 g de tahini (2 cucharadas)", "1 diente de ajo (5 g)", "El zumo de 1 limón (≈30 ml)", "30 ml de aceite de oliva virgen extra", "200 g de zanahoria, pepino y apio para mojar"],
     pasos: [
       "Escurrir bien los garbanzos y trocear la remolacha cocida.",
       "Triturar los garbanzos, la remolacha, el tahini, el ajo y el zumo de limón hasta obtener una crema fina.",
@@ -1517,7 +1517,7 @@ const recetas = [
     slug: "tabule-de-quinoa-con-menta-y-limon",
     categoria: "entrante",
     meta: "~210 kcal · 25 min + enfriado · Para 4 personas",
-    ingredientes: ["200 g de quinoa", "2 tomates maduros", "1/2 pepino", "1 manojo de perejil fresco", "Hojas de menta fresca", "Zumo de 2 limones", "Aceite de oliva virgen extra"],
+    ingredientes: ["200 g de quinoa", "2 tomates maduros (200 g)", "1/2 pepino (75 g)", "30 g de perejil fresco (1 manojo)", "10 g de hojas de menta fresca", "El zumo de 2 limones (≈60 ml)", "40 ml de aceite de oliva virgen extra"],
     pasos: [
       "Cocer la quinoa según las instrucciones del paquete, escurrir y dejar enfriar por completo.",
       "Picar el tomate y el pepino en dados pequeños, sin las semillas del tomate si se prefiere menos líquido.",
@@ -1533,7 +1533,7 @@ const recetas = [
     slug: "tosta-de-aguacate-y-huevo-poche",
     categoria: "entrante",
     meta: "~290 kcal · 15 min · Para 2 personas",
-    ingredientes: ["4 rebanadas de pan sin gluten", "2 aguacates maduros", "2 huevos", "Zumo de 1/2 limón", "Vinagre", "Pimienta y copos de guindilla al gusto"],
+    ingredientes: ["4 rebanadas de pan sin gluten (160 g)", "2 aguacates maduros (400 g)", "2 huevos (≈120 g)", "El zumo de 1/2 limón (≈15 ml)", "10 ml de vinagre", "2 g de pimienta y copos de guindilla al gusto"],
     pasos: [
       "Tostar las rebanadas de pan sin gluten.",
       "Machacar el aguacate con el zumo de limón, sal y pimienta hasta obtener una pasta con textura.",
@@ -1549,7 +1549,7 @@ const recetas = [
     slug: "paella-de-marisco-sin-gluten",
     categoria: "principal",
     meta: "~430 kcal · 50 min · Para 4 personas",
-    ingredientes: ["350 g de arroz redondo", "300 g de gambas", "300 g de mejillones", "200 g de calamar", "1 pimiento rojo", "2 tomates rallados", "Caldo de pescado sin gluten", "Azafrán"],
+    ingredientes: ["350 g de arroz redondo", "300 g de gambas", "300 g de mejillones", "200 g de calamar", "1 pimiento rojo (150 g)", "2 tomates rallados (200 g)", "1 litro de caldo de pescado sin gluten", "1 g de azafrán (unas hebras)"],
     pasos: [
       "Sofreír las gambas peladas en la paellera con aceite de oliva y reservar.",
       "En el mismo aceite, sofreír el pimiento troceado y el calamar en dados 5 minutos.",
@@ -1566,7 +1566,7 @@ const recetas = [
     slug: "chili-con-carne-sin-gluten",
     categoria: "principal",
     meta: "~390 kcal · 45 min · Para 4 personas",
-    ingredientes: ["500 g de carne picada de ternera", "400 g de alubias rojas cocidas", "400 g de tomate triturado", "1 cebolla", "1 pimiento rojo", "2 dientes de ajo", "1 cucharada de comino y pimentón sin gluten"],
+    ingredientes: ["500 g de carne picada de ternera", "400 g de alubias rojas cocidas", "400 g de tomate triturado", "1 cebolla (150 g)", "1 pimiento rojo (150 g)", "2 dientes de ajo (10 g)", "10 g de comino y pimentón sin gluten (1 cucharada de cada)"],
     pasos: [
       "Picar la cebolla, el pimiento y el ajo, y sofreír en una olla con aceite de oliva 5-6 minutos.",
       "Añadir la carne picada y dorarla bien, deshaciendo los grumos.",
@@ -1582,7 +1582,7 @@ const recetas = [
     slug: "flan-de-coco",
     categoria: "postre",
     meta: "~260 kcal · 30 min + enfriado · Para 6 personas",
-    ingredientes: ["400 ml de leche de coco", "300 ml de leche", "4 huevos", "100 g de azúcar (para el flan)", "100 g de azúcar (para el caramelo)", "Coco rallado para decorar"],
+    ingredientes: ["400 ml de leche de coco", "300 ml de leche", "4 huevos (≈240 g)", "100 g de azúcar (para el flan)", "100 g de azúcar (para el caramelo)", "20 g de coco rallado para decorar"],
     pasos: [
       "Preparar un caramelo dorando el azúcar en un cazo hasta que tome color, y repartirlo en el fondo de flaneras individuales o un molde grande.",
       "Batir los huevos con el azúcar hasta integrar.",
@@ -1598,7 +1598,7 @@ const recetas = [
     slug: "trufas-de-chocolate-y-datiles",
     categoria: "postre",
     meta: "~90 kcal por unidad · 20 min + reposo · Para 15 unidades",
-    ingredientes: ["200 g de dátiles sin hueso", "100 g de chocolate negro sin gluten", "2 cucharadas de cacao puro en polvo", "1 cucharada de aceite de coco", "Frutos secos picados o coco rallado para rebozar"],
+    ingredientes: ["200 g de dátiles sin hueso", "100 g de chocolate negro sin gluten", "15 g de cacao puro en polvo (2 cucharadas)", "12 g de aceite de coco (1 cucharada)", "50 g de frutos secos picados o coco rallado para rebozar"],
     pasos: [
       "Remojar los dátiles en agua templada 10 minutos si están muy secos, y escurrir.",
       "Triturar los dátiles hasta formar una pasta.",
@@ -1614,7 +1614,7 @@ const recetas = [
     slug: "helado-casero-de-platano-y-fresa",
     categoria: "postre",
     meta: "~140 kcal · 10 min + congelación previa · Para 4 personas",
-    ingredientes: ["3 plátanos maduros congelados en rodajas", "200 g de fresas congeladas", "2 cucharadas de yogur natural o leche", "1 cucharadita de miel (opcional)"],
+    ingredientes: ["3 plátanos maduros congelados en rodajas (360 g)", "200 g de fresas congeladas", "30 g de yogur natural o leche (2 cucharadas)", "7 g de miel, opcional (1 cucharadita)"],
     pasos: [
       "Congelar las rodajas de plátano y las fresas al menos 4 horas o toda la noche.",
       "Triturar el plátano congelado en un procesador de alimentos hasta que quede cremoso, parando para raspar los bordes.",
@@ -1629,7 +1629,7 @@ const recetas = [
     slug: "ensaladilla-rusa-sin-gluten",
     categoria: "entrante",
     meta: "~220 kcal · 35 min · Para 4 personas",
-    ingredientes: ["4 patatas medianas", "2 zanahorias", "1 lata de atún en aceite", "2 huevos", "1 lata pequeña de guisantes", "Mayonesa (casera o envasada sin gluten)", "Aceitunas para decorar"],
+    ingredientes: ["600 g de patatas medianas (4 unidades)", "2 zanahorias (160 g)", "1 lata de atún en aceite (80 g escurrido)", "2 huevos (≈120 g)", "1 lata pequeña de guisantes (100 g escurridos)", "100 g de mayonesa (casera o envasada sin gluten)", "30 g de aceitunas para decorar"],
     pasos: [
       "Cocer las patatas y las zanahorias con piel en agua con sal hasta que estén tiernas, unos 20-25 minutos.",
       "Cocer los huevos 10 minutos, enfriar bajo el grifo y pelar.",
@@ -1646,7 +1646,7 @@ const recetas = [
     slug: "croquetas-de-setas-sin-gluten",
     categoria: "entrante",
     meta: "~290 kcal · 60 min + enfriado · Para 6 personas",
-    ingredientes: ["300 g de setas variadas", "1 cebolla", "50 g de harina de arroz", "50 g de maicena", "500 ml de leche", "50 g de mantequilla", "Pan rallado sin gluten", "2 huevos"],
+    ingredientes: ["300 g de setas variadas", "1 cebolla (150 g)", "50 g de harina de arroz", "50 g de maicena", "500 ml de leche", "50 g de mantequilla", "60 g de pan rallado sin gluten", "2 huevos (≈120 g)"],
     pasos: [
       "Picar la cebolla y las setas muy finas, y sofreírlas en una sartén con un poco de aceite hasta que suelten el agua y se doren ligeramente.",
       "Derretir la mantequilla en un cazo y añadir la harina de arroz y la maicena, removiendo 2 minutos para tostar sin que cojan color.",
@@ -1663,7 +1663,7 @@ const recetas = [
     slug: "tartar-de-aguacate-y-mango",
     categoria: "entrante",
     meta: "~180 kcal · 20 min · Para 4 personas",
-    ingredientes: ["2 aguacates maduros", "1 mango maduro", "1/2 cebolla morada", "Zumo de 1 lima", "Cilantro fresco", "Aceite de oliva virgen extra", "Sal y pimienta"],
+    ingredientes: ["2 aguacates maduros (400 g)", "1 mango maduro (300 g)", "1/2 cebolla morada (75 g)", "El zumo de 1 lima (≈30 ml)", "10 g de cilantro fresco", "20 ml de aceite de oliva virgen extra", "5 g de sal y pimienta al gusto"],
     pasos: [
       "Cortar el aguacate y el mango en dados pequeños y uniformes.",
       "Picar la cebolla morada muy fina.",
@@ -1679,7 +1679,7 @@ const recetas = [
     slug: "fideua-de-marisco-sin-gluten",
     categoria: "principal",
     meta: "~410 kcal · 45 min · Para 4 personas",
-    ingredientes: ["350 g de fideos de arroz o maíz (tipo fideuá sin gluten)", "300 g de gambas", "300 g de mejillones", "200 g de calamar", "2 tomates rallados", "Caldo de pescado sin gluten", "Azafrán", "Alioli para acompañar"],
+    ingredientes: ["350 g de fideos de arroz o maíz (tipo fideuá sin gluten)", "300 g de gambas", "300 g de mejillones", "200 g de calamar", "2 tomates rallados (200 g)", "900 ml de caldo de pescado sin gluten", "1 g de azafrán (unas hebras)", "80 g de alioli para acompañar"],
     pasos: [
       "Sofreír las gambas peladas en la paellera con aceite de oliva y reservar.",
       "En el mismo aceite, sofreír el calamar en dados 5 minutos.",
@@ -1696,7 +1696,7 @@ const recetas = [
     slug: "pollo-teriyaki-con-arroz",
     categoria: "principal",
     meta: "~440 kcal · 30 min · Para 4 personas",
-    ingredientes: ["4 contramuslos de pollo deshuesados", "Arroz para acompañar", "4 cucharadas de salsa de soja sin gluten (tamari)", "2 cucharadas de miel", "1 diente de ajo", "1 cucharadita de jengibre rallado", "Sésamo y cebolleta para decorar"],
+    ingredientes: ["600 g de contramuslos de pollo deshuesados (4 unidades)", "300 g de arroz para acompañar", "60 ml de salsa de soja sin gluten (tamari, 4 cucharadas)", "40 g de miel (2 cucharadas)", "1 diente de ajo (5 g)", "5 g de jengibre rallado (1 cucharadita)", "15 g de sésamo y cebolleta para decorar"],
     pasos: [
       "Mezclar el tamari, la miel, el ajo picado y el jengibre en un bol para preparar la salsa teriyaki.",
       "Cocer el arroz según las instrucciones del paquete.",
@@ -1712,7 +1712,7 @@ const recetas = [
     slug: "natillas-caseras-sin-gluten",
     categoria: "postre",
     meta: "~180 kcal · 25 min + enfriado · Para 4 personas",
-    ingredientes: ["500 ml de leche", "4 yemas de huevo", "80 g de azúcar", "1 cucharada de maicena", "Piel de limón", "Canela en rama", "Galletas sin gluten para acompañar (opcional)"],
+    ingredientes: ["500 ml de leche", "4 yemas de huevo (≈72 g)", "80 g de azúcar", "10 g de maicena (1 cucharada)", "5 g de piel de limón", "1 rama de canela (3 g)", "100 g de galletas sin gluten para acompañar (opcional)"],
     pasos: [
       "Calentar la leche con la piel de limón y la canela sin que llegue a hervir, y dejar infusionar 10 minutos.",
       "Batir las yemas con el azúcar y la maicena hasta que blanqueen.",
@@ -1728,7 +1728,7 @@ const recetas = [
     slug: "galletas-de-avena-sin-gluten",
     categoria: "postre",
     meta: "~95 kcal por unidad · 25 min · Para 16 unidades",
-    ingredientes: ["200 g de copos de avena sin gluten", "1 plátano maduro", "2 cucharadas de miel", "50 g de mantequilla derretida", "50 g de pasas o pepitas de chocolate", "1/2 cucharadita de canela"],
+    ingredientes: ["200 g de copos de avena sin gluten", "1 plátano maduro (120 g)", "40 g de miel (2 cucharadas)", "50 g de mantequilla derretida", "50 g de pasas o pepitas de chocolate", "1 g de canela (1/2 cucharadita)"],
     pasos: [
       "Precalentar el horno a 180 °C y forrar una bandeja con papel de hornear.",
       "Machacar el plátano con un tenedor hasta obtener un puré.",
@@ -1745,7 +1745,7 @@ const recetas = [
     slug: "crema-de-calabacin-y-puerro",
     categoria: "entrante",
     meta: "~140 kcal · 30 min · Para 4 personas",
-    ingredientes: ["3 calabacines", "2 puerros", "1 patata pequeña", "Caldo de verduras sin gluten", "Queso crema (opcional)", "Aceite de oliva virgen extra"],
+    ingredientes: ["3 calabacines (600 g)", "2 puerros (200 g)", "1 patata pequeña (100 g)", "700 ml de caldo de verduras sin gluten", "50 g de queso crema (opcional)", "20 ml de aceite de oliva virgen extra"],
     pasos: [
       "Lavar y trocear los calabacines, los puerros y la patata.",
       "Rehogar el puerro en una olla con un poco de aceite de oliva 5 minutos, hasta que esté transparente.",
@@ -1761,7 +1761,7 @@ const recetas = [
     slug: "rollitos-vietnamitas-de-arroz-con-gambas",
     categoria: "entrante",
     meta: "~160 kcal · 30 min · Para 4 personas",
-    ingredientes: ["8 obleas de papel de arroz", "200 g de gambas cocidas", "Fideos de arroz", "Zanahoria y pepino en juliana", "Hojas de menta y cilantro", "Salsa de soja sin gluten (tamari) para mojar"],
+    ingredientes: ["8 obleas de papel de arroz", "200 g de gambas cocidas", "100 g de fideos de arroz", "1 zanahoria (80 g) y 1 pepino (150 g) en juliana", "10 g de hojas de menta y cilantro", "50 ml de salsa de soja sin gluten (tamari) para mojar"],
     pasos: [
       "Cocer los fideos de arroz según las instrucciones del paquete, escurrir y dejar templar.",
       "Cortar la zanahoria y el pepino en juliana fina.",
@@ -1777,7 +1777,7 @@ const recetas = [
     slug: "arroz-negro-con-sepia",
     categoria: "principal",
     meta: "~450 kcal · 45 min · Para 4 personas",
-    ingredientes: ["350 g de arroz redondo", "2 sepias limpias con su tinta", "1 cebolla", "1 pimiento verde", "2 tomates rallados", "Caldo de pescado sin gluten", "Alioli para acompañar"],
+    ingredientes: ["350 g de arroz redondo", "2 sepias limpias con su tinta (400 g)", "1 cebolla (150 g)", "1 pimiento verde (120 g)", "2 tomates rallados (200 g)", "900 ml de caldo de pescado sin gluten", "80 g de alioli para acompañar"],
     pasos: [
       "Cortar la sepia en trozos y sofreírla en la paellera con aceite de oliva hasta que dore.",
       "Añadir la cebolla y el pimiento picados finos, y sofreír 5 minutos.",
@@ -1794,7 +1794,7 @@ const recetas = [
     slug: "pollo-al-horno-con-limon-y-romero",
     categoria: "principal",
     meta: "~380 kcal · 50 min · Para 4 personas",
-    ingredientes: ["8 muslos de pollo", "2 limones", "4 dientes de ajo", "Romero fresco", "Patatas pequeñas", "Aceite de oliva virgen extra", "Sal y pimienta"],
+    ingredientes: ["1,6 kg de muslos de pollo (8 unidades)", "2 limones (200 g)", "4 dientes de ajo (20 g)", "10 g de romero fresco", "600 g de patatas pequeñas", "40 ml de aceite de oliva virgen extra", "5 g de sal y pimienta al gusto"],
     pasos: [
       "Precalentar el horno a 200 °C.",
       "Colocar los muslos de pollo en una fuente de horno junto con las patatas cortadas en cuartos y los ajos sin pelar.",
@@ -1810,7 +1810,7 @@ const recetas = [
     slug: "mousse-de-chocolate-sin-gluten",
     categoria: "postre",
     meta: "~250 kcal · 20 min + enfriado · Para 4 personas",
-    ingredientes: ["200 g de chocolate negro sin gluten", "4 huevos", "30 g de azúcar", "Una pizca de sal"],
+    ingredientes: ["200 g de chocolate negro sin gluten", "4 huevos (≈240 g)", "30 g de azúcar", "2 g de sal (una pizca)"],
     pasos: [
       "Derretir el chocolate al baño maría o en el microondas en golpes cortos, y dejar templar.",
       "Separar las yemas de las claras.",
@@ -1826,7 +1826,7 @@ const recetas = [
     slug: "crumble-de-manzana-sin-gluten",
     categoria: "postre",
     meta: "~310 kcal · 45 min · Para 6 personas",
-    ingredientes: ["5 manzanas", "1 cucharadita de canela", "100 g de harina de almendra", "80 g de copos de avena sin gluten", "80 g de mantequilla fría en dados", "60 g de azúcar moreno"],
+    ingredientes: ["5 manzanas (750 g)", "3 g de canela (1 cucharadita)", "100 g de harina de almendra", "80 g de copos de avena sin gluten", "80 g de mantequilla fría en dados", "60 g de azúcar moreno"],
     pasos: [
       "Precalentar el horno a 180 °C.",
       "Pelar y cortar las manzanas en láminas, y colocarlas en una fuente de horno con la canela.",
