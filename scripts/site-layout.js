@@ -92,10 +92,10 @@ function footerHtml() {
       </div>
       <div class="footer-col">
         <span class="footer-links-title">Libre de Trigo</span>
-        <a href="${SITE_URL}/sobre-libredetrigo/">Sobre nosotros</a>
-        <a href="${SITE_URL}/sobre-libredetrigo/">Cómo verificamos la información</a>
-        <a href="${SITE_URL}/sobre-libredetrigo/">Contacto</a>
-        <a href="${SITE_URL}/sobre-libredetrigo/">Colabora con nosotros</a>
+        <a href="${SITE_URL}/#sobre-libredetrigo">Sobre nosotros</a>
+        <a href="${SITE_URL}/#sobre-libredetrigo">Cómo verificamos la información</a>
+        <a href="${SITE_URL}/#sobre-libredetrigo">Contacto</a>
+        <a href="${SITE_URL}/#sobre-libredetrigo">Colabora con nosotros</a>
       </div>
       <div class="footer-col">
         <span class="footer-links-title">Legal</span>

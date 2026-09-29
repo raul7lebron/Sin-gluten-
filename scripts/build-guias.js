@@ -13,12 +13,29 @@
 // después de cambiar los datos de este archivo.
 const { SITE_URL, escapeHtml, fileHash, headerHtml, searchOverlayHtml, footerHtml, adsenseHeadHtml, writeFile } = require("./site-layout.js");
 
-const TODAY = new Date().toISOString().slice(0, 10);
+// Fecha real de publicación/última edición sustancial de las guías (no la fecha
+// de build): usar la fecha de build aquí simularía "actualizado hoy" en cada
+// commit, incluido el bot diario de noticias, lo cual es una señal de
+// frescura falsa que Google penaliza si la detecta. Solo se debe tocar esta
+// constante cuando el contenido de alguna guía cambie de verdad.
+const GUIDES_LAST_UPDATED = "2026-09-21";
 
 const CLUSTERS = {
-  celiaquia: { label: "Celiaquía", path: "/celiaquia/" },
-  "vivir-sin-gluten": { label: "Vivir sin gluten", path: "/vivir-sin-gluten/" },
-  "etiquetado-sin-gluten": { label: "Etiquetado sin gluten", path: "/etiquetado-sin-gluten/" },
+  celiaquia: {
+    label: "Celiaquía",
+    path: "/celiaquia/",
+    description: "Guías sobre celiaquía: qué es el gluten, ingesta accidental, celiaquía en niños, glosario y asociaciones de referencia en España.",
+  },
+  "vivir-sin-gluten": {
+    label: "Vivir sin gluten",
+    path: "/vivir-sin-gluten/",
+    description: "Guías prácticas para vivir sin gluten en el día a día: qué alimentos evitar, contaminación cruzada, viajar y hacer la compra.",
+  },
+  "etiquetado-sin-gluten": {
+    label: "Etiquetado sin gluten",
+    path: "/etiquetado-sin-gluten/",
+    description: "Cómo leer el etiquetado sin gluten: alérgenos, avisos de trazas, la espiga barrada y el límite legal de 20 ppm.",
+  },
   "restaurantes-sin-gluten": { label: "Comer fuera", path: "/" },
 };
 
@@ -189,8 +206,8 @@ const GUIAS = [
     slug: "productos-recomendados",
     cluster: "vivir-sin-gluten",
     icon: "🔪",
-    title: "Utensilios de cocina que ayudan a evitar la contaminación cruzada",
-    description: "Qué utensilios de cocina facilitan evitar la contaminación cruzada en una cocina compartida (airfryer de dos cestas, bolsas de tostadora, tabla de cortar de metal, colador exclusivo, botes individuales para untables...) y por qué ayuda cada uno.",
+    title: "Utensilios sin contaminación cruzada",
+    description: "Qué utensilios de cocina ayudan a evitar la contaminación cruzada: airfryer de dos cestas, bolsa de tostadora, tabla de metal y colador exclusivo.",
     lead: "No hace falta comprarlo todo de golpe: estos son los utensilios que más ayudan a evitar la contaminación cruzada en una cocina donde conviven productos con y sin gluten, y el motivo concreto de cada uno.",
     body: `
       <p>La guía de <a href="${SITE_URL}/vivir-sin-gluten/contaminacion-cruzada/">contaminación cruzada en casa</a> explica los riesgos más habituales. Esta página se centra en algo más concreto: qué utensilios facilitan evitarlos, y por qué ayuda cada uno específicamente.</p>
@@ -256,7 +273,7 @@ const GUIAS = [
     cluster: "celiaquia",
     icon: "📖",
     title: "Glosario rápido",
-    description: "Glosario de términos habituales sobre celiaquía y gluten: celiaquía, sensibilidad al gluten no celíaca, alergia al trigo, contaminación cruzada, ppm y espiga barrada.",
+    description: "Glosario de términos sobre celiaquía y gluten: sensibilidad al gluten no celíaca, alergia al trigo, contaminación cruzada, ppm y espiga barrada.",
     lead: "Términos que verás a menudo en esta web y en cualquier producto o consulta relacionada con el gluten.",
     body: `
       <ul>
@@ -365,8 +382,8 @@ function buildArticlePage(guia) {
     headline: guia.title,
     description: guia.description,
     url: canonicalUrl,
-    datePublished: TODAY,
-    dateModified: TODAY,
+    datePublished: GUIDES_LAST_UPDATED,
+    dateModified: GUIDES_LAST_UPDATED,
     inLanguage: "es-ES",
     author: { "@type": "Organization", name: "Libre de Trigo", url: `${SITE_URL}/` },
     publisher: {
@@ -437,7 +454,7 @@ function buildHubPage(clusterKey) {
   const canonicalUrl = `${SITE_URL}${cluster.path}`;
   const cssHash = fileHash("css/styles.css");
   const jsHash = fileHash("js/static-page.js");
-  const description = `Guías sobre ${cluster.label.toLowerCase()}: ${guiasInCluster.map((g) => g.title.toLowerCase()).join(", ")}.`;
+  const description = cluster.description || `Guías sobre ${cluster.label.toLowerCase()} para vivir sin gluten, explicadas de forma práctica.`;
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",

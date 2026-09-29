@@ -36,9 +36,28 @@ function parseMeta(meta) {
   };
 }
 
+// Descripción para <meta name="description"> y og:description. Google trunca
+// alrededor de los 155-160 caracteres, así que el "meta" (kcal · tiempo ·
+// raciones) solo se añade si cabe entero: mejor una frase corta y completa
+// que una larga cortada a mitad de palabra en el resultado de búsqueda.
 function descriptionFor(receta) {
-  return `Receta sin gluten de ${receta.title.toLowerCase()}, explicada paso a paso con ingredientes y tiempo de preparación. ${receta.meta}.`;
+  const base = `Receta sin gluten de ${receta.title.toLowerCase()}, explicada paso a paso con ingredientes y raciones.`;
+  const withMeta = `${base} ${receta.meta}.`;
+  return withMeta.length <= 158 ? withMeta : base;
 }
+
+// Título de pestaña/SERP. El sufijo " | Libre de Trigo" solo se mantiene si
+// cabe dentro de ~60 caracteres (límite habitual antes de que Google lo
+// trunque); si no, se prioriza el nombre completo del plato + "sin gluten".
+function pageTitleFor(receta) {
+  const hasGluten = /gluten/i.test(receta.title);
+  const withBrand = hasGluten ? `${receta.title} | Libre de Trigo` : `${receta.title} sin gluten | Libre de Trigo`;
+  if (withBrand.length <= 60) return withBrand;
+  const withoutBrand = hasGluten ? receta.title : `${receta.title} sin gluten`;
+  return withoutBrand.length <= 60 ? withoutBrand : receta.title;
+}
+
+const CATEGORIA_SCHEMA_LABEL = { principal: "Plato principal", entrante: "Entrante", postre: "Postre" };
 
 function breadcrumbsHtml(receta) {
   const items = [
@@ -101,7 +120,7 @@ function buildRecetaPage(receta, recetas) {
   const { breadcrumbJsonLd } = breadcrumbsHtml(receta);
   const description = descriptionFor(receta);
   const { calories, totalTimeIso, recipeYield } = parseMeta(receta.meta);
-  const pageTitle = /gluten/i.test(receta.title) ? `${receta.title} | Libre de Trigo` : `${receta.title} (receta sin gluten) | Libre de Trigo`;
+  const pageTitle = pageTitleFor(receta);
 
   const recipeJsonLd = {
     "@context": "https://schema.org",
@@ -114,6 +133,7 @@ function buildRecetaPage(receta, recetas) {
     author: { "@type": "Organization", name: "Libre de Trigo", url: `${SITE_URL}/` },
     recipeIngredient: receta.ingredientes,
     recipeInstructions: receta.pasos.map((paso) => ({ "@type": "HowToStep", text: paso })),
+    ...(CATEGORIA_SCHEMA_LABEL[receta.categoria] ? { recipeCategory: CATEGORIA_SCHEMA_LABEL[receta.categoria] } : {}),
     ...(totalTimeIso ? { totalTime: totalTimeIso } : {}),
     ...(recipeYield ? { recipeYield } : {}),
     ...(calories ? { nutrition: { "@type": "NutritionInformation", calories } } : {}),
