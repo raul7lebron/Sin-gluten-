@@ -101,7 +101,7 @@ const GUIAS = [
         <li><strong>Límite legal «sin gluten»:</strong> un producto solo puede etiquetarse como «sin gluten» si contiene menos de 20 mg/kg (20 ppm), según el Codex Alimentarius y la normativa que recoge la <a href="https://www.aesan.gob.es/AECOSAN/web/seguridad_alimentaria/subdetalle/informacion_gluten.htm" target="_blank" rel="noopener noreferrer">AESAN (Agencia Española de Seguridad Alimentaria y Nutrición)</a>.</li>
       </ul>
     `,
-    related: ["alimentos-con-y-sin-gluten", "contaminacion-cruzada", "hacer-la-compra"],
+    related: ["alimentos-con-y-sin-gluten", "contaminacion-cruzada", "marcas-pan-pasta-harina-sin-gluten"],
   },
   {
     slug: "contaminacion-cruzada",
@@ -200,7 +200,7 @@ const GUIAS = [
         <li>Ante la duda con un producto envasado, usa el <a href="${SITE_URL}/#escaner">escáner de códigos de barras</a> de esta web.</li>
       </ul>
     `,
-    related: ["alimentos-con-y-sin-gluten", "20-ppm", "que-es-el-gluten"],
+    related: ["alimentos-con-y-sin-gluten", "20-ppm", "marcas-pan-pasta-harina-sin-gluten"],
   },
   {
     slug: "productos-recomendados",
@@ -243,7 +243,7 @@ const GUIAS = [
         <strong>No hace falta comprarlo todo de golpe.</strong> Si convives con personas que sí comen gluten, prioriza según lo que más se use en tu cocina: la tabla de cortar y los utensilios de identificación rápida suelen ser el cambio más barato y con más impacto; el resto puede esperar.
       </div>
     `,
-    related: ["contaminacion-cruzada", "hacer-la-compra", "ingesta-accidental"],
+    related: ["contaminacion-cruzada", "hacer-la-compra", "marcas-pan-pasta-harina-sin-gluten"],
   },
   {
     slug: "celiaquia-en-ninos",
@@ -303,6 +303,44 @@ const GUIAS = [
       </ul>
     `,
     related: ["celiaquia-en-ninos", "comer-fuera-con-celiaquia", "glosario"],
+  },
+  {
+    slug: "marcas-pan-pasta-harina-sin-gluten",
+    cluster: "vivir-sin-gluten",
+    icon: "🍞",
+    title: "Marcas de pan, pasta y harina sin gluten",
+    description: "Marcas de pan, pasta y harina sin gluten en supermercados y tiendas de España, y cómo comprobar si tienen certificación real.",
+    lead: "Qué marcas de pan, pasta y harina sin gluten se encuentran realmente en supermercados y tiendas especializadas en España, sin valoraciones de sabor: solo dónde comprarlas y cómo comprobar tú mismo su certificación.",
+    body: `
+      <p>Esta lista es orientativa y no sustituye la lectura del etiquetado: la composición y la certificación de un producto pueden cambiar. Antes de nada, conviene tener claro <a href="${SITE_URL}/etiquetado-sin-gluten/">cómo leer una etiqueta sin gluten</a> y qué garantiza (o no) el símbolo de la espiga barrada.</p>
+
+      <h2>Pan sin gluten</h2>
+      <ul>
+        <li><strong>Schär:</strong> marca de referencia europea en alimentación sin gluten, con gama amplia de pan de molde, payés y especialidades. Se encuentra en supermercados grandes (sección específica) y farmacias.</li>
+        <li><strong>Proceli:</strong> marca española que fabrica en instalaciones 100% libres de gluten (sin líneas compartidas con productos con gluten), con pan, bollería y galletas. Disponible en tiendas especializadas, herbolarios y venta online.</li>
+        <li><strong>Beiker:</strong> marca española con certificación FACE en toda su gama, integrada en el grupo Dr. Schär. Su pan y preparado panificable se encuentran en supermercados como Mercadona.</li>
+        <li><strong>Hacendado (Mercadona):</strong> la marca blanca de Mercadona tiene una gama amplia de productos sin gluten, incluido pan de molde, identificados con un distintivo propio en el envase.</li>
+      </ul>
+
+      <h2>Pasta sin gluten</h2>
+      <ul>
+        <li><strong>Pastas Gallo:</strong> gama sin gluten con la certificación europea de la espiga barrada (Sistema de Licencia Europeo, ELS) otorgada por FACE, en formatos como espagueti, macarrones o placas de lasaña. Se usa, por ejemplo, en nuestra <a href="${SITE_URL}/recetas/carbonara-sin-gluten/">receta de carbonara sin gluten</a>.</li>
+        <li><strong>Schär:</strong> también fabrica pasta sin gluten (espaguetis, penne, fusilli), con la misma disponibilidad que su gama de pan.</li>
+      </ul>
+
+      <h2>Harina y mezcla panificable sin gluten</h2>
+      <ul>
+        <li><strong>Schär, Beiker y Proceli:</strong> las tres tienen su propia mezcla panificable ("mix pan") pensada para sustituir la harina de trigo en pan casero, bizcochos y rebozados en proporción similar.</li>
+        <li><strong>El Granero Integral:</strong> harinas y mezclas ecológicas sin gluten (multiusos, de avena certificada, etc.), disponibles en herbolarios, tiendas ecológicas y online.</li>
+        <li><strong>Adpan:</strong> proveedor español especializado con más de 20 años en el sector, con mixes de panadería y harinas sin gluten de venta principalmente online y en tiendas especializadas.</li>
+        <li><strong>Hacendado (Mercadona):</strong> también tiene su propia harina y preparado de panificación y repostería sin gluten.</li>
+      </ul>
+      <p>Estas harinas y el pan rallado sin gluten aparecen en recetas como las <a href="${SITE_URL}/recetas/croquetas-de-jamon-sin-gluten/">croquetas de jamón sin gluten</a>, el <a href="${SITE_URL}/recetas/pastel-de-carne-sin-gluten/">pastel de carne sin gluten</a> o el <a href="${SITE_URL}/recetas/brownie-sin-gluten/">brownie sin gluten</a>.</p>
+
+      <h2>Cómo comprobarlo tú mismo</h2>
+      <p>Ninguna lista sustituye al envase que tienes delante. Busca el símbolo de la <a href="${SITE_URL}/etiquetado-sin-gluten/">espiga barrada</a> o la mención «sin gluten» junto a los ingredientes en negrita, y ante cualquier duda con un producto envasado, usa el <a href="${SITE_URL}/#escaner">escáner de códigos de barras</a> de esta web o consulta el listado oficial de <a href="https://celiacos.org/" target="_blank" rel="noopener noreferrer">FACE</a>.</p>
+    `,
+    related: ["20-ppm", "hacer-la-compra", "productos-recomendados"],
   },
 ];
 

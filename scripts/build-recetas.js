@@ -207,6 +207,9 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
       <ul>${receta.ingredientes.map((i) => `<li>${escapeHtml(i)}</li>`).join("")}</ul>
       <h2>Preparación</h2>
       <ol>${receta.pasos.map((p) => `<li>${escapeHtml(p)}</li>`).join("")}</ol>
+      <div class="editorial-callout">
+        <strong>Antes de cocinar.</strong> Comprueba que los productos envasados que uses (pan rallado, pasta, salsas, especias) sean realmente sin gluten — aquí tienes <a href="${SITE_URL}/vivir-sin-gluten/marcas-pan-pasta-harina-sin-gluten/">marcas de pan, pasta y harina sin gluten</a> disponibles en España. Y si cocinas en una cocina compartida con productos con gluten, repasa cómo evitar la <a href="${SITE_URL}/vivir-sin-gluten/contaminacion-cruzada/">contaminación cruzada en casa</a>.
+      </div>
     </div>
 
     ${relatedHtml(receta, recetas)}
