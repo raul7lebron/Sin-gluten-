@@ -2445,6 +2445,18 @@ a:focus-visible {
   margin: 0 0 10px;
 }
 
+.recipe-photo {
+  display: block;
+  width: 100%;
+  max-width: var(--content-width);
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin: 4px 0 20px;
+}
+
 .recipe-actions {
   display: flex;
   flex-wrap: wrap;

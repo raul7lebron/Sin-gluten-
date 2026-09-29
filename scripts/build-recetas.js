@@ -13,9 +13,26 @@
 //
 // No edites los .html generados a mano: vuelve a ejecutar "npm run prerender"
 // después de cambiar js/data.js.
-const { SITE_URL, escapeHtml, fileHash, headerHtml, searchOverlayHtml, footerHtml, adsenseHeadHtml, writeFile } = require("./site-layout.js");
+const fs = require("fs");
+const path = require("path");
+const { SITE_URL, ROOT, escapeHtml, fileHash, headerHtml, searchOverlayHtml, footerHtml, adsenseHeadHtml, writeFile } = require("./site-layout.js");
 
 const RECETAS_PATH = "/recetas/";
+const RECIPE_PHOTOS_DIR = "img/recetas";
+
+// Foto real del plato si existe (ver img/recetas/PROMPTS.md para generarlas);
+// si no, se usa el og-image genérico del sitio como respaldo. Así cada foto
+// que se vaya añadiendo mejora automáticamente esa receta sin tocar código:
+// basta con volver a ejecutar "npm run prerender".
+function photoFor(receta) {
+  for (const ext of ["jpg", "jpeg", "png", "webp"]) {
+    const rel = `${RECIPE_PHOTOS_DIR}/${receta.slug}.${ext}`;
+    if (fs.existsSync(path.join(ROOT, rel))) {
+      return { url: `${SITE_URL}/${rel}`, hasPhoto: true };
+    }
+  }
+  return { url: `${SITE_URL}/img/og-image.png`, hasPhoto: false };
+}
 
 function urlFor(receta) {
   return `${RECETAS_PATH}${receta.slug}/`;
@@ -121,6 +138,7 @@ function buildRecetaPage(receta, recetas) {
   const description = descriptionFor(receta);
   const { calories, totalTimeIso, recipeYield } = parseMeta(receta.meta);
   const pageTitle = pageTitleFor(receta);
+  const photo = photoFor(receta);
 
   const recipeJsonLd = {
     "@context": "https://schema.org",
@@ -128,7 +146,7 @@ function buildRecetaPage(receta, recetas) {
     name: receta.title,
     description,
     url: canonicalUrl,
-    image: `${SITE_URL}/img/og-image.png`,
+    image: photo.url,
     inLanguage: "es-ES",
     author: { "@type": "Organization", name: "Libre de Trigo", url: `${SITE_URL}/` },
     recipeIngredient: receta.ingredientes,
@@ -153,11 +171,11 @@ function buildRecetaPage(receta, recetas) {
   <meta property="og:title" content="${escapeHtml(pageTitle)}" />
   <meta property="og:description" content="${escapeHtml(description)}" />
   <meta property="og:url" content="${canonicalUrl}" />
-  <meta property="og:image" content="${SITE_URL}/img/og-image.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:image" content="${photo.url}" />
+  <meta property="og:image:width" content="${photo.hasPhoto ? "1200" : "1200"}" />
+  <meta property="og:image:height" content="${photo.hasPhoto ? "800" : "630"}" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:image" content="${SITE_URL}/img/og-image.png" />
+  <meta name="twitter:image" content="${photo.url}" />
   <link rel="icon" type="image/png" href="${SITE_URL}/img/favicon.png" />
   <link rel="apple-touch-icon" href="${SITE_URL}/img/apple-touch-icon.png" />
   <link rel="manifest" href="${SITE_URL}/manifest.json" />
@@ -178,6 +196,7 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
     <span class="eyebrow">${receta.icon} Receta</span>
     <h1 class="section-title">${escapeHtml(receta.title)}</h1>
     <p class="article-lead">${escapeHtml(receta.meta)}</p>
+    ${photo.hasPhoto ? `<img class="recipe-photo" src="${photo.url}" alt="${escapeHtml(receta.title)}" width="1200" height="800" loading="eager" fetchpriority="high" />` : ""}
     <div class="recipe-actions">
       <button class="recipe-fav-toggle" type="button" data-standalone data-slug="${receta.slug}" aria-pressed="false">🤍 Guardar en favoritas</button>
       <button class="recipe-share-toggle" type="button" data-share-title="${escapeHtml(receta.title)}" data-share-url="${canonicalUrl}">🔗 Compartir</button>
