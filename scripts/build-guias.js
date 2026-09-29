@@ -64,7 +64,7 @@ const GUIAS = [
         <strong>Atención.</strong> Si sospechas que puedes ser celíaco, no elimines el gluten de tu dieta antes de hacerte las pruebas médicas, porque puede alterar el resultado del diagnóstico. Consulta siempre con un profesional sanitario.
       </div>
     `,
-    related: ["alimentos-con-y-sin-gluten", "ingesta-accidental", "glosario"],
+    related: ["alimentos-con-y-sin-gluten", "ingesta-accidental", "celebridades"],
   },
   {
     slug: "alimentos-con-y-sin-gluten",
@@ -146,7 +146,7 @@ const GUIAS = [
         <strong>Atención.</strong> Si los síntomas son intensos, persistentes o te preocupan, consulta con tu médico.
       </div>
     `,
-    related: ["que-es-el-gluten", "contaminacion-cruzada", "glosario"],
+    related: ["que-es-el-gluten", "contaminacion-cruzada", "celebridades"],
   },
   {
     slug: "comer-fuera-con-celiaquia",
@@ -302,7 +302,7 @@ const GUIAS = [
         <li>Esta web complementa esos recursos con <a href="${SITE_URL}/#tiendas">tiendas especializadas</a>, un <a href="${SITE_URL}/#restaurantes">ranking de restaurantes</a>, una <a href="${SITE_URL}/#nutricion">tabla nutricional</a> y un <a href="${SITE_URL}/#escaner">escáner de productos</a>.</li>
       </ul>
     `,
-    related: ["celiaquia-en-ninos", "comer-fuera-con-celiaquia", "glosario"],
+    related: ["celiaquia-en-ninos", "comer-fuera-con-celiaquia", "celebridades"],
   },
   {
     slug: "marcas-pan-pasta-harina-sin-gluten",
@@ -341,6 +341,46 @@ const GUIAS = [
       <p>Ninguna lista sustituye al envase que tienes delante. Busca el símbolo de la <a href="${SITE_URL}/etiquetado-sin-gluten/">espiga barrada</a> o la mención «sin gluten» junto a los ingredientes en negrita, y ante cualquier duda con un producto envasado, usa el <a href="${SITE_URL}/#escaner">escáner de códigos de barras</a> de esta web o consulta el listado oficial de <a href="https://celiacos.org/" target="_blank" rel="noopener noreferrer">FACE</a>.</p>
     `,
     related: ["20-ppm", "hacer-la-compra", "productos-recomendados"],
+  },
+  {
+    slug: "celebridades",
+    cluster: "celiaquia",
+    icon: "🌟",
+    title: "Famosos celíacos y sensibles al gluten",
+    description: "Celebridades que han hablado de su celiaquía o sensibilidad al gluten: cómo se dieron cuenta y qué consejo suelen dar a quien empieza.",
+    lead: "Historias reales, contadas por ellos mismos en entrevistas, libros o redes sociales: cómo se dieron cuenta de que algo iba mal y qué consejo repiten a quien recibe el diagnóstico ahora.",
+    body: `
+      <p>Esta página resume declaraciones públicas de cada persona (entrevistas, libros, redes sociales), citadas con su fuente. No son un diagnóstico ni sustituyen el de un profesional sanitario — cada caso es distinto, y como recuerda esta misma guía en <a href="${SITE_URL}/celiaquia/que-es-el-gluten/">qué es el gluten y quién debe evitarlo</a>, celiaquía y sensibilidad al gluten no celíaca son condiciones diferentes.</p>
+
+      <h2>Novak Djokovic — tenista</h2>
+      <p>En 2010, un médico le hizo una prueba sencilla: sujetar una rebanada de pan contra el estómago mientras alguien le presionaba el otro brazo hacia abajo. Djokovic perdió fuerza notablemente. Un análisis de sangre posterior confirmó una intolerancia fuerte al gluten y a los lácteos. Lo cuenta en su libro "El código Djokovic". Tras eliminar el gluten, encadenó una de las mejores temporadas de su carrera: 3 Grand Slam y 43 victorias seguidas en 2011.</p>
+      <p><strong>Consejo que suele dar:</strong> aunque su caso es de sensibilidad al gluten (no de celiaquía diagnosticada), siempre defiende hacerse pruebas médicas antes de eliminar el gluten sin más, para saber realmente qué le pasa a cada uno.</p>
+
+      <h2>Zooey Deschanel — actriz</h2>
+      <p>Pasó 13 años arrastrando síntomas digestivos que varios médicos atribuyeron al estrés y al síndrome de intestino irritable, hasta que finalmente le diagnosticaron celiaquía siendo ya adulta.</p>
+      <p><strong>Consejo que suele dar:</strong> no conformarse con una explicación de "es el estrés" si los síntomas persisten — en su caso, la causa real tardó años en aparecer.</p>
+
+      <h2>Jennifer Esposito — actriz</h2>
+      <p>Encadenó durante años síntomas muy dispares y mal diagnosticados: dolores de estómago, ataques de pánico, caída de cabello. Anunció su celiaquía en el programa de David Letterman en 2011, escribió el libro "Jennifer's Way" sobre su diagnóstico y abrió después su propia panadería sin gluten en Nueva York.</p>
+      <p><strong>Consejo que suele dar:</strong> insiste en no dejar de buscar respuestas cuando los médicos no encuentran la causa, y en el valor de aprender a cocinar en casa para recuperar el control sobre lo que se come.</p>
+
+      <h2>Elisabeth Hasselbeck — presentadora</h2>
+      <p>Le diagnosticaron durante años estrés y colon irritable. La pista definitiva llegó de forma inesperada: durante 39 días concursando en el reality "Survivor", comiendo casi nada, sus síntomas desaparecieron por completo — lo que le hizo sospechar de la comida al volver a casa. Tras el diagnóstico formal de celiaquía, logró quedarse embarazada, algo que la enfermedad sin diagnosticar le había dificultado.</p>
+      <p><strong>Consejo que suele dar:</strong> hacerse las pruebas médicas <em>antes</em> de eliminar el gluten por cuenta propia, porque comer sin gluten de antemano puede invalidar un diagnóstico posterior — el mismo consejo que da esta web en <a href="${SITE_URL}/celiaquia/que-es-el-gluten/">qué es el gluten</a>.</p>
+
+      <h2>Aitana Ocaña — cantante</h2>
+      <p>Fue diagnosticada de celiaquía a mediados de 2021, poco antes de lanzar una colaboración con McDonald's que ella misma ya no podía comer. Lo contó abiertamente en la presentación, pese a la polémica que generó.</p>
+      <p><strong>Consejo que suele dar:</strong> hablar de ello con naturalidad en público, aunque incomode o dé pie a titulares.</p>
+
+      <h2>Patricia Conde — actriz y presentadora</h2>
+      <p>Sus primeros síntomas aparecieron a los 14-15 años (llegó a desmayarse paseando a su perro), y pasó varios años con diagnósticos equivocados (gastritis, gastroenteritis) hasta que, con 19 años y de vacaciones en Mallorca, una médica dio con la celiaquía a la primera.</p>
+      <p><strong>Consejo que suele dar:</strong> no restarle importancia a síntomas que parecen no tener relación con la comida (dolores de cabeza, cambios de ánimo, piel) — en su caso, todos mejoraron al quitar el gluten.</p>
+
+      <h2>Adriana Abenia — presentadora</h2>
+      <p>Su diagnóstico se confirmó mediante biopsia intestinal y prueba genética.</p>
+      <p><strong>Consejo que suele dar:</strong> a quien acaba de recibir el diagnóstico, seguir blogs y comunidades de celíacos, porque ayudan a "ponerse las pilas" rápido y se aprende mucho del día a día real con la enfermedad — parecido a lo que resumimos en <a href="${SITE_URL}/celiaquia/asociaciones-y-recursos/">asociaciones y recursos en España</a>.</p>
+    `,
+    related: ["que-es-el-gluten", "ingesta-accidental", "asociaciones-y-recursos"],
   },
 ];
 
