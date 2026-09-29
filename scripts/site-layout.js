@@ -48,6 +48,7 @@ function headerHtml() {
         <a class="pill-btn" href="${SITE_URL}/#escaner"><span class="pill-icon" aria-hidden="true">📷</span>Escáner</a>
         <a class="pill-btn" href="${SITE_URL}/#lista-compra"><span class="pill-icon" aria-hidden="true">🛍️</span>Lista de la compra</a>
         <a class="pill-btn" href="${SITE_URL}/vivir-sin-gluten/productos-recomendados/"><span class="pill-icon" aria-hidden="true">🔪</span>Productos recomendados</a>
+        <a class="pill-btn" href="${SITE_URL}/celiaquia/celebridades/"><span class="pill-icon" aria-hidden="true">🌟</span>Celebridades</a>
         <a class="pill-btn" href="${SITE_URL}/#actualidad"><span class="pill-icon" aria-hidden="true">📰</span>Actualidad</a>
       </nav>
     </div>

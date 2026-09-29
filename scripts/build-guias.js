@@ -64,7 +64,7 @@ const GUIAS = [
         <strong>Atención.</strong> Si sospechas que puedes ser celíaco, no elimines el gluten de tu dieta antes de hacerte las pruebas médicas, porque puede alterar el resultado del diagnóstico. Consulta siempre con un profesional sanitario.
       </div>
     `,
-    related: ["alimentos-con-y-sin-gluten", "ingesta-accidental", "celebridades"],
+    related: ["alimentos-con-y-sin-gluten", "ingesta-accidental", "glosario"],
   },
   {
     slug: "alimentos-con-y-sin-gluten",
@@ -146,7 +146,7 @@ const GUIAS = [
         <strong>Atención.</strong> Si los síntomas son intensos, persistentes o te preocupan, consulta con tu médico.
       </div>
     `,
-    related: ["que-es-el-gluten", "contaminacion-cruzada", "celebridades"],
+    related: ["que-es-el-gluten", "contaminacion-cruzada", "glosario"],
   },
   {
     slug: "comer-fuera-con-celiaquia",
@@ -302,7 +302,7 @@ const GUIAS = [
         <li>Esta web complementa esos recursos con <a href="${SITE_URL}/#tiendas">tiendas especializadas</a>, un <a href="${SITE_URL}/#restaurantes">ranking de restaurantes</a>, una <a href="${SITE_URL}/#nutricion">tabla nutricional</a> y un <a href="${SITE_URL}/#escaner">escáner de productos</a>.</li>
       </ul>
     `,
-    related: ["celiaquia-en-ninos", "comer-fuera-con-celiaquia", "celebridades"],
+    related: ["celiaquia-en-ninos", "comer-fuera-con-celiaquia", "glosario"],
   },
   {
     slug: "marcas-pan-pasta-harina-sin-gluten",
@@ -350,7 +350,7 @@ const GUIAS = [
     description: "Celebridades que han hablado de su celiaquía o sensibilidad al gluten: cómo se dieron cuenta y qué consejo suelen dar a quien empieza.",
     lead: "Historias reales, contadas por ellos mismos en entrevistas, libros o redes sociales: cómo se dieron cuenta de que algo iba mal y qué consejo repiten a quien recibe el diagnóstico ahora.",
     body: `
-      <p>Esta página resume declaraciones públicas de cada persona (entrevistas, libros, redes sociales), citadas con su fuente. No son un diagnóstico ni sustituyen el de un profesional sanitario — cada caso es distinto, y como recuerda esta misma guía en <a href="${SITE_URL}/celiaquia/que-es-el-gluten/">qué es el gluten y quién debe evitarlo</a>, celiaquía y sensibilidad al gluten no celíaca son condiciones diferentes.</p>
+      <p>Esta página resume declaraciones públicas de cada persona (entrevistas, libros, redes sociales), citadas con su fuente. No son un diagnóstico ni sustituyen el de un profesional sanitario — cada caso es distinto, y celiaquía y sensibilidad al gluten no celíaca son condiciones diferentes.</p>
 
       <h2>Novak Djokovic — tenista</h2>
       <p>En 2010, un médico le hizo una prueba sencilla: sujetar una rebanada de pan contra el estómago mientras alguien le presionaba el otro brazo hacia abajo. Djokovic perdió fuerza notablemente. Un análisis de sangre posterior confirmó una intolerancia fuerte al gluten y a los lácteos. Lo cuenta en su libro "El código Djokovic". Tras eliminar el gluten, encadenó una de las mejores temporadas de su carrera: 3 Grand Slam y 43 victorias seguidas en 2011.</p>
@@ -366,7 +366,7 @@ const GUIAS = [
 
       <h2>Elisabeth Hasselbeck — presentadora</h2>
       <p>Le diagnosticaron durante años estrés y colon irritable. La pista definitiva llegó de forma inesperada: durante 39 días concursando en el reality "Survivor", comiendo casi nada, sus síntomas desaparecieron por completo — lo que le hizo sospechar de la comida al volver a casa. Tras el diagnóstico formal de celiaquía, logró quedarse embarazada, algo que la enfermedad sin diagnosticar le había dificultado.</p>
-      <p><strong>Consejo que suele dar:</strong> hacerse las pruebas médicas <em>antes</em> de eliminar el gluten por cuenta propia, porque comer sin gluten de antemano puede invalidar un diagnóstico posterior — el mismo consejo que da esta web en <a href="${SITE_URL}/celiaquia/que-es-el-gluten/">qué es el gluten</a>.</p>
+      <p><strong>Consejo que suele dar:</strong> hacerse las pruebas médicas <em>antes</em> de eliminar el gluten por cuenta propia, porque comer sin gluten de antemano puede invalidar un diagnóstico posterior.</p>
 
       <h2>Aitana Ocaña — cantante</h2>
       <p>Fue diagnosticada de celiaquía a mediados de 2021, poco antes de lanzar una colaboración con McDonald's que ella misma ya no podía comer. Lo contó abiertamente en la presentación, pese a la polémica que generó.</p>
@@ -378,9 +378,9 @@ const GUIAS = [
 
       <h2>Adriana Abenia — presentadora</h2>
       <p>Su diagnóstico se confirmó mediante biopsia intestinal y prueba genética.</p>
-      <p><strong>Consejo que suele dar:</strong> a quien acaba de recibir el diagnóstico, seguir blogs y comunidades de celíacos, porque ayudan a "ponerse las pilas" rápido y se aprende mucho del día a día real con la enfermedad — parecido a lo que resumimos en <a href="${SITE_URL}/celiaquia/asociaciones-y-recursos/">asociaciones y recursos en España</a>.</p>
+      <p><strong>Consejo que suele dar:</strong> a quien acaba de recibir el diagnóstico, seguir blogs y comunidades de celíacos, porque ayudan a "ponerse las pilas" rápido y se aprende mucho del día a día real con la enfermedad.</p>
     `,
-    related: ["que-es-el-gluten", "ingesta-accidental", "asociaciones-y-recursos"],
+    related: [],
   },
 ];
 
