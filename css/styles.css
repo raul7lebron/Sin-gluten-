@@ -1418,6 +1418,31 @@ a:focus-visible {
   text-align: center;
 }
 
+.scanner-pref {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 420px;
+  margin: 0 auto 20px;
+  padding: 12px 14px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  text-align: left;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.scanner-pref input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
 .scanner-camera {
   position: relative;
   max-width: 420px;
@@ -1552,6 +1577,27 @@ a:focus-visible {
 .scanner-manual-row input:focus {
   outline: none;
   border-color: var(--primary);
+}
+
+.scanner-ingredients-input {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  font: inherit;
+  color: var(--text);
+  resize: vertical;
+  margin-bottom: 10px;
+}
+
+.scanner-ingredients-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.scanner-ingredients-result {
+  margin-top: 14px;
 }
 
 .scanner-name-results {

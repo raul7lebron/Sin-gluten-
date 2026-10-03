@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const nameResultsBox = document.getElementById("scannerNameResults");
   const historyBox = document.getElementById("scannerHistory");
   const historyList = document.getElementById("scannerHistoryList");
+  const strictToggle = document.getElementById("scannerStrictToggle");
+  const ingredientsInput = document.getElementById("ingredientsInput");
+  const ingredientsCheckBtn = document.getElementById("ingredientsCheckBtn");
+  const ingredientsResult = document.getElementById("ingredientsResult");
 
   if (!startBtn) return; // scanner section not on this page
 
@@ -20,6 +24,37 @@ document.addEventListener("DOMContentLoaded", () => {
   // como HTML para no confiar en ese texto libre.
   function escapeHtml(str) {
     return String(str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+
+  // Preferencia "soy muy sensible a las trazas": sube de severidad los
+  // avisos de trazas (ámbar) a "evitar" (rojo), tanto en el veredicto de
+  // Open Food Facts como en el comprobador manual de ingredientes. Se
+  // recuerda en este dispositivo igual que el historial de escaneos.
+  const STRICT_KEY = "libreDeTrigoScannerStrictTraces";
+
+  function loadStrictPref() {
+    try {
+      return localStorage.getItem(STRICT_KEY) === "1";
+    } catch (err) {
+      return false;
+    }
+  }
+
+  function saveStrictPref(value) {
+    try {
+      localStorage.setItem(STRICT_KEY, value ? "1" : "0");
+    } catch (err) {
+      // Almacenamiento no disponible (navegación privada, etc.): la preferencia solo dura esta sesión.
+    }
+  }
+
+  let strictTraces = loadStrictPref();
+  if (strictToggle) {
+    strictToggle.checked = strictTraces;
+    strictToggle.addEventListener("change", () => {
+      strictTraces = strictToggle.checked;
+      saveStrictPref(strictTraces);
+    });
   }
 
   let reader = null;
@@ -101,6 +136,13 @@ document.addEventListener("DOMContentLoaded", () => {
       return { tipo: "con-gluten", icono: "⛔", texto: "Contiene gluten" };
     }
     if (traces.includes("en:gluten")) {
+      if (strictTraces) {
+        return {
+          tipo: "con-gluten",
+          icono: "⛔",
+          texto: "Puede contener trazas de gluten — lo tratamos como \"evitar\" por tu preferencia de sensibilidad a trazas",
+        };
+      }
       return { tipo: "trazas", icono: "⚠️", texto: "Puede contener trazas de gluten" };
     }
     // El fabricante ha declarado alérgenos (obligatorio por ley si los hay) y
@@ -126,7 +168,7 @@ document.addEventListener("DOMContentLoaded", () => {
     resultBox.innerHTML = `
       <div class="scanner-card scanner-verdict-desconocido">
         <div class="scanner-verdict"><span class="scanner-icon" aria-hidden="true">❓</span> Producto no encontrado</div>
-        <p>No hay datos en Open Food Facts para el código <strong>${escapeHtml(code)}</strong>. Prueba a leer el etiquetado directamente o busca el producto por nombre en la web del fabricante.</p>
+        <p>No hay datos en Open Food Facts para el código <strong>${escapeHtml(code)}</strong>. Mientras tanto, <button type="button" class="scanner-inline-link scanner-goto-ingredients">pega aquí la lista de ingredientes del envase</button> y te decimos si detectamos gluten.</p>
         <p>Si es una marca española pequeña o artesana, es habitual que todavía no esté en la base de datos. <button type="button" class="scanner-inline-link scanner-goto-contacto">Dinos qué producto es</button> y lo añadimos a Open Food Facts para que aparezca aquí en el futuro.</p>
       </div>
     `;
@@ -282,6 +324,12 @@ document.addEventListener("DOMContentLoaded", () => {
       window.libreDeTrigo.activateTab("sobre-libredetrigo");
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
+
+    const ingredientsBtn = event.target.closest(".scanner-goto-ingredients");
+    if (ingredientsBtn && ingredientsInput) {
+      ingredientsInput.scrollIntoView({ behavior: "smooth", block: "center" });
+      ingredientsInput.focus();
+    }
   });
 
   async function handleBarcode(code) {
@@ -425,6 +473,115 @@ document.addEventListener("DOMContentLoaded", () => {
       productNameInput.value = "";
       setStatus("");
       handleBarcode(btn.dataset.code);
+    });
+  }
+
+  /* ---------- Comprobador manual de ingredientes ----------
+     Para cuando el producto no está en Open Food Facts (habitual en marcas
+     españolas pequeñas o artesanas, ver renderNotFound): el usuario pega la
+     lista de ingredientes del envase y se busca localmente, sin servidor ni
+     IA, un diccionario de términos que indican gluten. Es una lectura
+     orientativa, no una certificación: nunca sustituye el etiquetado real. */
+
+  // Una sola grafía por término basta aunque lleve o no tilde: normalizeText()
+  // quita los acentos a ambos lados de la comparación, así que mantener
+  // "sémola" y "semola" a la vez solo duplicaría la lista de coincidencias
+  // mostrada al usuario sin detectar nada más.
+  const GLUTEN_TERMS = [
+    "harina de trigo",
+    "almidón de trigo",
+    "fécula de trigo",
+    "proteína de trigo",
+    "gluten de trigo",
+    "germen de trigo",
+    "salvado de trigo",
+    "pan rallado",
+    "trigo",
+    "cebada",
+    "centeno",
+    "espelta",
+    "kamut",
+    "triticale",
+    "escanda",
+    "malta",
+    "extracto de malta",
+    "sémola",
+    "cuscús",
+    "couscous",
+    "seitán",
+    "bulgur",
+    "panko",
+  ];
+
+  // La avena no tiene gluten de forma natural, pero suele contaminarse con
+  // trigo/cebada en el cultivo o el molino: solo es segura si el envase la
+  // certifica expresamente como "avena sin gluten" o "gluten-free oats".
+  const GLUTEN_CAUTION_TERMS = ["avena"];
+
+  // "Trigo sarraceno" (alforfón) es una semilla sin gluten pese al nombre:
+  // hay que descartarlo antes de buscar "trigo" suelto para no dar un falso
+  // positivo.
+  const FALSE_POSITIVE_PATTERNS = [/trigo sarraceno/g, /alforf[oó]n/g];
+
+  function normalizeText(text) {
+    return text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[̀-ͯ]/g, "");
+  }
+
+  function checkIngredientsText(rawText) {
+    let normalized = normalizeText(rawText);
+    FALSE_POSITIVE_PATTERNS.forEach((pattern) => {
+      normalized = normalized.replace(pattern, "");
+    });
+
+    const encontrados = GLUTEN_TERMS.filter((term) => normalized.includes(normalizeText(term)));
+    const conCautela = GLUTEN_CAUTION_TERMS.filter((term) => normalized.includes(normalizeText(term)));
+
+    if (encontrados.length > 0) {
+      // Evita listar tanto "trigo" como "harina de trigo" por el mismo ingrediente.
+      const unicos = encontrados.filter((term) => !encontrados.some((otro) => otro !== term && otro.includes(term)));
+      return {
+        tipo: "con-gluten",
+        icono: "⛔",
+        texto: "Contiene gluten",
+        detalle: `Términos detectados en el texto: ${unicos.join(", ")}.`,
+      };
+    }
+    if (conCautela.length > 0) {
+      return {
+        tipo: strictTraces ? "con-gluten" : "trazas",
+        icono: strictTraces ? "⛔" : "⚠️",
+        texto: "Contiene avena",
+        detalle:
+          "La avena no lleva gluten de forma natural, pero suele contaminarse con trigo o cebada en el cultivo o el molino. Solo es segura si el envase indica expresamente \"avena sin gluten\" o \"gluten-free oats\".",
+      };
+    }
+    return {
+      tipo: "probable-sin-gluten",
+      icono: "🟡",
+      texto: "No se han detectado términos con gluten en el texto",
+      detalle:
+        "Esta es una lectura automática simple del texto pegado, no un análisis certificado. Confirma siempre con el símbolo \"sin gluten\" o la lista de alérgenos en negrita del envase.",
+    };
+  }
+
+  function renderIngredientsResult(resultado) {
+    ingredientsResult.hidden = false;
+    ingredientsResult.innerHTML = `
+      <div class="scanner-card scanner-verdict-${resultado.tipo}">
+        <div class="scanner-verdict"><span class="scanner-icon" aria-hidden="true">${resultado.icono}</span> ${resultado.texto}</div>
+        <p class="scanner-ingredients">${escapeHtml(resultado.detalle)}</p>
+      </div>
+    `;
+  }
+
+  if (ingredientsCheckBtn && ingredientsInput) {
+    ingredientsCheckBtn.addEventListener("click", () => {
+      const text = ingredientsInput.value.trim();
+      if (!text) return;
+      renderIngredientsResult(checkIngredientsText(text));
     });
   }
 });

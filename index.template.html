@@ -478,6 +478,11 @@
       <span class="eyebrow">📷 Escáner</span>
 
       <div class="scanner-panel">
+        <label class="scanner-pref">
+          <input type="checkbox" id="scannerStrictToggle" />
+          <span>Soy muy sensible: trata los avisos de "puede contener trazas" como si llevaran gluten</span>
+        </label>
+
         <div class="scanner-camera" id="scannerCamera" hidden>
           <video id="scannerVideo" class="scanner-video" muted playsinline></video>
           <div class="scanner-frame" aria-hidden="true"></div>
@@ -508,6 +513,16 @@
             <button id="productNameSearchBtn" class="btn-primary" type="button">Buscar</button>
           </div>
           <div class="scanner-name-results" id="scannerNameResults" hidden></div>
+        </div>
+
+        <div class="scanner-divider"><span>o</span></div>
+
+        <div class="scanner-manual">
+          <label for="ingredientsInput">¿No aparece en ninguna base de datos? Pega aquí la lista de ingredientes del envase:</label>
+          <textarea id="ingredientsInput" class="scanner-ingredients-input" rows="3" placeholder="Ej. Harina de trigo, agua, levadura, sal…" aria-label="Lista de ingredientes"></textarea>
+          <button id="ingredientsCheckBtn" class="btn-primary" type="button">Comprobar ingredientes</button>
+          <p class="scanner-status">Lectura automática orientativa, no una certificación: comprueba siempre el etiquetado del envase.</p>
+          <div class="scanner-ingredients-result" id="ingredientsResult" hidden></div>
         </div>
       </div>
 

@@ -49,7 +49,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=744d49cc67">
+  <link rel="stylesheet" href="css/styles.css?v=b16897ab41">
   <!--
     Google AdSense: todavía no hay cuenta de editor (falta el ID
     "ca-pub-XXXXXXXXXXXXXXXX", que solo puede generar el titular dándose de
@@ -4759,6 +4759,11 @@ The post Lotería de Navidad de la Asociación appeared first on Asociación de 
       <span class="eyebrow">📷 Escáner</span>
 
       <div class="scanner-panel">
+        <label class="scanner-pref">
+          <input type="checkbox" id="scannerStrictToggle">
+          <span>Soy muy sensible: trata los avisos de "puede contener trazas" como si llevaran gluten</span>
+        </label>
+
         <div class="scanner-camera" id="scannerCamera" hidden="">
           <video id="scannerVideo" class="scanner-video" muted="" playsinline=""></video>
           <div class="scanner-frame" aria-hidden="true"></div>
@@ -4789,6 +4794,16 @@ The post Lotería de Navidad de la Asociación appeared first on Asociación de 
             <button id="productNameSearchBtn" class="btn-primary" type="button">Buscar</button>
           </div>
           <div class="scanner-name-results" id="scannerNameResults" hidden=""></div>
+        </div>
+
+        <div class="scanner-divider"><span>o</span></div>
+
+        <div class="scanner-manual">
+          <label for="ingredientsInput">¿No aparece en ninguna base de datos? Pega aquí la lista de ingredientes del envase:</label>
+          <textarea id="ingredientsInput" class="scanner-ingredients-input" rows="3" placeholder="Ej. Harina de trigo, agua, levadura, sal…" aria-label="Lista de ingredientes"></textarea>
+          <button id="ingredientsCheckBtn" class="btn-primary" type="button">Comprobar ingredientes</button>
+          <p class="scanner-status">Lectura automática orientativa, no una certificación: comprueba siempre el etiquetado del envase.</p>
+          <div class="scanner-ingredients-result" id="ingredientsResult" hidden=""></div>
         </div>
       </div>
 
@@ -5046,7 +5061,7 @@ The post Lotería de Navidad de la Asociación appeared first on Asociación de 
   <script defer="" src="js/shopping-list.js?v=771f201e31"></script>
   <script defer="" src="js/analytics.js?v=900a6b9715"></script>
   <script defer="" src="https://cdn.jsdelivr.net/npm/@zxing/library@0.20.0/umd/index.min.js"></script>
-  <script defer="" src="js/scanner.js?v=330c25f123"></script>
+  <script defer="" src="js/scanner.js?v=39571e80ad"></script>
 
 
 </body></html>
