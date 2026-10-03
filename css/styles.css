@@ -585,6 +585,26 @@ a:focus-visible {
   margin: 0;
 }
 
+/* Variante con foto (directorio de recetas): la imagen ocupa todo el ancho
+   de la tarjeta y el texto se mueve a un bloque con su propio padding,
+   porque .guide-card de base pone el padding directamente en el <a>. */
+.guide-card-photo {
+  padding: 0;
+  overflow: hidden;
+}
+
+.guide-card-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: var(--surface-alt);
+}
+
+.guide-card-body {
+  padding: 16px 20px 20px;
+}
+
 /* Productos / Comer fuera: bloque de texto amplio, sin foto forzada */
 .home-split {
   max-width: 680px;
@@ -637,6 +657,15 @@ a:focus-visible {
   display: block;
   font-size: 2.2rem;
   margin-bottom: 12px;
+}
+
+.recipe-teaser-img {
+  display: block;
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  margin: 0 auto 12px;
 }
 
 .recipe-teaser h3 {

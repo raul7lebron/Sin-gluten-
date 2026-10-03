@@ -106,22 +106,32 @@ function breadcrumbsHtml(receta) {
   return { linksHtml, breadcrumbJsonLd };
 }
 
+// Tarjeta de receta con su foto real si existe (misma variante visual que el
+// directorio de recetas de la SPA, ver js/render.js). Se reutiliza tanto en
+// "También puede interesarte" como en el índice /recetas/.
+function recipeCardHtml(r) {
+  const photo = photoFor(r);
+  const img = photo.hasPhoto
+    ? `<img class="guide-card-img" src="${photo.url}" alt="" width="484" height="484" loading="lazy" decoding="async" />`
+    : "";
+  return `
+        <a class="guide-card${photo.hasPhoto ? " guide-card-photo" : ""}" href="${SITE_URL}${urlFor(r)}">
+          ${img}
+          <div class="guide-card-body">
+            <span class="guide-category">${r.icon} Receta</span>
+            <h3>${escapeHtml(r.title)}</h3>
+            <p>${escapeHtml(r.meta)}</p>
+          </div>
+        </a>`;
+}
+
 // "También puede interesarte": las 3 recetas siguientes en la lista (circular).
 // No hay categorías en los datos, así que se usa el orden de la lista en vez
 // de inventar una relación temática entre platos.
 function relatedHtml(receta, recetas) {
   const idx = recetas.findIndex((r) => r.slug === receta.slug);
   const related = [1, 2, 3].map((offset) => recetas[(idx + offset) % recetas.length]);
-  const cards = related
-    .map(
-      (r) => `
-        <a class="guide-card" href="${SITE_URL}${urlFor(r)}">
-          <span class="guide-category">${r.icon} Receta</span>
-          <h3>${escapeHtml(r.title)}</h3>
-          <p>${escapeHtml(r.meta)}</p>
-        </a>`
-    )
-    .join("");
+  const cards = related.map(recipeCardHtml).join("");
   return `
     <div class="related-section">
       <h2>También puede interesarte</h2>
@@ -172,8 +182,8 @@ function buildRecetaPage(receta, recetas) {
   <meta property="og:description" content="${escapeHtml(description)}" />
   <meta property="og:url" content="${canonicalUrl}" />
   <meta property="og:image" content="${photo.url}" />
-  <meta property="og:image:width" content="${photo.hasPhoto ? "1200" : "1200"}" />
-  <meta property="og:image:height" content="${photo.hasPhoto ? "800" : "630"}" />
+  <meta property="og:image:width" content="${photo.hasPhoto ? "484" : "1200"}" />
+  <meta property="og:image:height" content="${photo.hasPhoto ? "484" : "630"}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="${photo.url}" />
   <link rel="icon" type="image/png" href="${SITE_URL}/img/favicon.png" />
@@ -196,7 +206,7 @@ ${JSON.stringify(breadcrumbJsonLd, null, 2)}
     <span class="eyebrow">${receta.icon} Receta</span>
     <h1 class="section-title">${escapeHtml(receta.title)}</h1>
     <p class="article-lead">${escapeHtml(receta.meta)}</p>
-    ${photo.hasPhoto ? `<img class="recipe-photo" src="${photo.url}" alt="${escapeHtml(receta.title)}" width="1200" height="800" loading="eager" fetchpriority="high" />` : ""}
+    ${photo.hasPhoto ? `<img class="recipe-photo" src="${photo.url}" alt="${escapeHtml(receta.title)}" width="484" height="484" loading="eager" fetchpriority="high" />` : ""}
     <div class="recipe-actions">
       <button class="recipe-fav-toggle" type="button" data-standalone data-slug="${receta.slug}" aria-pressed="false">🤍 Guardar en favoritas</button>
       <button class="recipe-share-toggle" type="button" data-share-title="${escapeHtml(receta.title)}" data-share-url="${canonicalUrl}">🔗 Compartir</button>
@@ -238,16 +248,7 @@ function buildHubPage(recetas) {
     ],
   };
 
-  const cards = recetas
-    .map(
-      (r) => `
-        <a class="guide-card" href="${SITE_URL}${urlFor(r)}">
-          <span class="guide-category">${r.icon} Receta</span>
-          <h3>${escapeHtml(r.title)}</h3>
-          <p>${escapeHtml(r.meta)}</p>
-        </a>`
-    )
-    .join("");
+  const cards = recetas.map(recipeCardHtml).join("");
 
   return `<!DOCTYPE html>
 <html lang="es">

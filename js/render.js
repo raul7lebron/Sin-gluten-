@@ -142,11 +142,14 @@ function renderRecetasDirectory(categoria = "todas", query = "") {
     .map((receta) => {
       const activo = favoritos.includes(receta.slug);
       return `
-        <a class="guide-card" href="https://www.libredetrigo.com/recetas/${receta.slug}/">
+        <a class="guide-card guide-card-photo" href="https://www.libredetrigo.com/recetas/${receta.slug}/">
+          <img class="guide-card-img" src="https://www.libredetrigo.com/img/recetas/${receta.slug}.webp" alt="" width="484" height="484" loading="lazy" decoding="async" />
           <button class="recipe-fav-toggle recipe-fav-toggle-card${activo ? " active" : ""}" type="button" data-slug="${receta.slug}" aria-pressed="${activo}" aria-label="${activo ? "Quitar de favoritas" : "Guardar en favoritas"}">${activo ? "❤️" : "🤍"}</button>
-          <span class="guide-category">${receta.icon} ${RECETA_CATEGORIA_LABEL[receta.categoria] || "Receta"}</span>
-          <h3>${receta.title}</h3>
-          <p>${receta.meta}</p>
+          <div class="guide-card-body">
+            <span class="guide-category">${receta.icon} ${RECETA_CATEGORIA_LABEL[receta.categoria] || "Receta"}</span>
+            <h3>${receta.title}</h3>
+            <p>${receta.meta}</p>
+          </div>
         </a>`;
     })
     .join("");
