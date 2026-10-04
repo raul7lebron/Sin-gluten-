@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const ingredientsInput = document.getElementById("ingredientsInput");
   const ingredientsCheckBtn = document.getElementById("ingredientsCheckBtn");
   const ingredientsResult = document.getElementById("ingredientsResult");
+  const ingredientsPhotoBtn = document.getElementById("ingredientsPhotoBtn");
+  const ingredientsPhotoInput = document.getElementById("ingredientsPhotoInput");
 
   if (!startBtn) return; // scanner section not on this page
 
@@ -567,9 +569,11 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
-  function renderIngredientsResult(resultado) {
+  function renderIngredientsResult(resultado, opciones) {
+    const fromPhoto = (opciones || {}).fromPhoto;
     ingredientsResult.hidden = false;
     ingredientsResult.innerHTML = `
+      ${fromPhoto ? `<p class="scanner-status">Texto leído automáticamente de la foto: revisa el cuadro de arriba por si el lector ha confundido alguna letra antes de confiar en el resultado.</p>` : ""}
       <div class="scanner-card scanner-verdict-${resultado.tipo}">
         <div class="scanner-verdict"><span class="scanner-icon" aria-hidden="true">${resultado.icono}</span> ${resultado.texto}</div>
         <p class="scanner-ingredients">${escapeHtml(resultado.detalle)}</p>
@@ -582,6 +586,84 @@ document.addEventListener("DOMContentLoaded", () => {
       const text = ingredientsInput.value.trim();
       if (!text) return;
       renderIngredientsResult(checkIngredientsText(text));
+    });
+  }
+
+  /* ---------- Foto de los ingredientes (OCR local con Tesseract.js) ----------
+     La foto se lee íntegramente en el propio navegador (igual que la cámara
+     del código de barras con ZXing, ver la Política de privacidad): no se
+     sube a ningún servidor, solo se descarga la librería de lectura de texto
+     la primera vez que se usa este botón, para no penalizar la carga de la
+     página a quien nunca lo usa. */
+
+  let tesseractLoadPromise = null;
+
+  function ensureTesseractLoaded() {
+    if (window.Tesseract) return Promise.resolve();
+    if (tesseractLoadPromise) return tesseractLoadPromise;
+    tesseractLoadPromise = new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = "https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js";
+      script.onload = () => resolve();
+      script.onerror = () => {
+        tesseractLoadPromise = null;
+        reject(new Error("No se pudo cargar el lector de texto"));
+      };
+      document.head.appendChild(script);
+    });
+    return tesseractLoadPromise;
+  }
+
+  function renderOcrStatus(text) {
+    ingredientsResult.hidden = false;
+    ingredientsResult.innerHTML = `<div class="scanner-card scanner-card-loading" id="ocrProgress">${escapeHtml(text)}</div>`;
+    return document.getElementById("ocrProgress");
+  }
+
+  function renderOcrError(text) {
+    ingredientsResult.hidden = false;
+    ingredientsResult.innerHTML = `
+      <div class="scanner-card scanner-verdict-desconocido">
+        <div class="scanner-verdict"><span class="scanner-icon" aria-hidden="true">⚠️</span> No se pudo leer la foto</div>
+        <p>${escapeHtml(text)}</p>
+      </div>
+    `;
+  }
+
+  if (ingredientsPhotoBtn && ingredientsPhotoInput) {
+    ingredientsPhotoBtn.addEventListener("click", () => ingredientsPhotoInput.click());
+
+    ingredientsPhotoInput.addEventListener("change", async () => {
+      const file = ingredientsPhotoInput.files && ingredientsPhotoInput.files[0];
+      ingredientsPhotoInput.value = ""; // permite volver a elegir la misma foto si hace falta repetirla
+      if (!file) return;
+
+      let progressEl = renderOcrStatus("Cargando el lector de texto…");
+
+      try {
+        await ensureTesseractLoaded();
+        const { data } = await Tesseract.recognize(file, "spa", {
+          logger: (m) => {
+            progressEl = document.getElementById("ocrProgress");
+            if (!progressEl) return;
+            if (m.status === "recognizing text") {
+              progressEl.textContent = `Leyendo la foto… ${Math.round((m.progress || 0) * 100)}%`;
+            } else {
+              progressEl.textContent = "Preparando el lector de texto…";
+            }
+          },
+        });
+
+        const texto = (data.text || "").replace(/\s+/g, " ").trim();
+        if (!texto) {
+          renderOcrError("No se ha detectado texto en la foto. Prueba con más luz y enfocando bien la lista de ingredientes, o escríbela a mano abajo.");
+          return;
+        }
+        ingredientsInput.value = texto;
+        renderIngredientsResult(checkIngredientsText(texto), { fromPhoto: true });
+      } catch (err) {
+        renderOcrError("Revisa tu conexión (la primera vez hay que descargar el lector de texto) e inténtalo de nuevo, o escribe los ingredientes a mano abajo.");
+      }
     });
   }
 });

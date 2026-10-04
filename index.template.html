@@ -518,10 +518,12 @@
         <div class="scanner-divider"><span>o</span></div>
 
         <div class="scanner-manual">
-          <label for="ingredientsInput">¿No aparece en ninguna base de datos? Pega aquí la lista de ingredientes del envase:</label>
+          <label for="ingredientsInput">¿No aparece en ninguna base de datos? Haz una foto a la lista de ingredientes del envase, o pégala a mano:</label>
+          <button type="button" id="ingredientsPhotoBtn" class="btn-secondary scanner-photo-btn">📷 Hacer foto a los ingredientes</button>
+          <input type="file" id="ingredientsPhotoInput" accept="image/*" capture="environment" hidden />
           <textarea id="ingredientsInput" class="scanner-ingredients-input" rows="3" placeholder="Ej. Harina de trigo, agua, levadura, sal…" aria-label="Lista de ingredientes"></textarea>
           <button id="ingredientsCheckBtn" class="btn-primary" type="button">Comprobar ingredientes</button>
-          <p class="scanner-status">Lectura automática orientativa, no una certificación: comprueba siempre el etiquetado del envase.</p>
+          <p class="scanner-status">Lectura automática orientativa, no una certificación: comprueba siempre el etiquetado del envase. La foto se procesa en tu propio navegador: no se sube a ningún servidor.</p>
           <div class="scanner-ingredients-result" id="ingredientsResult" hidden></div>
         </div>
       </div>
@@ -647,13 +649,14 @@
 
         <h3>3. Uso de la cámara en el escáner</h3>
         <p>Si activas la cámara para escanear un código de barras, el vídeo se procesa <strong>íntegramente en tu propio navegador</strong> (mediante la librería ZXing) para detectar el código. Libre de Trigo no graba, almacena ni envía a ningún servidor el vídeo ni ninguna imagen de la cámara; solo se transmite el código numérico ya detectado.</p>
+        <p>Lo mismo ocurre si usas "Hacer foto a los ingredientes": la foto se analiza <strong>íntegramente en tu propio navegador</strong> (mediante la librería Tesseract.js) para extraer el texto. La imagen nunca se sube a ningún servidor; solo se descarga, la primera vez que usas esa función, la propia librería de lectura de texto.</p>
 
         <h3>4. Destinatarios y servicios de terceros</h3>
         <p>Para el funcionamiento del sitio se cargan recursos de los siguientes proveedores externos, que pueden recibir la dirección IP del visitante al descargarse:</p>
         <ul>
           <li><strong>Open Food Facts</strong> (es.openfoodfacts.org) — consulta de productos por código de barras. <a href="https://world.openfoodfacts.org/privacy" target="_blank" rel="noopener noreferrer">Su política de privacidad</a>.</li>
           <li><strong>Google Fonts</strong> (fonts.googleapis.com / fonts.gstatic.com) — tipografías del sitio.</li>
-          <li><strong>jsDelivr</strong> (cdn.jsdelivr.net) — librería de lectura de códigos de barras (ZXing).</li>
+          <li><strong>jsDelivr</strong> (cdn.jsdelivr.net) — librería de lectura de códigos de barras (ZXing) y, solo si usas "Hacer foto a los ingredientes", la librería de lectura de texto (Tesseract.js).</li>
           <li><strong>Proveedor de alojamiento web</strong> — sirve los archivos del sitio.</li>
           <li><strong>Google Analytics</strong> (Google Ireland Limited / Google LLC) — estadísticas de uso agregadas (páginas más visitadas, procedencia del tráfico). <strong>Solo se activa si aceptas las cookies de analítica</strong> en el aviso que aparece en tu primera visita; si lo rechazas, este servicio no se carga en absoluto. Google puede transferir estos datos a EE. UU. bajo sus propias garantías (cláusulas contractuales tipo). <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Política de privacidad de Google</a>.</li>
         </ul>
