@@ -163,6 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderLoading() {
     resultBox.hidden = false;
     resultBox.innerHTML = `<div class="scanner-card scanner-card-loading">Buscando producto…</div>`;
+    resultBox.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function renderNotFound(code) {
@@ -414,7 +415,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const btn = event.target.closest(".scanner-history-item");
       if (!btn) return;
       handleBarcode(btn.dataset.code);
-      resultBox.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   }
 
@@ -579,6 +579,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p class="scanner-ingredients">${escapeHtml(resultado.detalle)}</p>
       </div>
     `;
+    ingredientsResult.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   if (ingredientsCheckBtn && ingredientsInput) {
@@ -617,6 +618,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderOcrStatus(text) {
     ingredientsResult.hidden = false;
     ingredientsResult.innerHTML = `<div class="scanner-card scanner-card-loading" id="ocrProgress">${escapeHtml(text)}</div>`;
+    ingredientsResult.scrollIntoView({ behavior: "smooth", block: "start" });
     return document.getElementById("ocrProgress");
   }
 
@@ -628,6 +630,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>${escapeHtml(text)}</p>
       </div>
     `;
+    ingredientsResult.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   if (ingredientsPhotoBtn && ingredientsPhotoInput) {
