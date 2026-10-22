@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-21T21:06:35.209Z",
+  "updatedAt": "2026-10-22T02:58:51.125Z",
   "items": [
     {
       "title": "Sin alcohol, sin gluten o saborizada: la cerveza invierte y apuesta a otros segmentos",
@@ -42,14 +42,6 @@
       "image": null
     },
     {
-      "title": "La historia detrás de GlutenGo, la guía digital creada en Uruguay para facilitar la vida sin gluten",
-      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOdmdlY3paR2M5S3UwV3VKSzczcG9MQ2NzcVVHeHU0TjhwLVJsaVEtaExJSFZmUWxyZnNfV3J5TWYyRVhGX1gyZ1JIcVl0OGtyOWEtSjIxcmxOcy1yT0JIckJpYmZXdUZ4SFVRZk54VFZMb05ldUhLUWhqUlA1YzB2Wml1QUROUVpLNGZRRTdOMkhJWDJ4TGxrRS1uS2lwNmpKQU1xWXlZaTdQMEJ3MU9Nd0dUQUVVZHdBYkZWNDkycVJfZVVXOTE4VXRYT1h5cXdpNF9mMXJ2ZmlnanVr?oc=5",
-      "source": "EL PAÍS Uruguay",
-      "pubDate": "Wed, 21 Oct 2026 07:35:18 GMT",
-      "summary": "La historia detrás de GlutenGo, la guía digital creada en Uruguay para facilitar la vida sin gluten  EL PAÍS Uruguay",
-      "image": null
-    },
-    {
       "title": "El Taller de Cocina Sin Gluten celebró una nueva edición fomentando conocimientos y técnicas culinarias",
       "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPaS1lUHdhREJQLTY0bzBWbzhYMm9sdkg3NnB0SkxNYi1XSnJnekx3azNuWmxHV3FnNm02VVgyVzl2UEF4Vm15bTZtZ2JMZjc5US05QWd2UXlCZGp0X0Z2WHU3SHhUb3RkT2JaR2JoYVRld3NnSGhwWnZHNjYwRVN3RC1HbDlZYjVYbkxSd3VTSDVjOE53YjJQNGExeFE1Ty1nVDZsRHduSHF6Q0RHeUFTNjdQZVZ3dS1CM0dNd0tWTXhMVGZDckNTRHVhM2hKcFlKYkdDOQ?oc=5",
       "source": "El Eco",
@@ -71,6 +63,14 @@
       "source": "Federación de Asociaciones de Celíacos de España",
       "pubDate": "Tue, 20 Oct 2026 12:14:50 GMT",
       "summary": "No te pierdas la jornada gastronómica “Cartagena sin gluten”, este sábado 24 de octubre  Federación de Asociaciones de Celíacos de España",
+      "image": null
+    },
+    {
+      "title": "Un menú para una alimentación antinflamatoria: cecina, aceite de oliva, alcachofa y brownie sin azúcar ni gluten",
+      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQR3MtR3RvLTkwNDB0eWtCa05SaTlFcDROc1pnZm91dlZ5cFBKNGxBcnFRVGZ5ZzVHWVZxVXVwcGpWdWJpVUpzM1hfUTBJWDd2SnR6bEUzNHM3bmZfSmJzM3BmNW01QWN4MktiX0JheTVqMGdVMGdaajE2UVVHTVVqR01oN1RGazVBYTRkMU5TVjBFSUd4Y1RTN2RZdGR3cDQ5SU1hVUdWcmJ5VGNOTzFoZWpQZlR6ZXpGcjJHRlAtRkpFU0dpRlZlWDVwYlpYSlpNMVp1bC1pUFVTUGhERlZVbm1RY05zRWdXeEJRaEZLbllSQdIB9wFBVV95cUxQSWo3aXZBOGpUVm1ETkdXNlRhcnh3ejZCd0prNXM1elRVTnRBeTJOeE5ibFRRbWloZkl0ZFd0VlZ2RU9aMVJ3NHdWTmZ3Rlg1cDdxYjVKdDZvc292ellNUkQ2VzlwTk9KbUdnS2xzVnZFSVFFSlYtV1NjSVl5ZV95YlhONWRibEJueTQ3QV9IWFdlRW1iUlp4THZaQ1REdUt5TmZKRWJ2Y2RXZGozMF9HM1VCTEw1a2VUcExaV1NfOE1Bc29LOWZBNzBNekdVd1R2NUNSakpMWXpreVRySERHemwzblhvcmVjclMxSUdyZTRqZDNCWWtn?oc=5",
+      "source": "elDiario.es",
+      "pubDate": "Tue, 20 Oct 2026 11:50:15 GMT",
+      "summary": "Un menú para una alimentación antinflamatoria: cecina, aceite de oliva, alcachofa y brownie sin azúcar ni gluten  elDiario.es",
       "image": null
     },
     {
@@ -122,14 +122,6 @@
       "image": null
     },
     {
-      "title": "Stella Artois lanza Pure Gold en México: una cerveza con 17% menos calorías y sin gluten",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNd1Z4WmpyM25YMDN4azAzR1ZMSHVwV1FmU21Lci1HRGFQcGNrSW5ESEY1bEFzQTlzYmtYUllZQkxwRTB5dEZuQWNlYWdwMFhzUUY5N3A3cVZiN2hnM000LWVXRGRwWDBxOXZIVDBFSW9FU1dCeElhNWVBTFY5a2V2RUN5dWhzSWZUbjdPbTY5b0NoS0gxNGZ3?oc=5",
-      "source": "InformaBTL",
-      "pubDate": "Mon, 19 Oct 2026 16:29:45 GMT",
-      "summary": "Stella Artois lanza Pure Gold en México: una cerveza con 17% menos calorías y sin gluten  InformaBTL",
-      "image": null
-    },
-    {
       "title": "'Cartagena sin gluten', una feria gastronómica para celíacos",
       "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNalVoUHg0MHZEUVMyTW9fVU5HOE9yQm5PME1tVFRkN1lqeGNFdXBHZFFRSGtzdGtia1B6NE9ZNzdtbk0tVldrbjgyamVQazRxZ2xxai1CUngxeThYM0dSWmUzX2Q5YXJYalpsbDNfZnpMNHNGaU5zVDA2d1duX0l6Y2tmbGR6RlN6V2VpM181aXFwUHFyMnJlc2ZQMmdRbzZWU1UzS1lB0gGrAUFVX3lxTFA0c29acUFIeldjQzM5MzRLR2NpOEdGWVhoY0dtMlZfRTNUMVNZdHotajdReDZ2bzZSS0xFQXdjY1NGUFNadmRBdnVIWC1jYldxX1FvREFiSzgtcWgzWjctbldUblBuamRmc2ZNQmZ4MEdVODdWdmE2a2Z1WHJqVFpldDIxR1oxU0IzSnBsT2gxWEgyTVRfU3l6cmtrSkNxampJWFBSUC1vU1NjNA?oc=5",
       "source": "La Verdad",
@@ -151,6 +143,14 @@
       "source": "Fusión Asturias",
       "pubDate": "Mon, 19 Oct 2026 11:53:41 GMT",
       "summary": "¿Estoy haciendo bien la dieta sin gluten?  Fusión Asturias",
+      "image": null
+    },
+    {
+      "title": "Cartagena celebra este sábado una feria gastronómica sin gluten con chefs en directo y degustaciones gratuitas",
+      "link": "https://news.google.com/rss/articles/CBMiigJBVV95cUxPWXpaanI3UXFSQW9taU1faE5rVFhGSC1RMUw5YmQtRVJCRjBGT2lvRVNJdVhMaGNYaDdjd3JoRkRmWkY2WExyUDd3TGRTSFpnT2J6a3FfVzdDaWRyNDFYeHQxaVp6S2NFYU1PZ1ZCUFptNXdNNmk5UjdpX1VBeFMtLW5wV3VRYk5WWXFhSlh1UDJ1anVONk53QkI0UVRLR2w1YWU5VzBpaVVBbzM0a3plWnN0MGJhUWNqZ21ibzQtZHZhYXNsQy1veHFMSUN5dXRsdmdQQ3ZBU05fYlV6Zmt0ell1SEgwXzRqdkotRVpxbnN4eHp2SUh3dVU0em5PZ29iX2dYMGtUUDhpd9IBjwJBVV95cUxPRGMtR2NsQ2x2cVY2a2tpWG1XSm1xVnJ3ZTJsd3duSnZIbDdQdmZKVHRVN2g2cS10S3JYSl9MMC0xQm03cURsaFNsWEpIQ095SWdQVk56WV9NV2Z6cW9LUWc3aC1UdUIxWFRIT3VyWElCemhKVXJmSDBiQnN5YVZlQTZlVWRrTlQwa0d4OHdLMHoyMWFnWUdxMWI3TE92c0dSS2N4UTYtSWd5czAzbmJBSTZ2MTQ1ZmZ5NmNxNlNVSFdGR0hnR2ZadGdibkhxOUpTOVF2a0h2TlVsNTZHMmtfUmVRbGNnZ3h1eXBwakhLdjZYUHliSFFROS1VY2ZzOTVDRUpfdmUwRkE2OS1NVVNZ?oc=5",
+      "source": "Cartagena Actualidad",
+      "pubDate": "Mon, 19 Oct 2026 09:22:33 GMT",
+      "summary": "Cartagena celebra este sábado una feria gastronómica sin gluten con chefs en directo y degustaciones gratuitas  Cartagena Actualidad",
       "image": null
     },
     {
