@@ -1,5 +1,14 @@
 let newsItems = [];
 
+// El título, la fuente, el resumen, el enlace y la imagen de cada noticia
+// vienen tal cual de feeds RSS externos (Google Noticias, la Asociación de
+// Celiacos) que no controlamos: un titular con "<", "&" o comillas rompía el
+// HTML de la tarjeta (y a veces el de las siguientes) al insertarse sin
+// escapar. Se escapa todo antes de montar la plantilla.
+function escapeHtml(str) {
+  return String(str == null ? "" : str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
 function formatNewsDate(iso) {
   if (!iso) return null;
   const date = new Date(iso);
@@ -8,25 +17,27 @@ function formatNewsDate(iso) {
 }
 
 function renderNewsCard(item) {
-  const dateHtml = formatNewsDate(item.pubDate) ? `<span class="news-date">${formatNewsDate(item.pubDate)}</span>` : "";
+  const dateHtml = formatNewsDate(item.pubDate) ? `<span class="news-date">${escapeHtml(formatNewsDate(item.pubDate))}</span>` : "";
+  const link = escapeHtml(item.link);
   const imageHtml = item.image
-    ? `<div class="news-image"><img src="${item.image}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()" /></div>`
+    ? `<div class="news-image"><img src="${escapeHtml(item.image)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.news-image').remove()" /></div>`
     : "";
   return `
     <article class="news-card">
       ${imageHtml}
       <div class="news-body">
         <div class="news-meta">
-          <span class="news-source">${item.source}</span>
+          <span class="news-source">${escapeHtml(item.source)}</span>
           ${dateHtml}
         </div>
-        <h3 class="news-title"><a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a></h3>
-        ${item.summary ? `<p class="news-summary">${item.summary}</p>` : ""}
-        <a class="news-link" href="${item.link}" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
+        <h3 class="news-title"><a href="${link}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.title)}</a></h3>
+        ${item.summary ? `<p class="news-summary">${escapeHtml(item.summary)}</p>` : ""}
+        <a class="news-link" href="${link}" target="_blank" rel="noopener noreferrer">Leer noticia completa ↗</a>
       </div>
     </article>
   `;
 }
+
 
 async function loadNews() {
   const grid = document.getElementById("newsGrid");
